@@ -1,0 +1,383 @@
+::-webkit-input-placeholder {
+	color: #494e4e;
+	font-style: italic;
+}
+ 
+:-moz-placeholder { /* Firefox 18- */
+	color: #494e4e;
+	font-style: italic;
+}
+ 
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #494e4e;
+	font-style: italic;
+}
+ 
+:-ms-input-placeholder { 
+	color: #494e4e;
+	font-style: italic;
+}
+body {
+	background: url(images/background-sliver.png) repeat-x;
+	&.soa-ui-dc-homepage {
+		background-image: url(images/header-BG-sliver-home.png);
+	}
+}
+.soa-ui-dc- {
+	&clearthis:after {
+		content: ".";
+		display: block;
+		height: 0;
+		line-height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	&icon {
+		position: relative;
+	}
+	&label {
+		&-hidden {
+			display: none;
+		}
+	}
+	/***** icons, image replacement ****/
+	&icon:before, &icon-imgtxt {
+		background: url(images/DC-Sprites_icons.png) no-repeat;
+		content: ".";
+		display: block;
+		font-size: 0.01em;
+		overflow: hidden;
+		text-indent: -99999px;
+	}
+	&icon:before {
+		height: 30px;
+		left: -20px;
+		position: absolute;
+		top: 0;
+		width: 27px;
+	}
+	&icon-document:before {
+		background-position: center -200px;
+	}
+	&icon-pdf:before {
+		background-position: center -145px;
+	}
+	&icon-document-20px:before {
+		background-position: center -101px;
+		height: 20px;
+		left: -10px;
+		top: -6px;
+		width: 26px;
+	}
+	&icon-action-dark:before {
+		height: 13px;
+		background-position: center -25px;
+		left: -26px;
+		width: 16px;
+	}
+	&icon-action-light:before {
+		background-position: center -62px;
+		height: 16px;
+		left: -7px;
+		top: -3px;
+		width: 16px;
+	}
+	/**** scaffolding *****/
+	&container {
+		&-top, &-main {
+			margin: 0 auto;
+			position: relative;
+			width: 791px;
+		}
+		&-top {
+			height: 130px;
+			.soa-ui-dc-homepage & {
+				height: 102px;
+			}
+		}
+		&-main {
+			&-left {
+				float: left;
+				padding-right: 23px;
+				width: 175px;
+			}
+			&-content {
+				margin-left: 198px;
+			}
+		}
+	}
+	/****** top area *****/
+	&logo {
+		background: url(images/SOAlogo.png);
+		height: 40px;
+		width: 149px;
+		h1&-container {
+			background: transparent;
+			left: 0;
+			padding: 0;
+			position: absolute;
+			top: 19px;
+		}
+	}
+	&topnav {
+		list-style: none;
+		&-container {
+			left: 196px;
+			position: absolute;
+			top: 24px;
+		}
+		&-item {
+			float: left;
+			margin: 0 0 0 30px;
+			padding: 0;
+			&-active {
+				background: url(images/DC-nav-active.png) no-repeat bottom center;
+			}
+			&-link {
+				height: 30px;
+				margin-bottom: 25px;
+				width: 119px;
+				&.soa-ui-dc-icon-imgtxt {
+					background-image: url(images/DC-Sprites_nav-prods.png);
+				}
+				&.soa-ui-dc-topnav-item-link-apigateway {
+					background-position: center -188px;
+					&:hover, .soa-ui-dc-topnav-item-active & {
+						background-position: center -25px;
+					}
+				}
+				&.soa-ui-dc-topnav-item-link-communitymanager {
+					background-position: center -242px;
+					&:hover, .soa-ui-dc-topnav-item-active & {
+						background-position: center -79px;
+					}
+				}
+				&.soa-ui-dc-topnav-item-link-lifecyclemanager {
+					background-position: center -297px;
+					&:hover, .soa-ui-dc-topnav-item-active & {
+						background-position: center -134px;
+					}
+				}
+			}
+		}
+	}
+	&subnav {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		&-item {
+			float: left;
+			margin: 0;
+			padding: 0 0 0 50px;
+			&:first-child {
+				padding: 0;
+			}
+			a&-link {
+				color: #a3a5a1;
+				font-size: 15px;
+				font-weight: bold;
+				&:hover, &.soa-ui-dc-subnav-item-link-active {
+					color: #2683b4;
+				}
+			}
+		}
+		&-container {
+			left: 100px;
+			position: absolute;
+			top: 85px;
+		}
+	}
+	&topsearch {
+		background: #fff;
+		border-radius: 3px;
+		padding: 3px 4px;
+		&-input {
+			border: none;
+			width: 134px;
+		}
+		&-container {
+			right: -4px;
+			position: absolute;
+			top: 81px;
+			.soa-ui-dc-homepage & {
+				top: 30px;
+			}
+		}
+		&-button, &-button:hover, &-button:active {
+			background: #2683b4 url(images/DC-Sprites_icons.png) center -251px;
+			border-radius: 3px;
+			box-shadow: none;
+			display: inline-block;
+			height: 16px;
+			margin: 0;
+			width: 16px;
+		}
+	}
+	/****** content area ******/
+	&content {
+		&-header {
+			background: none;
+			color: #2683b4;
+			font-size: 17px;
+			padding: 0 0 14px;
+		}
+		&-nav {
+			border-top: 2px solid #acabab;
+			list-style: none;
+			padding: 22px 0;
+			&-item {
+				float: left;
+				list-style: none;
+				margin: 0;
+				padding-left: 56px;
+				&:first-child {
+					padding: 0;
+				}
+				&-link {
+					height: 46px;
+					width: 155px;
+					&.soa-ui-dc-icon-imgtxt {
+						background-image: url(images/DC-Sprites_logos.png);
+					}
+					&.soa-ui-dc-content-nav-item-link-communitymanager {
+						background-position: center -238px;
+						.ui-tabs-active &, &:hover {
+							background-position: center -28px;
+						}
+					}
+					&.soa-ui-dc-content-nav-item-link-apigateway {
+						background-position: center -308px;
+						.ui-tabs-active &, &:hover {
+							background-position: center -98px;
+						}
+					}
+					&.soa-ui-dc-content-nav-item-link-lifecyclemanager {
+						background-position: center -378px;
+						.ui-tabs-active &, &:hover {
+							background-position: center -168px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&detail {
+		&-column {
+			float: left;
+			list-style: none;
+			margin: 0;
+			padding: 0 0 0 35px;
+			width: 240px;
+			&:first-child {
+				padding: 0;
+			}
+			&-header {
+				background: #eeeff0; /* Old browsers */
+				background-image: -moz-linear-gradient(top, #eeeff0 22%, #dcddde 81%); /* FF3.6+ */
+				background-image: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#eeeff0), color-stop(81%,#dcddde)); /* Chrome,Safari4+ */
+				background-image: -webkit-linear-gradient(top, #eeeff0 22%,#dcddde 81%); /* Chrome10+,Safari5.1+ */
+				background-image: -o-linear-gradient(top, #eeeff0 22%,#dcddde 81%); /* Opera 11.10+ */
+				background-image: -ms-linear-gradient(top, #eeeff0 22%,#dcddde 81%); /* IE10+ */
+				background-image: linear-gradient(to bottom, #eeeff0 22%,#dcddde 81%); /* W3C */
+				font-size: 17px;
+				font-weight: bold;
+				font-weight: normal;
+				padding: 6px 10px 5px 41px;
+			}
+			&-item {
+				list-style: none;
+				margin: 0;
+				padding: 10px 0 10px 20px;
+				&-link {
+					padding-left: 20px;
+				}
+				&s {
+					margin: 0;
+					padding: 10px 0 0 0;
+				}
+			}
+			&s {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+	&footer {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		&-item {
+			border-left: 1px solid #6d6e71;
+			color: #6d6e71;
+			display: inline;
+			font-size: 10px;
+			margin: 0 0 0 20px;
+			padding: 0 0 0 20px;
+			&:first-child {
+				border: none;
+				margin: 0;
+				padding: 0;
+			}
+			a&-link {
+				color: #6d6e71;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	&container-main {
+		&-left {
+			&-header {
+				color: #7d7e7f;
+				font-size: 13px;
+				padding: 0;
+				a&-link {
+					background: #eeeeef; /* Old browsers */
+					background-image: -moz-linear-gradient(top, #eeeeef 22%, #dddedf 81%); /* FF3.6+ */
+					background-image: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#eeeeef), color-stop(81%,#dddedf)); /* Chrome,Safari4+ */
+					background-image: -webkit-linear-gradient(top, #eeeeef 22%,#dddedf 81%); /* Chrome10+,Safari5.1+ */
+					background-image: -o-linear-gradient(top, #eeeeef 22%,#dddedf 81%); /* Opera 11.10+ */
+					background-image: -ms-linear-gradient(top, #eeeeef 22%,#dddedf 81%); /* IE10+ */
+					background-image: linear-gradient(to bottom, #eeeeef 22%,#dddedf 81%); /* W3C */
+					border-bottom: 1px solid #c6c5c6;
+					border-radius: 1px 1px 0 0;
+					color: #7d7e7f;
+					display: block;
+					padding: 6px 12px;
+				}
+			}
+			&-nav {
+				background: #ebeced;
+				border-radius: 0 0 1px 1px;
+				font-size: 13px;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				&-item {
+					color: #7d7e7f;
+					margin: 0;
+					padding: 0;
+					&-selected {
+						font-weight: bold;
+					}
+					a&-link {
+						border-bottom: 1px solid #c6c5c6;
+						color: #7d7e7f;
+						display: block;
+						padding: 6px 12px;
+						.soa-ui-dc-container-main-left-nav-inner & {
+							background: none;
+							border: none;
+						}
+					}
+				}
+				
+				&-inner {
+					border-bottom: 1px solid #c6c5c6;
+					//border-width: 1px 0;
+				}
+			}
+		}
+	}
+}
