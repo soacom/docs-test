@@ -32,6 +32,45 @@ body {
 		clear: both;
 		visibility: hidden;
 	}
+	&button {
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		background: #fff; /* Old browsers */
+		background-image: -moz-linear-gradient(top, #fff 22%, #e6e6e6 81%); /* FF3.6+ */
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#fff), color-stop(81%,#e6e6e6)); /* Chrome,Safari4+ */
+		background-image: -webkit-linear-gradient(top, #fff 22%,#e6e6e6 81%); /* Chrome10+,Safari5.1+ */
+		background-image: -o-linear-gradient(top, #fff 22%,#e6e6e6 81%); /* Opera 11.10+ */
+		background-image: -ms-linear-gradient(top, #fff 22%,#e6e6e6 81%); /* IE10+ */
+		background-image: linear-gradient(to bottom, #fff 22%,#e6e6e6 81%); /* W3C */
+		border: 1px solid;
+		border-color: #ccc #ccc #b3b3b3;
+		border-radius: 4px;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+		color: #333;
+		font: 12px/20px Helvetica,Arial,Sans-serif;
+		margin: 0;
+		text-shadow: none;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-o-transition: none;
+		transition: none;
+		&:hover {
+			background: #e6e6e6;
+			box-shadow: none;
+			text-shadow: none;
+		}
+		&:active {
+			background-image: -moz-linear-gradient(top, #e6e6e6 22%, #fff 81%); /* FF3.6+ */
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(22%,#e6e6e6), color-stop(81%,#fff)); /* Chrome,Safari4+ */
+			background-image: -webkit-linear-gradient(top, #e6e6e6 22%,#fff 81%); /* Chrome10+,Safari5.1+ */
+			background-image: -o-linear-gradient(top, #e6e6e6 22%,#fff 81%); /* Opera 11.10+ */
+			background-image: -ms-linear-gradient(top, #e6e6e6 22%,#fff 81%); /* IE10+ */
+			background-image: linear-gradient(to bottom, #e6e6e6 22%,#fff 81%); /* W3C */
+		}
+		&:focus {
+			outline: none;
+		}
+	}
 	&icon {
 		position: relative;
 	}
@@ -49,33 +88,38 @@ body {
 		overflow: hidden;
 		text-indent: -99999px;
 	}
-	&icon:before {
+	&icon:before, &icon-imgtxt {
 		height: 30px;
 		left: -20px;
 		position: absolute;
 		top: 0;
 		width: 27px;
 	}
-	&icon-document:before {
+	&icon-imgtxt {
+		left: auto;
+		position: static;
+		top: auto;
+	}
+	&icon-document:before, &icon-document.soa-ui-dc-icon-imgtxt {
 		background-position: center -200px;
 	}
-	&icon-pdf:before {
+	&icon-pdf:before, &icon-pdf.soa-ui-dc-icon-imgtxt {
 		background-position: center -145px;
 	}
-	&icon-document-20px:before {
+	&icon-document-20px:before, &icon-document-20px.soa-ui-dc-icon-imgtxt {
 		background-position: center -101px;
 		height: 20px;
 		left: -10px;
 		top: -6px;
 		width: 26px;
 	}
-	&icon-action-dark:before {
+	&icon-action-dark:before, &icon-action-dark.soa-ui-dc-icon-imgtxt {
 		height: 13px;
 		background-position: center -25px;
 		left: -26px;
 		width: 16px;
 	}
-	&icon-action-light:before {
+	&icon-action-light:before, &icon-action-light.soa-ui-dc-icon-imgtxt {
 		background-position: center -62px;
 		height: 16px;
 		left: -7px;
@@ -111,7 +155,7 @@ body {
 		background: url(images/SOAlogo.png);
 		height: 40px;
 		width: 149px;
-		h1&-container {
+		h2&-container {
 			background: transparent;
 			left: 0;
 			padding: 0;
@@ -168,7 +212,7 @@ body {
 		&-item {
 			float: left;
 			margin: 0;
-			padding: 0 0 0 50px;
+			padding: 0 0 0 65px;
 			&:first-child {
 				padding: 0;
 			}
@@ -182,7 +226,7 @@ body {
 			}
 		}
 		&-container {
-			left: 100px;
+			left: 223px;
 			position: absolute;
 			top: 85px;
 		}
@@ -193,6 +237,7 @@ body {
 		padding: 3px 4px;
 		&-input {
 			border: none;
+			height: 14px;
 			width: 134px;
 		}
 		&-container {
@@ -220,10 +265,43 @@ body {
 			color: #2683b4;
 			font-size: 17px;
 			padding: 0 0 14px;
+			&.soa-ui-dc-icon-imgtxt {
+				background: url(images/DC-Sprites_logos.png);
+				display: inline-block;
+				height: 46px;
+				padding: 0;
+				width: 155px;
+				&.soa-ui-dc-content-header-communitymanager {
+					background-position: center -28px;
+				}
+				&.soa-ui-dc-content-header-apigateway {
+					background-position: center -98px;
+				}
+				&.soa-ui-dc-content-header-lifecyclemanager {
+					background-position: center -168px;
+				}
+			}
+			&-details {
+				display: inline-block;
+				vertical-align: super;
+				&-dt, &-dd {
+					display: inline;
+				}
+				&-dt {
+					font-style: italic;
+					padding-left: 17px;
+					&:after {
+						content: ":";
+					}
+				}
+			}
+			&-description {
+			}
 		}
 		&-nav {
 			border-top: 2px solid #acabab;
 			list-style: none;
+			margin: 0;
 			padding: 22px 0;
 			&-item {
 				float: left;
@@ -234,6 +312,7 @@ body {
 					padding: 0;
 				}
 				&-link {
+					display: block;
 					height: 46px;
 					width: 155px;
 					&.soa-ui-dc-icon-imgtxt {
@@ -260,6 +339,19 @@ body {
 				}
 			}
 		}
+		&-catalog {
+			&-item {
+				border-top: 1px solid #c0bfbf;
+				list-style: none;
+				margin: 0;
+				padding: 16px 0 0;
+				&s {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
 	}
 	&detail {
 		&-column {
@@ -283,13 +375,27 @@ body {
 				font-weight: bold;
 				font-weight: normal;
 				padding: 6px 10px 5px 41px;
+				.soa-ui-dc-icon:before {
+					top: 1px;
+				}
 			}
 			&-item {
 				list-style: none;
 				margin: 0;
 				padding: 10px 0 10px 20px;
 				&-link {
+					display: block;
 					padding-left: 20px;
+					&.soa-ui-dc-icon {
+						&:before {
+							top: -5px;
+						}
+						&.soa-ui-dc-icon-action-light {
+							&:before {
+								top: -2px;
+							}
+						}
+					}
 				}
 				&s {
 					margin: 0;
@@ -372,10 +478,44 @@ body {
 						}
 					}
 				}
-				
 				&-inner {
 					border-bottom: 1px solid #c6c5c6;
 					//border-width: 1px 0;
+				}
+			}
+			
+		}
+	}
+	&document-type {
+		padding: 0;
+	}
+	&section {
+		&-header, &-paragraph {
+			color: #444949;
+			font-size: 12px;
+			margin: 0;
+			padding: 0 0 16px 0;
+		}
+		&-header {
+			font-weight: bold;
+			padding-bottom: 5px;
+		}
+	}
+	&2col-with-avatar {
+		.soa-ui-dc-avatar-box, .soa-ui-dc-details-box {
+			float: left;
+		}
+		.soa-ui-dc-avatar-box {
+			width: 27px;
+		}
+		.soa-ui-dc-details-box {
+			padding-left: 20px;
+			width: 524px;
+			.soa-ui-dc-user-item & {
+				.soa-ui-dc-buttons {
+					position: absolute;
+					top: 0;
+					right: 0;
 				}
 			}
 		}

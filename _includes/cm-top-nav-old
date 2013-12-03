@@ -1,7 +1,7 @@
 			<div class="soa-ui-dc-topnav-container">
 				<!-- top nav starts here -->
 				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
-					<li class="soa-ui-dc-topnav-item  soa-ui-dc-topnav-item-active">
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
 						<a href="index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon-imgtxt soa-ui-dc-topnav-item-link-communitymanager">COMMUNITY MANAGER</a><!-- replace href -->
 					</li>
 					<li class="soa-ui-dc-topnav-item">
@@ -28,4 +28,3 @@
 				</ul>
 				<!-- sub nav ends here -->
 			</div>
-			
