@@ -1,17 +1,19 @@
 ---
 layout: page
-title: Community Manager License Administration
-description: Business Administrator License Configuration in CM
+title: Community Manager License Administration (learnmore)
+description: Business Administrator License Configuration in CM (learnmore)
 product: cm
-category: learn
-weight:
-nav-title: License Administration
+category: ref
+subcategory: Business Administration
+weight: 20
+type: page
+nav-title: Business Admin License Administration
 ---
 
 <h2 id="top">Licenses</h2>
 
 <p>Information about setting up the components of the Licenses feature, adding and managing licenses, license terms, and scopes, and assigning licenses to APIs.</p>
-<p class="apidoc_note"><strong>Note</strong>: For an overview of the Licenses feature, with implementation scenarios and examples, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.
+<p class="apidoc_note"><strong>Note</strong>: For an overview of the Licenses feature, with implementation scenarios and examples, see <a href="ov_licenses.html">Licenses: Feature Overview</a>.
   
 </p>
 <div class = "divider1"></div>
@@ -37,7 +39,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="what_is_a_license"></a>What is a license?</h3>
+<a name="what_is_a_license"></a><h3>What is a license?</h3>
 <p>A license is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes:</p>
 <ul>
   <li>One or more License Terms, each of which can include multiple scopes, giving access to specifically designated operations, and multiple quality of service (QoS) agreements.</li>
@@ -49,7 +51,7 @@ nav-title: License Administration
 <p>Some points to note when defining a license:</p>
 <ul class="usingOrderedList">
   <li>It's best to define scopes first. You can define a license without adding Scopes, but a license is meaningless without at least one scope assigned to it.</li>
-  <li>As part of the license, you must define one or more <a href="basics_glossary.htm#gl_licenseterm">license terms</a>.</li>
+  <li>As part of the license, you must define one or more <a href="basics_glossary.html#gl_licenseterm">license terms</a>.</li>
   <li>One or more Scopes can be assigned a license using the <strong>Add Scope</strong> function.</li>
   <li>Each Scope can be tailored using the <strong>Select  Scope</strong> function (you can select or deselect specific tiers within the Scope).</li>
   <li>After you save the license, the API Admin must specify that the API uses licenses, and must map scopes to operations within the API (scope mapping). If the license is private, the API Admin must also create a Private API Group or invite other groups to access the API and specify that the groups have access to that license. Once those steps are complete, applicable licenses are available for app developers to select in the API Access Wizard.</li>
@@ -58,19 +60,19 @@ nav-title: License Administration
 
 
 
-<h3><a name="what_is_a_license_term"></a>What is a license term?</h3>
+<a name="what_is_a_license_term"></a><h3>What is a license term?</h3>
 <p>A license term is a building block for a license. A license is made up of one or more license terms plus, optionally, one or more legal agreements. When defining a license, you define one or more license terms. Each license term is unique to the license that it is a part of; license terms do not exist separately from licenses.</p>
 <p>A license term includes two components:</p>
 <ul>
-  <li>The access that is being offered in terms of what exactly the user is being given access to (<a href="basics_glossary.htm#gl_scope">scope</a>); for example, access to read-only operations, access to credit card operations, access to all operations.</li>
-  <li> The level of access in terms of quality of service and/or volume of transactions (<a href="basics_glossary.htm#gl_qosagreement">QoS policy</a>).</li>
+  <li>The access that is being offered in terms of what exactly the user is being given access to (<a href="basics_glossary.html#gl_scope">scope</a>); for example, access to read-only operations, access to credit card operations, access to all operations.</li>
+  <li> The level of access in terms of quality of service and/or volume of transactions (<a href="basics_glossary.html#gl_qosagreement">QoS policy</a>).</li>
 </ul>
 <p> Each license term includes one or more scopes plus, optionally, the quality of service limits/policies to be applied to all scopes in the license term. Scopes apply to both visibility and access; policies apply only to access. To have any impact, a license term must include at least one scope.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<h3><a name="what_are_the_visiblity_rules_for_a_license"></a>What are the visibility rules for a license?</h3>
+<a name="what_are_the_visiblity_rules_for_a_license"></a><h3>What are the visibility rules for a license?</h3>
 <p>The following visibility rules apply for a license:</p>
 <ul class="usingOrderedList">
   <li>Public licenses are always available  for selection in the API Access Request wizard.</li>
@@ -81,7 +83,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="what_is_a_scope"></a>What is a scope?</h3>
+<a name="what_is_a_scope"></a><h3>What is a scope?</h3>
 <p>A scope is the bridge between the top level of the hierarchy, a license, and the bottom level, an operation. At the business level, the Business Admin defines the scope with a name and basic attributes. Then, at the API level, the API Admin assigns specific operations to one or more scopes for the API. These operations are included in any license that the scope is assigned to.</p>
 <p>The app developer never sees scopes; the developer is offered one or more licenses offerings that have been defined for the API. However, scopes are a building block of licenses.</p>
 <p>Operations are assigned to scopes; scopes and QoS policies are assigned to license terms; license terms and legal agreements are assigned to licenses.</p>
@@ -89,7 +91,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_add_a_scope"></a>How do I add a scope?</h3>
+<a name="how_do_i_add_a_scope"></a><h3>How do I add a scope?</h3>
 <p>You can configure a scope using the <strong>Add Scope</strong> function in the <em>Administration &gt; Scopes</em> section of the platform. Some things to note about scopes:</p>
 <ul class="usingOrderedList">
   <li>The only required fields are Name and Short Description. You can also add a more detailed description in the Full Description field.</li>
@@ -105,7 +107,7 @@ nav-title: License Administration
   <li><strong>Delete a scope</strong>. Highlight the scope and then, in the right pane, click <strong>Delete</strong>.</li>
 </ul>
 <p><em>Note: Scopes can only be configured by Business Administrators.</em></p>
-<h5><a name="scope_add"></a>To add a scope</h5>
+<a name="scope_add"></a><h5>To add a scope</h5>
 <ol class=" usingOrderedList">
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The <em>Scopes </em>screen displays.</li>
   <li>Click <strong>Add Scope</strong>. In the right panel, specify the following:
@@ -128,7 +130,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_modify_a_scope"></a>How do I modify a scope?</h3>
+<a name="how_do_i_modify_a_scope"></a><h3>How do I modify a scope?</h3>
 <p>You can modify a scope using the <strong>Edit</strong> function in the <em>Administration &gt; Scopes </em>section of the platform.</p>
 <p><strong>Note</strong>: When a scope is active you cannot modify it.</p>
 <h5>To edit a scope</h5>
@@ -141,7 +143,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_add_a_license"></a>How do I add a license?</h3>
+<a name="how_do_i_add_a_license"></a><h3>How do I add a license?</h3>
 <p>You can configure a license using the <strong>Add License</strong> function in the <em>Administration &gt; Licenses </em>section of the platform:</p>
 <ul class="usingOrderedList">
   <li>Scopes must be predefined in the<em> Administration &gt; Scopes </em>section so that they are available for selection when defining the license.</li>
@@ -152,7 +154,7 @@ nav-title: License Administration
   <li>The <strong>Delete</strong> function allows you to delete a license definition line item.</li>
 </ul>
 <p><em>Note: Licenses can only be configured by Business Administrators.</em></p>
-<h5><a name="license_add"></a>To add a license</h5>
+<a name="license_add"></a><h5>To add a license</h5>
 <ol class=" usingOrderedList">
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The <em>Licenses </em>screen displays.</li>
   <li>Click <strong>Add License</strong>. Specify the Name, Description, Visibility (Public/Private), and Sandbox Access and Production Access options you would like to assign to the license definition.
@@ -172,7 +174,7 @@ nav-title: License Administration
       <tr class="t1row">
         <td>Description</td>
         <td><p>Specify a short description for the license. The app developer sees this at runtime, as shown below.</p>
-          <p><img src="assets/license_apiaccesswizard.jpg" alt="license descriptions displayed to app developer at runtime" /></p></td>
+          <p><img src="images/license_apiaccesswizard.jpg" alt="license descriptions displayed to app developer at runtime" /></p></td>
       </tr>
       <tr class="t2row">
         <td>Sandbox Access</td>
@@ -196,10 +198,10 @@ nav-title: License Administration
 <ul>
   <li><strong>Public</strong>: A public license is visible to app developers when requesting API access for an app.
 <p>If there is documentation  or downloadable  content for a public API's licenses, scopes, or operations that are designated with a visibility of public, those resources are visible to all users. If the API itself is private but the scope is public, the resources are visible to all users who have been invited to the API.</p></li>
-  <li><strong>Private</strong>: A private license is visible only to an app developer who is a member of one or more groups invited to have visibility into the license (<a href="basics_glossary.htm#gl_visibilityscope">visibility scope</a>).
+  <li><strong>Private</strong>: A private license is visible only to an app developer who is a member of one or more groups invited to have visibility into the license (<a href="basics_glossary.html#gl_visibilityscope">visibility scope</a>).
 <p>If an app developer’s visibility scope for an API version includes a private license, that developer will have the option to choose that license when requesting API access.</p>
 <p>If a license is private, only users that have the license in their visibility scope can access the API documentation/downloadable files that are mapped to the license.</p>
-<p><strong>Note</strong>: The API admin must make sure that the documentation is appropriately tagged. If it is not, it will not be visible even to authorized individuals. For information on tagging API documentation, see <a href="publish_api_documentation_maintenance.htm#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></p>
+<p><strong>Note</strong>: The API admin must make sure that the documentation is appropriately tagged. If it is not, it will not be visible even to authorized individuals. For information on tagging API documentation, see <a href="publish_api_documentation_maintenance.html#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></p>
  </li>
 </ul></td>
 </tr>
@@ -230,7 +232,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_edit_a_license"></a>How do I edit a license?</h3>
+<a name="how_do_i_edit_a_license"></a><h3>How do I edit a license?</h3>
 <p>You can modify a license, if it is deactivated, using the <strong>Edit</strong> function in the <em>Administration &gt; License </em>section of the platform.</p>
 <p><strong>Note</strong>: When a license is active you cannot modify it.</p>
 <h5>To edit a license</h5>
@@ -247,7 +249,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_deactivate_or_reactivate_a_license"></a>How do I deactivate or reactivate a license?</h3>
+<a name="how_do_i_deactivate_or_reactivate_a_license"></a><h3>How do I deactivate or reactivate a license?</h3>
 <p>You can deactivate a license definition on the <em>License Definitions</em> screen using the <strong>Deactivate</strong> function. Note the following points:</p>
 
 <ul class="usingOrderedList">
@@ -271,7 +273,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_delete_a_license"></a>How do I delete a license?</h3>
+<a name="how_do_i_delete_a_license"></a><h3>How do I delete a license?</h3>
 <p>You can delete a license on the <em>License Definitions</em> screen using the <strong>Delete</strong> function:</p>
 
 <ul class="usingOrderedList">
@@ -287,7 +289,7 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_add_a_policy"></a>How do I add a policy?</h3>
+<a name="how_do_i_add_a_policy"></a><h3>How do I add a policy?</h3>
 <p>The Licenses feature uses policies as a component when building the license definition; policies are an optional component in license terms. However, licenses are defined outside the platform, in Policy Manager.</p>
 <p>As soon as the policy is defined in Policy Manager, it is available for selection when you click <strong>Add License</strong> ( <em>Administration &gt; Licenses</em>) and add a license term to the license.</p>
 <p>If you want to create licenses but the policies are not set up yet, you can go ahead and set up the licenses without the policies, and then go back and add the policies when they're available.</p>
@@ -295,13 +297,13 @@ nav-title: License Administration
 
 
 
-<h3><a name="how_do_i_modify_a_policy"></a>How do I modify a policy?</h3>
+<a name="how_do_i_modify_a_policy"></a><h3>How do I modify a policy?</h3>
 <p>You can modify a policy by changing the policy definition in Policy Manager.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<h3><a name="how_do_i_delete_a_policy"></a>How do I delete a policy?</h3>
+<a name="how_do_i_delete_a_policy"></a><h3>How do I delete a policy?</h3>
 <p>If you want to delete a policy, it must be done in Policy Manager, where the policies are set up. Note that you can only delete a policy that is not in use.</p>
 <p>You <strong>cannot</strong> delete a policy if:</p>
 <ul>
@@ -309,7 +311,7 @@ nav-title: License Administration
   <li>There is an active or pending API access contract that references the policy.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
-<h3><a name="how_do_i_assign_a_license_to_an_api"></a>How do I assign a license to an API?</h3>
+<a name="how_do_i_assign_a_license_to_an_api"></a><h3>How do I assign a license to an API?</h3>
 <p>The API Admin or Business Admin links license definitions to an API by completing the following steps:</p>
 <ul>
 <li>In the API setup, making sure the <strong>Choose Licenses</strong> checkbox is selected.</li>
@@ -317,3 +319,5 @@ nav-title: License Administration
 </ul>
 <p>Once those steps are complete, any licenses that include those scopes in the license definition are presented to the app developer for selection when the app developer initiates an API access request.</p>
 <p><a href="#top">Back to top</a></p>
+
+<div class = "divider1"></div>
