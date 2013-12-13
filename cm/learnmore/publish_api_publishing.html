@@ -1,7 +1,7 @@
 ---
 layout: page
 title: API Publishing
-description: xxx
+description: Learn how to set up and manage your API on the platform.
 product: cm
 category: learn
 subcategory: API Admin
@@ -353,7 +353,7 @@ no-nav: true
 <strong><em>Select Policies:</em></strong>
 <ol class="usingOrderedList">
 <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-  Note: Y<em>ou MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
+  Note: <em>You MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
  <li>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
  <li>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</li>
  <li>After making your changes click <strong>Save</strong>. Your API is now registered.</li>
@@ -442,7 +442,7 @@ no-nav: true
     <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the<em> API Access Wizard</em>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
     <li>Expand <em>Advanced Options</em> and verify the settings are correct (i.e., they match the  Target section in the previous step).</li>
     <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-    Note: Y<em>ou MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts  and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
+    Note: <em>You MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts  and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
     <li>Click <strong>Save</strong>.<br />
       <br />
       <img src="images/Add_rest_api3.jpg" width="902" height="416" alt="" />
@@ -498,14 +498,14 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p><strong>Example Scenarios:</strong></p>
 <p><em>Scenario 1</em>&#8212;You build an API and would like to expose specific functionality for the purposes of collaborating with a selected development and/or discussion group. You do not want to the API to be visible to anyone outside the selected group. To accomplish this:</p>
 <ul class="usingOrderedList">
-  <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. See the <a href="quick_start_api_provider_admin.html">quick start </a>for API Providers for more information.</li>
+  <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. See the <a href="publish_api_tutorial.html">quick start </a>for API Providers for more information.</li>
   <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.html#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
   <li>Create a Private API Group and invite selected individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.html">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
 </ul>
 <p><em>Scenario 2</em>&#8212;You build an API and would like to expose specific functionality to the public for them to use in their applications. To accomplish this:</p>
 <ul class="usingOrderedList">
-  <li>Add a new API, configure with public visibility, and add a proxy API for operations you would like to expose. Your API will be visible via the <em>Search</em> function. See the <a href="quick_start_api_provider_admin.html">quick start </a>for API Providers for more information.</li>
+  <li>Add a new API, configure with public visibility, and add a proxy API for operations you would like to expose. Your API will be visible via the <em>Search</em> function. See the <a href="publish_api_tutorial.html">quick start </a>for API Providers for more information.</li>
   <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.html#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
   <li>Create an Independent Group and invite individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.html">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
@@ -624,7 +624,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   <li>Change the Version ID, Tags, Visibility option, API Description, and Version Description. <br />
     <br />
     <em>Note that the API Name is cannot be modified for an API Version. You can only change the API Name using the Edit function on the original API. </em></li>
-  <li>Update the API contents based on your requirements. See <a href="#how_do_i_add_an_api">How do I add an API?</a> or <a href="quick_start_api_provider_admin.html">How do I add and setup an API?</a> for details on configuring your API.</li>
+  <li>Update the API contents based on your requirements. See <a href="#how_do_i_add_an_api">How do I add an API?</a> or <a href="publish_api_tutorial.html">How do I add and setup an API?</a> for details on configuring your API.</li>
   <li>After you have defined your API version, click <strong>Save</strong>. The API is saved and the Version ID specified displays in the Version drop-down menu.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
@@ -639,7 +639,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   <li>Click the name of an API you would like to edit. The<em> API Details</em> page displays.</li>
   <li>From the Version drop-down menu, select the API version you would like to edit.</li>
   <li>Click <strong>Edit</strong>. The <strong>Edit API Info</strong> screen displays and presents the current API definition.</li>
-  <li>Update the API contents based on your requirements. See <a href="#how_do_i_add_an_api">How do I add an API?</a> or <a href="quick_start_api_provider_admin.html">How do I add and setup an API?</a> for details on configuring your API.</li>
+  <li>Update the API contents based on your requirements. See <a href="#how_do_i_add_an_api">How do I add an API?</a> or <a href="publish_api_tutorial.html">How do I add and setup an API?</a> for details on configuring your API.</li>
   <li>After you have edited your API, click <strong>Save</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
