@@ -39,8 +39,8 @@ nav-title: Tutorial (API Provider)
 <ol class="usingOrderedList">
   <li>On the <em>APIs</em> page, specify the API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon for the API. All information here displays on your customer-facing <em>API Details</em> page.
     <ul class="usingUnorderedList">
-      <li>See <a href="publish_api_publishing.htm#how_do_i_manage_api_visibility">How do I manage API visibility?</a> for information on Public and Private APIs.</li>
-      <li>See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for details on configuring your API Icon.</li>
+      <li>See <a href="publish_api_publishing.html#how_do_i_manage_api_visibility">How do I manage API visibility?</a> for information on Public and Private APIs.</li>
+      <li>See <a href="basics_account_management.html#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for details on configuring your API Icon.</li>
     </ul>
   </li>
   </ol>
@@ -49,7 +49,7 @@ nav-title: Tutorial (API Provider)
     <li>After specifying the API information, click <strong>Next</strong> to continue. The <em>Target</em> page displays. Here you will specify the <em>Target URL</em>, select the <em>Environment</em>, and configure <em> Advanced Options</em> for your API.</li>
   <li>In the <em>Target</em> section, specify the Target URL (i.e., endpoint) of the API implementation. If you would like to specify additional Target URLs, click <strong>+Add</strong>. For example, you might add one URL for Sandbox Environment and one for Production Environment.</li>
   <li>In the <em>Environment</em> section, click the radio button of the environment (Production or Sandbox) the Target URL is associated with.</li>
-  <li>See <a href="publish_api_publishing.htm#what_is_the_difference_between_sandbox_and_production_environments">What is the difference between Sandbox and Production environments?</a> for more information.</li>
+  <li>See <a href="publish_api_publishing.html#what_is_the_difference_between_sandbox_and_production_environments">What is the difference between Sandbox and Production environments?</a> for more information.</li>
   <li>Continue to the <em>Configure Advanced Options</em> section.</li>
   </ol>
   <p><strong>D. Configure Advanced Options</strong></p>
@@ -127,13 +127,13 @@ nav-title: Tutorial (API Provider)
 </li>
   <li>Click the <strong>Add Content-Length</strong> checkbox if you would like to send the Content_Length heading to the Target API. This disabled chunked encoding.</li>
   <li>Click the <strong>Use HTTP 1.0</strong> checkbox if you need to force the HTTP version to 1.0 for the Target API. It is unlikely to be needed.</li>
-  <li>See <a href="publish_api_publishing.htm#how_do_i_add_a_rest_service">How do I add a REST service?</a> for a sample walkthrough.</li>
+  <li>See <a href="publish_api_publishing.html#how_do_i_add_a_rest_service">How do I add a REST service?</a> for a sample walkthrough.</li>
 </ol>
 <p><strong>E. Configure Proxy</strong></p>
 
 <ol class="usingOrderedList">
 
-  <li>After specifying the Target information, click <strong>Next</strong> to continue. The <em>Proxy </em> page displays. Here you will specify the <em>Published URL</em> that represents what users will select when accessing your API. The page displays a summary list of all Production and Sandbox endpoints specified in the previous step. It's recommended that you use a Proxy API to take advantage of important platform functionality. See <a href="publish_api_publishing.htm#what_is_a_proxy_api">What is a Proxy API?</a> for more information.<br />
+  <li>After specifying the Target information, click <strong>Next</strong> to continue. The <em>Proxy </em> page displays. Here you will specify the <em>Published URL</em> that represents what users will select when accessing your API. The page displays a summary list of all Production and Sandbox endpoints specified in the previous step. It's recommended that you use a Proxy API to take advantage of important platform functionality. See <a href="publish_api_publishing.html#what_is_a_proxy_api">What is a Proxy API?</a> for more information.<br />
     <em><br />
 Note:
       As a security measure, users will be able to access a proxy that will run in the Cloud, and will not be accessing the API implementation directly. </em><br />
@@ -155,7 +155,7 @@ Note:
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul class="usingUnorderedList">
       <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path.</li>
-      <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="publish_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
+      <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="publish_api_publishing.html#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
       <li><em>It's common practice for Sandbox endpoint requests to be auto-approved. Production endpoint requests usually go through an approval cycle as API developers may want to review the app requesting access to see how the API functionality is being used.</em></li>
@@ -183,7 +183,7 @@ Note:
 <strong><em>Select Default Profile:</em></strong><br />
     <br />
   <ol class="usingOrderedList">
-  <li>Select a Default Profile from the drop-down list box. See <a href="publish_api_publishing.htm#what_is_an_api_type_profile">What is an API Type Profile?</a> for more information.
+  <li>Select a Default Profile from the drop-down list box. See <a href="publish_api_publishing.html#what_is_an_api_type_profile">What is an API Type Profile?</a> for more information.
 
 
 </li>
@@ -192,13 +192,13 @@ Note:
 <strong><em>Configure Method, Path, and Content Type for Operations:</em></strong><br />
 <ol class="usingOrderedList">
   <li>Select a Method from the dropdown menu, specify a URL in the text box, and configure a Content Type for the Request and Response message of each operation.</li>
-  <li>See <a href="publish_api_publishing.htm#what_are_the_supported_methods_and_content_types_for_requests">What are the supported Methods and Content Types for Requests?</a> for more information.</li>
+  <li>See <a href="publish_api_publishing.html#what_are_the_supported_methods_and_content_types_for_requests">What are the supported Methods and Content Types for Requests?</a> for more information.</li>
 </ol>
 <strong><em>Select Policies:</em></strong><br />
 <ol class="usingOrderedList">
   <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-    <p>Note: <em>You MUST select one security policy (e.g., Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="publish_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
-  <p>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="publish_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</p>
+    <p>Note: <em>You MUST select one security policy (e.g., Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="publish_api_publishing.html#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
+  <p>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="publish_api_publishing.html#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</p>
 <p>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</p>
 </li>
   <li>After making your changes, click <strong>Save</strong>. Your API is now registered.</li>
@@ -208,12 +208,12 @@ Note:
 
 <h3>Step 2: Create Legal Agreements</h3>
 <p>If you will require users of your API to accept any type of end user license agreement or developer agreement, you must create and upload the legal agreement content. The adding legal agreements step should be performed <em>after</em> you add an API using the <strong>Add a New API Wizard</strong> so the legal agreements will be available for review and acceptance when an App Developer requests access to the API using the <strong> API Access Wizard</strong>.</p>
-<p>All legal agreements must be written and maintained outside of the platform using your own HTML editor. Review the following key topics in the <a href="content_guidelines.htm">Content Development Guidelines</a> section to get started. When you are ready to publish your legal agreements to the site, proceed to Step 3: Upload Legal Agreements.</p>
+<p>All legal agreements must be written and maintained outside of the platform using your own HTML editor. Review the following key topics in the <a href="content_guidelines.html">Content Development Guidelines</a> section to get started. When you are ready to publish your legal agreements to the site, proceed to Step 3: Upload Legal Agreements.</p>
 <ul class="usingOrderedList">
-  <li><a href="content_guidelines.htm#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
-  <li><a href="content_guidelines.htm#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
-  <li><a href="content_guidelines.htm#what_style_sheets_do_i_use_for_my_legal_agreements">What style sheets do I use for my legal agreements?</a></li>
-  <li><a href="content_guidelines.htm#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
+  <li><a href="content_guidelines.html#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
+  <li><a href="content_guidelines.html#what_style_sheets_do_i_use_for_my_legal_agreements">What style sheets do I use for my legal agreements?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
 </ul>
 
 
@@ -228,8 +228,8 @@ Note:
   <li>After the activation is complete a hyperlink is added to the <em>Legal</em> page that you can click to view each legal agreement.</li>
   <li>You can view each legal agreement by clicking the hyperlink.</li>
   <li>To modify the display text for the hyperlink, use the <strong>Edit</strong> function on the <em>Agreements Summary</em> page.</li>
-  <li>See <a href="content_guidelines.htm#how_do_i_upload_my_legal_agreements">How do I upload my legal agreements?</a> in the <a href="content_guidelines.htm">Content Development Guidelines</a> for information on how to upload your legal agreements.</li>
-  <li>Refer to the <a href="publish_api_legal_agreement_maintenance.htm">Legal Agreements</a> section for information on how to manage legal agreement content.</li>
+  <li>See <a href="content_guidelines.html#how_do_i_upload_my_legal_agreements">How do I upload my legal agreements?</a> in the <a href="content_guidelines.html">Content Development Guidelines</a> for information on how to upload your legal agreements.</li>
+  <li>Refer to the <a href="publish_api_legal_agreement_maintenance.html">Legal Agreements</a> section for information on how to manage legal agreement content.</li>
 </ul>
 <h3>Step 4: Activate Legal Agreements</h3>
 <p>When legal agreements are initially uploaded, they are in <em>Draft</em> mode and not visible on the site. To make them visible on the site and available in the API Access Wizard, you must activate them. To do this, click the <strong>Activate</strong> button; assign a name and description to the legal agreement, and save the configuration. An activated legal agreement displays in the <strong>API Access Wizard</strong> where an API user can review and accept it as part of the API access approval process.</p>
@@ -240,7 +240,7 @@ Note:
   <li>Chose the legal agreement you want to activate. In the <em>Status</em> column, click <strong>Activate</strong>. The <em>Edit</em> pop-up displays.</li>
   <li>Specify a Name and Description for your legal agreement. Click <strong>Save</strong> to commit your changes. After you initially assign a Name and Description to a legal agreement, you can update it using the <strong>Edit</strong> function.</li>
   <li>Your legal agreement is activated and the <strong>Deactivate</strong> button displays. The legal agreement will now be available in the <strong>API Access Wizard</strong>.</li>
-  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
+  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="create_app_creation.html#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="access_apis_api_access.html#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
 </ol>
 
 
@@ -248,15 +248,15 @@ Note:
 <h3>Step 5: Create API Documentation</h3>
 <p>Each API should offer API documentation. All API documentation must be written and maintained outside of the platform using your own HTML editor. Review the following topics in the <em>Content Guidelines</em> section. When you are ready to upload your API documentation to the site, proceed to Step 6: Upload API Documentation.</p>
 <ul class="usingOrderedList">
-  <li><a href="content_guidelines.htm#what_api_documentation_publishing_options_does_the_platform_provide">What API documentation options does the platform provide?</a></li>
-  <li><a href="content_guidelines.htm#what_is_swagger_and_How_does_it_work">What is Swagger and how does it work?</a></li>
-  <li><a href="content_guidelines.htm#what_are_the_swagger_controls_and_How_do_i_edit_page_content">What are the Swagger controls and how do I edit page content?</a></li>
-  <li><a href="content_guidelines.htm#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
-  <li><a href="content_guidelines.htm#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
-  <li><a href="content_guidelines.htm#what_style_sheets_do_i_use_for_my_html_api_documentation">What style sheets do I use for my HTML API documentation?</a></li>
-  <li><a href="content_guidelines.htm#what_document_styles_can_i_use">What document styles can I use?</a></li>
-  <li><a href="content_guidelines.htm#can_i_add_other_types_of_content">Can I add other types of content?</a></li>
-  <li><a href="content_guidelines.htm#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
+  <li><a href="content_guidelines.html#what_api_documentation_publishing_options_does_the_platform_provide">What API documentation options does the platform provide?</a></li>
+  <li><a href="content_guidelines.html#what_is_swagger_and_How_does_it_work">What is Swagger and how does it work?</a></li>
+  <li><a href="content_guidelines.html#what_are_the_swagger_controls_and_How_do_i_edit_page_content">What are the Swagger controls and how do I edit page content?</a></li>
+  <li><a href="content_guidelines.html#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
+  <li><a href="content_guidelines.html#what_style_sheets_do_i_use_for_my_html_api_documentation">What style sheets do I use for my HTML API documentation?</a></li>
+  <li><a href="content_guidelines.html#what_document_styles_can_i_use">What document styles can I use?</a></li>
+  <li><a href="content_guidelines.html#can_i_add_other_types_of_content">Can I add other types of content?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
 </ul>
 
 
@@ -264,9 +264,9 @@ Note:
 <h3>Step 6: Upload API Documentation</h3>
 <p>You can upload API documentation using the <em>File Explorer</em>. Review the following guidelines:</p>
 <ul class="usingOrderedList">
-  <li><a href="content_guidelines.htm#how_do_i_zip_my_documentation_files">How do I zip my documentation files?</a></li>
-  <li><a href="content_guidelines.htm#how_do_i_upload_my_api_documentation">How do I upload my API documentation?</a></li>
-  <li><a href="content_guidelines.htm#can_i_upload_existing_api_documentation_and_use_it_in_the_platform">Can I upload existing API documentation and use it in the platform?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_zip_my_documentation_files">How do I zip my documentation files?</a></li>
+  <li><a href="content_guidelines.html#how_do_i_upload_my_api_documentation">How do I upload my API documentation?</a></li>
+  <li><a href="content_guidelines.html#can_i_upload_existing_api_documentation_and_use_it_in_the_platform">Can I upload existing API documentation and use it in the platform?</a></li>
 </ul>
 
 
@@ -280,7 +280,7 @@ Note:
   <li>In the<strong> Add a Brief Message</strong> text box, specify the invitation text you would like to send to your invitees.</li>
   <li>After completing your entries, click <strong> Invite</strong>. The invitation email is sent to the invitee.</li>
   <li>After the email invitation is sent, the platform will post an administrator invitation to the platform member's <em>Dashboard</em>. The invited platform member can then log in to accept or decline the administrator invitation.</li>
-  <li>Refer to the <a href="publish_api_admin_management.htm"> Admin Management</a> section for a complete list of admin management topics.</li>
+  <li>Refer to the <a href="publish_api_admin_management.html"> Admin Management</a> section for a complete list of admin management topics.</li>
 </ol>
 <p><em>Note: When you create an API, you are the administrator. Your administrator privilege is automatically approved and is posted to the Admins Summary page. You can then invite additional administrators using the <strong>Invite More</strong> function.<em> Invitees that are not members must sign up before accepting the team invitation.</em></em></p>
 
@@ -288,12 +288,12 @@ Note:
 
 <h3>Step 8: Create Private API Groups (for APIs configured with Visibility = Private)</h3>
 <p>If you API is configured with Visibility = Private, you can use the Private API Group Access functionality which provides a method of creating common interest groups around specific APIs. Group accounts are created by API Administrators, and member invitations are sent and managed by the API Administrator. <em>Only API Administrators can create Private API Groups.</em></p>
-<p>Refer to the <a href="publish_api_visibility.htm"> Private API Groups</a> section for complete instructions on creating a Private API Group, sending out invitations, and assigning group leaders.</p>
+<p>Refer to the <a href="publish_api_visibility.html"> Private API Groups</a> section for complete instructions on creating a Private API Group, sending out invitations, and assigning group leaders.</p>
 
 
 
 <h3>Step 9: Test Your API</h3>
-<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="create_app_tutorial.htm#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
+<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="create_app_tutorial.html#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
 <p><a href="#top">Back to top</a></p>
 
 <div class = "divider1"></div>
