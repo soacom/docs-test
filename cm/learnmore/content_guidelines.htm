@@ -11,7 +11,7 @@ nav-title:
 no-nav: true
 ---
 
-<h2 id="top">Content Development Guidelines</h2>
+<h2 id="top">Content Development Guidelines</h2><br />
 
 <p>This section provides guidelines that API providers can use to manage API content such as API documentation and legal agreements.</p>
 <div class = "divider1"></div>
@@ -267,14 +267,14 @@ no-nav: true
 
 <a name="how_do_i_set_the_default_documentation_page_using_a_parameter_file"></a><h3>How do I set the default documentation page using a parameter file?</h3>
 <p>When you upload a document or artifact to the API &gt; Documents section using the File Manager, a toc.apiversion file is created (format: toc.apiversionXXXXX.&lt;productname&gt;.json). Information about your document upload, toc display name, and default toc file are stored in this file.</p>
-<p>Using a file editor, you can manually update the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.htm&quot; parameter of the file to set your default HTML document.</p>
+<p>Using a file editor, you can manually update the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.html&quot; parameter of the file to set your default HTML document.</p>
 <p>If you currently have a HTML document loaded and would like to switch back to the Swagger UI, you can delete this parameter and reset the default document back to Swagger.</p>
 <h5>To set the default documentation page in a toc.apiversion file</h5>
 <ol class="usingOrderedList">
   <li>In the file system, navigate to the Documents folder of your API.</li>
   <li>If you previously uploaded an HTML file using File Manager, open a file editor, locate the toc.apiversionXXXXX.&lt;productname&gt;.json file and drag the file into the editor.</li>
-  <li>Update the HTML file in the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.htm&quot; parameter to the new default.</li>
-  <li>If you would like to switch back to the Swagger UI, remove the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.htm&quot; parameter.</li>
+  <li>Update the HTML file in the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.html&quot; parameter to the new default.</li>
+  <li>If you would like to switch back to the Swagger UI, remove the &quot;defaultFile&quot;:&quot;&lt;filename&gt;.html&quot; parameter.</li>
   <li>Save the file.</li>
   <li>Return to the platform UI and clear the cache. The selected default document will display on the<em> API &gt; Documents</em> page.</li>
 </ol>
@@ -445,7 +445,7 @@ HTML Content
   <li>The path of the /documents and /legal folder displayed in the <em>File Explorer </em>includes an  API ID (apixxxxx where &quot;xxxxx&quot; represents a number) that is assigned when the API is added to the platform. The /documents path is  /content/api/apixxxxx.open/documents. The /legal path is /content/api/apixxxxx.open/legal.</li>
   <li>Inside the /documents directory create a style sheet directory (/css)  to store any custom API documentation style sheets. This style sheet must work in conjunction with the document.css style sheet (located at http://&lt;tenanthost&gt;:&lt;port>/style&gt;/document.css).</li>
   <li>You can also create an assets directory (/assets) in the /documents directory to store image files that might be included in your documentation.</li>
-  <li>Download the platform style sheet, document.css, from the http://&lt;tenanthost&gt;:&lt;portstyle&gt;/document.css directory. A  sample API documentation style sheet can also be found <a href="images/apidocsample.css">here</a>. This style sheet can be used on your local machine to develop your documentation. Click <a href="app_security.htm">here</a> for a doc sample that illustrates use of the document.css style sheet.</li>
+  <li>Download the platform style sheet, document.css, from the http://&lt;tenanthost&gt;:&lt;portstyle&gt;/document.css directory. A  sample API documentation style sheet, apidoc.css, can also be  found   <a href="images/apidocsample.css">here</a>. This style sheet can be used on your local machine to develop your documentation. Click <a href="app_security.htm">here</a> for a doc sample that illustrates use of the apidoc.css style sheet.</li>
   <li>Copy any custom style sheets to the /documents/css directory where you will be storing your API documentation.</li>
   <li>If you would like to upload single documentation files using File Explorer, see <a href="#how_do_i_upload_my_api_documentation">How do I upload my API documentation?</a></li>
   <li>If you would like to upload your documentation using a zip file, see <a href="#how_do_i_zip_my_documentation_files">How do I zip my documentation files?</a></li>
