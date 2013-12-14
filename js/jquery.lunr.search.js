@@ -24,13 +24,19 @@
   
   var LunrSearch = (function() {
     function LunrSearch(elem, options) {
+      Handlebars.registerHelper('if_eq', function(a, b, opts) {
+        if (a == b) // Or === depending on your needs
+          return opts.fn(this);
+        else
+          return opts.inverse(this);
+        });
       this.$elem = elem;      
       this.$results = $(options.results),
       this.$entries = $(options.entries, this.$results),
       this.indexDataUrl = options.indexUrl;
       this.index = this.createIndex();
-      this.template = this.compileTemplate($(options.template));
-      
+      this.source = $(options.template).html();
+      this.template = this.parseTemplate(this.source);
       this.initialize();
     };
         
@@ -55,8 +61,8 @@
     };
     
     // compile search results template
-    LunrSearch.prototype.compileTemplate = function($template) {      
-      return Mustache.compile($template.text());
+    LunrSearch.prototype.parseTemplate = function($source) {      
+      return Handlebars.compile($source);
     };
         
     // load the search index data
