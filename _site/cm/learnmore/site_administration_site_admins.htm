@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+	    <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <title>Site Admins</title>
+            <link rel="stylesheet" href="/docs-test/style/reset.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/base.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/style.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/document.css" type="text/css">
+            <!-- <link rel="stylesheet" href="/docs-test/style/site.min.css" type="text/css" media="screen" /> -->
+            <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
+            <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
+<!--
+            <script src="/docs-test/js/jquery.min.js"></script>
+            <script src="/docs-test/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/mustache.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/handlebars-v1.1.2.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/date-format.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/URI.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery-ui.min.js"></script>
+-->
+            <script src="/docs-test/js/soadocs.min.js"></script>
+    </head>
+	<body>
+
+		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
+						<h2 class="soa-ui-dc-logo-container">
+				<a href="/docs-test/index.html" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
+			</h2>
+
+						<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch">
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
+				</div>
+			</div>
+
+		    
+		    <script id="soa-control-dc-search-results-template" type="text/x-handlebars-template">
+				{{#entries}}
+					<div class="soa-ui-dc-content-catalog">
+						<ul class="soa-ui-dc-content-catalog-items">
+							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
+								<div class="soa-ui-dc-avatar-box">
+									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									Document
+									</h4>
+								</div>
+								<div class="soa-ui-dc-details-box">
+									<div class="soa-ui-dc-section">
+										<h3 class="soa-ui-dc-section-header">
+											<a href="/docs-test{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
+										</h3>
+										<p class="soa-ui-dc-section-paragraph">
+										{{ description }}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				{{/entries}}
+		    </script>
+		    
+						<div class="soa-ui-dc-topnav-container">
+				<!-- top nav starts here -->
+				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
+						<a href="/docs-test/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/ag/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-apigateway"><span class="soa-ui-dc-topnav-item-link-firstword">API</span> GATEWAY</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/lm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-lifecyclemanager"><span class="soa-ui-dc-topnav-item-link-firstword">LIFECYCLE</span> MANAGER</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- top nav ends here -->
+			</div>
+			<div class="soa-ui-dc-subnav-container">
+				<!-- sub nav starts here -->
+				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a>
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark soa-ui-dc-subnav-item-link-active">Learning</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- sub nav ends here -->
+			</div>
+		</div>
+		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
+			<!-- left nav -->
+			<div class="soa-ui-dc-container-main-left">
+				<h3 class="soa-ui-dc-container-main-left-header">
+					
+					<a href="/docs-test/cm/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
+								
+				</h3>
+				<ul class="soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner">	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/basics.htm">
+						  Basics
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/create_app.htm">
+						  Create App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/access_apis.htm">
+						  Access APIs
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/test.htm">
+						  Test Your App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/collaborate.htm">
+						  Collaborate
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/go_live.htm">
+						  Go Live With Your App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/stay_informed.htm">
+						  Stay Informed
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/publish_api.htm">
+						  Publish Your API
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/business_administration.htm">
+						  Business Administration
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/site_administration.htm">
+						  Site Administration
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/create_app_tutorial.htm">
+						  Tutorial (App Developer)
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/publish_api_tutorial.htm">
+						  Tutorial (API Provider)
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/app_security.htm">
+						  App Security
+						</a>
+					</li>
+				</ul>
+			</div>
+<!-- end left nav -->
+			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
+				<div class="documentation supportContent">
+					<h2 id="top">Site Admins</h2>
+<p>Manage the team of site administrators for the platform.</p>
+
+
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+  <li><a href="#what_are_the_components_of_the_site_administration_section">What are the components of the Site Administration section?</a></li>
+  <li><a href="#what_is_the_difference_between_a_site_administrator_business_administrator_and_api_owner">What is the difference between a Site Administrator, Business Administrator, and API Owner?</a></li>
+  <li><a href="#how_do_i_invite_someone_to_be_a_site_admin">How do I invite someone to be a Site Administrator?</a></li>
+  <li><a href="#how_do_i_invite_non-members_to_be_site_administrators">How do I invite non-members to be Site Administrators?</a></li>
+  <li><a href="#how_do_i_respond_to_a_site_administrator_invitation">How do I respond to a Site Administrator  invitation?</a></li>
+  <li><a href="#how_do_i_cancel_a_site_administrator_invitation">How do I cancel a Site Administrator invitation?</a></li>
+  <li><a href="#how_do_i_remove_a_site_administrator_who_is_assigned_to_the_platform_deployment">How do I remove a Site Administrator who is assigned to the platform deployment?</a></li>
+ </ol>
+<div class = "divider1"></div>
+
+
+
+<a name="what_are_the_components_of_the_site_administration_section"></a><h3>What are the components of the Site Administration section?</h3>
+<p>The<em> Site Administration </em> quick filter launches the <em>Site Administration</em> section. Authorized site administrators can send out invitations to others whom they would like to invite to be site admins. All site admins have the same administration privileges for the platform deployment and can configure authentication domains that can be customized and assigned to APIs that are part of the platform deployment.</p>
+<p><strong>Invite Administrators</strong></p>
+<p>The <strong>Invite More</strong> function allows you to send invitations to individuals that you would like grant administration privileges for your API.</p>
+<ul class="usingOrderedList">
+  <li>Existing administrators  are displayed in a summary
+    listing.</li>
+  <li>When an invitation is sent a request email is issued.</li>
+  <li>The invitee receives an invitation request on their <em>Dashboard</em> page. If the invitee is not a platform member, they must sign up using the same email address that the invitation is addressed to in order to accept the invitation via their <em>Dashboard</em>.</li>
+</ul>
+<p><strong>View Administrators</strong></p>
+<p>When an administrator  invitation is submitted, the username, email address, and invitation status (i.e., Email Sent, Approved, or Rejected) of the invitee is added to the <em>Site Admins
+    Summary</em>.</p>
+<p><strong>Manage Administrators</strong></p>
+<p>Site Administrators    can  remove
+  an Administrator  from the listing.</p>
+
+  <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_the_difference_between_a_site_administrator_business_administrator_and_api_owner"></a><h3>What is the difference between a Site Administrator, Business Administrator, and API Owner?</h3>
+<ul class="usingOrderedList">
+  <li>When your platform is initially installed, configured, and deployed a Site Administrator is created at that time. Note that the default Site Administrator role is not automatically assigned the Business Administrator role.</li>
+  <li>All other user accounts created via the platform are added to the Policy Manager instance where the tenant is defined.</li>
+  <li>Each user account is automatically assigned Registered Users Group and API Owner role.</li>
+  <li>The Site Administrator configures the  API Owner role based on the  visibility requirements of the tenant and intended usage. For example, if the intended usage of the platform was to allow users to add an API, the API Owner role would be configured with an &quot;Add&quot; privilege. If the intended usage of the platform was to not allow users to add an API, no privileges would be configured.</li>
+  <li>Site Administrators that would like to grant additional API and App management privileges to specific users can do so by sending a Business Administrator invitation via <em>Site Administration &gt; Business Adm.</em> to selected platform users. See <a href="business_administration_business_adm.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a> for more information on the roles a Business Administrator can perform.</li>
+  <li>Business Administrators are part of the Business Administrator group via <em>Site Administration &gt; Business Adm. </em>See <a href="business_administration_business_adm.htm#what_are_the_components_of_the_business_admin_page">What are the components of the
+      Business Admin page?</a> for more information.</li>
+  <li>Note that only Business Administrators can add APIs. Site Administrators are not authorized to add APIs but can manage Business Administrators.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_invite_someone_to_be_a_site_admin"></a><h3>How do I invite someone to be a Site Administrator?</h3>
+<p>The <em>Site Administration &gt; Site Admins </em> page includes an administrator  invitation function that
+  allows you to send out invitations to individuals that you would like
+  to  grant administration privileges  for the current platform deployment.</p>
+<ul class="usingOrderedList">
+  <li>During the platform installation, an initial site administration account is defined.</li>
+  <li>This initial  administrator privilege is automatically approved and is posted to the <em>Site Admins</em>.</li>
+  <li>You can invite additional administrators using the <strong>Invite More</strong> function.</li>
+</ul>
+<h5>To invite someone to be a site admin:</h5>
+<ol class="usingOrderedList">
+  <li>Click the <em>Site Administration</em> quick filter icon on the top navigation. The <em>Site Admins  </em> page  displays.</li>
+  <li>Click <strong>Invite  More</strong>. The <em>Invite  Administrators</em> page displays.</li>
+  <li>In the <strong>Email</strong> text box, enter the  email address of individuals you would like to invite to your development team. Separate each email address with a comma.</li>
+  <li>In the<strong> Add a Brief Message</strong> text box, specify the invitation text  you would like to send to your invitees.</li>
+  <li>After completing your entries, click <strong> Invite</strong>. The invitation email is sent to the invitee.</li>
+  <li>After the email invitation is sent, the platform will post an administrator invitation to the member's <em>Dashboard</em>. The invited platform member can then log into the platform to accept or decline the administrator invitation.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_invite_non-members_to_be_site_administrators"></a><h3>How do I invite non-members to be Site Administrators?</h3>
+<p>If you have  already received a Site Administrator invitation and are not currently a platform member, you must  sign up to the platform using the email address that the  invitation was issued to in order to accept the invitation. Currently only platform members can be invited to be Site Administrators. See <a href="basics.htm">Basics </a> for more information.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_respond_to_a_site_administrator_invitation"></a><h3>How do I respond to a Site Administrator invitation?</h3>
+<p>If you receive an  invitation via email to be a Site Administrator for the platform deployment you can accept or reject the invitation.</p>
+<ul class="usingOrderedList">
+  <li>You must be a platform member to join a development team.</li>
+  <li>If you have  already received an  invitation and are not currently a platform member, you must  sign up to the platform using the email address that the  invitation was issued to in order to accept the invitation.</li>
+  <li>If you are not currently a member, see <a href="basics.htm">Basics</a> for sign up information.</li>
+</ul>
+<h5>To accept a Site Administrator  invitation:</h5>
+<ol class="usingOrderedList">
+  <li>Click the link in the  Site Administrator invitation email, log into the platform, and go to your <em>Dashboard</em> page.</li>
+  <li>Choose your Site Administrator  invitation in the newsfeed.</li>
+  <li>To accept the Site Administrator invitation, click <strong>Accept</strong>. The <strong>Accept this invitation</strong> text box displays. Enter a comment (if applicable) and click <strong>Confirm</strong>. The status changes to <em>Invitation Accepted</em>.</li>
+  <li>To view  administrators for the platform deployment, click the <em>Site Administration</em> quick filter icon on the platform top navigation. The <em>Site Admins </em> page  displays. Your username, email address, and <em>Approved</em> invitation status displays. You can also view a listing of other platform members that are Site Administrators.</li>
+</ol>
+<h5>To decline a Site Administrator  invitation:</h5>
+<ol class="usingOrderedList">
+  <li>Click the link in the   Site Administrator invitation email, log into the platform, and go to your <em>Dashboard</em> page.</li>
+  <li>Choose your   Site Administrator invitation in the newsfeed.</li>
+  <li>To decline  a Site Administrator invitation, click <strong>Decline</strong>. The <strong>Decline this invitation </strong>text box displays. Enter a comment (if applicable) and click <strong>Confirm</strong>. The status changes to <em>Invitation Declined</em>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_cancel_a_site_administrator_invitation"></a><h3>How do I cancel a Site Administrator invitation?</h3>
+<p>Once an  invitation is sent to an individual you would like to be a Site Administrator, the invitation itself
+  cannot be revoked. A platform member can choose to accept or decline the
+  invitation. If they choose to accept the invitation, you can remove the
+  Site Administrator from the <em>Site Admins</em> page by clicking <strong>Remove</strong>. See <a href="#how_do_i_remove_a_site_administrator_who_is_assigned_to_the_platform_deployment">How
+    do I remove a Site Administrator who is assigned to the platform deployment?</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_remove_a_site_administrator_who_is_assigned_to_the_platform_deployment"></a><h3>How do I remove a Site Administrator who is assigned to the platform deployment?</h3>
+<p>Any Site Administrator can remove other administrators from the platform deployment.</p>
+<h5>To remove someone from the Site Admin team:</h5>
+<ol class="usingOrderedList">
+  <li>Click the <em>Site Administration</em> quick filter icon on the platform top navigation. The <em>Site Admins </em> page  displays.</li>
+  <li>To remove a Site Administrator  from the platform deployment, choose the line item
+    of the Site Administrator  and click <strong>Remove</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+				</div>
+				<!-- main content ends here -->
+			</div>
+						<div class="soa-ui-dc-container-footer">
+				<ul class="soa-ui-dc-footer">
+					<li class="soa-ui-dc-footer-item"><a href="https://support.soa.com/support/" class="soa-ui-dc-footer-item-link">Support</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/contact_us/" class="soa-ui-dc-footer-item-link">Contact Us</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/soa_software_privacy_policy/" class="soa-ui-dc-footer-item-link">Privacy Policy</a></li>
+					<li class="soa-ui-dc-footer-item">&copy;2013, SOA Software, Inc. All Rights Reserved.</li>
+				</ul>
+			</div>
+			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
+			<script type="text/javascript">
+				$(function() {
+					$(".soa-control-dc-tabs").tabs();
+					$('#soa-control-dc-search-query').lunrSearch({
+						indexUrl: '/docs-test/search.json',
+						results:  '#soa-control-dc-search-results',
+						entries:  '#soa-control-dc-search-result-entries',
+						template: '#soa-control-dc-search-results-template'
+					});
+					$("#soa-control-dc-close-results").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>

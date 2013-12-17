@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	    <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <title>Getting Started with Metrics Policy in Policy Manager 7.x</title>
+            <link rel="stylesheet" href="/docs-test/style/reset.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/base.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/style.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/document.css" type="text/css">
+            <!-- <link rel="stylesheet" href="/docs-test/style/site.min.css" type="text/css" media="screen" /> -->
+            <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
+            <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
+<!--
+            <script src="/docs-test/js/jquery.min.js"></script>
+            <script src="/docs-test/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/mustache.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/handlebars-v1.1.2.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/date-format.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/URI.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery-ui.min.js"></script>
+-->
+            <script src="/docs-test/js/soadocs.min.js"></script>
+    </head>
+	<body>
+
+		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
+						<h2 class="soa-ui-dc-logo-container">
+				<a href="/docs-test/index.html" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
+			</h2>
+
+						<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch">
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
+				</div>
+			</div>
+
+		    
+		    <script id="soa-control-dc-search-results-template" type="text/x-handlebars-template">
+				{{#entries}}
+					<div class="soa-ui-dc-content-catalog">
+						<ul class="soa-ui-dc-content-catalog-items">
+							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
+								<div class="soa-ui-dc-avatar-box">
+									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									Document
+									</h4>
+								</div>
+								<div class="soa-ui-dc-details-box">
+									<div class="soa-ui-dc-section">
+										<h3 class="soa-ui-dc-section-header">
+											<a href="/docs-test{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
+										</h3>
+										<p class="soa-ui-dc-section-paragraph">
+										{{ description }}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				{{/entries}}
+		    </script>
+		    
+						<div class="soa-ui-dc-topnav-container">
+				<!-- top nav starts here -->
+				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
+						<a href="/docs-test/ag/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-apigateway"><span class="soa-ui-dc-topnav-item-link-firstword">API</span> GATEWAY</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/lm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-lifecyclemanager"><span class="soa-ui-dc-topnav-item-link-firstword">LIFECYCLE</span> MANAGER</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- top nav ends here -->
+			</div>
+			<div class="soa-ui-dc-subnav-container">
+				<!-- sub nav starts here -->
+				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/ag/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a>
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/ag/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/ag/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark soa-ui-dc-subnav-item-link-active">Learning</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- sub nav ends here -->
+			</div>
+		</div>
+		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
+			<!-- left nav -->
+			<div class="soa-ui-dc-container-main-left">
+				<h3 class="soa-ui-dc-container-main-left-header">
+					
+					<a href="/docs-test/ag/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
+								
+				</h3>
+				<ul class="soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner">	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/script_management.htm">
+						  Managing Scripts
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/getting_started_with_cross_site_scripting_policy.htm">
+						  Using Cross Site Scripting Policy
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/getting_started_with_metrics_policy.htm">
+						  Using Metrics Policy
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/getting_started_with_processes.htm">
+						  Getting Started with Processes
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/policy_management.htm">
+						  Managing Policies
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/ag/process_management.htm">
+						  Managing Processes
+						</a>
+					</li>
+				</ul>
+			</div>
+<!-- end left nav -->
+			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
+				<div class="documentation supportContent">
+					<a name="top"></a>
+<div class="documentation supportContent">
+  <h2 name="top">Getting Started with the Metrics Policy</h2>
+  <p>Learn how to  collect rollup data on specific services/operations using a Metrics Policy.</p>
+
+<a href="policy_management.htm" class="button secondary">Managing Policies</a>
+  <p></p>
+  <div class = "divider1"></div>
+   <h3 style="color: gray;">Table of Contents</h3>
+
+   <ol class="table_of_contents">
+
+ <li><a href="#introduction">Introduction</a></li>
+
+  <li><a href="#configuration">Configuration</a></li>
+
+  </ol>
+  <div class = "divider1"></div><p></p>
+
+<a name="introduction">
+<h3>Introduction</h3></a>
+
+<p>The Metrics Policy is an Operational policy that allows you to collect roll-up data for selected services/operations that the policy is attached too. A Metrics Policy is useful for:
+</p>
+<ul class="usingOrderedList">
+  <li><strong>Database Space Conservation</strong> - Roll-up data on a large number of services can take up a significant amount of database space. Designating specific services/operations where roll-up data will be captured reduces the chance of receiving out of memory database exception errors.</li>
+  <li><strong>Granular View of Service Activity</strong> - You may have a set of services that include specific operations you want to monitor at a more granular level (i.e., track service level, volume of activity, etc.).</li>
+</ul>
+<p>This is how it works:</p>
+<ul class="usingOrderedList">
+  <li>Roll-up data is controlled in the Network Director or Agent container by the <strong>metrics.rollup.reporter.requireMetricsPolicy
+    property</strong> in the <strong>com.soa.metrics</strong> configuration category via the <em>Configuration</em> section in the <em>SOA Software Administration Console</em>. </li>
+  <li>By default, the <strong>metrics.rollup.reporter.requireMetricsPolicy
+    property</strong> is set to <strong>False</strong>. This means that roll-up data is collected for all managed services in Policy Manager. Roll-up data can be viewed in the Logs, Real Time Charts, and Historical Charts  in the<em> Services &gt; Monitoring</em> section. </li>
+  <li>If you would like to change the roll-up data collection approach you change the property state to <strong>True</strong>, create a Metrics Policy in the <em>Policy Manager Management Console</em> and attach the policy to any service or service operation you would like to capture roll-up data for.
+    <a name="black_list_default_policy">
+
+    </a></li>
+</ul>
+<a name="black_list_default_policy">
+<p><a href="#top">Back to top</a></p></a><a name="configuration">
+<h3>Configuration</h3></a>
+<p>Let's take a quick walkthrough of the Metrics Policy configuration process to get your started.</p>
+<h5>Step 1: Change Roll-up Data Property</h5>
+<h5></h5>
+<ul class="usingOrderedList">
+  <li>Launch the <em>SOA Software Administration Console</em> for your Network Director or Agent container instance.</li>
+  <li> Select the <em>Configuration</em> tab.</li>
+  <li>Select  <strong>com.soa.metrics</strong> in the <em>Configuration Categories</em> section. The default status of <strong>False</strong> indicates that roll-up data is currently being captured for all managed services.</li>
+  <li> Change the state to <strong>True</strong> and save. </li>
+</ul>
+<p><img src="metrics_admin_console.jpg" width="644" height="391"></p>
+<h5>Step 2: Add Policy / Use System Policy</h5>
+<ul class="usingOrderedList">
+  <li>In Policy Manager, you can create a Metrics Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section. </li>
+  <li><em>Note: The  Metrics Policy does not require any configuration. </em></li>
+</ul>
+<h5>Step 3: Attach Policy</h5>
+<p>After you have saved your policy you can  attach it to a web service  or operation that you would like to capture roll-up data for. </p>
+<p><img src="metrics_policy_attachment.jpg" width="608" height="163"></p>
+<h5>Step 4: Test Policy and View Monitoring Data</h5>
+<p>After you attached the Metrics Policy to a service or operation, send a request to your service and go to the <em>Services &gt; Monitoring</em> section to view the results for Logs, Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p><a href="#top">Back to top</a></p>
+
+<div class = "divider1"></div>
+				</div>
+				<!-- main content ends here -->
+			</div>
+						<div class="soa-ui-dc-container-footer">
+				<ul class="soa-ui-dc-footer">
+					<li class="soa-ui-dc-footer-item"><a href="https://support.soa.com/support/" class="soa-ui-dc-footer-item-link">Support</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/contact_us/" class="soa-ui-dc-footer-item-link">Contact Us</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/soa_software_privacy_policy/" class="soa-ui-dc-footer-item-link">Privacy Policy</a></li>
+					<li class="soa-ui-dc-footer-item">&copy;2013, SOA Software, Inc. All Rights Reserved.</li>
+				</ul>
+			</div>
+			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
+			<script type="text/javascript">
+				$(function() {
+					$(".soa-control-dc-tabs").tabs();
+					$('#soa-control-dc-search-query').lunrSearch({
+						indexUrl: '/docs-test/search.json',
+						results:  '#soa-control-dc-search-results',
+						entries:  '#soa-control-dc-search-result-entries',
+						template: '#soa-control-dc-search-results-template'
+					});
+					$("#soa-control-dc-close-results").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>

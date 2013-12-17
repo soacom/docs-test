@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	    <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <title>SOA Software Community Manager</title>
+            <link rel="stylesheet" href="/docs-test/style/reset.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/base.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/style.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/document.css" type="text/css">
+            <!-- <link rel="stylesheet" href="/docs-test/style/site.min.css" type="text/css" media="screen" /> -->
+            <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
+            <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
+<!--
+            <script src="/docs-test/js/jquery.min.js"></script>
+            <script src="/docs-test/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/mustache.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/handlebars-v1.1.2.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/date-format.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/URI.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery-ui.min.js"></script>
+-->
+            <script src="/docs-test/js/soadocs.min.js"></script>
+    </head>
+	<body>
+
+		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
+						<h2 class="soa-ui-dc-logo-container">
+				<a href="/docs-test/index.html" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
+			</h2>
+
+						<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch">
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
+				</div>
+			</div>
+
+		    
+		    <script id="soa-control-dc-search-results-template" type="text/x-handlebars-template">
+				{{#entries}}
+					<div class="soa-ui-dc-content-catalog">
+						<ul class="soa-ui-dc-content-catalog-items">
+							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
+								<div class="soa-ui-dc-avatar-box">
+									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									Document
+									</h4>
+								</div>
+								<div class="soa-ui-dc-details-box">
+									<div class="soa-ui-dc-section">
+										<h3 class="soa-ui-dc-section-header">
+											<a href="/docs-test{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
+										</h3>
+										<p class="soa-ui-dc-section-paragraph">
+										{{ description }}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				{{/entries}}
+		    </script>
+		    
+						<div class="soa-ui-dc-topnav-container">
+				<!-- top nav starts here -->
+				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
+						<a href="/docs-test/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/ag/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-apigateway"><span class="soa-ui-dc-topnav-item-link-firstword">API</span> GATEWAY</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/lm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-lifecyclemanager"><span class="soa-ui-dc-topnav-item-link-firstword">LIFECYCLE</span> MANAGER</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- top nav ends here -->
+			</div>
+			<div class="soa-ui-dc-subnav-container">
+				<!-- sub nav starts here -->
+				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a>
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- sub nav ends here -->
+			</div>
+		</div>
+		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
+			<p class="soa-ui-dc-section-paragraph"><strong>Community Manager</strong> is a sophisticated developer community product to help enterprises develop an API portal to attract, manage, and support the developers that build Apps using their APIs.</p>
+			<!-- 3-col index starts here -->
+			<ul class="soa-ui-dc-detail-columns soa-ui-dc-clearthis">
+				<!-- col 1 index starts here -->
+				<li class="soa-ui-dc-detail-column">
+					<h4 class="soa-ui-dc-detail-column-header"><a href="/docs-test/cm/getting-started.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a></h4>
+					<ul class="soa-ui-dc-detail-column-items">
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/getting_started_for_api_developers.htm">
+					          API Developers
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/getting_started_for_app_developers.htm">
+					          App Developers
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/tutorial_oauth_walkthrough.htm">
+					          Quick Start (OAuth Setup)
+					        </a>
+					      </li>
+					</ul>
+				</li>
+				<!-- col 1 index ends here -->
+				<!-- col 2 index starts here -->
+				<li class="soa-ui-dc-detail-column">
+					<h4 class="soa-ui-dc-detail-column-header"><a href="/docs-test/cm/reference.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a></h4>
+					<ul class="soa-ui-dc-detail-column-items">
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-pdf-17px" href="/docs-test/cm/res-building-successful-apis.html" target="_blank">
+					          API eBook
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-pdf-17px" href="/docs-test/cm/res-cm-install-guide.html" target="_blank">
+					          Install Guide
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/basics_glossary.htm">
+					          Glossary of Terms
+					        </a>
+					      </li>
+					</ul>
+				</li>
+				<!-- col 2 index ends here -->
+				<!-- col 3 index starts here -->
+				<li class="soa-ui-dc-detail-column">
+					<h4 class="soa-ui-dc-detail-column-header"><a href="/docs-test/cm/learning.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a></h4>
+					<ul class="soa-ui-dc-detail-column-items">
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/basics.htm">
+					          Basics
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/create_app.htm">
+					          Create App
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/access_apis.htm">
+					          Access APIs
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/test.htm">
+					          Test Your App
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/collaborate.htm">
+					          Collaborate
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/go_live.htm">
+					          Go Live With Your App
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/stay_informed.htm">
+					          Stay Informed
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/publish_api.htm">
+					          Publish Your API
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/business_administration.htm">
+					          Business Administration
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/site_administration.htm">
+					          Site Administration
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/create_app_tutorial.htm">
+					          Tutorial (App Developer)
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/publish_api_tutorial.htm">
+					          Tutorial (API Provider)
+					        </a>
+					      </li>
+					      <li class="soa-ui-dc-detail-column-item">
+					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-document-20px" href="/docs-test/cm/learnmore/app_security.htm">
+					          App Security
+					        </a>
+					      </li>
+					</ul>
+				</li>
+				<!-- col 3 index ends here -->
+			</ul>
+			<!-- 3-col index ends here -->
+						<div class="soa-ui-dc-container-footer">
+				<ul class="soa-ui-dc-footer">
+					<li class="soa-ui-dc-footer-item"><a href="https://support.soa.com/support/" class="soa-ui-dc-footer-item-link">Support</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/contact_us/" class="soa-ui-dc-footer-item-link">Contact Us</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/soa_software_privacy_policy/" class="soa-ui-dc-footer-item-link">Privacy Policy</a></li>
+					<li class="soa-ui-dc-footer-item">&copy;2013, SOA Software, Inc. All Rights Reserved.</li>
+				</ul>
+			</div>
+			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
+			<script type="text/javascript">
+				$(function() {
+					$(".soa-control-dc-tabs").tabs();
+					$('#soa-control-dc-search-query').lunrSearch({
+						indexUrl: '/docs-test/search.json',
+						results:  '#soa-control-dc-search-results',
+						entries:  '#soa-control-dc-search-result-entries',
+						template: '#soa-control-dc-search-results-template'
+					});
+					$("#soa-control-dc-close-results").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>

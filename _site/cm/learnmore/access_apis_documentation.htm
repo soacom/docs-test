@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	    <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <title>API Documentation</title>
+            <link rel="stylesheet" href="/docs-test/style/reset.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/base.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/style.css" type="text/css">
+            <link rel="stylesheet" href="/docs-test/style/document.css" type="text/css">
+            <!-- <link rel="stylesheet" href="/docs-test/style/site.min.css" type="text/css" media="screen" /> -->
+            <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
+            <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
+<!--
+            <script src="/docs-test/js/jquery.min.js"></script>
+            <script src="/docs-test/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/mustache.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/handlebars-v1.1.2.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/date-format.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/URI.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+            <script src="/docs-test/js/jquery-ui.min.js"></script>
+-->
+            <script src="/docs-test/js/soadocs.min.js"></script>
+    </head>
+	<body>
+
+		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
+						<h2 class="soa-ui-dc-logo-container">
+				<a href="/docs-test/index.html" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
+			</h2>
+
+						<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch">
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
+				</div>
+			</div>
+
+		    
+		    <script id="soa-control-dc-search-results-template" type="text/x-handlebars-template">
+				{{#entries}}
+					<div class="soa-ui-dc-content-catalog">
+						<ul class="soa-ui-dc-content-catalog-items">
+							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
+								<div class="soa-ui-dc-avatar-box">
+									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									Document
+									</h4>
+								</div>
+								<div class="soa-ui-dc-details-box">
+									<div class="soa-ui-dc-section">
+										<h3 class="soa-ui-dc-section-header">
+											<a href="/docs-test{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
+										</h3>
+										<p class="soa-ui-dc-section-paragraph">
+										{{ description }}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				{{/entries}}
+		    </script>
+		    
+						<div class="soa-ui-dc-topnav-container">
+				<!-- top nav starts here -->
+				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
+						<a href="/docs-test/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/ag/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-apigateway"><span class="soa-ui-dc-topnav-item-link-firstword">API</span> GATEWAY</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/docs-test/lm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-lifecyclemanager"><span class="soa-ui-dc-topnav-item-link-firstword">LIFECYCLE</span> MANAGER</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- top nav ends here -->
+			</div>
+			<div class="soa-ui-dc-subnav-container">
+				<!-- sub nav starts here -->
+				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a>
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/docs-test/cm/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark soa-ui-dc-subnav-item-link-active">Learning</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- sub nav ends here -->
+			</div>
+		</div>
+		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
+			<!-- left nav -->
+			<div class="soa-ui-dc-container-main-left">
+				<h3 class="soa-ui-dc-container-main-left-header">
+					
+					<a href="/docs-test/cm/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
+								
+				</h3>
+				<ul class="soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner">	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/basics.htm">
+						  Basics
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/create_app.htm">
+						  Create App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/access_apis.htm">
+						  Access APIs
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/test.htm">
+						  Test Your App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/collaborate.htm">
+						  Collaborate
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/go_live.htm">
+						  Go Live With Your App
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/stay_informed.htm">
+						  Stay Informed
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/publish_api.htm">
+						  Publish Your API
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/business_administration.htm">
+						  Business Administration
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/site_administration.htm">
+						  Site Administration
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/create_app_tutorial.htm">
+						  Tutorial (App Developer)
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/publish_api_tutorial.htm">
+						  Tutorial (API Provider)
+						</a>
+					</li>	
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a class="soa-ui-dc-container-main-left-nav-item-link" href="/docs-test/cm/learnmore/app_security.htm">
+						  App Security
+						</a>
+					</li>
+				</ul>
+			</div>
+<!-- end left nav -->
+			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
+				<div class="documentation supportContent">
+					<h2 id="top">API Documentation</h2>
+
+<p>Access API documentation.</p>
+<div class = "divider1"></div>
+
+
+<h3 style="color: gray;">Table of Contents</h3>
+
+
+<ol class="table_of_contents">
+
+
+ <li><a href="#does_the_platformprovide_api_documentation">Does the platform provide API documentation?</a></li>
+
+ <li><a href="#how_do_i_access_the_api_documentation">How do I access the API documentation?</a></li>
+
+</ol>
+
+<div class = "divider1"></div>
+
+
+<a name="does_the_platformprovide_api_documentation"></a><h3>Does the platform provide API documentation?</h3>
+<p>Each API includes a set of reference documentation which is available via the <em>My APIs &gt; API Name &gt; Documents </em>tab. The specifics in terms of what documentation is offered vary from API to API.</p>
+<p>In some cases, certain APIs, or portions of them, have restricted visibility. In those cases, you would need to be invited to have visibility into those properties and their associated documentation. However, in many cases, the API documentation is publicly shared. You can locate it by using the Search feature in the platform.</p>
+<p>A typical API documentation set might include the  following  sections:</p>
+<ul class="usingOrderedList">
+  <li><strong>Overview</strong>&#8212;A summary of the API functionality, links to reference documentation for the operations, and a Getting Started section that illustrates key information and steps for using the API.</li>
+  <li><strong>Developer Guide</strong>&#8212;Reference documentation for each  API operation (method). A typical organization might include use cases, URI (endpoint), sample request, request parameters, sample response, response parameters, and error handling information.</li>
+  <li><strong>Users Guide</strong>&#8212;Instructions for how to connect to the API, and ideally a walkthrough of API use cases.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_access_the_api_documentation"></a><h3>How do I access the API documentation?</h3>
+<h5>To access the API documentation</h5>
+<ol class="usingOrderedList">
+  <li>Select <em>My APIs &gt; API Name &gt; Documents</em>. The <em>Documents</em> page for the selected API displays.</li>
+  <li>Review the documentation, clicking through to additional pages as needed.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+
+
+
+				</div>
+				<!-- main content ends here -->
+			</div>
+						<div class="soa-ui-dc-container-footer">
+				<ul class="soa-ui-dc-footer">
+					<li class="soa-ui-dc-footer-item"><a href="https://support.soa.com/support/" class="soa-ui-dc-footer-item-link">Support</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/contact_us/" class="soa-ui-dc-footer-item-link">Contact Us</a></li>
+					<li class="soa-ui-dc-footer-item"><a href="http://www.soa.com/company/soa_software_privacy_policy/" class="soa-ui-dc-footer-item-link">Privacy Policy</a></li>
+					<li class="soa-ui-dc-footer-item">&copy;2013, SOA Software, Inc. All Rights Reserved.</li>
+				</ul>
+			</div>
+			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
+			<script type="text/javascript">
+				$(function() {
+					$(".soa-control-dc-tabs").tabs();
+					$('#soa-control-dc-search-query').lunrSearch({
+						indexUrl: '/docs-test/search.json',
+						results:  '#soa-control-dc-search-results',
+						entries:  '#soa-control-dc-search-result-entries',
+						template: '#soa-control-dc-search-results-template'
+					});
+					$("#soa-control-dc-close-results").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>
