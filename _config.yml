@@ -1,5 +1,2 @@
 baseurl: /docs-test
 MAXWEIGHT: 30
-exclude: [Guardfile]
-lunr_search:
-  excludes: [rss.xml, atom.xml, search.json, Guardfile]
