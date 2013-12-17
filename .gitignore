@@ -4,3 +4,4 @@ _guard.yml
 _plugins
 Gemfile
 Guardfile
+Gemfile.lock
