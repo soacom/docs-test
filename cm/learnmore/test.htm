@@ -68,7 +68,7 @@ nav-title: Test Your App
 <p><em><strong>Note: If your App is contracted with an API (API Access Request) that includes one or more licenses, the Dev Console will only display the operations that the App is allowed to access in the API based on the API License configuration.</strong></em></p>
 <p>The <em>Dev Console</em> allows you to test different APIs in the context of an application so you can verify if you can use the API with your app.</p>
 <p>For example, you may want to:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Determine what is needed to send a request to an API.</li>
   <li>Verify if you can successfully send a request to an API.</li>
   <li>If your application is failing, verify if there is an issue in either the API or app. <br />
@@ -77,7 +77,7 @@ For example, if your app sends a request message to the API and it is rejected, 
   <li>Test different operations in your app.</li>
 </ol>
 <p>Before using the <em>Dev Console</em>, you must:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Identity an API you would like to test with your app. This API can be one that is already available in the platform, or can be one that you've added using the <strong>Add a New API </strong>function via the <em>Plus Menu</em>.</li>
   <li>Add an app to the platform. This can be done using the <strong>Add a New App</strong> function via the <em>Plus Menu</em>. Make sure that you've assigned the desired security credentials in the <em>App Details &gt; Security Credentials</em> section.</li>
   <li>Submit an API Access Request (via the <strong>Access</strong> link on the <em>API Details</em> page) for the API you would like to test with your app. The API Access Request must be approved by the API Administrator and activated before you can begin testing the API with the <em>Dev Console</em>. After your API Access Request has been approved and activated it will be available for use via the <em>Dev Console</em>.</li>
@@ -97,7 +97,7 @@ For example, if your app sends a request message to the API and it is rejected, 
 <h3>Part 1: Run REST Operation with Params:</h3>
 <p>The following example illustrates how to establish a GET request and verify the response header and content. The example uses the Facebook API.</p>
 <p><strong><u>Pre-conditions</u></strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Add the &quot;API User Security Policy&quot; and &quot;API Consumer Application Security Policy&quot; to the Operational Policies folder of the Policy Manager Tenant Organization for your platform.
    <ul class="usingUnorderedList">
       <li>Use the Policy Manager <strong>Copy Policy</strong> function, change the policy key, and then use <strong>Change Organization</strong> to move the policy to the Tenant Organization for your platform.</li>
@@ -162,7 +162,7 @@ For example, if your app sends a request message to the API and it is rejected, 
 </li>
 </ol>
 <p><u><strong>Procedure</strong></u></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Use the Target URL (https://graph.facebook.com) of the API and open an existing Facebook account (using your login information)</li>
   <li>Copy the Album ID from the URL, and then use <a href="#what_are_some_sample_rest_clients_i_can_use_to_test_my_api">Rest Client</a> to run this URL: https://graph.facebook.com/&lt;album_id&gt;
     <ul class="usingUnorderedList">
@@ -202,11 +202,11 @@ For example, if your app sends a request message to the API and it is rejected, 
 <h3>Part 2: Run REST Operation with Full URL:</h3>
 <p>The following example illustrates how to establish a GET request with Params and verify the response header and content. The example uses the Facebook API.</p>
 <p><strong><u>Pre-conditions</u></strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Edit the API created in <em>Example #1: Run REST Operation with Params </em>by adding in the parameter &lt;album_id&gt; to the Target URL. Note, grab &lt;album_id&gt; from <em>Example #1: Run REST Operation with Params &gt; Procedure &gt; Step #2</em>.</li>
 </ol>
 <p><strong><u>Procedure</u></strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Go to<em> My Apps &gt; App Name &gt; Dev Console</em> and select the API from the API drop-down menu.
 <ul class="usingUnorderedList">
       <li>Note that the details of the API (End Point, Operation, Method, Accept, Content-Type, Path, Proxy URL) are automatically filled in.</li>
@@ -236,13 +236,13 @@ For example, if your app sends a request message to the API and it is rejected, 
 <a name="how_do_i_test_authorization_of_my_app_with_oauth_using_the_dev_console"></a><h3>How do I test authorization of my app with OAuth using the Dev Console?</h3>
 <p>The following procedure provides a simple example of how to use the <em>Dev Console</em> to test authorizing your app with OAuth and then subsequently sending a request.</p>
 <p><strong><u>Pre-conditions</u></strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Your app must be connected to the API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
   <li>The API the app is connected to must be configured with an OAuth Provider.</li>
   <li>Your app security credentials must be configured to correctly support the OAuth Provider configuration that the API is using.</li>
 </ol>
 <p><u><strong>Procedure</strong></u></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Go to <em>App &gt; App Name &gt; Dev Console</em>, and select the API from the API drop-down menu.
     <ul class="usingUnorderedList">
       <li>Note that the details of the API (End Point, Operation, Method, Accept, Content-Type, Path, Proxy URL, and Target URL) will be automatically filled in.</li>
