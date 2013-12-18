@@ -10,10 +10,10 @@ nav-title: System Administrator Guide
 ---
 
 
-<H1>Portfolio Manager and Lifecycle Manager 6.5 for J2EE<BR>
-    System (Installation) Administrator Guide</H1>
+<h2>Portfolio Manager and Lifecycle Manager 6.5 for J2EE<BR>
+    System (Installation) Administrator Guide</h2>
  
-<h2>Introduction</h2>
+<h3>Introduction</h3>
 <ul>
 
 <p>This <i>System Admin Guide</i> is written and intended for the person filling the role
@@ -26,7 +26,7 @@ and product.
 </ul>
 
 <hr>
-<h2>Table of Contents</h2> 
+<h3>Table of Contents</h3> 
 <p>The following topics are covered in this system admin guide:
 <ul compact>
   <h3>General</h3>
@@ -91,7 +91,7 @@ and product.
   for help on any issue or topic that is not covered here, in the Install documents, 
   or any of the applications' on-line help systems. 
 <hr>
-<h2>Notation Used in this Document</h2>
+<h3>Notation Used in this Document</h3>
 <ul>
   <h3>Notation for the Configuration Parameters</h3>
   <p>Throughout this System Admin guide there will be references to configuration 
@@ -104,7 +104,7 @@ and product.
 
 
 <hr>
-<h2><a name="adminaccounts">Administrator Accounts</a></h2>
+<h3><a name="adminaccounts">Administrator Accounts</a></h3>
 <ul>
   <p>There are three different and distinct administrator roles that can 
     be assigned to user accounts within the application. All three roles are described here in 
@@ -222,7 +222,7 @@ and product.
 
 
 <hr>
-<h2><a name="adminlogin">Admin Console for the Installation Administrator</a></h2>
+<h3><a name="adminlogin">Admin Console for the Installation Administrator</a></h3>
 <h3>System Admin Console Access</h3>
 <p>Portfolio Manager and Lifecycle Manager provide access to a number of administrative functions via the System 
   Admin Console. This application can be accessed from within a web 
@@ -306,7 +306,7 @@ and product.
       System Administration Guide) is provided.</p>
   </li>
 </ul>
-<h4><a name="ManageVAS"></a>Visible Asset Sources</h4>
+<h5><a name="ManageVAS"></a>Visible Asset Sources</h5>
 <p>Each library consists of two components: the <i>library</i> itself, 
   which contains the published assets, and its associated <i>asset source, </i>where 
   assets are created and edited prior to being published. When assets are published 
@@ -321,7 +321,7 @@ and product.
   Source entry uses a remote library, the update takes place according to the 
   polling interval established by the Remote Asset Source entry used by the Visible 
   Asset Source. </p>
-<h4>Create a Visible Asset Source</h4>
+<h5>Create a Visible Asset Source</h5>
 <p>On the Manage Visible Asset Sources page, selecting your library from the Library 
   drop down list causes the page to refresh and display a list of all other libraries 
   existing for your installation. If you want to pull assets and models from a 
@@ -364,7 +364,7 @@ and product.
   Groups, and Reference Models.<br>
 </p>
 <hr>
-<h2><a name="config">The Configuration File</a></h2>
+<h3><a name="config">The Configuration File</a></h3>
 <ul>
   <p>The configuration parameters for your installation are in <b><i>ApplicationRoot</i>/conf/lib.conf</b> 
   <p>This configuration file was created at install time and can be updated after 
@@ -387,7 +387,7 @@ and product.
 </ul>
 
 <hr>
-<h2><a name="configdesigner">Configuration Designer</a></h2>
+<h3><a name="configdesigner">Configuration Designer</a></h3>
 <ul>
    <p>The Eclipse-based Configuration Designer (CD) plug-in provides library administrators a rich client interface to 
       manage the configuration for their libraries. CD is included in the Repository Client--a standalone, Eclipse-based IDE--or
@@ -428,7 +428,7 @@ and product.
 </ul>
 
 <hr>
-<h2><a name="ldap">Setting up LDAP</a></h2>
+<h3><a name="ldap">Setting up LDAP</a></h3>
 <ul>
 <p>All of the configuration parameters needed to setup Portfolio Manager or Lifecycle Manager against a preexisting LDAP server or a new server are in the <a href="#config">
 configuration file</a>.
@@ -576,7 +576,7 @@ Depending on the setup, you may have to specify an ldap.binddn and ldap.bindpass
 </ul>
 
 <hr>
-<h2><a name="ldapssl">Setting up LDAP over SSL</a></h2>
+<h3><a name="ldapssl">Setting up LDAP over SSL</a></h3>
 <ul>
   <p>It is best to make sure the installation works without SSL first, then turn 
     on SSL after you have verified that all the configuration parameters are set 
@@ -646,7 +646,7 @@ Depending on the setup, you may have to specify an ldap.binddn and ldap.bindpass
 
    
 <hr>
-<h2><a name="startstop">Starting and Stopping Servers</a></h2>
+<h3><a name="startstop">Starting and Stopping Servers</a></h3>
 <ul>
   <p>Admin Note: Automatic startup/shutdown for system reboot is configured in 
     /etc/init.d/ for all of these servers as an optional step in the install 
@@ -704,7 +704,7 @@ Depending on the setup, you may have to specify an ldap.binddn and ldap.bindpass
 
 
 <hr>
-<h2><a name="servicepacks">Installing Service Packs</a></h2>
+<h3><a name="servicepacks">Installing Service Packs</a></h3>
 <ul>
 <p>Service packs are distributed via the 
 <a href="http://support.soa.com">SOA Sofware Support website</a>.  
@@ -713,12 +713,12 @@ Each service pack will have a corresponding README file that will have instructi
 
 
 <hr>
-<h2><a name="usessl">Setting up SSL</a></h2>
+<h3><a name="usessl">Setting up SSL</a></h3>
 <ul>
 <p>Portfolio Manager and Lifecycle Manager support the use of SSL (Secure Sockets Layer) encryption.  However, 
 by default, the installation is not configured to use SSL.  If you want to use SSL for your installation,
 you will need to modify the default configuration.  Changes are required on both the Web Server and the App Server.
-<h5>Update the Web Server</h5>
+<h6>Update the Web Server</h6>
 <p>These updates are for an Apache web server.
 <ol>
 <li>Login to the web server as root.
@@ -775,7 +775,7 @@ you will need to modify the default configuration.  Changes are required on both
 </pre>
 </ol>
 
-<h5>Update the App Server</h5>
+<h6>Update the App Server</h6>
   <ol>
     <li><a href="#config">Update the lib.conf file<a/> or use the <a href="#installationproperties">SetInstalltionProperty</a> command 
      to change the <b>usessl</b> setting to one of these values: 
@@ -793,7 +793,7 @@ you will need to modify the default configuration.  Changes are required on both
   </ol>
 </ul>
 <hr>
-<h2><a name="resetsyspw">Reset System Passwords</a></h2>
+<h3><a name="resetsyspw">Reset System Passwords</a></h3>
 <ul>
   <p>If you need to reset passwords, here is a list 
     of the passwords that you may need to update: 
@@ -810,8 +810,8 @@ you will need to modify the default configuration.  Changes are required on both
   </ul>
 </ul>
 <hr>
-<h2><a name="logs">Log Files and Logging Levels</a></h2>
-<h4>Log files and location</h4>
+<h3><a name="logs">Log Files and Logging Levels</a></h3>
+<h5>Log files and location</h5>
   <p>Below is a brief description of the most important log files (not all of 
     the log files are listed here). 
   <p>By default the log files are in the directory <i><i>ApplicationRoot</i>/logs</i>, with 
@@ -844,7 +844,7 @@ you will need to modify the default configuration.  Changes are required on both
           should be a symlink to the application server's logging directory. 
       </dl>
   </ul>
-  <h4>Changing the logging levels</h4>
+  <h5>Changing the logging levels</h5>
   The logging level may be changed dynamically at runtime through the 
   Administration console. See the <a href="#admincmd">Admin Console Commands</a> 
   section for information on how to update or view the current logging configuration. 
@@ -895,14 +895,14 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     tend to slow down the performance of the application so you should only turn 
     up the logging if needed for debugging. 
   <hr>
-  <h2><a name="dba">Database Administration</a></h2>
+  <h3><a name="dba">Database Administration</a></h3>
   <ul>
     <p>Database administration is not covered here. Generally DBA responsibilities 
       are a separate and specialized responsibility. 
     <p>There are no additional DBA requirements for Portfolio Manager or Lifecycle Manager. 
   </ul>
   <hr>
-  <h2><a name="backup">Backing up and Restoring the Application and Data</a></h2>
+  <h3><a name="backup">Backing up and Restoring the Application and Data</a></h3>
   <ul>
     <li><b>Full Installation Backup (code and data):</b> 
       <ul>
@@ -992,7 +992,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <br>
   </ul>
   <hr>
-  <h2><a name="libraryuser">Adding a Library User</a></h2>
+  <h3><a name="libraryuser">Adding a Library User</a></h3>
   <ul>
     <p>If {ldap.ownership.mode}=guest, user information is obtained from 
       the external LDAP server. Therefore, there is no concept of creating users 
@@ -1003,7 +1003,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       an Account" link off the login page. Their entry is dependent on whether 
       controlled access for a library is turned on or not. </p>
   </ul>
-  <h2><a name="resetuserpw">Reset a User Password</a></h2>
+  <h3><a name="resetuserpw">Reset a User Password</a></h3>
   <ul>
     <p>A user can reset a password using the "Forgot Password" link on the login 
       page.
@@ -1012,7 +1012,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
   </ul>
   <hr>
   
-<h2><a name="SuperUser">Super User</a> <a></a></h2>
+<h3><a name="SuperUser">Super User</a> <a></a></h3>
 <blockquote>
   <p>Portfolio Manager or Lifecycle Manager provide the capability of accessing your libraries and your System 
     Admin console by logging in with a special &quot;user&quot; account that does 
@@ -1023,7 +1023,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     the facilities provided by the System Admin console. Note that super user 
     access can be enabled or disabled in the <a href="#config">lib.conf</a> 
     file by assigning a password or leaving the password blank.</p>
-  <h4>The Purpose of Super User</h4>
+  <h5>The Purpose of Super User</h5>
   <p>Super User access is provided to enable you to recover from the lack of an 
     active Library Administrator account. By logging into a library 
     as super user, you can activate an inactive account 
@@ -1038,7 +1038,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     when establishing library federation through creation of <a href="#ManageVAS">Visible 
     Asset Source</a> and <a href="#RemoteAssetSource">Remote Asset Source</a> 
     configuration.</p>
-  <h4> Super User Role Assignments</h4>
+  <h5> Super User Role Assignments</h5>
   <p>The Super User account is assigned the library roles 
     of Library Administrator, Usage Controller and Asset User. In addition, this 
     account is also assigned the group roles of Asset Capture Engineer (ACE), 
@@ -1047,16 +1047,16 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     and their scope of application.</p>
   </blockquote>
 <ul>
-  <h2> 
+  <h3> 
     <hr>
-    <a name="multilibraries">Creating Additional Libraries</a></h2>
+    <a name="multilibraries">Creating Additional Libraries</a></h3>
   <ul>
     <p>If your installation needs to create multiple Asset Libraries, you can 
       create them as needed. Additional libraries can be created using via the 
       <a href="#adminlogin">Admin Console for the Installation Administrator</a>. 
   </ul>
   <hr>
-  <h2><a name="downloaduploadassets">Download assets or upload assets automatically</a></h2>
+  <h3><a name="downloaduploadassets">Download assets or upload assets automatically</a></h3>
   <ul>
     <p> The ability to automate asset operations is provided by the Automation 
       Extensions (AE). There are two samples provided with the AE that allow a 
@@ -1066,7 +1066,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       navigation bar in the library. 
   </ul>
   <hr>
-  <h2><a name="installcmd">The Install Command</a></h2>
+  <h3><a name="installcmd">The Install Command</a></h3>
   <ul>
     <p>The install command is used for both the initial install of Portfolio Manager / Lifecycle Manager, 
       and also for installing upgrades, such as service packs and new releases. 
@@ -1099,7 +1099,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     </ul>
   </ul>
   <hr>
-  <h2><a name="admincmd">Commands You Can Run From The Admin Console</a></h2>
+  <h3><a name="admincmd">Commands You Can Run From The Admin Console</a></h3>
   <ul>
     <p>There are several special administrative and library maintenance commands 
       that are only available to the Installation Administrator. See the <a href="#adminlogin">Admin 
@@ -1123,8 +1123,8 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <tbody> 
       <tr> 
         <td colspan=4 align=center> 
-          <h4>NOTE: for each command, you will need to select the name of the 
-            library that the command is being executed against</h4>
+          <h5>NOTE: for each command, you will need to select the name of the 
+            library that the command is being executed against</h5>
         </td>
       </tr>
       <tr> 
@@ -1294,7 +1294,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <tr> 
         <td valign=top>StoreDocument</td>
         <td valign=top>Stores a file in the selected library.  
-			This document may be used by certain processing steps (e.g. by a Listener within the Library's workflow) </td>
+      This document may be used by certain processing steps (e.g. by a Listener within the Library's workflow) </td>
         <td valign=top>The file to store</td>
         <td> 
           <ol>
@@ -1562,13 +1562,13 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <tr> 
         <td valign=top>PrimeOrganizationsFromPolicyManager</td>
         <td valign=top>Creates organizations based on a hierarchy in Policy Manager.  
-	The purpose of this command is to prime a library for integration with an existing Policy Manager system.
-	Since it does more than simply creating groups (it cross-references the groups of the two systems),
-	it should not be run on the same library with different Policy Manager groups or systems, 
-	nor should two RM systems use the same source Policy Manager organization.
+  The purpose of this command is to prime a library for integration with an existing Policy Manager system.
+  Since it does more than simply creating groups (it cross-references the groups of the two systems),
+  it should not be run on the same library with different Policy Manager groups or systems, 
+  nor should two RM systems use the same source Policy Manager organization.
         The Policy Manager group specified in the command arguments needs to correspond to 
-	a child organization of the "Registry" (a top level organization).  
-	The Enterprise group will be renamed to correspond to that group and all subordinates of that group will be created as well.</td>
+  a child organization of the "Registry" (a top level organization).  
+  The Enterprise group will be renamed to correspond to that group and all subordinates of that group will be created as well.</td>
         <td valign=top>N/A</td>
         <td> 
           <ol>
@@ -1583,7 +1583,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <tr> 
         <td valign=top></a>ChangeLibraryName</td>
         <td valign=top>Change the name of an existing library.
-		Note that this command does not affect other libraries that may be viewing or interacting
+    Note that this command does not affect other libraries that may be viewing or interacting
         with this library.  For this reason any dependencies from other libraries
         (local or remote) such as visible-asset-sources or federated-repositories
         should be disconnected prior to changing a library name.
@@ -1649,16 +1649,16 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
       <tr> 
         <td valign=top></a>RunScript</td>
         <td valign=top>Executes either a <a href="http://www.beanshell.org/">BeanShell</a> or <a href="http://www.jython.org/">Jython</a> script.
-		The script interpreter used is based on the file extension (.bsh, or .py).
-		This is mainly to be used for support purposes, but can be used to test some ScriptListener code, without the need 
-		to integrate it into the Library Process Configuration.
-		The library ID of the selected library is passed into the script as a variable named "libraryId".
+    The script interpreter used is based on the file extension (.bsh, or .py).
+    This is mainly to be used for support purposes, but can be used to test some ScriptListener code, without the need 
+    to integrate it into the Library Process Configuration.
+    The library ID of the selected library is passed into the script as a variable named "libraryId".
           </td>
         <td valign=top>The script to execute.</td>
         <td> 
           <ol>
             <p>Parameters to the script may be specified in the form "variablename=value" (without quotes).  
-		The parameters are then available in the script as variables.
+    The parameters are then available in the script as variables.
           </ol>
         </td>
       </tr>
@@ -1747,8 +1747,8 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
   </ul>
 </ul>
 <hr>
-<h2><a name="attributedefinitions">Customize user attributes and LDAP 
-  attributes</a></h2>
+<h3><a name="attributedefinitions">Customize user attributes and LDAP 
+  attributes</a></h3>
 <ul>
   <p>The user properties that appear in the create and display user and contact 
     pages are obtained and configured through the attribute definitions. 
@@ -1763,20 +1763,20 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;ContactAttributeDefinitions xmlns="http://www.logiclibrary.com/2004/ContactAttributesXML"&gt;
         &lt;AttributeDefinition attribute-name="Full Name" include-in-filter="true" include-in-list="true"&gt;
-		&lt;ExternalSourceMapping source-id="LDAP" name-in-source="cn" /&gt;
-	&lt;/AttributeDefinition&gt;
-	&lt;AttributeDefinition attribute-name="Email" include-in-filter="true" include-in-list="true"&gt;
-		&lt;ExternalSourceMapping source-id="LDAP" name-in-source="mail" /&gt;
-	&lt;/AttributeDefinition&gt;
+    &lt;ExternalSourceMapping source-id="LDAP" name-in-source="cn" /&gt;
+  &lt;/AttributeDefinition&gt;
+  &lt;AttributeDefinition attribute-name="Email" include-in-filter="true" include-in-list="true"&gt;
+    &lt;ExternalSourceMapping source-id="LDAP" name-in-source="mail" /&gt;
+  &lt;/AttributeDefinition&gt;
         &lt;AttributeDefinition attribute-name="First Name" include-in-filter="false" include-in-list="false"&gt;
-		&lt;ExternalSourceMapping source-id="LDAP" name-in-source="givenName" /&gt;
-	&lt;/AttributeDefinition&gt;
+    &lt;ExternalSourceMapping source-id="LDAP" name-in-source="givenName" /&gt;
+  &lt;/AttributeDefinition&gt;
         &lt;AttributeDefinition attribute-name="Last Name" include-in-filter="false" include-in-list="false"&gt;
-		&lt;ExternalSourceMapping source-id="LDAP" name-in-source="sn" /&gt;
-	&lt;/AttributeDefinition&gt;
-	&lt;AttributeDefinition attribute-name="Phone" include-in-filter="false" include-in-list="true"&gt;&lt;/AttributeDefinition&gt;
-	&lt;AttributeDefinition attribute-name="Fax" include-in-filter="false" include-in-list="false"&gt;&lt;/AttributeDefinition&gt;
-	&lt;AttributeDefinition attribute-name="Cell" include-in-filter="false" include-in-list="false"&gt;&lt;/AttributeDefinition&gt;
+    &lt;ExternalSourceMapping source-id="LDAP" name-in-source="sn" /&gt;
+  &lt;/AttributeDefinition&gt;
+  &lt;AttributeDefinition attribute-name="Phone" include-in-filter="false" include-in-list="true"&gt;&lt;/AttributeDefinition&gt;
+  &lt;AttributeDefinition attribute-name="Fax" include-in-filter="false" include-in-list="false"&gt;&lt;/AttributeDefinition&gt;
+  &lt;AttributeDefinition attribute-name="Cell" include-in-filter="false" include-in-list="false"&gt;&lt;/AttributeDefinition&gt;
 &lt;/ContactAttributeDefinitions&gt;
 </pre>
   <p>Each AttributeDefinition element defines a user attribute that may be displayed 
@@ -1807,12 +1807,12 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     parameter in the lib.conf file): 
   <pre>
         &lt;AttributeDefinition attribute-name="Account Name" include-in-filter="true" include-in-list="false"&gt;
-		&lt;ExternalSourceMapping source-id="LDAP" name-in-source="uid" /&gt;
-	&lt;/AttributeDefinition&gt;
+    &lt;ExternalSourceMapping source-id="LDAP" name-in-source="uid" /&gt;
+  &lt;/AttributeDefinition&gt;
 </pre>
 </ul>
 <hr>
-<h2><a name="artifactsearch">Full-text artifact search</a></h2>
+<h3><a name="artifactsearch">Full-text artifact search</a></h3>
   <h3>Full-text artifact search on Oracle</h3>  
   By default, new Lifecycle and Portfolio Manager installations perform full-text searching of asset artifacts on Oracle.  However if you've upgraded
   from RM 6.4, and had not yet enabled Full-text artifact searching on Oracle, perform the following steps:<br><br>
@@ -1864,7 +1864,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
   To determine which filters are installed on SQL Server, execute the following SQL: 
   <p><code>EXEC sp_help_fulltext_system_components 'filter';</code>
 <hr>
-<h2><a name="installationproperties">Update Installation-wide Properties</a></h2>
+<h3><a name="installationproperties">Update Installation-wide Properties</a></h3>
 <ul>
   <p>Most of the configuration values that are set through the lib.conf 
      (logidex.conf) during the initial installation can be updated through the UI via the Installation Administration command
@@ -2066,7 +2066,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
         <td>synchronous_text_update
         </td>
         <td>True or false. On DB2 systems when the property is 'false', the indexer that runs after every asset publish will be disabled.
-	    The index will still be updated by the DB2 index settings, which runs every 5 minutes.
+      The index will still be updated by the DB2 index settings, which runs every 5 minutes.
         </td>
         <td>&nbsp;
         </td>
@@ -2101,7 +2101,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
      
 </ul>
 <hr>
-<h2><a name="sso">Single Sign-on (SSO) Installation and Configuration</a></h2>
+<h3><a name="sso">Single Sign-on (SSO) Installation and Configuration</a></h3>
 <ul>
   <p>Single Sign-on (SSO) is a login mechanism that allows authorization by an 
     external web server plug-in. This enables you to integrate with your 
@@ -2136,7 +2136,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     </ul>
 </ul>
 <hr>
-<h2><a name="topbanner">Customize the Web Page Branding Image (Top Banner)</a></h2>
+<h3><a name="topbanner">Customize the Web Page Branding Image (Top Banner)</a></h3>
 <ul>
   <p>You can customize the banner on the top of all web pages with your 
     own branding information. This configuration is global 
@@ -2190,7 +2190,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
      } </pre> 
 </ul>
 <hr>
-<h2><a name="footer">Customize the Footer for all Web Pages</a></h2>
+<h3><a name="footer">Customize the Footer for all Web Pages</a></h3>
 <ul>
   <p>The footer of each web page can be customized as needed for your 
     installation. You may want to add additional information for terms of use, 
@@ -2206,7 +2206,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     the whole page.</p>
 </ul>
 <hr>
-<h2><a name="homepage" id="homepage">Customize Home Page Content (Web Browser Application)</a></h2>
+<h3><a name="homepage" id="homepage">Customize Home Page Content (Web Browser Application)</a></h3>
 <ul>
   <p>You can customize the content presented on the home page of the web browser application. The area available for custom content falls below the web page <a href="#topbanner">Top Banner</a> and above the Active Project designation on the home page. This configuration is global to this installation, 
      which means it will be in effect for all libraries on your installation. 
@@ -2218,7 +2218,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
 </ul>
 <hr>
 
-<h2><a name="supportpage" id="supportpage">Customize Support Center Page</a></h2>
+<h3><a name="supportpage" id="supportpage">Customize Support Center Page</a></h3>
 <ul>
   <p>You may customize the content presented on the Support Center page of the web browser application. The area
    available for custom content is the Support Information section. This configuration is global to this installation, 
@@ -2232,7 +2232,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
 </ul>
 <hr>
 
-<h2><a name="topnavlinks" id="topnavlinks">Customize  Top Navigation Links (Web Browser Application)</a></h2>
+<h3><a name="topnavlinks" id="topnavlinks">Customize  Top Navigation Links (Web Browser Application)</a></h3>
 <ul>
   <p>You may change the target for the top navigation bar "Discussion" and "Help" links.
     This configuration is library-specific and can be different for each library.
@@ -2244,12 +2244,12 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
 </ul>
 <hr>
 
-<h2><a name="language">Using different languages</a></h2>
+<h3><a name="language">Using different languages</a></h3>
 <p>Portfolio Manager and Lifecycle Manager can be configured so the user can select what language 
   to display its contents. Contact <a href="mailto:llsupport@soa.com">support</a> 
   for information on which languages are available and how to configure them. 
 <hr>
-<h2><a name="altuser">Running with an alternate database user</a></h2>
+<h3><a name="altuser">Running with an alternate database user</a></h3>
 <p>By default, the database schema owner is used to create and modify the
   database entities (tables, views, sequences, etc). If you would like to configure 
   a different user, there will be some actions that do not work 
@@ -2287,7 +2287,7 @@ com.logiclibrary.common.logging.FileHandler.pattern=/opt/lm/logs/webapp/lm_%g.lo
     to all the standard reports. 
 </ul>
 <hr>
-<h2><a name="customjar">Deploying custom class files</a></h2>
+<h3><a name="customjar">Deploying custom class files</a></h3>
 <p>In certain instances, such as creating custom listeners, deploying custom class files is required.
 This is accomplished by adding your class files to the <i>ApplicationRoot</i>/customer/custom.jar file.  You'll need to ensure the package information is 
 preserved in the class file's path.  For instance, suppose you have a class named <code>com.example.CustomListener</code>.  
@@ -2305,7 +2305,7 @@ your custom listeners will run. See the commands GetCurrentProcessConfiguration 
 section of this document.
 
 <hr>
-<h2><a name="largeartifacts">Notes on Uploading Large Artifacts</a></h2>
+<h3><a name="largeartifacts">Notes on Uploading Large Artifacts</a></h3>
 <ul>
   <li>WebLogic 
     <p>WebLogic uses /tmp/_wl_proxy to write the file while it is being uploaded. 
@@ -2324,7 +2324,7 @@ section of this document.
 to &lt;ServerGroup Name="MY_NODE/Default Server" PostSizeLimit="30000000"&gt;</pre> 
 </ul>
 <hr>
-<!-- <h2><a name="RASlistener">Notes on the RAS Feedback Listener</a></h2>
+<!-- <h3><a name="RASlistener">Notes on the RAS Feedback Listener</a></h3>
 <p>The RAS Feedback Listener allows users within the Rational Software Architect 
   environment to post feedback messages in Lifecycle Manager. The RAS Feedback Listener 
   is disabled by default and must be enabled if you would like to take advantage 
@@ -2351,7 +2351,7 @@ to &lt;ServerGroup Name="MY_NODE/Default Server" PostSizeLimit="30000000"&gt;</p
      &lt;listener&gt;DeleteFeedback&lt;/listener&gt; 
   &lt;/action&gt; </pre>
 <hr> -->
-<h2><a name="migratingartifacts">Migrating Artifacts to a Long Tablespace</a></h2>
+<h3><a name="migratingartifacts">Migrating Artifacts to a Long Tablespace</a></h3>
 <p>You can use Long Table spaces for the columns that store binary 
   data. Previously regular table spaces were used to store binary data which was 
   inefficient. It is recommended to upgrade to use Long table spaces. 
@@ -2379,7 +2379,7 @@ to &lt;ServerGroup Name="MY_NODE/Default Server" PostSizeLimit="30000000"&gt;</p
   <li>Confirm that artifacts can be accessed in the library. 
 </ol>
 <hr>
-<h2><a name="utf8">Saving files in UTF-8</a></h2>
+<h3><a name="utf8">Saving files in UTF-8</a></h3>
 <p>One needs to be concerned 
   with saving files that have non-ASCII characters. There are several different 
   encodings that one can use to safely preserve extended characters (UTF-16, UTF-8, 
@@ -2411,7 +2411,7 @@ to &lt;ServerGroup Name="MY_NODE/Default Server" PostSizeLimit="30000000"&gt;</p
     65001. 
 </ul>
 <hr>
-<h2><a name="userlicensereport">User License Report</a></h2>
+<h3><a name="userlicensereport">User License Report</a></h3>
 <p>A User License Report is included which you may link to in an appropriate group 
    of your choice. The report provides a list of all users on the installation and
    the libraries to which each user has access. Create the report link as follows:
@@ -2427,7 +2427,7 @@ to &lt;ServerGroup Name="MY_NODE/Default Server" PostSizeLimit="30000000"&gt;</p
 
 <hr>
 
- <h2><a name="managereports">Managing Reports</a></h2>
+ <h3><a name="managereports">Managing Reports</a></h3>
 <p>Customers may use the BIRT Eclipse tool to create custom reports and deploy those reports to the application server to be available to application
 users. Beginning in RM and PortM 6.3.1, BIRT reports are managed using the Configuration Designer plug-in. The report design files appear in your 
 configuration project under Document-Source -> reports. Custom reports may be saved to this folder and uploaded to the library via the context menu.
@@ -2453,39 +2453,39 @@ Once a report has been uploaded to the library, follow the steps below to create
 <hr>
 
 
-<!-- <h2><a name="systinet">Systinet Integration</a></h2>
+<!-- <h3><a name="systinet">Systinet Integration</a></h3>
 <p>Integrating a library with Systinet requires that the application server can find the appropriate JAAS configuration to login to Systinet.  
-	Follow the application server specific instructions to do so.
+  Follow the application server specific instructions to do so.
 
    <ul>
     <li><b>WebLogic 9</b>
-	<ul>
-		<li>Add the location of Systinet's jaas.config file to the JAVA_OPTIONS environment variable in the user's profile script.  
-		Source the file after you have made the changes and restart the server.
-		<pre>JAVA_OPTIONS=-Djava.security.auth.login.config=/opt/bea/user_projects/domains/base_domain/applications/logidex/logidex.war/WEB-INF/systinet/conf/jaas.config
+  <ul>
+    <li>Add the location of Systinet's jaas.config file to the JAVA_OPTIONS environment variable in the user's profile script.  
+    Source the file after you have made the changes and restart the server.
+    <pre>JAVA_OPTIONS=-Djava.security.auth.login.config=/opt/bea/user_projects/domains/base_domain/applications/logidex/logidex.war/WEB-INF/systinet/conf/jaas.config
 export EXT_PRE_CLASSPATH </pre>
-	</ul>
-	<li><b>WebSphere</b>
-	<ul>
-		<li>Create a JAAS configuration entry for Systinet.  
-		<li>Open the WebSphere Administration console.
-		<li><b>WebSphere 5 or 6.0:</b> select Security -&gt; JAAS Configuration -&gt; Application Logins.
-		<li><b>WebSphere 6.1:</b> select Security -&gt; Secure administration, application, and infrastructure -&gt; Java Authentication and Authorization Service -&gt; Application Logins.
-		<li>Select New
-		<li>Enter NamePasswordNoAN for the alias.
-		<li>Click OK
-		<li>Click on the entry you just created and select JAAS Login Modules
-		<li>Select New
-		<li>Enter com.idoox.security.jaas.NamePasswordLoginModuleNoAuth for the Module Classname
-		<li>Set the Authentication Strategy to REQUIRED.
-		<li>Click OK
-		<li>Save the configuration
-		<li>Restart the server.
-		
-	</ul>
-	<li><b>JBoss</b>
-	<ul>
-		<li>Systinet’s JAAS configuration needs to be added to the $JBOSS/server/default/conf/login-config.xml file.  Restart the server after making the changes.
+  </ul>
+  <li><b>WebSphere</b>
+  <ul>
+    <li>Create a JAAS configuration entry for Systinet.  
+    <li>Open the WebSphere Administration console.
+    <li><b>WebSphere 5 or 6.0:</b> select Security -&gt; JAAS Configuration -&gt; Application Logins.
+    <li><b>WebSphere 6.1:</b> select Security -&gt; Secure administration, application, and infrastructure -&gt; Java Authentication and Authorization Service -&gt; Application Logins.
+    <li>Select New
+    <li>Enter NamePasswordNoAN for the alias.
+    <li>Click OK
+    <li>Click on the entry you just created and select JAAS Login Modules
+    <li>Select New
+    <li>Enter com.idoox.security.jaas.NamePasswordLoginModuleNoAuth for the Module Classname
+    <li>Set the Authentication Strategy to REQUIRED.
+    <li>Click OK
+    <li>Save the configuration
+    <li>Restart the server.
+    
+  </ul>
+  <li><b>JBoss</b>
+  <ul>
+    <li>Systinet’s JAAS configuration needs to be added to the $JBOSS/server/default/conf/login-config.xml file.  Restart the server after making the changes.
 <pre>
     &lt;application-policy name="NamePasswordNoAN"&gt;
       &lt;authentication&gt;
@@ -2495,60 +2495,60 @@ export EXT_PRE_CLASSPATH </pre>
       &lt;/authentication&gt;
     &lt;/application-policy&gt;
 </pre>
-	</ul>
+  </ul>
    </ul>
 
 <hr> -->
 
-<h2><a name="weblayers">WebLayers Integration</a></h2>
+<h3><a name="weblayers">WebLayers Integration</a></h3>
 <p>Integrating with WebLayers requires that the application server can find the appropriate WebLayers' configuration file and executables. 
-	
-	
+  
+  
 
    <ul>
-	<li><p>Install the WebLayers Governor client on the same application server as Portfolio/Lifecycle Manager is installed on.  
-		When prompted make sure to check the <b>"Java 1.4"</b> option.
-		<p>Continue on to the application server specific instructions to complete the integration.
-	<li><b>WebLogic 8</b>
-	<ul>
-		<li>Edit the <i>WLDomain</i>/startWebLogic.sh script and prepend the location of the WebLogic governor to the classpath.  Modify paths as appropriate.
-		<pre>CLASSPATH="/opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar:${WEBLOGIC_CLASSPATH}:...</pre>
-		<li>Edit the user's .profile script and append the following lines.  Source the file after you finish.
-		<pre>JAVA_OPTIONS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
+  <li><p>Install the WebLayers Governor client on the same application server as Portfolio/Lifecycle Manager is installed on.  
+    When prompted make sure to check the <b>"Java 1.4"</b> option.
+    <p>Continue on to the application server specific instructions to complete the integration.
+  <li><b>WebLogic 8</b>
+  <ul>
+    <li>Edit the <i>WLDomain</i>/startWebLogic.sh script and prepend the location of the WebLogic governor to the classpath.  Modify paths as appropriate.
+    <pre>CLASSPATH="/opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar:${WEBLOGIC_CLASSPATH}:...</pre>
+    <li>Edit the user's .profile script and append the following lines.  Source the file after you finish.
+    <pre>JAVA_OPTIONS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
 export JAVA_OPTIONS</pre>
-		<li>Restart the server
-	</ul>
-	<li><b>WebLogic 9</b>
-	<ul>
-		<li>Edit the user's .profile script and append the following lines (adjusting as needed).  Source the file after you finish.
-		<pre>JAVA_OPTIONS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
+    <li>Restart the server
+  </ul>
+  <li><b>WebLogic 9</b>
+  <ul>
+    <li>Edit the user's .profile script and append the following lines (adjusting as needed).  Source the file after you finish.
+    <pre>JAVA_OPTIONS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
 export JAVA_OPTIONS
 EXT_PRE_CLASSPATH=/opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar:${EXT_PRE_CLASSPATH}
 export EXT_PRE_CLASSPATH</pre>
 <li>Restart the server
-		
-	</ul>
-	<li><b>WebSphere</b>
-	<ul>
-		<li>Open the WebSphere Administration console.
-		<li><b>WebSphere 5 or 6.0:</b> select Servers -&gt; Application servers -&gt; Logidex -&gt; Process Definition -&gt; Java Virtual Machine.
-		<li><b>WebSphere 6.1:</b> select Servers -&gt; Application servers -&gt; Logidex -&gt; Java and Process Management -&gt; Process Definition -&gt; Java Virtual Machine.
-		<li>Append the following to the Generic JVM Arguments (adjust as needed): -Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository 
-		<li>Click Ok, the save link, and the save button.
-		<li>Copy the /opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar file to <i>ApplicationRoot</i>/customer/weblayers-logidex-governor.jar
-		<li>Perform ./install upgrade
-		<li>Restart the server.
-	</ul>
-	<li><b>JBoss</b>
-	<ul>
-		<li>Edit the user's .profile script and append the following lines (adjusting as needed).  Source the file after you finish.
-		<pre>JAVA_OPTS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
+    
+  </ul>
+  <li><b>WebSphere</b>
+  <ul>
+    <li>Open the WebSphere Administration console.
+    <li><b>WebSphere 5 or 6.0:</b> select Servers -&gt; Application servers -&gt; Logidex -&gt; Process Definition -&gt; Java Virtual Machine.
+    <li><b>WebSphere 6.1:</b> select Servers -&gt; Application servers -&gt; Logidex -&gt; Java and Process Management -&gt; Process Definition -&gt; Java Virtual Machine.
+    <li>Append the following to the Generic JVM Arguments (adjust as needed): -Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository 
+    <li>Click Ok, the save link, and the save button.
+    <li>Copy the /opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar file to <i>ApplicationRoot</i>/customer/weblayers-logidex-governor.jar
+    <li>Perform ./install upgrade
+    <li>Restart the server.
+  </ul>
+  <li><b>JBoss</b>
+  <ul>
+    <li>Edit the user's .profile script and append the following lines (adjusting as needed).  Source the file after you finish.
+    <pre>JAVA_OPTS=-Dweblayers.repository_location=/opt/weblayers/governors/weblayers_logidex_governor/repository
 export JAVA_OPTS
 JBOSS_CLASSPATH=/opt/weblayers/governors/weblayers_logidex_governor/weblayers-logidex-governor.jar
 export JBOSS_CLASSPATH</pre>
-	
-		<li>Restart the server.
-	</ul>
+  
+    <li>Restart the server.
+  </ul>
    </ul>
 <hr>
 
