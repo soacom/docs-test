@@ -89,7 +89,7 @@ no-catalog: true
 </ul>
 <p><u><strong>B. Launch OAuth Details Wizard and Select OAuth Provider</strong></u></p>
 <p>The first step is to select an OAuth Provider for both the Production and Sandbox endpoints of your API.</p>
-<ol class="usingOrderedList">
+<ol>
   <li>On the <em>API &gt; Detail</em>s page, click <strong> OAuth Details</strong>. The <em>API OAuth Wizard</em> launches and the <em>Provider</em> page displays.</li>
   <li>Based on your API configuration you will have one or more Production or Sandbox endpoints. In the OAuth Provider section select a provider name for each endpoint you would like to configure.
   <ul class="usingUnorderedList">
@@ -102,7 +102,7 @@ no-catalog: true
 <p><u><strong>C. Specify Authorization Details</strong></u></p>
 <p>Based on the OAuth version supported for the provider selected, specify the details for 1.0a or 2.0 OAuth Versions. If you select OAuth 2.0, the <em>OAuth Options</em> section displays where you can configure Authorization Grant Types.</p>
 <p><em>Note: When specifying an Authorization Server URL in the platform, it's important to verify that the client application is authorized to use the grant type that the OAuth Provider is configured to support. </em></p>
-<ol class="usingOrderedList">
+<ol>
   <li>Select an OAuth version. Version 2.0 and 1.0a are supported.</li>
   <li>Specify the required endpoint URL's for each OAuth version
     <ul class="usingUnorderedList">
@@ -120,7 +120,7 @@ no-catalog: true
 <p><u><strong>D. Configure Scope Mapping</strong></u></p>
 <p>If you selected a predefined OAuth Provider, the resources (i.e., operations) of the current API have already been defined and authorized for use. On the <em>Scope Mapping</em> page, you identify which the operations your applications will need to get authorization for and the scope.</p>
 <p>For example, Application1 includes a calendar and may need access to the API's calendar operation, and Application2 includes an email client and may require access to the API's address operation.</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Click the radio button of the Scope Mapping approach you would like to use. <strong>API-wide Mapping</strong> or <strong>Operation Specific Mapping</strong>.</li>
   <li>In the <em>Scope</em> column, click <strong>Select</strong>. The <em>Select Scope</em> popup displays. Click the checkbox of the operations you would like to include in the scope of the current API. Deselect the checkboxes of operations you do not want to include in the configuration.</li>
   <li>After completing your configuration, click <strong>Save</strong>.</li>

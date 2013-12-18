@@ -32,12 +32,12 @@ no-catalog: true
 <h3>Step 1: Add New API</h3>
 <p><strong>A. Launch the Add a New API Wizard</strong></p>
 <p>The first step in the process is to add an API. To do this:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>From the <em>Plus Menu</em>, select <strong>Add a New API</strong>. The <em>Add API Wizard</em> displays.</li>
   <li>Review the tooltips for each option to gather additional details and recommendations.</li>
 </ol>
 <p><strong>B. Specify API Information</strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>On the <em>APIs</em> page, specify the API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon for the API. All information here displays on your customer-facing <em>API Details</em> page.
     <ul class="usingUnorderedList">
       <li>See <a href="publish_api_publishing.htm#how_do_i_manage_api_visibility">How do I manage API visibility?</a> for information on Public and Private APIs.</li>
@@ -46,7 +46,7 @@ no-catalog: true
   </li>
   </ol>
   <p><strong>C. Specify Target URL and Environment</strong></p>
-  <ol class="usingOrderedList">
+  <ol>
     <li>After specifying the API information, click <strong>Next</strong> to continue. The <em>Target</em> page displays. Here you will specify the <em>Target URL</em>, select the <em>Environment</em>, and configure <em> Advanced Options</em> for your API.</li>
   <li>In the <em>Target</em> section, specify the Target URL (i.e., endpoint) of the API implementation. If you would like to specify additional Target URLs, click <strong>+Add</strong>. For example, you might add one URL for Sandbox Environment and one for Production Environment.</li>
   <li>In the <em>Environment</em> section, click the radio button of the environment (Production or Sandbox) the Target URL is associated with.</li>
@@ -56,12 +56,12 @@ no-catalog: true
   <p><strong>D. Configure Advanced Options</strong></p>
   <p>By default, the REST protocol is selected for your API, a Default Profile (Any in and out), and Default Operation are specified. After specifying the Target URL and Environment, you can optionally update the existing protocol (REST), or change the protocol to SOAP in the <em>Advanced Options</em> section.</p>
   <p><strong><em>Configure Protocol: </em></strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>On the <em>Advanced Options </em>line click <strong>Show</strong> to expand the section.
 </li>
 </ol>
 <p>To configure SOAP:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Click the <strong>SOAP</strong> radio button. You can enter a WSDL URL directly or upload a zip archive:
     <ul class="usingUnorderedList">
       <li><strong>WSDL URL</strong>&#8212;Click the <strong>WSDL URL</strong> radio button, enter the WSDL URL and click <strong>Get</strong>. The operations load into the <em>Operations</em> section.</li>
@@ -70,7 +70,7 @@ no-catalog: true
 </li>
 </ol>
 <p>To configure REST:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Click the <strong>REST</strong> radio button and select a <em>Default Profile</em> from the drop-down menu. <strong>Any in and out </strong>is the default selection.</li>
   <li>A &quot;Default_Operation&quot; is automatically assigned, with a GET method, Path that is pre-filled with the default URI, and &quot;API Default&quot; selected for the Request and Response serialization.</li>
   <li>Modify the &quot;Default_Operation&quot; and/or click <strong>+Add</strong> and specify the operations for the API definition based on your requirements. <br />
@@ -132,7 +132,7 @@ no-catalog: true
 </ol>
 <p><strong>E. Configure Proxy</strong></p>
 
-<ol class="usingOrderedList">
+<ol>
 
   <li>After specifying the Target information, click <strong>Next</strong> to continue. The <em>Proxy </em> page displays. Here you will specify the <em>Published URL</em> that represents what users will select when accessing your API. The page displays a summary list of all Production and Sandbox endpoints specified in the previous step. It's recommended that you use a Proxy API to take advantage of important platform functionality. See <a href="publish_api_publishing.htm#what_is_a_proxy_api">What is a Proxy API?</a> for more information.<br />
     <em><br />
@@ -143,7 +143,7 @@ Note:
     <br />
     For example, you might have two APIs that have the same <em>Target</em> information, but different <em>Proxy</em> information. Alternatively, you might have a SOAP API implementation but want to offer developers a REST API implementation; in this case the <em>Target</em> would be SOAP, and the <em>Proxy</em> would be REST.</li></ol>
 <p><strong>F. Enable / Disable Proxy API</strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>In the <em>Proxy API </em>section, click the applicable radio button to indicate whether you would like to proxy your API.
     <ul class="usingUnorderedList">
       <li>If you select <strong>No</strong>, click <strong>Save</strong> to complete the API configuration process.</li>
@@ -152,7 +152,7 @@ Note:
 </li>
 </ol>
 <p><strong>G. Configure Production Endpoint</strong></p>
-<ol class="usingOrderedList">
+<ol>
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul class="usingUnorderedList">
       <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path.</li>
@@ -171,7 +171,7 @@ Note:
   <p><strong>H. Configure Advanced Options</strong></p>
 
 
-  <ol class="usingOrderedList">
+  <ol>
   <li>On the <em>Advanced Options </em>line click <strong>Show</strong> to expand the section.</li>
   <li>The <em>Advanced Options</em> section allows you to select a protocol for the Proxy API, select policies, and select a Default Profile (REST option only), and displays the settings configured in the <em>Target</em> section.</li>
   <li>If you would like the Proxy configuration to be different than you initially specified in the <em>Target</em> section, you can update the existing settings. For example, you might have two APIs that have the same <em>Target</em> information, but different <em>Proxy</em> information. Alternatively, you might have a SOAP API implementation but want to offer developers a REST API implementation; in this case the <em>Target</em> would be SOAP, and the <em>Proxy</em> would be REST. <br />
@@ -183,7 +183,7 @@ Note:
   </ol>
 <strong><em>Select Default Profile:</em></strong><br />
     <br />
-  <ol class="usingOrderedList">
+  <ol>
   <li>Select a Default Profile from the drop-down list box. See <a href="publish_api_publishing.htm#what_is_an_api_type_profile">What is an API Type Profile?</a> for more information.
 
 
@@ -191,12 +191,12 @@ Note:
 
 </ol>
 <strong><em>Configure Method, Path, and Content Type for Operations:</em></strong><br />
-<ol class="usingOrderedList">
+<ol>
   <li>Select a Method from the dropdown menu, specify a URL in the text box, and configure a Content Type for the Request and Response message of each operation.</li>
   <li>See <a href="publish_api_publishing.htm#what_are_the_supported_methods_and_content_types_for_requests">What are the supported Methods and Content Types for Requests?</a> for more information.</li>
 </ol>
 <strong><em>Select Policies:</em></strong><br />
-<ol class="usingOrderedList">
+<ol>
   <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
     <p>Note: <em>You MUST select one security policy (e.g., Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="publish_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
   <p>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="publish_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</p>
@@ -235,7 +235,7 @@ Note:
 <h3>Step 4: Activate Legal Agreements</h3>
 <p>When legal agreements are initially uploaded, they are in <em>Draft</em> mode and not visible on the site. To make them visible on the site and available in the API Access Wizard, you must activate them. To do this, click the <strong>Activate</strong> button; assign a name and description to the legal agreement, and save the configuration. An activated legal agreement displays in the <strong>API Access Wizard</strong> where an API user can review and accept it as part of the API access approval process.</p>
 <h5>To activate a legal agreement:</h5>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>API &gt; API Name &gt; Legal</em>.</li>
   <li>Click <strong>Manage Agreements</strong>.</li>
   <li>Chose the legal agreement you want to activate. In the <em>Status</em> column, click <strong>Activate</strong>. The <em>Edit</em> pop-up displays.</li>
@@ -274,7 +274,7 @@ Note:
 
 <h3>Step 7: Invite API Administrators</h3>
 <p>Maintenance of an API can be performed by the API Developer who initially added the API to the platform, or individuals who accept invitations to be administrators. To send an invitation to an individual you would like to have API administrator privileges:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>My APIs &gt; API Name &gt; Admins</em>. The <em>Admins </em> page displays.</li>
   <li>Click <strong>Invite More</strong>. The <em>Invite Administrators</em> page displays.</li>
   <li>In the <strong>Email</strong> text box, enter the email address of individuals you would like to invite to your development team. Separate multiple email addresses with commas.</li>

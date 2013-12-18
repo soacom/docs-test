@@ -97,7 +97,7 @@ no-catalog: true
 <a name="how_do_i_download_the_customless_template"></a><h3>How do I download the custom.less template?</h3>
 <p>The <em>Administration &gt; Config &gt; Custom Styles</em> section includes a <strong>Download</strong> button that allows you to download the custom.less template.</p>
 <p>To download the custom.less template:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Download</strong>. A download dialog box displays.</li>
   <li>Select the <strong>Save File</strong> option and click <strong>OK</strong>.</li>
@@ -144,7 +144,7 @@ no-catalog: true
 <a name="how_do_i_upload_my_customless_file_after_i_have_updated_it"></a><h3>How do I upload my custom.less file after I have updated it?</h3>
 <p>The <em>Administration &gt; Config &gt; Custom Styles</em> section includes a <strong>Download</strong> button that allows you to download the custom.less template.</p>
 <p>To upload the custom.less template:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Upload</strong>. A <em>File to Upload</em> dialog box displays.</li>
   <li>Click <strong>Browse</strong> to target and select a file, the <strong>Upload</strong>. After the file has been successfully uploaded the &quot;Platform style sheets have been successfully regenerated using custom.less&quot; confirmation message displays. This indicates that the style sheets were automatically rebuilt when the custom.less file was uploaded. The custom.less file is uploaded to the \resources\less directory.</li>
@@ -167,7 +167,7 @@ no-catalog: true
 <p>The <em>Administration > Config > Custom Styles</em> section includes a <strong>Rebuild Styles</strong> option that allows you to Initiate a rebuild of the platform style sheets. This option is primarily used when a platform update is installed that includes style sheet changes. This option is primarily used when a site update is performed where style sheet changes were made.</p>
 <p>For example, if an update was applied to the site and the update included new additions to the UI that required style sheet changes; this would mean that the style sheets were not active immediately after the update was completed. In this case, the <strong>Rebuild Styles</strong> option would complete update process by regenerating the style sheets.</p>
 <p>To rebuild site style sheets:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Rebuild Styles</strong>. The rebuild process takes approximately one minute. After style sheets have been rebuilt, the  &quot;Platform style sheets have been successfully regenerated using custom.less&quot; confirmation message displays.</li>
   <li>After the style sheets are regenerated, clear the browser cache and refresh the screen to view the changes.</li>
@@ -184,7 +184,7 @@ no-catalog: true
 
 <a name="how_do_i_configure_a_custom_footer"></a><h3>How do I configure a custom footer?</h3>
 <p>The footer customization process includes the following steps:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Footer customization is done with an HTML file that acts as a template. The HTML file is uploaded to the /resources/templates/footer with the name footer.htm.</li>
   <li>Links in the footer.htm  file can have a class attribute with values "ext" or "dialog." When a link has a class "ext," clicking on the link will open a popup window. When the link has a class "dialog," clicking on the link will open the href in a dialog window.</li>
   <li>A footer can be uploaded using the File Manager in the <em>Site Administration &gt; Config &gt; Resources &gt; Resources </em>section. An uploaded footer becomes effective within five minutes if the page is refreshed after five minutes.</li>
@@ -212,7 +212,7 @@ no-catalog: true
 </ul>
 <p>To customize your logo filename:</p>
 
-<ol class="usingOrderedList">
+<ol>
   <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
   <li>Click  <strong>Download</strong> to download a new custom_template.less file and rename it to custom.less.</li>
   <li>Load the custom .less file into an HTML editor and change the filename for this entry: @logo-img: url(&quot;images/&lt;image_name&gt;.png&quot;); to the new logo filename.</li>
@@ -221,7 +221,7 @@ no-catalog: true
 
 
 <p>To upload your logo file:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em> and click <strong>Rebuild Styles</strong> to ensure that all the proper style folders are generated. <em>Note: If you specified a custom logo name in custom.less and already uploaded the style sheet the rebuild step is not required. </em></li>
   <li>Go to <em>Resources &gt; Resources &gt; File Manager</em> and drill down in the &quot;Theme&quot; folder until it looks like the following:<br />
     <br />
@@ -325,7 +325,7 @@ no-catalog: true
 
 
 <a name="how_do_i_enable_and_customize_a_platform_login"></a><h3>How do I enable and customize a platform login?</h3>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays a listing of domains that have been added to the platform.</li>
   <li>To enable the domain, click the checkbox in the &quot;Enable&quot; column.</li>
   <li>If you would like configure a virtual host for the domain, enter it in the  &quot;Target Host&quot; text box. See <a href="#what_is_a_target_host">What is a Target Host?</a> for more information.</li>
@@ -338,7 +338,7 @@ no-catalog: true
 
 
 <a name="how_do_i_disable_a_platform_login"></a><h3>How do I disable a platform login?</h3>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays a listing of domains that have been added to the platform.</li>
   <li>To disable the domain, uncheck the  &quot;Enable&quot; column.</li>
   <li>Click <strong>Save</strong> to commit your changes.</li>
@@ -370,7 +370,7 @@ no-catalog: true
 
 <a name="how_do_i_upload_sprite_files_to_the_platform"></a><h3>How do I upload Sprite files to the platform?</h3>
 <p>If you've updated  one or more Sprite files, you can create an /images folder in the /resources/theme/default/style directory and upload them. Sprite files must be uploaded AFTER you have uploaded your custom.less file and have rebuilt the site styles (either automatically as part of the custom.less upload process or manually by executing the <strong>Rebuild</strong> function).</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Resources</em> section click <strong>File Manager</strong>. Navigate to the /resources/theme/default/style directory. You will see the following default styles which were autogenerated as part of the custom.less upload process.<br />
     <br />
@@ -399,7 +399,7 @@ no-catalog: true
 </ul>
 
 <h5>To upload a file:</h5>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Content</em> section click <strong>File Manager.</strong></li>
   <li>Select the directory of the content area you would like to update (illustrated above).
@@ -415,7 +415,7 @@ no-catalog: true
 <p>The document.css style sheet contains all the custom styles for both  API and Online Help documentation. It is located in the  /content/style directory. If you make changes to the document.css file, you can upload it directly to the /content/style directory.</p>
 <p> <em>Note: This style sheet is not affected by the custom.less style sheet regeneration process and will not be changed or overwritten when a new custom.less file is uploaded. </em></p>
 <p>To upload a document.css style sheet to the platform:</p>
-<ol class="usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Content</em> section, click <strong>File Manager</strong>. Navigate to /content/style. You will see a directory similar to the following:
 <p><img src="images/document style sheet.jpg" width="498" height="234" alt="" /></p></li>
