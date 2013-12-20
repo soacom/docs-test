@@ -40,17 +40,17 @@ Changes a user's account settings such as email notification preferences.<!-- #E
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/{UserID}/settings</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/settings</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below sends some changes the user has made to notifications preferences. The user has opted out of one of the notifications groups, so it is omitted from the request object.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->users/user13967.open/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.open/settings</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>PUT&nbsp;/api/users/user10016.open/settings HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>

@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/{UserID}/feeds/homefeed[?APIID=APIID][&amp;ItemType=ItemType][&amp;TicketLabel=TicketLabel]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/feeds/homefeed[?APIID=APIID][&amp;ItemType=ItemType][&amp;TicketLabel=TicketLabel]
 [&amp;TicketState=TicketState][&amp;ItemID=ItemID][&amp;Tag=Tag][&amp;IncludeComments=IncludeComments]
 [&amp;NumberOfComments=NumberOfComments][&amp;IncludeActions=IncludeActions][&amp;count=count][&amp;SortBy=SortBy]</pre>
 <!-- InstanceEndEditable -->
@@ -58,15 +58,15 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL #1</strong></p>
 <p>The example below requests the first 10 items for the specified user.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->users/user12262.open/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.open
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.open/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.open
 </pre>
 <p><strong>Request URL #2</strong></p>
 <p>The example below requests the third and fourth items, with comments excluded.</p>
-<pre>https://open.soa.com/api/users/user12262.open/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.open&amp;IncludeComments=false
+<pre>https://&lt;hostname&gt;/api/users/user12262.open/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.open&amp;IncludeComments=false
 </pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/users/user12262.open/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.open&amp;SortBy=DescendingDate HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -244,13 +244,13 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2012-11-26T15:20:30.000Z",
@@ -301,13 +301,13 @@ on behalf of the  PaaStime (2.0) application",
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
         "Link" : "#/app/app16964.open"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
@@ -414,7 +414,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -430,7 +430,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
@@ -456,7 +456,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -492,7 +492,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
         &lt;Link&gt;#/app/app16964.open&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;

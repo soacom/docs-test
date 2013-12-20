@@ -44,7 +44,7 @@ Retrieves information about legal documents for the specified API version.<!-- #
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -52,10 +52,10 @@ Retrieves information about legal documents for the specified API version.<!-- #
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded</pre>
 <p><strong>Sample request body</strong></p>

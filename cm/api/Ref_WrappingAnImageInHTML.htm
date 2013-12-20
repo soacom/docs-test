@@ -17,7 +17,7 @@ no-catalog: true
 frameborder="0" src="/resources/global/upload.html?dynamic=true"&gt;&lt;/iframe&gt;</pre>
 <p>This is a way of integrating the file upload controls in the UI and getting the response into JavaScript without changing the browser context.</p>
 <p>For example, the user interface  runs the addPicture operation like this, with <span class="apidoc_code">wrapInHTML</span> set to <strong>true</strong> and the document.domain value specified:</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->dropbox/pictures?wrapInHTML=true&amp;document.domain=open.soa.com</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->dropbox/pictures?wrapInHTML=true&amp;document.domain=&lt;hostname&gt;</pre>
 <p class="apidoc_note"><strong>Note</strong>: for information about the <strong>wrapInHTML</strong> parameter, see <a href="Ref_WrapInHTMLParameter.htm">The &quot;Wrap In HTML&quot; Parameter</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

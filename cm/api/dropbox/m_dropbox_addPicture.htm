@@ -40,7 +40,7 @@ Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Pro
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/dropbox/pictures</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/dropbox/pictures</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -48,10 +48,10 @@ Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Pro
 <p id="id_samplerequest">The example below shows a picture being uploaded. The image is part of the multipart request body. </p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using iframes, you can wrap the image in HTML so that it will work with the browser's same origin security policy. For more information, see <a href="../Ref_WrappingAnImageInHTML.htm">Wrapping an Image in HTML</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/dropbox/pictures HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the image which the user uploaded.</p>

@@ -46,7 +46,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/{APIID}/board</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/{APIID}/board</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -54,10 +54,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below a request for an API's Board items. The request is limited to the first 10 items relating to a specified user.</p>
 <p><strong>Request URL</strong> #1</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/api18969.open/board?start=0&amp;count=10&amp;RetrievingUserID=user12262.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.open/board?start=0&amp;count=10&amp;RetrievingUserID=user12262.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate</pre>
 <p><strong>Request URL</strong> #2</p>
 <p>Requests Board items of type <strong>Alert</strong> for the specified API.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/api200.open/board?start=0&amp;count=10&amp;RetrievingUserID=user10002.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate&amp;ItemType=Alert</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api200.open/board?start=0&amp;count=10&amp;RetrievingUserID=user10002.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate&amp;ItemType=Alert</pre>
 
 <p><strong>Sample request headers</strong></p>
 <pre>Accept:application/json</pre>
@@ -255,13 +255,13 @@ Content-Type: application/json</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://cdn.open.soa.com/api/users/user12262.open/avatar",
+          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "http://cdn.open.soa.com/api/users/user12262.open/avatar",
+        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-02-12T17:11:37.000Z",
@@ -316,13 +316,13 @@ Content-Type: application/json</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://cdn.open.soa.com/api/users/user12262.open/avatar",
+          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "http://cdn.open.soa.com/api/users/user12262.open/avatar",
+        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-02-12T17:11:37.000Z",
@@ -398,13 +398,13 @@ Content-Type: application/json</pre>
         "ID" : "user10002.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user10002.open/avatar",
+          "Url" : "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
           "Title" : "JaneMead",
           "Link" : "#/users/user10002.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user10002.open/avatar",
+        "Url" : "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
         "Link" : "../atmosphere#/user/user10002.open/details"
       },
       "CreatedDate" : "2013-02-20T20:19:15.518Z",
@@ -482,7 +482,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns2:Image&gt;
-          &lt;Url&gt;http://cdn.open.soa.com/api/users/user12262.open/avatar&lt;/Url&gt;
+          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns2:Image&gt;
@@ -503,7 +503,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:Image&gt;
-        &lt;Url&gt;http://cdn.open.soa.com/api/users/user12262.open/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns2:Image&gt;
     &lt;/item&gt;
@@ -527,7 +527,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns2:Image&gt;
-          &lt;Url&gt;http://cdn.open.soa.com/api/users/user12262.open/avatar&lt;/Url&gt;
+          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns2:Image&gt;
@@ -548,7 +548,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:Image&gt;
-        &lt;Url&gt;http://cdn.open.soa.com/api/users/user12262.open/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns2:Image&gt;
     &lt;/item&gt;

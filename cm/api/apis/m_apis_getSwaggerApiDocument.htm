@@ -50,7 +50,7 @@ Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/{ApiName}.{format}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/{ApiName}.{format}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -58,10 +58,10 @@ Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the documentation for the <strong>follows</strong> service.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->/follows.json</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->/follows.json</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->/validatePasswordResetCode.json HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -198,7 +198,7 @@ Content-Type: application/json</pre>
     } ],
     "path" : "/follows"
   } ],
-  "basePath" : "http://<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->open.soa.com<!-- #EndLibraryItem -->/api",
+  "basePath" : "http://<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->/api",
   "resourcePath" : "/follows",
   "swaggerVersion" : "1.1"
 }</pre>
@@ -267,7 +267,7 @@ Content-Type: text/xml</pre>
       &lt;path&gt;/follows&lt;/path&gt;
     &lt;/element&gt;
   &lt;/apis&gt;
-  &lt;basePath&gt;https://open.soa.com/api&lt;/basePath&gt;
+  &lt;basePath&gt;https://&lt;hostname&gt;/api&lt;/basePath&gt;
   &lt;resourcePath&gt;/follows&lt;/resourcePath&gt;
   &lt;swaggerVersion&gt;1.1&lt;/swaggerVersion&gt;
 &lt;/Any&gt;</pre>
@@ -326,7 +326,7 @@ Content-Type: text/xml</pre>
     <tr>
       <td>basePath</td>
       <td>String</td>
-      <td>The base path for the API information returned in the response. The base path is the same for all operations and services for the API; for example, <strong>https://open.soa.com/api</strong>.</td>
+      <td>The base path for the API information returned in the response. The base path is the same for all operations and services for the API; for example, <strong>https://&lt;hostname&gt;/api</strong>.</td>
     </tr>
     <tr>
       <td>resourcePath</td>

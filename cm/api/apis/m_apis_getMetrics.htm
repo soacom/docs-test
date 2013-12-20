@@ -46,7 +46,7 @@ Returns a set of metric information for the specified API version, in the form o
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -54,10 +54,10 @@ Returns a set of metric information for the specified API version, in the form o
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/apis/versions/apiversion18972.open/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion18972.open/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion18972.open/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>

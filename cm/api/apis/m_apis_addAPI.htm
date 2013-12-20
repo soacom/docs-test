@@ -41,17 +41,17 @@ Adds a new API to the platform, and also adds the first API version.<!-- #EndLib
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/apis</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below adds an API named <strong>ACMEPayments</strong>.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/apis HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body: JSON</strong></p>
@@ -67,13 +67,13 @@ Content-Type: application/json; charset=UTF-8</pre>
     "Endpoints":{
       "Endpoint":[
         {
-          "Uri":"http://acmepayments.open.soa.com/payment",
+          "Uri":"http://acmepayments.&lt;hostname&gt;/payment",
           "Category":"Production",
           "CName":"acmepayments.open.soa.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
         },
         {
-          "Uri":"http://acmepayments.open.soa.com/s/payment",
+          "Uri":"http://acmepayments.&lt;hostname&gt;/s/payment",
           "Category":"Sandbox",
           "CName":"acmepayments.open.soa.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
@@ -107,8 +107,8 @@ Content-Type: application/json; charset=UTF-8</pre>
       ]
     },
     "Type":"shttp",
-    "ProductionEndpoint":"http://acmepayments.open.soa.com/payment",
-    "SandboxEndpoint":"http://acmepayments.open.soa.com/s/payment",
+    "ProductionEndpoint":"http://acmepayments.&lt;hostname&gt;/payment",
+    "SandboxEndpoint":"http://acmepayments.&lt;hostname&gt;/s/payment",
     "Tag":[
       "payments"
     ],
@@ -199,7 +199,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     &lt;Tag&gt;payments&lt;/Tag&gt;
     &lt;Tag&gt;ACME&lt;/Tag&gt;
     &lt;Tag&gt;efficient&lt;/Tag&gt;
-    &lt;SandboxEndpoint&gt;http://www.open.soa.com/&lt;/SandboxEndpoint&gt;
+    &lt;SandboxEndpoint&gt;http://www.&lt;hostname&gt;/&lt;/SandboxEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
         &lt;Name&gt;addPayment&lt;/Name&gt;
@@ -225,8 +225,8 @@ Content-Type: application/json; charset=UTF-8</pre>
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://www.open.soa.com/&lt;/Uri&gt;
-        &lt;CName&gt;www.open.soa.com&lt;/CName&gt;
+        &lt;Uri&gt;http://www.&lt;hostname&gt;/&lt;/Uri&gt;
+        &lt;CName&gt;www.&lt;hostname&gt;&lt;/CName&gt;
         &lt;DeploymentZoneRule&gt;dzone-rule-2&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
@@ -369,8 +369,8 @@ Atmo-Renew-Token: renew</pre>
     "DefaultProfile" : "XML or JSON in/XML or JSON out",
     "Description" : "First release.",
     "Tag" : [ "payments" ],
-    "ProductionEndpoint" : "http://acmepayments.open.soa.com/payment",
-    "SandboxEndpoint" : "http://acmepayments.open.soa.com/s/payment",
+    "ProductionEndpoint" : "http://acmepayments.&lt;hostname&gt;/payment",
+    "SandboxEndpoint" : "http://acmepayments.&lt;hostname&gt;/s/payment",
     "Operations" : {
       "Operation" : [ {
         "Name" : "Default_Operation",
@@ -394,13 +394,13 @@ Atmo-Renew-Token: renew</pre>
       "Endpoint" : [ {
         "CName" : "acmepayments.open.soa.local",
         "Category" : "Production",
-        "Uri" : "http://acmepayments.open.soa.com/payment",
+        "Uri" : "http://acmepayments.&lt;hostname&gt;/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
         "ConnectionProperties" : [ ]
       }, {
         "CName" : "acmepayments.open.soa.local",
         "Category" : "Sandbox",
-        "Uri" : "http://acmepayments.open.soa.com/s/payment",
+        "Uri" : "http://acmepayments.&lt;hostname&gt;/s/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
         "ConnectionProperties" : [ ]
       } ]

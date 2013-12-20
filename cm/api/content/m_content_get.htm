@@ -46,7 +46,7 @@ Retrieves the requested content from the platform.<!-- #EndLibraryItem --></p>
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/{contentpath}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/{contentpath}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,13 +56,13 @@ Retrieves the requested content from the platform.<!-- #EndLibraryItem --></p>
 <p id="id_samplerequest">The example below shows a request for one of the online help documents on the platform.</p>
 <p><strong>Request URL</strong> #1</p>
 <p>Returns a page from the site help.</p>
-<pre>https://open.soa.com/content/home/learnmore/create_your_app.htm</pre>
+<pre>https://&lt;hostname&gt;/content/home/learnmore/create_your_app.htm</pre>
 <p><strong>Request URL</strong> #2</p>
 <p>Returns the index page from the API documentation for the specified API.</p>
 <pre>
-https://open.soa.com/#/api/api19427.open/versions/apiversion23609.open/documents/index.htm</pre><p><strong>Sample request headers</strong></p>
+https://&lt;hostname&gt;/#/api/api19427.open/versions/apiversion23609.open/documents/index.htm</pre><p><strong>Sample request headers</strong></p>
 <pre>GET / HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>

@@ -40,7 +40,7 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/apps/versions/{RuntimeID}/board[?ItemType={ItemType}][&amp;APIID={APIID}]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/versions/{RuntimeID}/board[?ItemType={ItemType}][&amp;APIID={APIID}]
 [&amp;TicketLabel={TicketLabel}][&amp;TicketState={TicketState}][&amp;ItemID={ItemID}][&amp;Tag={Tag}][&amp;IncludeComments={IncludeComments}]
 [&amp;NumberOfComments={NumberOfComments}][&amp;IncludeActions={IncludeActions}][&amp;start={start}][&amp;count={count}][&amp;SortBy={SortBy}]
 [&amp;RetrievingUserID={RetrievingUserID}]</pre>
@@ -50,10 +50,10 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the Board for a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://open.soa.com/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board HTTP/1.1
-Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->open.soa.com<!-- #EndLibraryItem -->
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -256,13 +256,13 @@ Content-Type: application/json</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-05-31T17:48:09.000Z",
@@ -319,13 +319,13 @@ Content-Type: application/json</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
         "Link" : "#/app/app16964.open"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
@@ -353,7 +353,7 @@ Content-Type: application/json</pre>
           "IsMarked" : false,
           "UserID" : "global.open",
           "UserName" : "Atmosphere",
-          "AvatarURL" : "https://open.soa.com/api/tenants/global.open/avatar"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/tenants/global.open/avatar"
         } ]
       },
       "EntityReferences" : {
@@ -446,7 +446,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -462,7 +462,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Actions&gt;
@@ -494,14 +494,14 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;global.open&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;Atmosphere&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://open.soa.com/api/tenants/global.open/avatar&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/tenants/global.open/avatar&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -537,7 +537,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
         &lt;Link&gt;#/app/app16964.open&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;

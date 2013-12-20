@@ -44,7 +44,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/txlogs/export[?Environment=Environment][&amp;StartDate=StartDate]
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/txlogs/export[?Environment=Environment][&amp;StartDate=StartDate]
 [&amp;EndDate=EndDate][&amp;TimeZone=TimeZone][&amp;Duration=Duration]</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -53,7 +53,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the usage logs for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.open/txlogs/export</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.open/txlogs/export</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -165,34 +165,34 @@ Date: Fri, 03 May 2013 15:26:22 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>Request Date Time,API,Method,URL,Client Host,"Response Time
 ( in milliseconds )",Result,Fault Message
-05/03/2013 08:25 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,324,Success,
-05/03/2013 08:19 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,73,Success,
-05/03/2013 08:19 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,86,Success,
-05/03/2013 08:18 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,70,Success,
-05/03/2013 08:18 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,84,Success,
-05/03/2013 08:17 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,71,Success,
-05/03/2013 08:17 AM,LoginAPI Service,renewToken,https://open.soa.com/api/login/renewToken,0.0.0.0,135,Success,
-05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,73,Success,
-05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,119,Success,
-05/03/2013 08:14 AM,LoginAPI Service,login,https://open.soa.com/api/login,10.2.20.2,2156,Success,
-05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,81,Success,
-05/03/2013 08:14 AM,LoginAPI Service,logout,https://open.soa.com/api/login/logout,0.0.0.0,124,Success,
-05/03/2013 08:13 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,101,Success,
-05/03/2013 08:13 AM,LoginAPI Service,renewToken,https://open.soa.com/api/login/renewToken,0.0.0.0,2293,Success,
-05/03/2013 08:05 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,744,Success,
-05/03/2013 08:00 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,571,Success,
-05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,94,Success,
-05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,130,Success,
-05/03/2013 07:59 AM,LoginAPI Service,login,https://open.soa.com/api/login,10.2.20.2,5687,Success,
-05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,73,Success,
-05/03/2013 07:59 AM,LoginAPI Service,renewToken,https://open.soa.com/api/login/renewToken,0.0.0.0,54,Success,
-05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://open.soa.com/api/login/domains,0.0.0.0,191,Success,
-05/03/2013 07:59 AM,LoginAPI Service,renewToken,https://open.soa.com/api/login/renewToken,0.0.0.0,339,Success,
-05/03/2013 07:40 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,936,Success,
-05/03/2013 07:35 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,387,Success,
-05/03/2013 07:15 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,70559,Success,
-05/03/2013 07:10 AM,LoginAPI Service,loginWithSSO,https://open.soa.com/api/login/loginWithSSO,0.0.0.0,1183,Success,
-05/03/2013 07:04 AM,LoginAPI Service,login,https://open.soa.com/api/login,10.1.20.78,3028,Success,</pre>
+05/03/2013 08:25 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,324,Success,
+05/03/2013 08:19 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,73,Success,
+05/03/2013 08:19 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,86,Success,
+05/03/2013 08:18 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,70,Success,
+05/03/2013 08:18 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,84,Success,
+05/03/2013 08:17 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,71,Success,
+05/03/2013 08:17 AM,LoginAPI Service,renewToken,https://&lt;hostname&gt;/api/login/renewToken,0.0.0.0,135,Success,
+05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,73,Success,
+05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,119,Success,
+05/03/2013 08:14 AM,LoginAPI Service,login,https://&lt;hostname&gt;/api/login,10.2.20.2,2156,Success,
+05/03/2013 08:14 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,81,Success,
+05/03/2013 08:14 AM,LoginAPI Service,logout,https://&lt;hostname&gt;/api/login/logout,0.0.0.0,124,Success,
+05/03/2013 08:13 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,101,Success,
+05/03/2013 08:13 AM,LoginAPI Service,renewToken,https://&lt;hostname&gt;/api/login/renewToken,0.0.0.0,2293,Success,
+05/03/2013 08:05 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,744,Success,
+05/03/2013 08:00 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,571,Success,
+05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,94,Success,
+05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,130,Success,
+05/03/2013 07:59 AM,LoginAPI Service,login,https://&lt;hostname&gt;/api/login,10.2.20.2,5687,Success,
+05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,73,Success,
+05/03/2013 07:59 AM,LoginAPI Service,renewToken,https://&lt;hostname&gt;/api/login/renewToken,0.0.0.0,54,Success,
+05/03/2013 07:59 AM,LoginAPI Service,getLoginDomains,https://&lt;hostname&gt;/api/login/domains,0.0.0.0,191,Success,
+05/03/2013 07:59 AM,LoginAPI Service,renewToken,https://&lt;hostname&gt;/api/login/renewToken,0.0.0.0,339,Success,
+05/03/2013 07:40 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,936,Success,
+05/03/2013 07:35 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,387,Success,
+05/03/2013 07:15 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,70559,Success,
+05/03/2013 07:10 AM,LoginAPI Service,loginWithSSO,https://&lt;hostname&gt;/api/login/loginWithSSO,0.0.0.0,1183,Success,
+05/03/2013 07:04 AM,LoginAPI Service,login,https://&lt;hostname&gt;/api/login,10.1.20.78,3028,Success,</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

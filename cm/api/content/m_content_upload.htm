@@ -49,7 +49,7 @@ Uploads a single file of existing content to the platform, or uploads a ZIP file
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/content/{path}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/content/{path}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -58,10 +58,10 @@ Uploads a single file of existing content to the platform, or uploads a ZIP file
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to upload a ZIP file of content for the specified API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/content/api/api19427.open/documents?unpack=true&amp;wrapInHTML=true</pre>
+<pre>https://&lt;hostname&gt;/content/api/api19427.open/documents?unpack=true&amp;wrapInHTML=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /content/api/api19427.open/documents?unpack=true&amp;wrapInHTML=true HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the ZIP file.</p>

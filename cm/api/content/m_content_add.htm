@@ -48,7 +48,7 @@ Adds a single file of new content to the platform, or adds a new directory. When
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/content/{path}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/content/{path}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,10 +57,10 @@ Adds a single file of new content to the platform, or adds a new directory. When
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below creates a new folder named <strong>assets</strong> with a file in it, named <strong>toc.apiversion20693.open.json</strong>, the <a href="../Ref_ManagingAPIDocumentationContent.htm">JSON table of contents file</a> for the new folder. The file contains a single pair of curly braces (encoded in the sample request body below).</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/content/api/api18969.open/documents/assets/toc.apiversion20693.open.json?body=%7B%7D</pre>
+<pre>https://&lt;hostname&gt;/content/api/api18969.open/documents/assets/toc.apiversion20693.open.json?body=%7B%7D</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /content/api/api18969.open/documents/assets/toc.apiversion20693.open.json HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>

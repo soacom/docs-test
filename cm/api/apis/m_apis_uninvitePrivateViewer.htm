@@ -44,7 +44,7 @@ Removes the connection between a <a href="../glossary_communityplatform.htm#view
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -52,10 +52,10 @@ Removes the connection between a <a href="../glossary_communityplatform.htm#view
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to remove the specified group's connection to the specified Private API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/versions/apiversion19184.open/viewers/group18691.open</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion19184.open/viewers/group18691.open</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>DELETE&nbsp;/api/apis/versions/apiversion19184.open/viewers/group18691.open HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: text/plain, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>

@@ -46,7 +46,7 @@ Updates the label associated with a ticket.<!-- #EndLibraryItem --></p>
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/tickets/{TicketID}/labels</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/tickets/{TicketID}/labels</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,10 +55,10 @@ Updates the label associated with a ticket.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to change the ticket label to medium priority, which shows up as a priority of <strong>Major</strong> in the user interface.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/tickets/ticket25687.open/labels</pre>
+<pre>https://&lt;hostname&gt;/api/tickets/ticket25687.open/labels</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /api/tickets/ticket25687.open/labels HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>

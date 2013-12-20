@@ -48,7 +48,7 @@ Returns information about the apps for which the user is on the app team, and op
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/{UserID}/apps[?IncludeVersions=boolean][&amp;start=int]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/apps[?IncludeVersions=boolean][&amp;start=int]
 [&amp;count=int][&amp;VersionCount=int]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -58,10 +58,10 @@ Returns information about the apps for which the user is on the app team, and op
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the apps associated with a specific user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->users/user13967.open/apps</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.open/apps</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/users/user13967.open/apps HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -183,7 +183,7 @@ Date: Fri, 17 May 2013 18:48:15 GMT</pre>
       "Rating" : 3.2,
       "Followers" : 3,
       "Image" : {
-        "Url" : "https://open.soa.com/api/apps/app16964.open/avatar"
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatar"
       },
       "EntityReference" : {
         "Title" : "PaaStime (2.0)",
@@ -222,7 +222,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;app16964.open&lt;/guid&gt;
       &lt;pubDate&gt;Tue, 30 Apr 2013 19:25:09 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apps/app16964.open/avatar&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatar&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime (2.0)&lt;/Title&gt;

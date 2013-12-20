@@ -39,7 +39,7 @@ Returns the specified API version.<!-- #EndLibraryItem --></p>
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">open.soa.com/api/apis/versions/{ApiVersionID}[?includeTargetAPI=boolean][&amp;includeOperations=boolean]
+<pre class="soaapidoc_endpoint">&lt;hostname&gt;/api/apis/versions/{ApiVersionID}[?includeTargetAPI=boolean][&amp;includeOperations=boolean]
 </pre>
 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -48,12 +48,12 @@ Returns the specified API version.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the API version object for apiversion18971.open.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre>https://open.soa.com/api/apis/versions/apiversion18971.open</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion18971.open</pre>
 <p><strong>Sample request URL #2</strong></p>
-<pre>https://open.soa.com/api/apis/versions/apiversion11793.open?includeTargetAPI=true&amp;includeOperations=true</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion11793.open?includeTargetAPI=true&amp;includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion18971.open HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>

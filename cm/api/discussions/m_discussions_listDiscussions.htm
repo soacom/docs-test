@@ -46,7 +46,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/discussions[?DiscussionSubjectID={DiscussionSubjectID}][&amp;ItemID={ItemID}][&amp;Tag={Tag}]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/discussions[?DiscussionSubjectID={DiscussionSubjectID}][&amp;ItemID={ItemID}][&amp;Tag={Tag}]
 [&amp;SortBy={SortBy}][&amp;IncludeComments={IncludeComments}][&amp;NumberOfComments={NumberOfComments}][&amp;count={count}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -56,7 +56,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the discussion items relating to a specific discussion about a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/discussions?DiscussionSubjectID=apiversion20693.open&amp;ItemID=discussion25796.open</pre>
+<pre>https://&lt;hostname&gt;/api/discussions?DiscussionSubjectID=apiversion20693.open&amp;ItemID=discussion25796.open</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -237,13 +237,13 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "http://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Url" : "http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
         "Link" : "../atmosphere#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-07-22T20:15:34.000Z",
@@ -311,7 +311,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       &lt;guid&gt;discussion25796.open&lt;/guid&gt;
       &lt;pubDate&gt;2013-07-22T20:15:34.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;http://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
         &lt;Link&gt;../atmosphere#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-07-22T20:15:34.000Z&lt;/ns4:CreatedDate&gt;
@@ -326,7 +326,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;http://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;

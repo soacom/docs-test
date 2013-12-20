@@ -46,7 +46,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/versions/{APIVersionID}/txlogs/{TransactionID}</pre><!-- InstanceEndEditable -->
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/txlogs/{TransactionID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -54,7 +54,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for a specific transaction record for a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->versions/apiversion400.open/txlogs/5e38b76e-b8b6-11e2-985a-a81e</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->versions/apiversion400.open/txlogs/5e38b76e-b8b6-11e2-985a-a81e</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -147,10 +147,10 @@ Date: Thu, 09 May 2013 15:48:47 GMT</pre>
   "RequestMessageSize" : 0,
   "ResponseMessageSize" : 224,
   "APIResponseTime" : "P0Y0M0DT0H0M0.000S",
-  "APIURL" : "https://open.soa.com/api/login/domains",
+  "APIURL" : "https://&lt;hostname&gt;/api/login/domains",
   "RequestMessage" : {
     "Message" : "EMPTY MESSAGE",
-    "TransportHeaders" : "GET&nbsp;/api/login/domains?_=1368110417837 HTTP/1.1\nHost: open.soa.com\nUser-Agent: 
+    "TransportHeaders" : "GET&nbsp;/api/login/domains?_=1368110417837 HTTP/1.1\nHost: &lt;hostname&gt;\nUser-Agent: 
 Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0\nAccept: application/json,text/javascript,*/*;q=0.01\n
 Accept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate\nCookie: __utma=120274954.1033981115.1360618092.136
 7978778.1368109070.82; __utmz=120274954.1360695664.4.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmc=120274954; __
@@ -162,7 +162,7 @@ TdNnSeKUMtE; AtmoAuthToken_devexchange=TokenID%3Dd8991b3c-b8b5-11e2-81b9-f5950bd
 r%3Aopen%3Auser10002%2CissueTime%3D1368110193739%2CexpirationTime%3D1368111993704%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
 user10002%252Eopen%2CUserName%3Dopen%2Csig%3DNoZbjkCblMuafFXGKlshF6t886SC1K9bl7XDStKBxkAaUNaHzUe3XaE1uwYnG2lL0_4Krk_scR3Mu
 6_ps4AqAYAsVVZuoRDfFwj5n3vVQrCys4f8cTr92HRWE9fU0HmZeNrL78sfJXeiC6lla8RMC4YE4yUVaZJAXOwXEZW_RWg\nConnection: keep-alive\
-nReferer: https://open.soa.com/atmosphere/\nX-Requested-With: XMLHttpRequest\n"
+nReferer: https://&lt;hostname&gt;/atmosphere/\nX-Requested-With: XMLHttpRequest\n"
   },
   "ResponseMessage" : {
     "Message" : "[ {\n  \"LoginDomainID\" : \"siteusers.open\",\n  \"FedmemberId\" : \"open\",\n  \"Title\" : \"open-users\",
@@ -193,10 +193,10 @@ Date: Thu, 09 May 2013 15:33:35 GMT</pre>
     &lt;ns2:RequestMessageSize&gt;0&lt;/ns2:RequestMessageSize&gt;
     &lt;ns2:ResponseMessageSize&gt;224&lt;/ns2:ResponseMessageSize&gt;
     &lt;ns2:APIResponseTime&gt;P0Y0M0DT0H0M0.000S&lt;/ns2:APIResponseTime&gt;
-    &lt;ns2:APIURL&gt;https://open.soa.com/api/login/domains&lt;/ns2:APIURL&gt;
+    &lt;ns2:APIURL&gt;https://&lt;hostname&gt;/api/login/domains&lt;/ns2:APIURL&gt;
     &lt;ns2:RequestMessage&gt;
         &lt;ns2:Message&gt;EMPTY MESSAGE&lt;/ns2:Message&gt;
-        &lt;ns2:TransportHeaders&gt;GET&nbsp;/api/login/domains?_=1368110417837 HTTP/1.1 Host: open.soa.com 
+        &lt;ns2:TransportHeaders&gt;GET&nbsp;/api/login/domains?_=1368110417837 HTTP/1.1 Host: &lt;hostname&gt; 
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
 Accept: application/json,text/javascript,*/*;q=0.01 Accept-Language: en-US,en;q=0.5 Accept-Encoding: gzip, 
 deflate Cookie: __utma=120274954.1033981115.1360618092.1367978778.1368109070.82; __utmz=120274954.1360695664.4.1.utmcsr=
@@ -209,7 +209,7 @@ CUserName%3Dopen%2Csig%3DGQIPSVgVrKf_5zhlJ_zsqlSwWVaY3z0MVFz_trMBwRnoa51hGWbZlzX
 Time%3D1368111993704%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser10002%252Eopen%2CUserName%3Dopen%2Csig%3DNoZbjkCblMuafFX
 GKlshF6t886SC1K9bl7XDStKBxkAaUNaHzUe3XaE1uwYnG2lL0_4Krk_scR3Mu6_ps4AqAYAsVVZuoRDfFwj5n3vVQrCys4f8cTr92HRWE9fU0HmZeNrL78sfJ
 XeiC6lla8RMC4YE4yUVaZJAXOwXEZW_RWg
-Connection: keep-alive Referer: https://open.soa.com/atmosphere/ X-Requested-With: XMLHttpRequest
+Connection: keep-alive Referer: https://&lt;hostname&gt;/atmosphere/ X-Requested-With: XMLHttpRequest
 &lt;/ns2:TransportHeaders&gt;
     &lt;/ns2:RequestMessage&gt;
     &lt;ns2:ResponseMessage&gt;

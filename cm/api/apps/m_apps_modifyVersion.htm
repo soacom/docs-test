@@ -43,18 +43,18 @@ Changes one or more values associated with an app version.<!-- #EndLibraryItem -
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/apps/versions/{RuntimeID}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/versions/{RuntimeID}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below modifies the name (version number) and tags of an app. The operation sends the new app version information in JSON format.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://open.soa.com/api/apps/versions/4asLaEWAR0S4eV9aMRJcGK9V.open </pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4asLaEWAR0S4eV9aMRJcGK9V.open </pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: text/plain
 Content-Type: application/json; charset=UTF-8
-Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->open.soa.com<!-- #EndLibraryItem --></pre>
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "Name":"1.01",

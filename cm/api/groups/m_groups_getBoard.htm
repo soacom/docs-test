@@ -46,7 +46,7 @@ Returns a list of Board items for the specified group.<!-- #EndLibraryItem --></
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/groups/{GroupID}/board</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/groups/{GroupID}/board</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,7 +55,7 @@ Returns a list of Board items for the specified group.<!-- #EndLibraryItem --></
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the Board of the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/groups/group19793.open/board</pre>
+<pre>https://&lt;hostname&gt;/api/groups/group19793.open/board</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -165,13 +165,13 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-06-12T19:59:54.000Z",
@@ -233,13 +233,13 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-06-12T19:53:24.000Z",
@@ -264,7 +264,7 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
           "IsMarked" : false,
           "UserID" : "user13967.open",
           "UserName" : "JonathanSwift",
-          "AvatarURL" : "https://open.soa.com/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
         }, {
           "CommentID" : "comment24507.open",
           "CommentSubjectID" : "discussion24489.open",
@@ -274,7 +274,7 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
           "IsMarked" : false,
           "UserID" : "user13967.open",
           "UserName" : "JonathanSwift",
-          "AvatarURL" : "https://open.soa.com/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
         } ]
       },
       "EntityReference" : {
@@ -306,13 +306,13 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
         "ID" : "user12262.open",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
         "Link" : "#/user/user12262.open/details"
       },
       "CreatedDate" : "2013-06-12T19:53:45.000Z",
@@ -394,7 +394,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -405,7 +405,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;group&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Actions&gt;
@@ -441,7 +441,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;user13967.open&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JonathanSwift&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://open.soa.com/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
         &lt;ns5:Comment&gt;
           &lt;ns5:CommentID&gt;comment24507.open&lt;/ns5:CommentID&gt;
@@ -452,14 +452,14 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;user13967.open&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JonathanSwift&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://open.soa.com/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -470,7 +470,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;group&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Actions&gt;
@@ -497,7 +497,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.open&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -523,7 +523,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;

@@ -25,7 +25,7 @@ no-catalog: true
   <li>Log in via the API, using your own email and password in the body of the operation instead of the placeholder values given below.
     <ul>
       <li>HTTP method: POST</li>
-      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem --></span>login</strong></li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>login</strong></li>
       <li>Accept header: <strong>application/json</strong></li>
       <li>Content-Type header: <strong>application/json</strong></li>
       <li>Request Body: <strong>{&quot;email&quot;:&quot;MyEmailAddress&quot;,&quot;password&quot;:&quot;MyPassword&quot;}</strong></li>
@@ -33,7 +33,7 @@ no-catalog: true
   <li>Add the app. In your API call, use the values below, modifying the URL path if needed, and filling your own values for name and description in the Request Body (URL encoding not needed):
     <ul>
           <li>HTTP method: POST</li>
-      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem --></span>apps</strong></li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>apps</strong></li>
       <li>Accept header: <strong>text/plain</strong></li>
       <li>Content-Type header: <strong>application/json</strong></li>
       <li>Request Body: <strong>{&quot;Name&quot;:&quot;MyAppName&quot;,&quot;Description&quot;:&quot;My App Description.&quot;}</strong></li>
@@ -42,7 +42,7 @@ no-catalog: true
   <li>Add the app version. In your API call, use the following, substituting the correct AppID in the URL and also in the request body:
     <ul>
       <li>HTTP method: POST</li>
-      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem --></span>apps/{AppID}/versions</strong></li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>apps/{AppID}/versions</strong></li>
       <li>Accept header: <strong>text/plain</strong></li>
       <li>Content-Type header: <strong>application/json</strong></li>
       <li>Request Body: <strong>{&quot;Name&quot;:&quot;xxx&quot;,&quot;Description&quot;:&quot;xxx.&quot;,&quot;Tag&quot;:[&quot;xxx&quot;,&quot;xxx&quot;],&quot;AppID&quot;:&quot;appxxx.open&quot;,&quot;InitialEnvironment&quot;:&quot;Sandbox&quot;,&quot;Visibility&quot;:&quot;xxx&quot;}</strong></li>

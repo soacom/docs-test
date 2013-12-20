@@ -45,17 +45,17 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/verifySignup</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/verifySignup</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request #1</h3>
 <p id="id_samplerequest">The example below shows a sample request when the user is signing up using Facebook credentials.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/users/verifySignup?signupCode=</pre>
+<pre>https://&lt;hostname&gt;/api/users/verifySignup?signupCode=</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/users/verifySignup HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
@@ -63,7 +63,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <h3 id="samplerequest_2">Sample Request #2</h3>
 <p>The sample request URL below shows this operation in action when the user is signing up in the platform, without using third-party credentials.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/users/verifySignup?signupCode=NJs0DoC
+<pre>https://&lt;hostname&gt;/api/users/verifySignup?signupCode=NJs0DoC
 6jQpqikI8KcQzg9qV2l48yAw3we5iFtgNKsGkpvsOpPmAaBcpKjFYkv5w</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/{UserID}/auzstatus</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/auzstatus</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,10 +56,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below queries whether the specified user is authorized to add an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->users/user13998.open/auzstatus?ResourceType=api&amp;Action=Add</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.open/auzstatus?ResourceType=api&amp;Action=Add</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/users/user13998.open/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>

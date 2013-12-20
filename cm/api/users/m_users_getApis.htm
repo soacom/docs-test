@@ -48,7 +48,7 @@ Returns information about the APIs that the specified user is connected to, eith
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/users/{UserID}/apis[?includeVersions=boolean][&amp;start=int]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/apis[?includeVersions=boolean][&amp;start=int]
 [&amp;count=int][&amp;VersionCount=int]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -58,7 +58,7 @@ Returns information about the APIs that the specified user is connected to, eith
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about APIs the specified user is associated with.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://open.soa.com/api/users/user10002.open/apis</pre>
+<pre>https://&lt;hostname&gt;/api/users/user10002.open/apis</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -182,7 +182,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 0.0,
       "Followers" : 0,
       "Image" : {
-        "Url" : "https://open.soa.com/api/apis/api12545.open/avatar"
+        "Url" : "https://&lt;hostname&gt;/api/apis/api12545.open/avatar"
       },
       "EntityReference" : {
         "Title" : "Facepond (1,0)",
@@ -210,7 +210,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 0.0,
       "Followers" : 2,
       "Image" : {
-        "Url" : "https://open.soa.com/api/apis/api13350.open/avatars/751757c08b084c7058acb2984cc1ac9c.png"
+        "Url" : "https://&lt;hostname&gt;/api/apis/api13350.open/avatars/751757c08b084c7058acb2984cc1ac9c.png"
       },
       "EntityReference" : {
         "Title" : "Reddit (v1)",
@@ -238,7 +238,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 5.0,
       "Followers" : 11,
       "Image" : {
-        "Url" : "https://open.soa.com/api/apis/api11135.open/avatars/751757c08b084c7058acb2984cc1ac9c.png"
+        "Url" : "https://&lt;hostname&gt;/api/apis/api11135.open/avatars/751757c08b084c7058acb2984cc1ac9c.png"
       },
       "EntityReference" : {
         "Title" : "Linkedin (1.0)",
@@ -277,7 +277,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api12545.open&lt;/guid&gt;
       &lt;pubDate&gt;Wed, 15 Aug 2012 23:47:25 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apis/api12545.open/avatar&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api12545.open/avatar&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Facepond (1,0)&lt;/Title&gt;
@@ -296,7 +296,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api13350.open&lt;/guid&gt;
       &lt;pubDate&gt;Wed, 19 Dec 2012 11:35:30 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apis/api13350.open/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api13350.open/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Reddit (v1)&lt;/Title&gt;
@@ -315,7 +315,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api11135.open&lt;/guid&gt;
       &lt;pubDate&gt;Sat, 20 Apr 2013 05:58:18 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/apis/api11135.open/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api11135.open/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Linkedin (1.0)&lt;/Title&gt;

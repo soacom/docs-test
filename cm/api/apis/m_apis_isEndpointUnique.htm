@@ -45,7 +45,7 @@ Checks whether the specified endpoint is unique.<!-- #EndLibraryItem --></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://open.soa.com/api/apis/isendpointunique?url={url}&amp;ApiVersionID={APIVersionID}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/isendpointunique?url={url}&amp;ApiVersionID={APIVersionID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -53,12 +53,12 @@ Checks whether the specified endpoint is unique.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">In the first sample URL below, the API is being added, so it doesn't yet have an APIVersionID. In the second example, the API is being edited, so the APIVersionID is included as a query parameter.</p>
 <p><strong>Request URL</strong> #1</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/isendpointunique?url=http%3A%2F%2Fakmepayments_api.broker.soa.com</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/isendpointunique?url=http%3A%2F%2Fakmepayments_api.broker.soa.com</pre>
 <p><strong>Request URL</strong> #2</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://open.soa.com/api/<!-- #EndLibraryItem -->apis/isendpointunique?url=http%3A%2F%2Fakmepayments_api.broker.soa.com&amp;ApiVersionID=apiversion19123.open</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/isendpointunique?url=http%3A%2F%2Fakmepayments_api.broker.soa.com&amp;ApiVersionID=apiversion19123.open</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/isendpointunique?url=http%3A%2F%2Fakmepayments_api.broker.soa.com%2Fa.com HTTP/1.1
-Host: open.soa.com
+Host: &lt;hostname&gt;
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>

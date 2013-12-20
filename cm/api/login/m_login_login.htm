@@ -40,17 +40,17 @@ Allows a registered user to log in, returning an authentication cookie that is u
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/login</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/login</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below sends the username and password for authentication of the user logging in.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://open.soa.com/api/login</pre>
+<pre>https://&lt;hostname&gt;/api/login</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/login HTTP/1.1
-Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->open.soa.com<!-- #EndLibraryItem -->
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
@@ -144,7 +144,7 @@ user10002%252Eopen%2CHasPendingAgreements%3Dtrue%2CUserName%3DJaneMead%2Csig%3Do
 KAnXu1UgPOHA0t31dIKw4TafxLNMmC-GFekkPhvNti4vUimqP-5e5gnf1H0bkLcXKQLT1131R6Cx9MX3ue9z6z-jmD6QesLRkWXwzRkBrb-wLerHn
 Blx_Tnr9p3g-SrPA7pPirmpADA",
   "userFDN": "user10002.open",
-  "avatarURL": "https://open.soa.com/api/users/user10002.open/avatar",
+  "avatarURL": "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
   "pendingNotifications": 0,
   "pendingAgreements": ["signupagrmtv2.open"]
 }</pre>

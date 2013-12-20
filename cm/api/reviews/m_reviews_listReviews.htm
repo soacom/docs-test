@@ -45,7 +45,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://open.soa.com/api/reviews[?ReviewSubjectID={ReviewSubjectID}]
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/reviews[?ReviewSubjectID={ReviewSubjectID}]
 [&amp;RetrievingUserID={RetrievingUserID}][&amp;ItemID={ItemID}]
 [&amp;ReviewAuthorID=ReviewAuthorID][&amp;Tag=Tag][&amp;SortBy=SortBy][&amp;IncludeComments=IncludeComments]
 [&amp;NumberOfComments=NumberOfComments][&amp;start=start][&amp;count=count]</pre>
@@ -57,12 +57,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL</strong> #1</p>
 <p>Returns all reviews.</p>
-<pre>https://open.soa.com/api/reviews
+<pre>https://&lt;hostname&gt;/api/reviews
 </pre>
 <p><strong>Request URL</strong> #2</p>
 <p>Returns all reviews written by the specified user.</p>
 <pre>
-https://open.soa.com/api/reviews?ReviewAuthorID=user23531.open</pre>
+https://&lt;hostname&gt;/api/reviews?ReviewAuthorID=user23531.open</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -221,13 +221,13 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         "ID" : "user23531.open",
         "Name" : "JenniferMeadows",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
           "Title" : "JenniferMeadows",
           "Link" : "#/users/user23531.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
         "Link" : "../atmosphere#/user/user23531.open/details"
       },
       "CreatedDate" : "2013-06-05T16:42:07.000Z",
@@ -270,13 +270,13 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         "ID" : "user23531.open",
         "Name" : "JenniferMeadows",
         "Image" : {
-          "Url" : "https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
           "Title" : "JenniferMeadows",
           "Link" : "#/users/user23531.open/details"
         }
       },
       "Image" : {
-        "Url" : "https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+        "Url" : "https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
         "Link" : "../atmosphere#/user/user23531.open/details"
       },
       "CreatedDate" : "2013-06-04T22:51:14.000Z",
@@ -326,7 +326,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
       &lt;guid&gt;review24109.open&lt;/guid&gt;
       &lt;pubDate&gt;2013-06-05T16:42:07.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
         &lt;Link&gt;../atmosphere#/user/user23531.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-06-05T16:42:07.000Z&lt;/ns4:CreatedDate&gt;
@@ -341,7 +341,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         &lt;ID&gt;user23531.open&lt;/ID&gt;
         &lt;Name&gt;JenniferMeadows&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
           &lt;Title&gt;JenniferMeadows&lt;/Title&gt;
           &lt;Link&gt;#/users/user23531.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -365,7 +365,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
       &lt;guid&gt;review24085.open&lt;/guid&gt;
       &lt;pubDate&gt;2013-06-04T22:51:14.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
         &lt;Link&gt;../atmosphere#/user/user23531.open/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-06-04T22:51:14.000Z&lt;/ns4:CreatedDate&gt;
@@ -380,7 +380,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         &lt;ID&gt;user23531.open&lt;/ID&gt;
         &lt;Name&gt;JenniferMeadows&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://open.soa.com/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.open/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
           &lt;Title&gt;JenniferMeadows&lt;/Title&gt;
           &lt;Link&gt;#/users/user23531.open/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
