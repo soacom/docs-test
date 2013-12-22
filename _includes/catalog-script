@@ -14,9 +14,9 @@
 			return (a.title.localeCompare(b.title));
 		}
 	});
-	function catalog()
+	function catalog(div)
     {
-        var ObjUl = $('<ul></ul>');
+        var ObjUl = $('<ul></ul>').hide();
         ObjUl.addClass("soa-ui-dc-content-catalog-items");
 
         for (i = 0; i < cat_pages.length; i++)
@@ -68,7 +68,11 @@
 
             ObjUl.append(Objli);
         }
-        $('.soa-ui-dc-content-catalog').append(ObjUl);
+        $(div).append(ObjUl);
     }
+    $(document).ready(function() {
+        catalog(".soa-ui-dc-content-catalog");
+        $(".soa-ui-dc-content-catalog").find("ul").show();
+    });
 </script>
 <!-- End catalog script -->

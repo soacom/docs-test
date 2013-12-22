@@ -5,7 +5,7 @@
   limit: the maximum number of entries to include in the list (0 means no limit)
 -->
 <script>
-  function prod_cat_col(prod, cat, limit)
+  function prod_cat_col(column, prod, cat, limit)
     {
         var pages = unsorted_pages_all.filter(function(a) {
           return (a.no_nav == '' && a.prod == prod && a.cat == cat);
@@ -28,7 +28,7 @@
           limit = pages.length;
         } 
 
-        var ObjUl = $('<ul></ul>');
+        var ObjUl = $('<ul></ul>').hide();
         ObjUl.addClass("soa-ui-dc-detail-column-items");
 
         for (i = 0; i < limit; i++)
@@ -86,7 +86,13 @@
         Obja.html("More");
         Objli.append(Obja);
         ObjUl.append(Objli);
-        $('.soa-ui-dc-detail-column').last().append(ObjUl);
+        $(column).last().append(ObjUl);
     }
+    $(document).ready(function() {
+        $(".soa-ui-dc-detail-column").each(function() {
+            var item = $(this);
+            prod_cat_col(this, item.data("prod"), item.data("cat"), item.data("limit"));
+        }).find("ul").show();
+    });
 </script>
 <!-- End homepage column script -->

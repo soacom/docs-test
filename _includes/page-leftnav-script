@@ -16,7 +16,7 @@
                 return (a.navtitle.localeCompare(b.navtitle));
             }
         });
-        var ObjUl = $('<ul></ul>');
+        var ObjUl = $('<ul></ul>').hide();
         ObjUl.addClass("soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner");
 
         for (i = 0; i < pages.length; i++)
@@ -54,5 +54,9 @@
         }
         $('.soa-ui-dc-container-main-left').append(ObjUl);
     }
+    $(document).ready(function() {
+        leftnav();
+        $(".soa-ui-dc-container-main-left").find("ul").show();
+    });
 </script>
 <!-- End left nav script -->
