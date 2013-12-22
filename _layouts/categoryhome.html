@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-	{% include header %}
+	<head>
+		{% include header %}
+		{% include unsorted-pages-prod-cat %}
+		{% include page-leftnav-script %}
+		{% include catalog-script %}
+	</head>
 	<body>
 		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
 			{% include logo %}
@@ -8,13 +13,13 @@
 			{% include prod-topnav %}
 		</div>
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
-			{% include prod-leftnav %}
+			{% include dynamic-page-leftnav %}
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
 					<h2 id="top">{{ page.title }}</h2>
 					{{ content }}
 					<div class = "divider1"></div>
-					{% include catalog %}
+					{% include dynamic-catalog %}
 				</div>
 				<!-- main content ends here -->
 			</div>
