@@ -14,9 +14,6 @@ nav-title: Getting Started with Scripts
   <p>Learn about the script creation process, using a Script Activity in a process, documentation,  and management tools.</p>
 
 
-
-
-
 <a href="script_management.htm" class="button secondary">Managing Scripts</a>
 
 <a href="http://docs.soa.com/ag/assets/index.html" class="button secondary">Policy Manager Scripting API</a>
@@ -58,11 +55,6 @@ nav-title: Getting Started with Scripts
 
 
 
-
-
-
-
-
   </ol>
 
 
@@ -83,6 +75,8 @@ nav-title: Getting Started with Scripts
   <li>You can create a QoS Script Policy and import an existing script.</li>
   <li> If there is a portion of a pre-defined script object you would like to utilize in your local script, you can import the script object and reference functions in the imported script. </li>
 </ul>
+
+<p><a href="#top">Back to top</a></p>
 <a name="add_script">
 <h3>Add Script</h3></a>
 <p>You add a script using the <strong>Add Script</strong> function on the Scripts Summary page. </p>
@@ -96,6 +90,7 @@ nav-title: Getting Started with Scripts
 
 <p>Now that you've added a script, let's investigate how to reference a script in the next section. </p>
 
+<p><a href="#top">Back to top</a></p>
 
 <a name="reference_script">
 <h3>Reference Script</h3></a>
@@ -105,6 +100,7 @@ nav-title: Getting Started with Scripts
 <p><img src="script_example.jpg" alt="" width="436" height="285"></p>
 <p>Figure. Example of Referencing a Script Function</p>
 
+<p><a href="#top">Back to top</a></p>
 <h3><a name="script_activity">Script Activity</a></h3>
 <p>The Script Activity provides the ability to execute a script at the point in the process the activity is connected. The script can be written in either JavaScript, Jython, or BeanShell. </p>
 <p>The Script Details Editor is organized into two separate areas, Imports and Source. The Source has a pull-down where you can select the script language. It also has a large source code editor text area. </p>
@@ -112,19 +108,18 @@ nav-title: Getting Started with Scripts
   <img src="script_activity_source_area.jpg" width="591" height="140"></p>
 <p>Figure. Script Activity Source Area</p>
 <p>Common functions that you may need to perform in your scripts can be saved in Script objects using the <strong>Add Script</strong> function in the <em>Scripts</em> section of each Organization in the Policy Manager Workbench. To make use of those common functions from the Script Activity the Script objects defining those functions must be imported. The Imports area is where those scripts are identified for import. The available scripts are listed in the Available Scripts tree. Any number of Scripts in that tree can be moved to the Imported Scripts list box. Only scripts that match the language type will be available for selection in the tree. The script does not return a value. </p>
-<p><br>
-  <br>
+</p>
   <img src="script_activity_imports_area.jpg" width="572" height="174"></p>
 <p>Figure. Script Activity Imports Area</p>
 <p>In the figure above the json2 Script from the Registry Scripts folder is imported. Any functions defined in json2 can be used within the Script Activity source code. </p>
 <p>If you are using scripts in a process, the following pre-defined variables are provided.  For more information refer to the Scripts API located in the \sm70\docs\scriptDocs folder of the Policy Manager 7.0 release folder. Click index.htm to launch the documentation: </p>
 <ul class="usingOrderedList">
-  <li> <strong>processContext</strong> – Provides functions for retrieving and changing information about the currently running process, such as the variables defined in the process and the authenticated subject(s) of the process. </li>
-  <li> <strong>systemLog</strong> – Provides logging functions to the container&rsquo;s log. The statements logged with this interface are mixed with the other system log statements. </li>
-  <li> <strong>auditLog</strong> – Provides logging functions to the process audit log. If auditing is enabled for the virtual service operation that is invoking the process statements logged using this variable log information will be inserted into the audited message log for the operation&rsquo;s execution. This can be found on the service&rsquo;s Monitoring tab in the Logs sub-tab. </li>
-  <li> <strong>alerter</strong> – Provides an interface for generating alerts that are displayed in on the Policy Manager alert pages. </li>
-  <li> <strong>recorder</strong> – Provides an interface for recording content in the Policy Manager usage log pages. </li>
-  <li> <strong>msgFactory</strong> – Providers functions for create message variables. A message variable cannot  simply be assigned content like a simple string or int variable. It must be initialized using one of the functions in the msgFactory. </li>
+  <li> <strong>processContext: </strong> Provides functions for retrieving and changing information about the currently running process, such as the variables defined in the process and the authenticated subject(s) of the process. </li>
+  <li> <strong>systemLog</strong>:  Provides logging functions to the container&rsquo;s log. The statements logged with this interface are mixed with the other system log statements. </li>
+  <li> <strong>auditLog: </strong> Provides logging functions to the process audit log. If auditing is enabled for the virtual service operation that is invoking the process statements logged using this variable log information will be inserted into the audited message log for the operation&rsquo;s execution. This can be found on the service&rsquo;s Monitoring tab in the Logs sub-tab. </li>
+  <li> <strong>alerter: </strong> Provides an interface for generating alerts that are displayed in on the Policy Manager alert pages. </li>
+  <li> <strong>recorder</strong>:  Provides an interface for recording content in the Policy Manager usage log pages. </li>
+  <li> <strong>msgFactory: </strong> Providers functions for create message variables. A message variable cannot  simply be assigned content like a simple string or int variable. It must be initialized using one of the functions in the msgFactory. </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 <a name="policy_manager_scripting_api">
