@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Community Manager 6.5.0 | Customizing the User Interface</title>
+<link href="document.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="documentation supportContent">
+<!-----
+layout: page
+title: Customizing the User Interface
+description: Customize the user interface to match your own branding.
+product: cm
+category: ref
+subcategory: 
+weight: 10
+type: page
+nav-title: Customizing the User Interface
+----->
+<h2 id="top">Community Manager 6.5.0: Customizing the User Interface</h2>
+<p>The Community Manager product is designed as a consumer-facing portal for our customers. In order to facilitate the need to customize the portal, SOA Software has provided a number of options to brand, extend and customize the user experience.</p>
+<p>This document provides information about the extensibility mechanisms built into the product.</p>
+
+<div class = "divider1"></div>
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+  <li><a href="#architecture">Architecture</a></li>
+  <li><a href="#branding">Branding</a></li>
+  <li><a href="#adding_and_exposing_static_content">Adding and Exposing Static Content</a></li>
+  <li><a href="#customization_architecture">Customization Architecture</a></li>
+  <li><a href="#adding_new_views_or_widgets">Adding New Views or Widgets</a></li>
+  <li><a href="#altering_existing_widgets">Altering Existing Widgets</a></li>
+  <li><a href="#altering_existing_widgets_legacy_framework">Altering Existing Widgets – Legacy Framework</a></li>
+  <li><a href="#editing_the_custom_dashboard">Editing the Custom Dashboard</a></li>
+  <li><a href="#internationalization">Internationalization</a></li>
+  <li><a href="#examples">Examples</a></li>
+  <li><a href="#appendix">Appendix</a></li>
+</ol>
+<div class = "divider1"></div>
+<a name="architecture"></a><h3>Architecture</h3>
+<p>The Community Manager product is comprised of a backend REST API that encapsulates the business logic and a content management system (CMS) that serves up the user interface. The user interface is built using CanJS and communicates using Ajax with the backend REST API. This document describes how to upload new or altered files into the CMS, allowing customers to customize the user experience with a great deal of flexibility.</p>
+<p>The diagram below illustrates the basic architecture:</p>
+
+<p class="apidoc_image_p"><img src="images/01_basic_architecture.png" alt="basic architecture" /></p>
+<p><a href="#top">Back to top</a></p>
+<a name="branding"></a><h3>Branding</h3>
+<p>Branding is done by modifying a dynamic stylesheet (LESS) provided by the system and uploading it into the CMS via the user interface. For more information, please refer to the documentation:</p>
+<p><a href="http://docs.soa.com/cm/learnmore/site_administration_config.htm" target="_blank">http://docs.soa.com/cm/learnmore/site_administration_config.htm</a></p>
+
+<p><a href="#top">Back to top</a></p>
+<a name="adding_and_exposing_static_content"></a><h3>Adding and Exposing Static Content</h3>
+<p>When customizing the UI, it is important to understand how static content from the CMS interacts with the overall application. The Community Manager UI is a CanJS MVC application that runs in the browser. It has pages (views) that present a variety of dynamic and static content to the user using client-side templates and JavaScript. It is not tightly coupled to the underlying CMS, but has specific pages that are designed to directly serve this static content.</p>
+<p>This allows the customer to seamlessly integrate static marketing content and documentation from more dynamic views, such as the DevConsole or Monitoring pages.</p>
+<p class="apidoc_image_p"><img src="images/02_content_diagram.png" alt="content diagram" /></p>
+<p>The default Community Manager theme incorporates static content in several landing areas within the site, namely:</p>
+<ol>
+<li>#/home/landing</li>
+<li>#/home/support</li>
+<li>#/api/*/versions/*/documents</li>
+</ol>
+<p>As a customer, you have the freedom to upload any content into the CMS to brand and customize the content. You also have the ability (mentioned later in this document), to add other views that incorporate static content.</p>
+<p>For more information, please refer to:</p>
+<p><a href="http://docs.soa.com/cm/learnmore/site_administration_config.htm#how_do_i_upload_content_to_the_platform" target="_blank">http://docs.soa.com/cm/learnmore/site_administration_config.htm#how_do_i_upload_content_to_the_platform</a></p>
+<p><a href="#top">Back to top</a></p>
+<a name="customization_architecture"></a><h3>Customization Architecture</h3>
+<p>The Community Manager UI is built using a javascript framework called CanJS. Modifying the user interface beyond basic branding and static content requires an understanding of CanJS principles and architecture. More info can be found at:</p>
+<p><a href="http://canjs.com" target="_blank">http://canjs.com/</a></p>
+<h4>CMS Deployment Package</h4>
+<p>All user interface artifacts are packaged into a zip file (with the root ‘/theme/default/’) and uploaded via the user interface using the file upload facility (typically Administration -&gt; Config -&gt; Resources -&gt; Resources). The file structure of the package is described in the diagram below:</p>
+<p class="apidoc_image_p"><img src="images/03_cms_deployment_package.png" alt="CMS deployment package" /></p>
+
+<p>Once uploaded, you should be able to refresh you browser and see you new views in the user interface. Depending on timing, you may also want to refresh your browser cache.</p>
+<p><strong>Note</strong>: the path ‘SOA/CM/extensions’ cannot be changed, neither can the names of the following files:</p>
+<ul>
+<li>metadata.json</li>
+<li>widget_factory.json</li>
+</ul>
+
+<h5>metadata.json</h5>
+<p>Metadata.json is a file that describes the layout of the pages and the corresponding URL for each page. For example, if you want to design a new page at the URL #/foo/bar, you would add an entry within the layoutStructure array in metadata.json as follows:</p>
+
+<pre>
+"layoutStructure": [{
+    "objType": "foo", 
+    "view": "bar",
+    "scriptResources": [
+      PATH TO OPTIONAL SCRIPT RESOURCES (e.g. CANJS)
+    ],
+    "layout":[
+      LIST OF WIDGETS
+    ]
+  }
+…
+]</pre>
+
+<p>Metadata.json can also be used to load other javascript files from the CMS as follows:</p>
+<pre>
+"scriptResources": [
+    LIST OF JAVASCRIPT FILES
+  ]</pre>
+
+<p>The ‘layout’ array in the metadata file describes the list of widgets that are used to build a particular page. For example, a page might have header, footer, left nav and content. Each of these is a widget.</p>
+<p class="apidoc_image_p"><img src="images/code_01.jpg" alt="layout array in metadata file" /></p>
+
+<!--<pre>{
+  "layoutStructure": [{
+    "objType": "foo", 
+    "view": "bar",
+    "scriptResources": [
+      PATH TO OPTIONAL SCRIPT RESOURCES (e.g. CANJS)        ],
+    "layout":[
+      {
+      "widgetInstance": "Main",
+      "widget": "widget.horiz.tiling",
+      "priority": "100"
+      },
+      {
+      "widgetInstance": "Header",
+      "widget": "widget.header",
+      "parentWidgetInstance": "Main",
+      "parent": "widget.horiz.tiling",
+      "priority": "1000"
+      },
+      {
+      "widgetInstance": "Content-Widest",
+      "widget": "widget.horiz.tiling",
+      "parentWidgetInstance": "Main",
+      "parent": "widget.horiz.tiling",
+      "priority": "2200"
+      },
+      {
+      "widgetInstance": "soa-control-cm-test-form-widget",
+      "widget": "widget.iconsole.adapter",
+      "parentWidgetInstance": "Content-Widest",
+      "parent": "widget.horiz.tiling",
+      "priority": "2201",
+      "properties":{
+        "widgetKey": WIDGETKEY
+      }
+      },
+      {
+      "widgetInstance": "Footer",
+      "widget": "widget.footer",
+      "parentWidgetInstance": "Main",
+      "parent": "widget.horiz.tiling",
+      "priority": "3000"
+      }
+    ]
+  }]
+}</pre>-->
+
+<h5>widget_factory.json</h5>
+<p>The widget factory JSON document describes the CanJS view corresponding to each widget in metadata.json.</p>
+<p class="apidoc_image_p"><img src="images/code_02.jpg" alt="CanJS view" /></p>
+
+<!--<pre>
+{
+  "WIDGETKEY": {
+    "widgets": [
+      {
+        "position": "html",
+        "view": PATH TO CANJS VIEW
+      }
+    ]
+  }
+} </pre>-->
+
+
+<p><a href="#top">Back to top</a></p>
+<a name="adding_new_views_or_widgets"></a><h3>Adding New Views or Widgets</h3>
+<p>In the event that branding alone is insufficient to achieve the desired customization a user could either:</p>
+<ol>
+<li>Add a new view or widget for a new page</li>
+<li>Replace the view or a widget entirely for a page</li>
+<li>Alter the existing view</li>
+</ol>
+<p>To add a new view or widget, the following process should be followed:</p>
+<ol>
+<li>Write the CanJS view, controller and optional model</li>
+<li>Modify the metadata.json and widget_factory.json files to add the new view, or to add a new widget to an existing view</li>
+<li>Create a zip file with the structure described in the previous section</li>
+<li>Upload the zip file into the CMS</li>
+</ol>
+<p>The process for replacing a view or widget is similar to creating a new one:</p>
+<ol>
+<li>Write the replacement CanJS view, controller and optional model</li>
+<li>Modify the metadata.json and widget_factory.json files, adding the replacement view with the same objType and view parameters as the existing view. This essentially overwrites the existing definition in the system</li>
+<li>Create a zip file with the structure described in the previous section</li>
+<li>Upload the zip file into the CMS</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+<a name="altering_existing_widgets"></a><h3>Altering Existing Widgets</h3>
+<p>A widget is made up of a CanJS view (EJS) and corresponding controller. Altering existing widgets in the product is not a common practice since any significant changes to the view (EJS) files typically means that you need to change the controller as well, but there might be some cases (e.g. adding a link) that justifies modifying the EJS file only.</p>
+<p>To modify the EJS file simply upload a new EJS file into the CMS to replace the existing file. For example, if the path of the EJS file is:</p>
+<pre>
+/resources/[VER]/SOA/CM/common/notifications/views/notifications.ejs</pre>
+
+<p>Then just add a new notifications.ejs file with the same path under theme/default in your CMS Deployment Package.</p>
+
+<p><a href="#top">Back to top</a></p>
+<a name="altering_existing_widgets_legacy_framework"></a><h3>Altering Existing Widgets – Legacy Framework</h3>
+<p>The Community Manager UI is evolving and still has some widgets rendered using legacy Handlebars and jQuery Templates. A classic example of this is the header widget, which often requires modification.</p>
+<p>To modify these templates, simply upload a new template file into the CMS to replace the existing file. For example, if the path of the template file is:</p>
+
+<pre>/resources/[VERSION]/widgets/HeaderWidget/header.tmpl.htm  </pre>
+<p>Then just add a new header.tmpl.htm file with the same path under theme/default in your CMS Deployment Package.</p>
+<p><a href="#top">Back to top</a></p>
+<a name="editing_the_custom_dashboard"></a><h3>Editing the Custom Dashboard</h3>
+<p>New in 6.5.0 is the custom dashboard available on #/home/customdashboard. This dashboard provides customers and their users with a way to create their own dashboard made up of a set of widgets – in a drag & drop way.</p>
+<p>The architecture is very similar to the architecture described in the previous sections, with the exception that the metadata.json file has been effectively replaced by the ability to select widgets and drag them to appropriate locations on the page:</p>
+
+<p class="apidoc_image_p"><img src="images/04_custom_dashboard.png" alt="custom dashboard" /></p>
+
+<p>The product ships with a set of prepackaged widgets, including:</p>
+<ul>
+<li>Top 5 APIs – a graph of the 5 APIs with the most traffic</li>
+<li>Notifications – a list of the users’ notifications</li>
+<li>Documents – static content stored in the CMS.</li>
+</ul>
+<p>The Documents widget is especially powerful because it allows customers to write any static content and present it to the users of the Community Manager product.</p>
+<p>In addition to the prepackaged widgets, custom widgets can be built and deployed in the same way as conventional widgets – with the exception of requiring a metadata.json file. To create a custom dashboard widget:</p>
+<ol>
+<li>Write the CanJS view, controller and optional model</li>
+<li>Modify the widget_factory.json files to add the new widget</li>
+<li>Create a zip file with the structure described in the previous section</li>
+<li>Upload the zip file into the CMS</li>
+</ol>
+<p>The widget_factory.json file will look like this:</p>
+<p class="apidoc_image_p"><img src="images/code_03.jpg" alt="widget_factory.json file" /></p>
+
+<!--<pre>{
+  "WIDGETKEY": {
+    "widgets": [
+      {
+        "position": "html",
+        "view": PATH TO CANJS VIEW
+      }
+    ],
+    widgetContexts: [
+      {
+        "context" : "customdashboard",
+        "label" : "label.Notifications"
+      }  
+    }
+}  
+}</pre>
+-->
+
+
+<p><a href="#top">Back to top</a></p>
+<a name="internationalization"></a><h3>Internationalization</h3>
+<p>There are two places in the product that drive internationalization:</p>
+<ul>
+<li>/theme/default/i18n/CustomApplicationResources_[LOCALE].properties</li>
+<li>/locales/custom_[LOCALE].json</li>
+</ul>
+<h4>CustomApplicationResources.properties</h4>
+<p>The CustomApplicationResources.properties files are artifacts of the old framework and contain only a limited set of predefined labels:</p>
+<pre>
+#com.soa.atmosphere.site.title=Your Developer Portal
+#com.soa.atmosphere.footer.legal=Read the legal agreements.
+#com.soa.atmosphere.footer.rights= &copy; Your Company. All rights reserved.</pre>
+
+<p><strong>Note</strong>: No additional values should be added to this file.</p>
+<h4>Custom.json</h4>
+<p>The product leverages the jsperanto framework for internationalization – see <a href="https://github.com/jpjoyal/jsperanto" target="_blank">https://github.com/jpjoyal/jsperanto</a> for more information. All i18n strings in EJS views and widget_factory are defined in these files. The file is as follows:</p>
+<pre>
+{
+  "errors": {},
+  "labels": {
+    "key": "value",
+    "key": "value"
+  },
+  "messages": {},
+  "validator": {
+  "errors": {}
+  }
+}</pre>
+<h5>Using Internationalization</h5>
+<p>All language-specific text in the user interface should be externalized in custom_[LOCALE].json files and accessed via the soa.framework wrapper that has been provided in the product. For example:</p>
+<ul>
+  <li>in EJS files:
+<pre>&lt;%=soa.framework.globalize("labels.key", replacements)%&gt;</pre>
+  </li>
+  <li>in JavaScript files:
+<pre>
+SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
+  </li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+<a name="examples"></a><h3>Examples</h3>
+<h4>Adding a New Static Content View</h4>
+<p>A common customization is adding new views in the product to support static content from the CMS. For example, a site may benefit from a ‘Showcases’ section that lists all the best Apps that have been built and provides links to them.</p>
+<p>The following metadata.json file shows how a "widget.document" widget can be added to a new view:</p>
+<p class="apidoc_image_p"><img src="images/code_04.jpg" alt="adding to a new view" /></p>
+
+<!--<pre>{
+  "layoutStructure": [{
+    "objType": "home", 
+    "view": "showcases",
+    "layout":[
+      {
+        "widgetInstance": "Main",
+        "widget": "widget.horiz.tiling",
+        "priority": "100"
+      },
+      {
+        "widgetInstance": "Header",
+        "widget": "widget.header",
+        "parentWidgetInstance": "Main",
+        "parent": "widget.horiz.tiling",
+        "priority": "1000"
+      },
+      {
+        "widgetInstance": "Content-Widest",
+        "widget": "widget.horiz.tiling",
+        "parentWidgetInstance": "Main",
+        "parent": "widget.horiz.tiling",
+        "priority": "2200"
+      },
+      {
+"widgetInstance": "Landing",
+"widget": "widget.document",         "parentWidgetInstance": "Content-Widest",     "parent": "widget.horiz.tiling",         "priority": "2202"         
+},
+      {
+        "widgetInstance": "Footer",
+        "widget": "widget.footer",
+        "parentWidgetInstance": "Main",
+        "parent": "widget.horiz.tiling",
+        "priority": "3000"
+      }
+    ]
+  }]
+}</pre>
+--><p><a href="#top">Back to top</a></p>
+<a name="appendix"></a><h3>Appendix</h3>
+<h4>Sample View</h4>
+<p>The following file is a very basic view template. These files are Mustache templates and are rendered by the controller, which is referenced at the top of the template as follows:</p>
+<pre>
+&lt;div id="soa-control-test-custom-form-container" 
+&lt;%= soa.framework.control("TEST.Home.Test.TestForm", this) %&gt;&gt;
+  Test Succeeded!
+&lt;/div&gt;</pre>
+<h4>Sample Controller</h4>
+<p>The following controller is just a tiny sample of the logic that is typically in a controller. Typically the controllers extend SOA.Console.BaseControl and there are two key functions, namely ‘display’ and ‘postDisplay’. Display is where the data is typically retrieved asynchronously for the form. Once the data is retrieved, a call is made to ‘SOA.Framework.Common.WidgetFactory.draw()’ to actually render the EJS template above.</p>
+<pre>
+steal("iconsole/SOA/console").then(function () {
+  can.getObject("TEST.Home.Test.TestForm", window, true);
+  TEST.Home.Test.TestForm = SOA.Console.BaseControl(
+  /* @Static */
+  {
+    "defaults" : {
+    }
+  },
+  /* @Prototype */
+  {
+    "display" : function () {
+      var thisControl = this;
+      var somethingDeferred = ..;
+      somethingDeferred.then(function () {
+        SOA.Framework.Common.WidgetFactory.draw("[WIDGETKEY]", {
+          "data" : [DATA TO BE PASSED TO THE FORM]
+        }, thisControl.element);
+        thisControl.postDisplay();
+      });
+    },
+    "postDisplay" : function () {
+  /* All the actions on the form that are done after redering */
+    }
+  });
+});</pre>
+<p><a href="#top">Back to top</a></p>
+
+
+
+</div>
+</body>
+</html>
