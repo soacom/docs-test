@@ -9,7 +9,6 @@ weight: 10
 type: page
 nav-title: Customizing the User Interface
 ---
-
 <h2 id="top">Community Manager 6.5.0: Customizing the User Interface</h2>
 <p>The Community Manager product is designed as a consumer-facing portal for our customers. In order to facilitate the need to customize the portal, SOA Software has provided a number of options to brand, extend and customize the user experience.</p>
 <p>This document provides information about the extensibility mechanisms built into the product.</p>
@@ -59,11 +58,11 @@ nav-title: Customizing the User Interface
 <p>The Community Manager UI is built using a javascript framework called CanJS. Modifying the user interface beyond basic branding and static content requires an understanding of CanJS principles and architecture. More info can be found at:</p>
 <p><a href="http://canjs.com" target="_blank">http://canjs.com/</a></p>
 <h4>CMS Deployment Package</h4>
-<p>All user interface artifacts are packaged into a zip file (with the root ‘/theme/default/’) and uploaded via the user interface using the file upload facility (typically Administration -&gt; Config -&gt; Resources -&gt; Resources). The file structure of the package is described in the diagram below:</p>
+<p>All user interface artifacts are packaged into a zip file (with the root "/theme/default/") and uploaded via the user interface using the file upload facility (typically Administration -&gt; Config -&gt; Resources -&gt; Resources). The file structure of the package is described in the diagram below:</p>
 <p class="apidoc_image_p"><img src="images/03_cms_deployment_package.png" alt="CMS deployment package" /></p>
 
 <p>Once uploaded, you should be able to refresh you browser and see you new views in the user interface. Depending on timing, you may also want to refresh your browser cache.</p>
-<p><strong>Note</strong>: the path ‘SOA/CM/extensions’ cannot be changed, neither can the names of the following files:</p>
+<p><strong>Note</strong>: the path "SOA/CM/extensions" cannot be changed, neither can the names of the following files:</p>
 <ul>
 <li>metadata.json</li>
 <li>widget_factory.json</li>
@@ -83,7 +82,7 @@ nav-title: Customizing the User Interface
       LIST OF WIDGETS
     ]
   }
-…
+...
 ]</pre>
 
 <p>Metadata.json can also be used to load other javascript files from the CMS as follows:</p>
@@ -92,29 +91,41 @@ nav-title: Customizing the User Interface
     LIST OF JAVASCRIPT FILES
   ]</pre>
 
-<p>The ‘layout’ array in the metadata file describes the list of widgets that are used to build a particular page. For example, a page might have header, footer, left nav and content. Each of these is a widget.</p>
-<p class="apidoc_image_p"><img src="images/code_01.jpg" alt="layout array in metadata file" /></p>
-
-<!--<pre>{
+<p>The "layout" array in the metadata file describes the list of widgets that are used to build a particular page. For example, a page might have header, footer, left nav and content. Each of these is a widget.</p>
+<!--<p class="apidoc_image_p"><img src="images/code_01.jpg" alt="layout array in metadata file" /></p>
+-->
+<pre>{
   "layoutStructure": [{
+// objType: describes the root url. Typically a resource in the system such as "api", "app", or "user".
     "objType": "foo", 
+// view: describes the specific view for the objType above. Typically something like "details" or "monitor".
     "view": "bar",
+// scriptResources: these are the JavaScript files that need to be loaded; typically the CanJS model and controller files.
     "scriptResources": [
       PATH TO OPTIONAL SCRIPT RESOURCES (e.g. CANJS)        ],
+// layout: an array of widgets with parent/child relationships.
     "layout":[
       {
+// widgetInstance: a unique widget instance name
       "widgetInstance": "Main",
+// widget: the name of the actual widget. In this specific case, &quot;widget.horiz.tiling&quot; is a REQUIRED parent widget describing a tile layout of all the other widgets on the page.
       "widget": "widget.horiz.tiling",
+// Priority: the order in which the widget is rendered within its parent
       "priority": "100"
       },
       {
+// The header widget is a predefined widget in the default theme and is drawn first
       "widgetInstance": "Header",
       "widget": "widget.header",
       "parentWidgetInstance": "Main",
+// Typically, the parent is going to be "widget.horiz.tiling"
       "parent": "widget.horiz.tiling",
       "priority": "1000"
       },
       {
+// Content-Widest is a widget that describes a full-page layout without left or right nav. (hence: widest). 
+// Other options are Content-Wide (to make room for either left or right nav) and Content (to make room for 
+// both left and right nav). These correspond to style element in the css, so you can change the size of the columns)
       "widgetInstance": "Content-Widest",
       "widget": "widget.horiz.tiling",
       "parentWidgetInstance": "Main",
@@ -123,15 +134,21 @@ nav-title: Customizing the User Interface
       },
       {
       "widgetInstance": "soa-control-cm-test-form-widget",
+// &quot;widget.iconsole.adapter&quot; is where you will put most of your customizations. It is the container for the actual 
+// HTML that will be rendered on the page within its parent. You can have multiple instances of this widget and 
+// they will be drawn according to priority within the parent widget.
       "widget": "widget.iconsole.adapter",
       "parentWidgetInstance": "Content-Widest",
       "parent": "widget.horiz.tiling",
       "priority": "2201",
+// &quot;properties&quot; are specific to a widget
       "properties":{
+// &quot;widgetKey&quot; references the widget in the widget_factory.json file described below. It is specific to the widget.iconsole.adapter
         "widgetKey": WIDGETKEY
       }
       },
       {
+// The footer widget is a predefined widget in the default theme and is drawn last
       "widgetInstance": "Footer",
       "widget": "widget.footer",
       "parentWidgetInstance": "Main",
@@ -140,23 +157,25 @@ nav-title: Customizing the User Interface
       }
     ]
   }]
-}</pre>-->
+}</pre>
 
 <h5>widget_factory.json</h5>
 <p>The widget factory JSON document describes the CanJS view corresponding to each widget in metadata.json.</p>
-<p class="apidoc_image_p"><img src="images/code_02.jpg" alt="CanJS view" /></p>
-
-<!--<pre>
+<!--<p class="apidoc_image_p"><img src="images/code_02.jpg" alt="CanJS view" /></p>
+-->
+<pre>
 {
+// The name of the object corresponds to the widgetKey for each of the "widget.iconsole.adapter" widgets in metadata.json.
   "WIDGETKEY": {
     "widgets": [
       {
         "position": "html",
+// view: provides the path to the EJS template for the view
         "view": PATH TO CANJS VIEW
       }
     ]
   }
-} </pre>-->
+} </pre>
 
 
 <p><a href="#top">Back to top</a></p>
@@ -207,7 +226,7 @@ nav-title: Customizing the User Interface
 <p>The product ships with a set of prepackaged widgets, including:</p>
 <ul>
 <li>Top 5 APIs – a graph of the 5 APIs with the most traffic</li>
-<li>Notifications – a list of the users’ notifications</li>
+<li>Notifications – a list of the user's notifications</li>
 <li>Documents – static content stored in the CMS.</li>
 </ul>
 <p>The Documents widget is especially powerful because it allows customers to write any static content and present it to the users of the Community Manager product.</p>
@@ -219,9 +238,9 @@ nav-title: Customizing the User Interface
 <li>Upload the zip file into the CMS</li>
 </ol>
 <p>The widget_factory.json file will look like this:</p>
-<p class="apidoc_image_p"><img src="images/code_03.jpg" alt="widget_factory.json file" /></p>
-
-<!--<pre>{
+<!--<p class="apidoc_image_p"><img src="images/code_03.jpg" alt="widget_factory.json file" /></p>
+-->
+<pre>{
   "WIDGETKEY": {
     "widgets": [
       {
@@ -232,14 +251,13 @@ nav-title: Customizing the User Interface
     widgetContexts: [
       {
         "context" : "customdashboard",
+            // widgetContext provide a list of the views where this widget is available. In this case, it is &quot;customdashboard&quot;.
+            // The label is the name of the widget that appears in the UI and it must be resolved to the right key via internationalization.
         "label" : "label.Notifications"
       }  
     }
 }  
 }</pre>
--->
-
-
 <p><a href="#top">Back to top</a></p>
 <a name="internationalization"></a><h3>Internationalization</h3>
 <p>There are two places in the product that drive internationalization:</p>
@@ -283,11 +301,11 @@ SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
 <p><a href="#top">Back to top</a></p>
 <a name="examples"></a><h3>Examples</h3>
 <h4>Adding a New Static Content View</h4>
-<p>A common customization is adding new views in the product to support static content from the CMS. For example, a site may benefit from a ‘Showcases’ section that lists all the best Apps that have been built and provides links to them.</p>
+<p>A common customization is adding new views in the product to support static content from the CMS. For example, a site may benefit from a "Showcases" section that lists all the best Apps that have been built and provides links to them.</p>
 <p>The following metadata.json file shows how a "widget.document" widget can be added to a new view:</p>
-<p class="apidoc_image_p"><img src="images/code_04.jpg" alt="adding to a new view" /></p>
-
-<!--<pre>{
+<!--<p class="apidoc_image_p"><img src="images/code_04.jpg" alt="adding to a new view" /></p>
+-->
+<pre>{
   "layoutStructure": [{
     "objType": "home", 
     "view": "showcases",
@@ -312,9 +330,14 @@ SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
         "priority": "2200"
       },
       {
-"widgetInstance": "Landing",
-"widget": "widget.document",         "parentWidgetInstance": "Content-Widest",     "parent": "widget.horiz.tiling",         "priority": "2202"         
-},
+        "widgetInstance": "Landing",
+            // &quot;widget.document&quot; is a standard widget that renders the index.htm file from the CMS system at the path corresponding to 
+            // the browser URL. For example, "#/home/showcases" will automatically load "/home/showcases/index.htm" from the CMS.
+        "widget": "widget.document",
+        "parentWidgetInstance": "Content-Widest",
+        "parent": "widget.horiz.tiling",
+        "priority": "2202"
+      },
       {
         "widgetInstance": "Footer",
         "widget": "widget.footer",
@@ -325,7 +348,7 @@ SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
     ]
   }]
 }</pre>
---><p><a href="#top">Back to top</a></p>
+<p><a href="#top">Back to top</a></p>
 <a name="appendix"></a><h3>Appendix</h3>
 <h4>Sample View</h4>
 <p>The following file is a very basic view template. These files are Mustache templates and are rendered by the controller, which is referenced at the top of the template as follows:</p>
@@ -335,7 +358,7 @@ SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
   Test Succeeded!
 &lt;/div&gt;</pre>
 <h4>Sample Controller</h4>
-<p>The following controller is just a tiny sample of the logic that is typically in a controller. Typically the controllers extend SOA.Console.BaseControl and there are two key functions, namely ‘display’ and ‘postDisplay’. Display is where the data is typically retrieved asynchronously for the form. Once the data is retrieved, a call is made to ‘SOA.Framework.Common.WidgetFactory.draw()’ to actually render the EJS template above.</p>
+<p>The following controller is just a tiny sample of the logic that is typically in a controller. Typically the controllers extend SOA.Console.BaseControl and there are two key functions, namely "display" and "postDisplay". Display is where the data is typically retrieved asynchronously for the form. Once the data is retrieved, a call is made to "SOA.Framework.Common.WidgetFactory.draw()" to actually render the EJS template above.</p>
 <pre>
 steal("iconsole/SOA/console").then(function () {
   can.getObject("TEST.Home.Test.TestForm", window, true);
@@ -364,3 +387,6 @@ steal("iconsole/SOA/console").then(function () {
 });</pre>
 <p><a href="#top">Back to top</a></p>
 
+
+
+</div>
