@@ -96,7 +96,7 @@ no-catalog: false
 <p>There might also be one or more URL parameters, or an additional part to the URL. For example, the following includes two URL parameters and an extended URL path: </p>
 <pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/{AppID}/members/{UserID}</pre>
 <p>Here is an example of the above: </p>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/app10017..open/members/user10021.open</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/app10017..acmecorp/members/user10021.acmecorp</pre>
 <p>In some cases there might be additional query parameters. These are appended after a question mark at the end of the URL. For example, the following operation, GET&nbsp;search, includes a query parameter for the search expression: </p>
 <pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/search?{q}={SearchExpression}</pre>
 <p>Here is an example of the above: </p>
@@ -308,24 +308,24 @@ If encoding was used to transfer the message safely, this value indicates the en
 </table>
 <p>Below is an example of an actual cookie request header sent by the <span class="apidoc_code">GET&nbsp;/api/legals/{DocumentID}</span> method. Line breaks have been added for display reasons.</p>
 <pre>Cookie:  JSESSIONID_pm60=bjbtphr06utk;
-AtmoApplicationAuthToken=Atmosphere%20realm%3Dhttp%3A//open%2Catmos
-phere_app_id%3Dapp-version10028%2C%20atmosphere_signature_method%3DNONE</pre>
+AtmoApplicationAuthToken=ACMECorp%20realm%3Dhttp%3A//open%2Catmos
+phere_app_id%3Dapp-version10028%2C%20acmecorp_signature_method%3DNONE</pre>
 <p>In the Cookie request header, individual cookies are separated by a semicolon. The above header includes two.</p>
 <p>Examples of the cookies specific to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> are shown below.</p>
 
 <p><strong>AtmoApplicationAuthToken</strong></p>
-<pre>AtmoApplicationAuthToken=Atmosphere%20realm%3Dhttp%3A//atmosphere
-%2Catmosphere_app_id%3Dapp-version10028%2C%20atmosphere_signature_method%3DNONE</pre>
+<pre>AtmoApplicationAuthToken=ACMECorp%20realm%3Dhttp%3A//acmecorp
+%2Cacmecorp_app_id%3Dapp-version10028%2C%20acmecorp_signature_method%3DNONE</pre>
 
 <p><strong>JSESSIONID_pm60</strong></p>
 <pre>JSESSIONID_pm60=bjbtphr06utk;</pre>
 
 <p><strong>AtmoAuthToken_&lt;tenant&gt;</strong></p>
 <p>In the example below, the tenant name is <strong>open</strong>.</p>
-<pre>AtmoAuthToken_open=claimed_id%3Durn%3Aatmosphere%3Auser%3Aopen%3Auser10010%2CissueTime%3D1340822348569%2C
-expirationTime%3D1340824148512%2CGroups%3D%5B%22group10009.open%22%7C%22group10116.open%22%5D%2CFollowings
-%3D%5B%22app10115.open%22%5D%2CUserFDN%3Duser10010.open%2CApis%3D%5B%22api210.open%22%5D%2CApps%3D%5B%22
-app10115.open%22%5D%2CUserName%3DJaneMead%2CApiVersions%3D%5B%22apiversion410.open%22%5D%2Csig%3Dr5VDNRL9aL
+<pre>AtmoAuthToken_open=claimed_id%3Durn%3Aacmecorp%3Auser%3Aacmecorp%3Auser10010%2CissueTime%3D1340822348569%2C
+expirationTime%3D1340824148512%2CGroups%3D%5B%22group10009.acmecorp%22%7C%22group10116.acmecorp%22%5D%2CFollowings
+%3D%5B%22app10115.acmecorp%22%5D%2CUserFDN%3Duser10010.acmecorp%2CApis%3D%5B%22api210.acmecorp%22%5D%2CApps%3D%5B%22
+app10115.acmecorp%22%5D%2CUserName%3DJaneMead%2CApiVersions%3D%5B%22apiversion410.acmecorp%22%5D%2Csig%3Dr5VDNRL9aL
 z3BUWjdjo80ZYIH0wuuBBbBpcxx_lVL6PRLUVObbDoDO-dkR_totez78sGe_lLs8EwM4DFhf9YPBniHx0MCKDg6Z6yz_R3EFyddso0vcqbjOy1M
 a6Yw-3DTfJH_tgLHfD_xkdBIjUY5Yq-q2JMoEviK6318ql-shI;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

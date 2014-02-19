@@ -96,36 +96,46 @@ nav-title: Customizing the User Interface
 -->
 <pre>{
   "layoutStructure": [{
-// objType: describes the root url. Typically a resource in the system such as "api", "app", or "user".
+              // objType: describes the root url. Typically a resource in the
+              // system such as "api", "app", or "user".
     "objType": "foo", 
-// view: describes the specific view for the objType above. Typically something like "details" or "monitor".
+              // view: describes the specific view for the objType above.
+              // Typically something like "details" or "monitor".
     "view": "bar",
-// scriptResources: these are the JavaScript files that need to be loaded; typically the CanJS model and controller files.
+              // scriptResources: these are the JavaScript files that need to
+              // be loaded; typically the CanJS model and controller files.
     "scriptResources": [
       PATH TO OPTIONAL SCRIPT RESOURCES (e.g. CANJS)        ],
-// layout: an array of widgets with parent/child relationships.
+              // layout: an array of widgets with parent/child relationships.
     "layout":[
       {
-// widgetInstance: a unique widget instance name
+              // widgetInstance: a unique widget instance name
       "widgetInstance": "Main",
-// widget: the name of the actual widget. In this specific case, &quot;widget.horiz.tiling&quot; is a REQUIRED parent widget describing a tile layout of all the other widgets on the page.
+              // widget: the name of the actual widget. In this specific case,
+              // &quot;widget.horiz.tiling&quot; is a REQUIRED parent widget describing 
+              // a tile layout of all the other widgets on the page.
       "widget": "widget.horiz.tiling",
-// Priority: the order in which the widget is rendered within its parent
+              // Priority: the order in which the widget is rendered within its
+              // parent.
       "priority": "100"
       },
       {
-// The header widget is a predefined widget in the default theme and is drawn first
+              // The header widget is a predefined widget in the default theme 
+              // and is drawn first
       "widgetInstance": "Header",
       "widget": "widget.header",
       "parentWidgetInstance": "Main",
-// Typically, the parent is going to be "widget.horiz.tiling"
+              // Typically, the parent is going to be "widget.horiz.tiling".
       "parent": "widget.horiz.tiling",
       "priority": "1000"
       },
       {
-// Content-Widest is a widget that describes a full-page layout without left or right nav. (hence: widest). 
-// Other options are Content-Wide (to make room for either left or right nav) and Content (to make room for 
-// both left and right nav). These correspond to style element in the css, so you can change the size of the columns)
+              // Content-Widest is a widget that describes a full-page layout 
+              // without left or right nav. (hence: widest). Other options are
+              // Content-Wide (to make room for either left or right nav) and
+              // Content (to make room for both left and right nav). These
+              // correspond to style element in the css, so you can change the
+              // size of the columns.
       "widgetInstance": "Content-Widest",
       "widget": "widget.horiz.tiling",
       "parentWidgetInstance": "Main",
@@ -134,21 +144,26 @@ nav-title: Customizing the User Interface
       },
       {
       "widgetInstance": "soa-control-cm-test-form-widget",
-// &quot;widget.iconsole.adapter&quot; is where you will put most of your customizations. It is the container for the actual 
-// HTML that will be rendered on the page within its parent. You can have multiple instances of this widget and 
-// they will be drawn according to priority within the parent widget.
+              // &quot;widget.iconsole.adapter&quot; is where you will put most of your
+              // customizations. It is the container for the actual HTML that
+              // will be rendered on the page within its parent. You can have
+              // multiple instances of this widget and they will be drawn
+              // according to priority within the parent widget.
       "widget": "widget.iconsole.adapter",
       "parentWidgetInstance": "Content-Widest",
       "parent": "widget.horiz.tiling",
       "priority": "2201",
-// &quot;properties&quot; are specific to a widget
+              // &quot;properties&quot; are specific to a widget.
       "properties":{
-// &quot;widgetKey&quot; references the widget in the widget_factory.json file described below. It is specific to the widget.iconsole.adapter
+              // &quot;widgetKey&quot; references the widget in the widget_factory.json
+              // file described below. It is specific to the
+              // widget.iconsole.adapter.
         "widgetKey": WIDGETKEY
       }
       },
       {
-// The footer widget is a predefined widget in the default theme and is drawn last
+              // The footer widget is a predefined widget in the default theme
+              // and is drawn last.
       "widgetInstance": "Footer",
       "widget": "widget.footer",
       "parentWidgetInstance": "Main",
@@ -165,12 +180,13 @@ nav-title: Customizing the User Interface
 -->
 <pre>
 {
-// The name of the object corresponds to the widgetKey for each of the "widget.iconsole.adapter" widgets in metadata.json.
+              // The name of the object corresponds to the widgetKey for each of
+              // the "widget.iconsole.adapter" widgets in metadata.json.
   "WIDGETKEY": {
     "widgets": [
       {
         "position": "html",
-// view: provides the path to the EJS template for the view
+             // view: provides the path to the EJS template for the view.
         "view": PATH TO CANJS VIEW
       }
     ]
@@ -251,8 +267,10 @@ nav-title: Customizing the User Interface
     widgetContexts: [
       {
         "context" : "customdashboard",
-            // widgetContext provide a list of the views where this widget is available. In this case, it is &quot;customdashboard&quot;.
-            // The label is the name of the widget that appears in the UI and it must be resolved to the right key via internationalization.
+              // widgetContext provide a list of the views where this widget is
+              // available. In this case, it is &quot;customdashboard&quot;. The label is
+              // the name of the widget that appears in the UI and it must be 
+              // resolved to the right key via internationalization.
         "label" : "label.Notifications"
       }  
     }
@@ -331,8 +349,10 @@ SOA.Framework.Common.I18N.globalize(key, replacements);</pre>
       },
       {
         "widgetInstance": "Landing",
-            // &quot;widget.document&quot; is a standard widget that renders the index.htm file from the CMS system at the path corresponding to 
-            // the browser URL. For example, "#/home/showcases" will automatically load "/home/showcases/index.htm" from the CMS.
+              // &quot;widget.document&quot; is a standard widget that renders the 
+              // index.htm file from the CMS system at the path corresponding
+              // to the browser URL. For example, "#/home/showcases" will
+              // automatically load "/home/showcases/index.htm" from the CMS.
         "widget": "widget.document",
         "parentWidgetInstance": "Content-Widest",
         "parent": "widget.horiz.tiling",
