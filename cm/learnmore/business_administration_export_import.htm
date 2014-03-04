@@ -170,9 +170,9 @@ migration.url.target.http\://apihost-target-env\:8900=DiscussionAPI</pre>
 <p> The migration properties file allows the user to map a set of ND container keys in the source environment to an alias to which multiple target environment ND containers are also mapped. This scenario allows the proxy APIs that are exported/imported to be imported into the appropriate ND containers in the target environment.</p>
 <p>The sample file below illustrates this scenario.</p>
 <pre>#With the properties below, source-env-container-key in the source environment 
-#is mapped to target-env-container-key in the target environment. All proxy services 
-#that were hosted in source-env-container-key in the export file will be hosted in 
-#target-env-container-key in the target environment.
+#is mapped to target-env-container-key in the target environment. All proxy 
+#services that were hosted in source-env-container-key in the export file will be 
+#hosted in target-env-container-key in the target environment.
 
 migration.container.source.source-env-container-key=acmebroker
 migration.container.target.target-env-container-key=acmebroker</pre>
