@@ -155,9 +155,10 @@ no-catalog: true
   <li><strong>JMS</strong>&#8212;If the target API endpoint is JMS, migration properties file allows mapping to the JNDI URL.</li>
 </ul>
 <p>The sample file below illustrates this scenario.</p>
-<pre>#With the properties below, all target APIs with an endpoint address of http://apihost-source-env:8900 
-#will be imported with a URL of http://apihost-target-env:8900, 
-#keeping the path portion the same in both environments.
+<pre>#With the properties below, all target APIs with an endpoint address of 
+#http://apihost-source-env:8900 will be imported with a URL of 
+#http://apihost-target-env:8900, keeping the path portion the same 
+#in both environments.
 
 migration.url.source.http\://apihost-source-env\:8900=DiscussionAPI
 migration.url.target.http\://apihost-target-env\:8900=DiscussionAPI</pre>
@@ -168,10 +169,10 @@ migration.url.target.http\://apihost-target-env\:8900=DiscussionAPI</pre>
 <p> It is also possible that the proxy API might be hosted in a different number of ND containers in the source environment versus the target environment. However, this is rare, because most users want to host the Proxy API in an ND cluster rather than hosting in multiple NDs.</p>
 <p> The migration properties file allows the user to map a set of ND container keys in the source environment to an alias to which multiple target environment ND containers are also mapped. This scenario allows the proxy APIs that are exported/imported to be imported into the appropriate ND containers in the target environment.</p>
 <p>The sample file below illustrates this scenario.</p>
-<pre>#With the properties below, source-env-container-key in the source environment is mapped to 
-#target-env-container-key in the target environment. All proxy services that were hosted in 
-#source-env-container-key in the export file will be hosted in target-env-container-key in the 
-#target environment.
+<pre>#With the properties below, source-env-container-key in the source environment 
+#is mapped to target-env-container-key in the target environment. All proxy services 
+#that were hosted in source-env-container-key in the export file will be hosted in 
+#target-env-container-key in the target environment.
 
 migration.container.source.source-env-container-key=acmebroker
 migration.container.target.target-env-container-key=acmebroker</pre>
