@@ -600,8 +600,8 @@ a6Yw-3DTfJH_tgLHfD_xkdBIjUY5Yq-q2JMoEviK6318ql-shI;</pre>
 <h3 id="derivingstatevalue">Determining the State Value of an App</h3>
 <p>To determine the state value of an app, check it against the following rules:</p>
 <ol>
-<li>If AppVersion has zero contracts, it is in <strong>Setup</strong> state.</li>
-<li>If AppVersion is in Sandbox state and one or more API contracts for the production environment are not yet fully approved, it is in <strong>Sandbox</strong> state.</li>
+<li>If the AppVersion has zero contracts, it is in <strong>Setup</strong> state.</li>
+<li>If the AppVersion is in Sandbox state and one or more API contracts for the production environment are not yet fully approved, it is in <strong>Sandbox</strong> state.</li>
 <li>If AppVersion has made contract requests for the production environment for all APIs that it has contracts with in the sandbox environment, and if all production contracts are in approved state,  AppVersion is in <strong>Approved</strong> state. </li>
 <li>If AppVersion is in the Production environment, AppVersion is in <strong>Live</strong> state.</li>
 </ol>
