@@ -1,23 +1,18 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-
-<title>Transformation Activity</title>
-<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
-<link href="../../style/base.css" rel="stylesheet" type="text/css" />
-<link href="../../style/document.css" rel="stylesheet" type="text/css" />
-
-
-</head>
-<body>
-<a name="top"></a>
-<div class="documentation supportContent">
-  <h2 name="top">Transformation Activity</h2>
+---
+layout: page
+title: DataPower Orchestration Policy Transformation Activity
+description: Functional overview of the DataPower Orchestration Policy Transformation Activity.
+product: ag
+category: learn
+weight:	5
+subcategory: Policies
+type: page
+nav-title: DataPower Orchestration Policy Transformation Activity
+--->
+  <h2 name="top">DataPower Orchestration Policy Transformation Activity</h2>
   <p>The &quot;Transformation Activity&quot; is a DataPower Orchestration Polilcy Activity that  allows you to modify a web service message using an XSLT (eXtensible Stylesheet Language Transformation) style sheet (for XML or SOAP messages) or WTX (WebSphere Transformation Extender) .dpa file (for Binary messages).</p>
- 
-  
+
+
 <a href="orch_policy_activities.htm" class="button secondary">DataPower Orchestration Policy Activities</a> <a href="using_orchestration_policy.htm" class="button secondary">Using DataPower Orchestration Policy</a>
 
 <a href="datapower_policies.htm" class="button secondary">DataPower Policies</a>
@@ -26,13 +21,13 @@
 
 
 
-  
+
   <p></p>
 
 
 
   <div class = "divider1"></div>
- 
+
 <h3>Configuration Options</h3>
 <p>The policy includes the following configuration options:</p>
 <p><strong>Name</strong></p>
@@ -40,7 +35,7 @@
 <p><strong>Algorithm(s)</strong></p>
 <p>A check-box that allows you to designate the variable of the input message you want to transform. You can specify the default message or user defined message.</p>
 <ul class="usingOrderedList">
-  
+
   <li><strong>XSLT</strong> - This filter type performs an XSLT transformation on an XML or SOAP message that is passing through the policy. For example, you can use XSLT to insert a SOAP security header or &nbsp;modify a message to strip out elements you do not want in the backend (e.g., credit card number).    The &quot;details&quot; link launches the &quot;Modify Transformation Activity (XSLT)&quot; screen where you can upload an XSLT file or insert an XSLT code snippet.</li>
   <li><strong>WTX</strong> - This filter type performs an XML to binary or binary to XML transformation on the message that is passing through the policy. It also supports IBM WebSphere MQ based services in the Policy Manager &quot;Management Console.&quot; This functionality requires that the <em>SOA Software Policy Manager WebSphere MQ Support</em> feature be installed. The &quot;details&quot; link launches the &quot;Modify Transformation Activity (WTX)&quot; screen where you can upload a .dpa file.</li>
 </ul>
@@ -64,6 +59,4 @@
   Figure. Modify Transformation Activity (WTX)</p>
 <p><a href="#top">Back to top</a></p>
 
-</div>
-</body>
-</html>
+<div class = "divider1"></div>
