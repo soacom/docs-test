@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<title>Getting Started API Developers</title>
+<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
+<link href="../../style/base.css" rel="stylesheet" type="text/css" />
+<link href="../../style/document.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+<a name="top"></a>
+<div class="documentation supportContent">
+  <h2 name="top">Auditing Activity</h2>
+  <p>The &quot;Auditing Activity&quot; is a DataPower Orchestration Polilcy Activity that allows you to record the message that you specified in the Invoke Service Activity. You assign a Name to the Auditing Activity, specify the message type (Message or User Defined) that you configured in the Invoke Service Activity, and the Variable of the message you want to audit from DataPower. You can view associated usage logs in the Policy Manager <em>Services &gt; Monitoring</em> section. </p>
+
+
+<a href="orch_policy_activities.htm" class="button secondary">DataPower Orchestration Policy Activities</a><a href="using_orchestration_policy.htm" class="button secondary">Using DataPower Orchestration Policy</a>
+
+<a href="datapower_policies.htm" class="button secondary">DataPower Policies</a>
+
+<a href="../policies/policy_management.htm" class="button secondary">Managing Policies</a>
+
+
+
+
+  <p></p>
+
+
+
+  <div class = "divider1"></div>
+
+<h3>Configuration Options</h3>
+<p>The policy includes the following configuration options:</p>
+<p><strong>Name</strong></p>
+<ul class="usingOrderedList">
+  <li>Allows you to enter a unique name for the Auditing Activity. Usage data associated with a service can be identified and viewed in the Usage Logs section of <em>Services &gt; Monitoring</em>.</li>
+</ul>
+<p><strong>Variable</strong></p>
+<p>A check-box that allows you to designate the variable of the message you want to audit from DataPower. You can specify the default message or user defined message.</p>
+<ul class="usingOrderedList">
+  <li><strong>Message</strong> - A predefined variable that stores the results of the message. </li>
+  <li><strong>User-Defined</strong> - A user defined variable that you defined in an Invoke Service Activity.</li>
+</ul>
+<p><strong>Label</strong></p>
+<ul class="usingOrderedList">
+  <li>Allows you to specify a name that serves as a filter for viewing usage logs in the Services &gt; Monitoring &gt; Usage Logs section of Policy Manager.</li>
+</ul>
+<p><img src="images/auditing_activity.jpg" width="580" height="168"><br>
+  <br>
+  Figure. Auditing Activity - Example with &quot;Incoming_Message&quot; label (DataPower Orchestration Policy)</p>
+<p><img src="images/auditing_activity_usage_data.jpg" width="623" height="236"></p>
+<p>Figure. Auditing Activity (Usage Data in <em>Services &gt; Monitoring &gt; Recorded Messages</em> for &quot;Incoming_Message&quot;)</p>
+<p><a href="#top">Back to top</a></p>
+</div>
+</body>
+</html>
