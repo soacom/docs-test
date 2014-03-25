@@ -56,7 +56,7 @@
           if (pages[i].nt) {
             Obja.html(pages[i].nt.replace("&amp;nbsp;", " "));
           } else {
-            Obja.html(pages[i].title.replace("&amp;nbsp;", " "));
+            Obja.html(pages[i].t.replace("&amp;nbsp;", " "));
           }
           Objli.append(Obja);
 
