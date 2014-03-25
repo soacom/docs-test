@@ -6,3 +6,5 @@ Gemfile
 Guardfile
 Gemfile.lock
 CNAME
+.vagrant
+.DS_Store
