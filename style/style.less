@@ -293,13 +293,16 @@ body {
 		padding: 2px;
 		&-input {
 			border: none;
-			height: 14px;
+			height: 21px;
 			width: 134px;
+			margin-bottom: 0;
+			padding-left: 5px;
 		}
 		&-container {
 			right: -4px;
 			position: absolute;
 			top: 81px;
+			z-index: 99;
 			.soa-ui-dc-homepage & {
 				top: 30px;
 			}
@@ -547,8 +550,12 @@ body {
 					color: #7d7e7f;
 					margin: 0;
 					padding: 0;
+					word-wrap: break-word;
 					&-selected {
 						font-weight: bold;
+						.soa-ui-dc-container-main-left-nav-inner{
+							display: block;
+						}
 					}
 					a&-link {
 						border-bottom: 1px solid #c6c5c6;
@@ -564,6 +571,9 @@ body {
 				&-inner {
 					border-bottom: 1px solid #c6c5c6;
 					//border-width: 1px 0;
+					font-weight: normal;
+					padding-left: 5px;
+					display: none;
 				}
 			}
 			
@@ -610,9 +620,8 @@ body {
 		position: absolute;
 		right: 0;
 		top: 29px;
-		z-index: 99;
 		&:before {
-			background-image: url(images/pointer.png);
+			background: url(images/pointer.png) no-repeat;
 			height: 10px;
 			left: auto;
 			right: 72px;
@@ -644,6 +653,9 @@ body {
 				font-size: 13px;
 				text-align: center;
 			}
+			.soa-ui-dc-content-header {
+			  display: none;
+			}
 		}
 		.soa-ui-dc-buttons {
 			position: absolute;
@@ -655,11 +667,15 @@ body {
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 		background: #333;
 		bottom: 0;
+		display: none;
 		left: 0;
 		opacity: .3;
 		position: fixed;
 		right: 0;
 		top: 0;
 		z-index: 98;
+		&-visible {
+			display: block;
+		}
 	}
 }
