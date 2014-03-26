@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Using the Dynamic User-Defined DataPower Policy
+title: Using the Dynamic User-Defined DataPower Policy (Non-Pipeline)
 description: Learn how to configure DataPower processing rules that can be referenced by the pipeline version of the Dynamic User-Defined DataPower Policy.
 product: ag
 category: learn
 weight:	10
 subcategory: Policies
 type: page
-nav-title: Using the Dynamic User-Defined DataPower Policy
+nav-title: Using the Dynamic User-Defined DataPower Policy (Non-Pipeline)
 ---
-  <h2 name="top">Using the Dynamic User-Defined DataPower Policy</h2>
+  <h2 name="top">Using the Dynamic User-Defined DataPower Policy (Non-Pipeline)</h2>
   <p>Learn how to configure DataPower processing rules that can be referenced by the pipeline version of the Dynamic User-Defined DataPower Policy.</p>
 
  <a href="datapower_policies.htm" class="button secondary">DataPower Policies</a>
@@ -31,11 +31,6 @@ nav-title: Using the Dynamic User-Defined DataPower Policy
   </ol>
   <div class = "divider1"></div><p></p>
 
-
-
-
-
-
 <a name="introduction">
 <h3>Introduction</h3></a>
 
@@ -49,11 +44,11 @@ nav-title: Using the Dynamic User-Defined DataPower Policy
 <p><a href="#top">Back to top</a></p>
 
 <a name="using_contexts">
-<h3>Using Contexts with User Defined DataPower Policy</h3>
+<h3>Using Contexts with User Defined DataPower Policy</h3></a>
 <p>When enforcing the User-Defined DataPower Policy Component, DataPower will call out to a user defined processing rule previously defined as a &quot;Processing Rule&quot; object in the DataPower domain being governed. This rule will perform an important user-defined function such as security processing or transformation.
-  <p>When authoring this rule, the proper use of DataPower contexts is critical to the functioning of the rule and the larger service.</p>
+<p>When authoring this rule, the proper use of DataPower contexts is critical to the functioning of the rule and the larger service.</p>
   <p>The following lists the key points that should be followed for the proper use of contexts.</p>
-</a>
+
 <ul class="usingOrderedList">
   <li>If actions in the user defined processing rule need to read the current request or response message, their input context should be set to &lsquo;INPUT&rsquo;.</li>
   <li>The &lsquo;INPUT&rsquo; context within the user defined processing rule contains the request or response message as it has been modified over the course of DataPower processing up to the invocation of the user defined rule. It does not contain the original message as received by DataPower.</li>
@@ -87,9 +82,8 @@ nav-title: Using the Dynamic User-Defined DataPower Policy
   <li><strong>Execution Order</strong> - A field display that allows you to enter a number that represents the execution order of the DataPower &quot;Processing Rule.&quot;</li>
   <li><strong>Delete</strong> - A button that deletes a single row.</li></ul>
 <h5>Step 4: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service  or you can attach the policy at the Organization level and the policy will be active for all services defined within the orgnization. </p>
-<p><img src="attach_ws_schema_validation_policy.jpg" width="513" height="221"></p>
+<p>After you have saved your policy you must attach <em>both</em> the Dynamic User-Defined DataPower Policy Component and the Dynamic User-Defined DataPower  Policy that contains the User-Defined Category you referenced to  specific web service   or at the Organization level and the policy will be active for all services defined within the orgnization. The non-pipeline policy should be attached first as follows:</p>
+<p><img src="images/dynam_userdefined_dp_component_pipeline_attach.jpg" width="660" height="275" /></p>
 
 <p><a href="#top">Back to top</a></p>
 
-<div class = "divider1"></div>
