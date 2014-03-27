@@ -19,13 +19,6 @@
 document {
   height: 100%;
 }
-body {
-  background: url(images/background-sliver.png) repeat-x;
-  height: 100%;
-}
-body.soa-ui-dc-homepage {
-  background-image: url(images/header-BG-sliver-home.png);
-}
 .soa-ui-dc- {
   /***** icons, image replacement ****/
   /**** scaffolding *****/
@@ -196,38 +189,50 @@ body.soa-ui-dc-homepage {
 .soa-ui-dc-homepage .soa-ui-dc-container-top {
   height: 102px;
 }
+.soa-ui-dc-container-main {
+  margin-bottom: 30px;
+}
 .soa-ui-dc-container-main-left,
 .soa-ui-dc-container-main-content {
   float: left;
 }
 .soa-ui-dc-container-main-left {
   padding-right: 23px;
-  width: 175px;
+  width: 205px;
 }
 .soa-ui-dc-container-main-content {
   width: 571px;
 }
-.soa-ui-dc-logo {
-  background: url(images/SOAlogo.png);
-  height: 40px;
-  width: 149px;
+.soa-ui-dc-top-bar-wrapper {
+  background: #F8F8F8;
+  border-bottom: 1px solid #252525;
+  margin-bottom: 40px;
 }
-h2.soa-ui-dc-logo-container {
-  background: transparent;
-  left: 0;
-  padding: 0;
-  position: absolute;
-  top: 19px;
+.soa-ui-dc-top-bar-wrapper .top-bar {
+  position: relative;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  min-height: 90px;
+}
+.soa-ui-dc-logo {
+  float: left;
 }
 .soa-ui-dc-topnav {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+.soa-ui-dc-topnav-wrapper {
+  position: absolute;
+  width: 640px;
+  top: 0;
+  margin-left: 140px;
+}
 .soa-ui-dc-topnav-container {
   left: 196px;
   position: absolute;
-  top: 24px;
+  top: 13px;
 }
 .soa-ui-dc-topnav-item {
   float: left;
@@ -237,8 +242,13 @@ h2.soa-ui-dc-logo-container {
 .soa-ui-dc-topnav-item:first-child {
   padding: 0;
 }
-.soa-ui-dc-topnav-item-active {
-  background: url(images/DC-nav-active.png) no-repeat bottom center;
+.soa-ui-dc-topnav-item-active:after {
+  content: "";
+  position: absolute;
+  top: 39px;
+  margin-left: 40px;
+  border-left: 1px solid grey;
+  height: 12px;
 }
 .soa-ui-dc-topnav-item-link {
   display: block;
@@ -308,14 +318,18 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   color: #2683b4;
 }
 .soa-ui-dc-subnav-container {
-  left: 223px;
+  left: 215px;
   position: absolute;
-  top: 85px;
+  border-top: 1px solid grey;
+  padding-top: 4px;
+  top: 63px;
+  padding-left: 26px;
 }
 .soa-ui-dc-topsearch {
   background: #fff;
   border-radius: 3px;
   padding: 2px;
+  border: 1px solid grey;
 }
 .soa-ui-dc-topsearch-input {
   border: none;
@@ -325,24 +339,21 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   padding-left: 5px;
 }
 .soa-ui-dc-topsearch-container {
-  right: -4px;
   position: absolute;
-  top: 81px;
+  right: 0;
+  margin-top: 12px;
   z-index: 99;
-}
-.soa-ui-dc-homepage .soa-ui-dc-topsearch-container {
-  top: 30px;
 }
 .soa-ui-dc-topsearch-button,
 .soa-ui-dc-topsearch-button:hover,
 .soa-ui-dc-topsearch-button:active {
-  background: #2683b4 url(images/DC-Sprites_icons.png) center -251px;
+  width: 25px;
+  height: 25px;
+  background: #2683b4 url(images/DC-Sprites_icons.png) center -247px;
   border-radius: 3px;
   box-shadow: none;
   display: inline-block;
-  height: 16px;
   margin: 0;
-  width: 16px;
 }
 .soa-ui-dc-content-header {
   background: none;
@@ -700,4 +711,12 @@ a.soa-ui-dc-container-main-left-nav-item-link {
 }
 .soa-ui-dc-overlay-visible {
   display: block;
+}
+pre {
+  padding: 10px 20px !important;
+  margin: 10px 0 !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.07) inset;
+}
+code {
+  white-space: normal;
 }
