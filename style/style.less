@@ -20,13 +20,6 @@
 document {
 	height: 100%;
 }
-body {
-	background: url(images/background-sliver.png) repeat-x;
-	height: 100%;
-	&.soa-ui-dc-homepage {
-		background-image: url(images/header-BG-sliver-home.png);
-	}
-}
 .soa-ui-dc- {
 	&clearthis:after {
 		content: ".";
@@ -174,12 +167,13 @@ body {
 			}
 		}
 		&-main {
+			margin-bottom: 30px;
 			&-left, &-content {
 				float: left;
 			}
 			&-left {
 				padding-right: 23px;
-				width: 175px;
+				width: 205px;
 			}
 			&-content {
 				width: 571px;
@@ -187,26 +181,35 @@ body {
 		}
 	}
 	/****** top area *****/
-	&logo {
-		background: url(images/SOAlogo.png);
-		height: 40px;
-		width: 149px;
-		h2&-container {
-			background: transparent;
-			left: 0;
-			padding: 0;
-			position: absolute;
-			top: 19px;
+	&top-bar-wrapper{
+		background: #F8F8F8;
+		border-bottom: 1px solid #252525;
+		margin-bottom: 40px;
+		.top-bar{
+			position: relative;
+			max-width: 1050px;
+			margin: 0 auto;
+			padding-bottom: 15px;
+			min-height: 90px;
 		}
+	}
+	&logo {
+		float: left;
 	}
 	&topnav {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		&-wrapper {
+		    position: absolute;
+		    width: 640px;
+		    top: 0;
+		    margin-left: 140px;
+		}
 		&-container {
 			left: 196px;
 			position: absolute;
-			top: 24px;
+			top: 13px;
 		}
 		&-item {
 			float: left;
@@ -215,8 +218,13 @@ body {
 			&:first-child {
 				padding: 0;
 			}
-			&-active {
-				background: url(images/DC-nav-active.png) no-repeat bottom center;
+			&-active:after {
+				content: ""; 
+				position: absolute;
+				top: 39px;
+				margin-left: 40px;
+				border-left: 1px solid grey;
+				height: 12px;
 			}
 			&-link {
 				display: block;
@@ -282,15 +290,19 @@ body {
 			}
 		}
 		&-container {
-			left: 223px;
+			left: 215px;
 			position: absolute;
-			top: 85px;
+			border-top: 1px solid grey;
+		    padding-top: 4px;
+		    top: 63px;
+		    padding-left: 26px;
 		}
 	}
 	&topsearch {
 		background: #fff;
 		border-radius: 3px;
 		padding: 2px;
+		border: 1px solid grey;
 		&-input {
 			border: none;
 			height: 21px;
@@ -299,22 +311,19 @@ body {
 			padding-left: 5px;
 		}
 		&-container {
-			right: -4px;
 			position: absolute;
-			top: 81px;
+			right: 0;
+			margin-top: 12px;
 			z-index: 99;
-			.soa-ui-dc-homepage & {
-				top: 30px;
-			}
 		}
 		&-button, &-button:hover, &-button:active {
-			background: #2683b4 url(images/DC-Sprites_icons.png) center -251px;
+			width: 25px;
+			height: 25px;
+			background: #2683b4 url(images/DC-Sprites_icons.png) center -247px;
 			border-radius: 3px;
 			box-shadow: none;
 			display: inline-block;
-			height: 16px;
 			margin: 0;
-			width: 16px;
 		}
 	}
 	/****** content area ******/
@@ -678,4 +687,13 @@ body {
 			display: block;
 		}
 	}
+}
+
+pre {
+    padding: 10px 20px !important;
+    margin: 10px 0 !important;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.07) inset;
+}
+code {
+	white-space: normal;
 }
