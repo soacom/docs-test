@@ -64,9 +64,11 @@ no-catalog: true
 
 <h5 style="color: gray;">Configuration:</h5>
 <ol class="table_of_contents">
-  <li><a href="#how_do_i_configure_api_settings">How do I configure API settings?</a></li>
-  <li><a href="#how_do_i_configure_app_settings">How do I configure app settings?</a></li>
-  <li><a href="#how_do_i_configure_group_settings">How do I configure group settings?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_apis">How do I configure settings for APIs?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_apps">How do I configure settings for apps?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_connections">How do I configure settings for app/API connections?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_groups">How do I configure settings for groups?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_tickets">How do I configure settings for tickets?</a></li>
 </ol>
 
 
@@ -365,13 +367,13 @@ no-catalog: true
 
 
 <a name="what_is_a_target_host"></a><h3>What is a Target Host?</h3>
-<p>Site Administrators can specify different URLs for logging into the platform based on roles (Administrator, Developer, User, etc.), or for a Backdoor Login if one of your domain configurations is down. This is accomplished by specifying a virtual host address for each login domain referred to as a <em>Target Host</em> (e.g., &lt;role&gt;.&lt;company&gt;.com).</p>
+<p>Site Administrators can specify different URLs for logging into the platform based on role (Business Admin, API Admin, Developer, and so forth), or for a Backdoor Login if one of the domain configurations is down. This is accomplished by specifying a virtual host address for each login domain referred to as a <em>Target Host</em> (e.g., &lt;role&gt;.&lt;company&gt;.com).</p>
 <p>The recommended approach is to develop a login plan for each role that covers different types of login scenarios.</p>
+<p>For example, if your site uses CA SiteMinder exclusively for logins, and the CA SiteMinder login is down for some reason, you will need a backdoor login to investigate the problem. To provide a resolution for this scenario, here are two possible approaches:</p>
 <ul>
-  <li>For example, if your site uses CA SiteMinder exclusively for logins, and the CA SiteMinder login is down for some reason, you will need a backdoor login to investigate the problem.</li>
-  <li>In this scenario you could configure the platform default login Target Host so that only the Site Administrator can log in using email and password credentials.</li>
-  <li>You could also configure an alternate Facebook (using the Facebook Connector domain) or Google login (using the OpenID Relying Provider domain) and specify a Target Host for backdoor logins.
-</li>
+  <li>Configure the platform default login Target Host so that only the Site Administrator can log in using email and password credentials.</li>
+  <li>Configure an alternate Facebook domain (using the Facebook Connector domain) or Google login domain (using the OpenID Relying Provider domain) and specify a Target Host for back door logins.
+  </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
@@ -513,7 +515,7 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_api_settings"></a><h3>How do I configure API settings?</h3>
+<a name="how_do_i_configure_settings_for_apis"></a><h3>How do I configure settings for APIs?</h3>
 <p>You can configure API settings to determine which features will be available for all APIs on the platform. If a feature is disabled in the API settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>You can configure the API settings shown in the tables below:</p>
@@ -531,6 +533,14 @@ no-catalog: true
   </tr>
 </thead>
 <tbody>
+  <tr class="t2row">
+    <td>Creation of API with new service</td>
+    <td>Determines whether users can create an API that isn't already set up as a service in the API Gateway. Choose this option if users won't need to take advantage of the advanced capabilities offered by the API Gateway. (Default: enabled)</td>
+  </tr>
+  <tr class="t1row">
+    <td>Creation of API with existing service</td>
+    <td>Determines whether users can create an API by referencing a service already defined in the API Gateway. Choose this option if users might want to use the flexible service definition model offered by the API Gateway. (Default: diabled)</td>
+  </tr>
   <tr class="t2row">
     <td>API Workflow Definition</td>
     <td>The workflow definition (default or custom) that will apply to all new APIs on the platform (existing APIs are not affected).</td>
@@ -645,7 +655,7 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_app_settings"></a><h3>How do I configure app settings?</h3>
+<a name="how_do_i_configure_settings_for_apps"></a><h3>How do I configure settings for apps?</h3>
 <p>You can configure app settings to determine which features will be available for all apps on the platform. If a feature is disabled in the app settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>Available app configuration settings are shows in the tables below:</p>
@@ -673,7 +683,7 @@ no-catalog: true
     <td>SImultaneous Access to Sandbox and Production</td>
     <td> If enabled, grants access to both environments in one request.</td>
   </tr>
-  <tr class="t1row">
+  <tr class="t2row">
     <td>App Workflow Definition</td>
     <td>The workflow definition (default or custom) that will apply to all new apps on the platform (existing apps are not affected).</td>
   </tr>
@@ -740,7 +750,40 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_group_settings"></a><h3>How do I configure group settings?</h3>
+<a name="how_do_i_configure_settings_for_connections"></a><h3>How do I configure settings for app/API connections?</h3>
+<p>You can configure connection settings to determine which features will be available for app/API connections on the platform. If a feature is disabled in the connection settings page it will not be present in the user interface.</p>
+<p>Unless otherwise noted, settings are either enabled or disabled.</p>
+<h5>General App/API Connection Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>Sandbox Contract  Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new sandbox app/API contracts on the platform (existing contracts are not  affected).</td>
+  </tr>
+  <tr class="t1row">
+    <td>Production Contract  Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new production app/API contracts on the platform (existing contracts are not  affected).</td>
+  </tr>
+</tbody>
+</table>
+
+<h5><a name="to_configure_ticket_settings"></a>To configure app/API connection settings:</h5>
+<ol>
+  <li>Go to <em>Administration &gt; Config &gt; Connections</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_settings_for_groups"></a><h3>How do I configure settings for groups?</h3>
 <p>You can configure group settings to determine which features will be available for all group on the platform. If a feature is disabled in the group settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>Available group configuration settings are shows in the tables below:</p>
@@ -763,6 +806,10 @@ no-catalog: true
   <tr class="t2row">
     <td>Group Support</td>
     <td>Determines whether groups are supported on the platform. If this setting is disabled, nothing about groups appears in the platform and no other options relating to groups are available. </td>
+  </tr>
+  <tr class="t1row">
+    <td>Group Membership Workflow</td>
+    <td>The workflow definition (default or custom) that will apply to all new groups on the platform (existing groups are not affected).</td>
   </tr>
 </tbody>
 </table>
@@ -826,6 +873,39 @@ no-catalog: true
 <ol>
   <li>Go to <em>Administration &gt; Config &gt; Groups</em>.</li>
   <li>Change the settings as needed. For explanations of your choices, refer to the tables above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_settings_for_tickets"></a><h3>How do I configure settings for tickets?</h3>
+<p>You can configure ticket settings to determine which features will be available for tickets on the platform. If a feature is disabled in the ticket settings page it will not be present in the user interface.</p>
+<p>Unless otherwise noted, settings are either enabled or disabled.</p>
+<h5>General Ticket Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>Ticket Support</td>
+    <td>Determines whether tickets are supported on the platform. If this setting is disabled, nothing about tickets appears in the platform and no other options relating to tickets are available. </td>
+  </tr>
+  <tr class="t1row">
+    <td>Ticket Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new tickets on the platform (existing tickets are not affected).</td>
+  </tr>
+</tbody>
+</table>
+
+<h5><a name="to_configure_ticket_settings"></a>To configure ticket settings:</h5>
+<ol>
+  <li>Go to <em>Administration &gt; Config &gt; Tickets</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
   <li>When done, click <strong>Save</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
