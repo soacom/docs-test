@@ -211,7 +211,8 @@ no-catalog: true
 <p><strong>Target</strong></p>
 <p>On the <em>Target</em> page, you can configure SOAP-based APIs by specifying the SOAP version and WSDL. REST-based APIs are configured by specifying one or more operations. Policy selection is not required for the Target URL.</p>
 <p><strong>Proxy</strong></p>
-<p>The Proxy API page allows you to configure your API's proxy settings. If you would like to proxy your API, select the <strong>Yes</strong> radio button in the <em>Proxy API</em> section. There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable anonymous access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a></p>
+<p>The Proxy API page allows you to configure your API's proxy settings. If you would like to proxy your API, select the <strong>Yes</strong> radio button in the <em>Proxy API</em> section.</p>
+<p>There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable anonymous access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a></p>
 <h5>To add a new API:</h5>
 <p><strong>A. Launch the Add a New API Wizard</strong></p>
 <ol>
@@ -341,11 +342,11 @@ no-catalog: true
     </ul>
   </li>
   </ol>
-<p><strong>G. Configure Production Endpoint</strong></p>
+<p><strong>G. Configure Production Endpoint (Proxy)</strong></p>
 <ol>
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul>
-      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path.</li>
+      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the deployment zones loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
       <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
@@ -415,8 +416,7 @@ no-catalog: true
   <li>Click <strong>Next</strong> to go to the <strong>Target API</strong> page.</li>
   <li>Set up the following values for at least one environment in which the API is running:
     <ul>
-  <li>Service Key. Enter the environment name, unique service key, or URL. The platform locates the API Gateway service, and you can then select it. <br />
-    To locate the appropriate value, go to the API Gateway, open up the service, and click Edit. Copy the value and paste it into this field. </li>
+  <li>Service Key. Enter the environment name, unique service key, or URL. The platform locates the API Gateway service, and you can then select it. To locate the appropriate value, go to the API Gateway, open up the service, and click Edit. Copy the value and paste it into this field.</li>
   <li>Allow <a href="#what_is_anonymous_api_access">anonymous access</a> (yes/no)</li>
       <li>Approval required (yes/no)</li>
     </ul>

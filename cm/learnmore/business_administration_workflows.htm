@@ -54,9 +54,9 @@ no-catalog: true
 <ul>
   <li>API (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / APIs) </li>
   <li>App (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Apps)</li>
-  <li>API access request (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
-  <li>Group membership request (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
-  <li>Ticket (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
+  <li>API access request (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Connections)</li>
+  <li>Group membership request (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Groups)</li>
+  <li>Ticket (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Tickets) </li>
 <!--  <li>OAuth Grants (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>-->
 </ul>
 <p class="apidoc_note"><strong>Note</strong>: OAuth grants cannot be customized at this time.</p>
@@ -93,11 +93,11 @@ no-catalog: true
 </ol>
 <p>Once you've uploaded the custom workflow, the next step is for the Site Admin to assign the custom workflow to the correct resource type, following the instructions for the applicable object type:</p>
 <ul>
-  <li><a href="site_administration_config.htm#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
-  <li><a href="site_administration_config.htm#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
-  <li><a href="site_administration_config.htm#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
-  <li><a href="site_administration_config.htm#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
-  <li><a href="site_administration_config.htm#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
+  <li><a href="site_administration_workflows.htm#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
+  <li><a href="site_administration_workflows.htm#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
+  <li><a href="site_administration_workflows.htm#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
+  <li><a href="site_administration_workflows.htm#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
+  <li><a href="site_administration_workflows.htm#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
 <!--  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>-->
 </ul>
 <p class="apidoc_note"><strong>Note</strong>: when the Site Admin specifies a new custom workflow for a resource, it affects all future resources. Existing resources are not affected. In some cases, it's possible to modify the workflow used for an individual resource. For example, the API Admin or Business Admin can modify the workflow that a specific API uses, in the API Details page.</p>
