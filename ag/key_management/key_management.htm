@@ -38,11 +38,14 @@ nav-title: Managing Keys
   <div class = "divider1"></div>
  
   
-  <a name="overview">
+<a name="overview">
 <h2>Key Management Overview</h2>
 </a>
   
+<p>Policy Manager provides key management that uses an &quot;access key&quot; encryption/decryption  service to monitor access to Policy Manager  functionality and managed web  services. The &quot;access key&quot; guarantees message integrity by signing the message with a private key and verifying the message with a public key.</p>
+<p>This enables you to publish the public key to an administrator or user, while retaining  the private key. This means that any data that anyone else encrypts using your public key can only be decrypted by you.</p>
 <p>The Policy Manager  <em>Manage PKI Keys Wizard</em> is used to generate  and manage (import/export) PKI Keys, Certificates, and Certificate Signing Requests for Service, Organization, Container, and  User identities. </p>
+
 <h5>Supported Key / Certificate Types:</h5>
 <ul class="usingOrderedList">
   <li><strong>PKI Keys</strong> - Access keys that guarantee message  integrity by signing the message with a private key and verifying the message  with a public key. </li>
