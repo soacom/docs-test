@@ -70,14 +70,110 @@ nav-title: Identity Categories
     <li>Location of the Manage PKI Keys function in the Policy Manager Management Console.</li>
     <li> Screen capture of the initial page that shows what functions are available for the identity category for the default Policy Manager Keystore and External Keystore Feature.</li>
   </ul>
-  <p>Key management options that are grayed out are not available for the identity type. See <a href="key_management.htm" > Key Management</a> for a list of available options.  To perform a key management task, select the desired option, and follow the wizard help text and prompts. </p>
+  <p>Key management options that are grayed out are not available for the identity type. See <a href="key_management.htm" > Key Management</a> for a list of available options.  To perform a key management task, select the desired option, and follow the wizard help text and prompts.</p>
+  <p>The following table shows which <em>Manage PKI Keys Wizard</em> options (by identity) are not available (X) when the SOA Software External Keystore Feature is installed. Note that the options displayed are based on having keys already generated. </p>
+  <table width="682" cellspacing="0px" class="doctable">
+    <thead>
+      <tr>
+        <th width="256"></td>
+          Manage PKI Keys Wizard </th>
+        <th width="102">Service Identity</th>
+        <th width="82">Organization Identity</th>
+        <th width="117">Container Identity (Inbound)
+          <div align="center"></div></th>
+        <th width="117">Container Identity (Outbound)</th>
+        <th width="92">User Identity</th>
+        <td width="19">&nbsp;</td>
+      </tr>
+    </thead>
+    <tr class="t2row">
+      <td><strong>Generate PKI Keys</strong></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Generate X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Generate PKI Keys and X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t2row">
+      <td><strong>Generate Certificate Signing Request</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Import X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Import PKI Keys and X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Export X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Export Private Key and X.509 Certificate</strong></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+      <td><div align="center">X</div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Delete PKI keys and X.509 Certificate</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+    <tr class="t1row">
+      <td><strong>Assign PKI Keys and X.509 Certificate from Keystore</strong></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+    </tr>
+</table>
 
 <a name="service_identities">
 <h2>Service Identities</h2>
 </a>
 
 <ul class="usingOrderedList">
-    <li>Represents the default service identity in the local domain.</li>
+  <li>Represents the default service identity in the local domain.</li>
     <li>Every service has one identity by default. </li>
     <li>A service can be assigned a single key identity and can be deployed in multiple SOA Containers. The complete service identity is then represented by the service key plus the SOA Container listener configuration, and defined service path. </li>
     <li> Policy Manager uses the service identity to associate the PKI keys to the service.</li>
@@ -118,7 +214,7 @@ nav-title: Identity Categories
   <p>Organization Details &gt; Organization Identities Portlet &gt; Manage PKI Keys (from drop-down menu)</p>
   <p><img src="images\manage_keys_org_identity_default.jpg" width="609" height="218"><br>
   Figure. Manage PKI Keys (Organization Identities) - Available options using the default Policy Manager keystore</p>
-<p><img src="images\manage_keys_org_identity_external.jpg" width="609" height="220"><br>
+<p><img src="images/manage_keys_org_identity_external.jpg" width="608" height="223"><br>
   Figure. Manage PKI Keys (Organization Identities) - Available options using the External Keystore feature</p>
 <p><a href="#top">back to top</a>
 </p>
