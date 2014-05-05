@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Identity Categories in Policy Manager 7.x
-description: Overview of Service, Organization, Container, and User identity categories and assocated key management functions.
+description: Overview of Service, Organization, Container, and User identity categories and associated key management functions.
 product: ag
 category: learn
 weight:	6
@@ -12,7 +12,7 @@ nav-title: Identity Categories
 ---
 <h2 name="top">Identity Categories</h2>
 
-<p>Overview of Service, Organization, Container, and User identity categories and assocated key management functions. </p>
+<p>Overview of Service, Organization, Container, and User identity categories and associated key management functions. </p>
 
 
 <a href="key_management.htm" class="button secondary"> Key Management</a>
@@ -49,7 +49,8 @@ nav-title: Identity Categories
   <a name="overview">
 <h2>Overview</h2>
 </a>
-  <p>Key management can be performed on Service, Organization, Container, and User identity categories using the Manage PKI Keys Wizard. This topic includes:</p>
+  <p>Key management can be performed on Service, Organization, Container, and User identity categories using the <em>Manage PKI Keys Wizard</em>. As a prerequisite to  performing key management tasks using the <em>Manage PKI Keys Wizard</em> you must define a CA Certificate in the <em>Configure &gt; Security &gt; Certificates &gt; Certificate Authority</em> section. </p>
+  <p>This topic includes:</p>
 
   <ul class="usingOrderedList">
     <li>Functional description of each identity category.</li>
@@ -103,9 +104,9 @@ nav-title: Identity Categories
 <p>The <em>Manage PKI Keys (Organization Identities) Wizard </em>provides  key management options that allow you to generate public and private keys to  facilitate consumer applications that will be accessing an Organization.  Consumers (other than Services) are identified in Policy Manager with an  identity. Identity can be an external domain user or local domain user.  </p>
 <p><strong>Location:</strong></p>
   <p>Organization Details &gt; Organization Identities Portlet &gt; Manage PKI Keys (from drop-down menu)</p>
-  <p><img src="images\manage_keys_org_identity_default.jpg" width="609" height="218"><br>
+  <p><img src="images/manage_keys_org_identity_default.jpg" width="609" height="214" /><br>
   Figure. Manage PKI Keys (Organization Identities) - Available options using the default Policy Manager keystore</p>
-<p><img src="images/manage_keys_org_identity_external.jpg" width="608" height="223"><br>
+<p><img src="images/manage_keys_org_identity_external.jpg" width="608" height="223" /><br>
   Figure. Manage PKI Keys (Organization Identities) - Available options using the External Keystore feature</p>
 <p><a href="#top">back to top</a>
 </p>
@@ -125,15 +126,15 @@ nav-title: Identity Categories
     <li>PKI Keys of the container identity are managed from the <em>Container Details</em> page using the <em>Manage PKI Keys</em> option by anyone that has the Container/Modify permission. </li>
   </ul>
 <h5>Configuration (Containers - Inbound)</h5>
-<p>The <em>Manage PKI Keys (Containers - Inbound) Wizard</em> provides key management  options for inbound certificates that are used if you want a container to  recieve HTTPS messages with client authentication to the next hop.  </p>
+<p>The <em>Manage PKI Keys (Containers - Inbound) Wizard</em> provides key management  options for inbound certificates that are used if you want a container to  receive HTTPS messages with client authentication to the next hop.  </p>
 <p><strong>Location: </strong></p>
   <p>Container Details &gt; Inbound Listener Portlet &gt; Manage PKI Keys (from Actions drop-down menu)</p>
-  <p><img src="images\manage_keys_container_inbound_default.jpg" width="611" height="219"><br>
+  <p><img src="images/manage_keys_container_inbound_default.jpg" width="611" height="219" /><br>
   Figure. Manage PKI Keys (Containers -Inbound Identities) - Available options using the default Policy Manager keystore</p>
-<p><img src="images\manage_keys_container_inbound_external.jpg" width="610" height="220"><br>
+<p><img src="images/manage_keys_container_inbound_external.jpg" width="707" height="222" /><br>
   Figure. Manage PKI Keys (Containers - Inbound Identities) - Available options using the External Keystore feature</p>
 <h5>Configuration (Containers - Outbound)</h5>
-  <p>The Manage PKI Keys (Containers - Outbound) Wizard provides key management  options for Outbound certificates that are used if you want a container to  recieve HTTPS messages with client authentication to the next hop.  </p>
+  <p>The Manage PKI Keys (Containers - Outbound) Wizard provides key management  options for Outbound certificates that are used if you want a container to  receive HTTPS messages with client authentication to the next hop.  </p>
   <h6>Key Configuration Prerequisites</h6>
   <p>As a prerequisite for configuring outbound HTTPS certificates, you must have previously imported Trusted CA Certificates using one of the following options:
   </p>
@@ -159,9 +160,9 @@ HTTPS is only necessary if you want HTTPS between Network Director and Policy Ma
   </ul>
 <p><strong>Location: </strong></p>
   <p>Container Details &gt; Outbound Configuration Portlet  &gt; Manage PKI Keys (button) </p>
-  <p><img src="images\manage_keys_container_outbound_default.jpg" width="610" height="215"><br>
+  <p><img src="images/manage_keys_container_outbound_default.jpg" width="610" height="215" /><br>
   Figure. Manage PKI Keys (Containers -Outbound Identities) - Available options using the default Policy Manager keystore</p>
-<p><img src="images\manage_keys_container_outbound_external.jpg" width="707" height="222"><br>
+<p><img src="images/manage_keys_container_outbound_external.jpg" width="707" height="222" /><br>
   Figure. Manage PKI Keys (Containers - Outbound Identities) - Available options using the External Keystore feature</p>
 <p><a href="#top">back to top</a>
 </p>
@@ -177,19 +178,19 @@ HTTPS is only necessary if you want HTTPS between Network Director and Policy Ma
     <li>End users authorization rules are defined in the Service Authorization Rules tab of the Organization.</li>
     <li>End users do not belong to organizations.</li>
     <li>The same end user can access the services of different organizations and may not even belong to any of the organizations in Policy Manager.</li>
-    <li>These users most oftem  come from other user repositories like LDAP. </li>
+    <li>These users most often  come from other user repositories like LDAP. </li>
     <li>If you want to use local domain users, these users must be  created in the <em>Security &gt; Users</em> tab using the<strong> Add User </strong>function, which means it is a System administrator function.</li>
     <li>Though users are created by System Administrators, every Organization Administrator has to allow the user to access the services of their organization by creating the service authorization rules.</li>
     <li>End Users can be Local Domain users or external domain users (like LDAP).</li>
-    <li> PKI Keys of the service are managed from the <em>Security &gt;  Users </em> page using the <em>Manage PKI Keys</em> option the System Admininstrator and Organization Administrators with Full Control permission. </li>
+    <li> PKI Keys of the service are managed from the <em>Security &gt;  Users </em> page using the <em>Manage PKI Keys</em> option the System Administrator and Organization Administrators with Full Control permission. </li>
   </ul>
   <h5>Configuration (Users)</h5>
-  <p>The <em>Manage PKI Keys (Users) Wizard</em> provides key management  options that allow you to generate public and private keys to facilitate user  autehntication process.  </p>
+  <p>The <em>Manage PKI Keys (Users) Wizard</em> provides key management  options that allow you to generate public and private keys to facilitate user  authentication process.  </p>
   <p><strong>Location:</strong></p>
 <p>Security &gt; Users &gt; Manage PKI Keys (button)</p>
-  <p><img src="images\manage_keys_users_default.jpg" width="605" height="219"><br>
+  <p><img src="images/manage_keys_users_default.jpg" width="605" height="219" /><br>
   Figure. Manage PKI Keys (User Identities) - Available options using the default Policy Manager keystore</p>
-<p><img src="images\manage_keys_users_external.jpg" width="607" height="224"><br>
+<p><img src="images/manage_keys_users_external.jpg" width="607" height="224" /><br>
   Figure. Manage PKI Keys (User  Identities) - Available options using the External Keystore feature</p>
 
 
