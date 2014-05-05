@@ -21,7 +21,7 @@ nav-title: Managing Keys
 
 <a href="identity_categories.htm" class="button secondary"> Identity Categories</a>
 
-<a href="installing_external_keystore_feature.htm" class="button secondary">External Keystore Feature</a>
+<a href="using_external_keystore.htm" class="button secondary">Using External Keystore</a>
 
 </p>
 
@@ -59,7 +59,7 @@ nav-title: Managing Keys
 
 <h5>External Keystore Feature</h5>
 <p>The  <em>SOA Software External Keystore Feature</em> enables a Container to use an external key store for managing  all the PKI keys and certificates it needs. Without installing this feature the  default Policy Manager key store will be used.</p>
-<p><em>Note: Installation of this feature MUST occur before installing the Policy Manager features (SOA Software Policy Manager Console and SOA Software Policy Manager Services). If you have already installed Policy Manager and would like to use the External Keystore Feature, you must first install the SOA Software External Keystore Feature, and then  reinstall both of the Policy Manager features. </em></p>
+<p><em><strong>Note:</strong> Installation of this feature MUST occur before installing the Policy Manager features (SOA Software Policy Manager Console and SOA Software Policy Manager Services). If you have already installed Policy Manager and would like to use the External Keystore Feature, you must first install the SOA Software External Keystore Feature, and then  reinstall both of the Policy Manager features. </em></p>
 <p>Refer to the External Keystore Feature topic for instructions on installing and configuring the feature.</p>
 
 <p><a href="#top">back to top</a>
@@ -77,7 +77,7 @@ nav-title: Managing Keys
 <h4>Generate PKI Keys</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Generates public and private PKI keys.  This option does not create an X.509 certificate. </li>
-  <li><strong>External Keystore</strong> - This option is  disabled if the <em>SOA Software External Keystore Feature</em> is installed as the PKI Keys are stored in the external keystore.</li>
+  <li><strong>External Keystore</strong> - This option is  disabled for all identities if the <em>SOA Software External Keystore Feature</em> is installed as the PKI Keys are stored in the external keystore.</li>
 </ul>
 <h4>Generate X.509 Certificate</h4>
 <ul class="usingOrderedList">
@@ -87,14 +87,14 @@ nav-title: Managing Keys
 <h4>Generate PKI Keys and X.509 Certificate</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Generates PKI keys and X.509 certificate. </li>
-  <li><strong>External Keystore</strong> - Assigns PKI keys and X.509 certificate to alias of the current identity. <em> <br />
+  <li><strong>External Keystore</strong> - Assigns PKI keys and X.509 certificate to the external keystore alias of the current identity. <em> <br />
   </em><br />
 <img src="images/assign_keys_external.jpg" width="583" height="390" /></li>
 </ul>
 <h4>Generate Certificate Signing Request (CSR)</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Used if user of the container already has a PKI Key pair and  wants to generate a Certificate Signing Request. The request can be sent to a  third party Certificate Authority to request an X.509 Certificate.</li>
-  <li><strong>External Keystore</strong> - TBD</li>
+  <li><strong>External Keystore</strong> - No change.</li>
 </ul>
 <p><a href="#top">back to top</a>
 </p>
@@ -111,7 +111,7 @@ nav-title: Managing Keys
 <h4>Import PKI Keys and X.509 Certificate</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Used to  import public and private keys and a certificate that has been issued by a third party Certificate  Authority. Import requires that you specify a keystore path or certificate filename. Supported keystore types include <em>Java</em> (imports public keys from a certificate only) and <em>PKCS12</em> (imports keys from a PKCS12 only. The import function supports the certificate file format (.CER). </li>
-  <li><strong>External Keystore</strong> - TBD</li>
+  <li><strong>External Keystore</strong> - Imports  PKI Keys and X.509 Certificate and assigns them to  external keystore along with the associated alias. </li>
 </ul>
 <p><a href="#top">back to top</a>
 </p>
@@ -120,20 +120,20 @@ nav-title: Managing Keys
 <h4>Export X.509 Certificate</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Exports an X.5.09 certificate to certificate file format (.CER). </li>
-  <li><strong>External Keystore</strong> - TBD</li>
+  <li><strong>External Keystore</strong> - No change.</li>
 </ul>
 <h4>Export Private Key and X.509 Certificate</h4>
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Exports an Private Key and X.5.09 certificate to certificate file format (.CER). </li>
-  <li><strong>External Keystore</strong> - TBD</li>
+  <li><strong>External Keystore</strong> - This option is  disabled for all identities if the <em>SOA Software External Keystore Feature</em> is installed as the export of private (or secret) keys out of an HSM is restricted. </li>
 </ul>
 <p><a href="#top">back to top</a>
 </p>
 
 <h3>Delete Options</h3>
 <ul class="usingOrderedList">
-  <li><strong>Default - </strong>Deletes key from the  current identity type.  Provides a confirmation message prior to deleting  keys. </li>
-  <li><strong>External Keystore</strong> - TBD</li>
+  <li><strong>Default - </strong>Deletes key of the current identity type from the Policy Manager default keystore.    </li>
+  <li><strong>External Keystore</strong> - Deletes key of the current identity type from the external keystore. Note that you cannot delete a key if it assigned to one or more identities. </li>
 </ul>
 <p><a href="#top">back to top</a>
 </p>
