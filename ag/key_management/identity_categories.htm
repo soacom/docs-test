@@ -15,24 +15,11 @@ nav-title: Identity Categories
 <p>Overview of Service, Organization, Container, and User identity categories and assocated key management functions. </p>
 
 
-
-<p>
-</p>
-
-
 <a href="key_management.htm" class="button secondary"> Key Management</a>
 
-<a href="external_keystore.htm" class="button secondary"> External Keystore Feature</a>
+<a href="using_external_keystore.htm" class="button secondary"> Using External Keystore</a>
 
-
-
-
-
-
-
-
-</p>
-
+<p></p>
 
 
 <div class = "divider1"></div>
@@ -71,103 +58,7 @@ nav-title: Identity Categories
     <li> Screen capture of the initial page that shows what functions are available for the identity category for the default Policy Manager Keystore and External Keystore Feature.</li>
   </ul>
   <p>Key management options that are grayed out are not available for the identity type. See <a href="key_management.htm" > Key Management</a> for a list of available options.  To perform a key management task, select the desired option, and follow the wizard help text and prompts.</p>
-  <p>The following table shows which <em>Manage PKI Keys Wizard</em> options (by identity) are not available (X) when the SOA Software External Keystore Feature is installed. Note that the options displayed are based on having keys already generated. </p>
-  <table width="682" cellspacing="0px" class="doctable">
-    <thead>
-      <tr>
-        <th width="256"></td>
-          Manage PKI Keys Wizard </th>
-        <th width="102">Service Identity</th>
-        <th width="82">Organization Identity</th>
-        <th width="117">Container Identity (Inbound)
-          <div align="center"></div></th>
-        <th width="117">Container Identity (Outbound)</th>
-        <th width="92">User Identity</th>
-        <td width="19">&nbsp;</td>
-      </tr>
-    </thead>
-    <tr class="t2row">
-      <td><strong>Generate PKI Keys</strong></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Generate X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Generate PKI Keys and X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t2row">
-      <td><strong>Generate Certificate Signing Request</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Import X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Import PKI Keys and X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Export X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Export Private Key and X.509 Certificate</strong></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-      <td><div align="center">X</div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Delete PKI keys and X.509 Certificate</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-    <tr class="t1row">
-      <td><strong>Assign PKI Keys and X.509 Certificate from Keystore</strong></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-      <td><div align="center"></div></td>
-    </tr>
-</table>
-
+  <p><em><strong>Note:</strong> The <strong>Generate PKI Keys</strong> and <strong>Export Private Keys and X.509 Certificate</strong> options are grayed out (i.e., not available) for all Manage PKI Keys Wizard when the SOA Software External Keystore Feature is installed.</em></p>
 <a name="service_identities">
 <h2>Service Identities</h2>
 </a>
