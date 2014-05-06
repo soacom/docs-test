@@ -6,9 +6,9 @@ product: cm
 category: ref
 nav-title: Authentication and Security with the Enterprise API Platform API 
 no-nav: api
-sub-nav: true
-sub-nav-class: documents
-no-catalog: true
+sub-nav: false
+sub-nav-class: 
+no-catalog: false
 ---
 
 <h2><a name="top"></a>Authentication and Security with the Enterprise API Platform API</h2>
@@ -46,7 +46,7 @@ no-catalog: true
 <p>The operations you can run without logging in are all &quot;read&quot; operations using the HTTP verb <strong>GET</strong>. Some examples:</p>
 <ul>
   <li><span class="apidoc_code"><a href="content/m_content_get.htm">GET&nbsp;/{contentpath}</a></span>: Retrieves a specific content document. To retrieve content, no login is required, unless the content is marked as Private (see <a href="#public_and_private">Public and private resources</a> below).</li>
-  <li><span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>: Returns a list of APIs. Again, APIs marked as Private are not returned, but all APIs marked as Public are visible to all users in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->user interface, whether logged in or not, and anyone can perform this operation via the API without logging in.</li>
+  <li><span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>: Returns a list of APIs. Again, APIs marked as Private are not returned, but all APIs marked as Public are visible to all users in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> user interface, whether logged in or not, and anyone can perform this operation via the API without logging in.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -99,7 +99,7 @@ no-catalog: true
 
 <a id="session_cookie"></a><h3>The session cookie</h3>
 <p>When you run the <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, the response includes a session cookie which you'll need to make sure is included in the request headers for subsequent operations. If you're using a browser-based client, the cookie is probably sent automatically, but if not, you must explicitly include it.</p>
-<p>For more information and examples, refer to <a href="Ref_apireference.htm#ref_cookies">Cookies in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --></a>.</p>
+<p>For more information and examples, refer to <a href="Ref_apireference.htm#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --></a>.</p>
 <p>You'll also need to renew the cookie, after 30 minutes or after certain events. See <a href="#renewing_cookie">Renewing the cookie</a> below.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
