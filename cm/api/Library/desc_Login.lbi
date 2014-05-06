@@ -1,0 +1,2 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem -->. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.
