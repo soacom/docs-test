@@ -156,7 +156,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->services and methods, can be brok
 <p>The Content-Type header specifies which of the accepted media types your app is sending, and the Accept header specifies which of the accepted media type choices you want for the response format.</p>
 <p>Depending on your app and implementation, JSON or XML might be preferable. For example, if your app is browser-based, you might prefer JSON because it can easily be converted to JavaScript.</p>
 <p>Valid media types for each operation are listed in the documentation for the operation.</p>
-<p><a href="Ref_apireference.htm#ref_mediatypes">List of valid media types in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API.</a></p>
+<p><a href="Ref_apireference.htm#ref_mediatypes">List of valid media types in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -168,7 +168,7 @@ Enterprise API Platform<!-- #EndLibraryItem --> API uses the HTTP request header
   <li><a href="#acceptheader">Accept</a></li>
   <li>For operations other than GET, <a href="#contenttype_request">Content-Type</a></li>
   <li><a href="#host_request">Host</a></li>
-  <li>Cookie (certain cookies, see <a href="#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> </a>)</li>
+  <li>Cookie (certain cookies, see <a href="#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> </a>)</li>
 </ul>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -200,7 +200,7 @@ Lists one or more data formats that are valid in the response. For example,<stro
       <td>Cache-Control</td>
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Connection</td>
@@ -217,13 +217,13 @@ Used in both request and response to specify whether the message can be cached b
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_content-type.lbi" -->
 <p>Specifies the media type of a request or response message body.</p>
-<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --></td>
+<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Cookie</td>
       <td>Request Only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_cookie.lbi" -->
-An extension header used for client identification and tracking. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API the cookie parameter contains the session ID.<!-- #EndLibraryItem --> For more information, see <a href="#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> </a> below.</td>
+An extension header used for client identification and tracking. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API the cookie parameter contains the session ID.<!-- #EndLibraryItem --> For more information, see <a href="#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> </a> below.</td>
   </tr>
     <tr>
       <td><a id="host_request"></a>Host</td>
@@ -245,7 +245,7 @@ The URL from which the request originated. Example: <strong>https://api.acmecorp
     <tr>
       <td>X-Requested-With</td>
       <td>Request Only</td>
-      <td>An extension header used to identify Ajax requests. Wherever the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
+      <td>An extension header used to identify Ajax requests. Wherever the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
   </tr>
 <!--  <tr>
       <td>&nbsp;</td>
@@ -286,13 +286,13 @@ Enterprise API Platform<!-- #EndLibraryItem -->API uses the HTTP response header
       <td><a id="cachecontrol"></a>Cache-Control</td>
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Content-Encoding</td>
       <td>Response only</td>
       <td><!-- #BeginLibraryItem "/Library/hrdrsp_content-encoding.lbi" -->
-Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.<!-- #EndLibraryItem --></td>
+Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="contentdisposition_response"></a>Content-Disposition</td>
@@ -325,7 +325,7 @@ A date/timestamp representing the time on the server when the message response w
       <td>Transfer-Encoding</td>
       <td>Response only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrrsp_transfer-encoding.lbi" -->
-If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
+If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
   </tr>
   </tbody>
 </table>
@@ -371,7 +371,7 @@ Lw9RQLzyxojBGslxXDvo</pre>
 <h3><a name="ref_atmo_caching"></a>How the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->
 Enterprise API Platform<!-- #EndLibraryItem -->API Uses Caching</h3>
 <p>Most<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->
-Enterprise API Platform<!-- #EndLibraryItem --> operations don't use caching at all. Generally, the <strong>Cache-Contro</strong>l header is set to <strong>no-cache</strong>, for both request and response messages, since the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> APIs generally pass database information that might change and should therefore not be cached.</p>
+Enterprise API Platform<!-- #EndLibraryItem --> operations don't use caching at all. Generally, the <strong>Cache-Contro</strong>l header is set to <strong>no-cache</strong>, for both request and response messages, since the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> APIs generally pass database information that might change and should therefore not be cached.</p>
 <p>However, there are a few methods that do use caching. In general, the types of information that might be cached are images (such as a user's profile picture), data resources such as API documentation and online help, and code-related components such as JavaScript files, templates, and stylesheets.</p>
 <p>In some cases, operations are set by default to read the response from cache, but include an optional parameter so that you can choose not to read from cache. For example, the <span class="apidoc_code"><a href="login/m_login_getLoginDomains.htm">GET&nbsp;/api/login/domains</a></span> operation includes this parameter.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -512,7 +512,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->authorization cookie.</p>
 
 
 <h3><a name="ref_errormessages"></a>Error Messages</h3>
-<p>If a call is unsuccessful, <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> returns one or both of the following:</p>
+<p>If a call is unsuccessful, <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> returns one or both of the following:</p>
 <ul>
   <li>The applicable HTTP code and its associated message. See <a href="#httpstatuscodes">HTTP Status Codes</a> below.</li>
   <li>A a product-specific error code and message included in the response payload. Where there are unique messages for specific operations, they are included in the documentation for that operation.</li>
@@ -545,7 +545,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->authorization cookie.</p>
   <li>500-599: Error on the server side</li>
 </ul>
 <p>Recognizing the general numeric category could be helpful in tracking down the source of an error.</p>
-<p>The table below provides information on some of the more common HTTP error codes you might encounter when working with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API. For a full list of HTTP error code numbers and meanings, refer to <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">the HTTP spec</a>.</p>
+<p>The table below provides information on some of the more common HTTP error codes you might encounter when working with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API. For a full list of HTTP error code numbers and meanings, refer to <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">the HTTP spec</a>.</p>
 
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -624,10 +624,10 @@ Enterprise API Platform<!-- #EndLibraryItem -->authorization cookie.</p>
 
 
 <h3><a name="ref_publicandprivateapps"></a>Public and Limited (Private) Apps</h3>
-<p><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> supports two visibility scenarios that affect who can see information about, and interact with, your app. An app can be either <strong>public</strong> or <strong>limited</strong>.</p>
-<p><strong>Public</strong>: a public app can be seen by all <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> users, whether registered or not. Communications relating to a public app, such as tickets and discussions, might be picked up and rendered by popular search engines. Changes to the app are still restricted to app team members, but the app has general visibility.</p>
+<p><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> supports two visibility scenarios that affect who can see information about, and interact with, your app. An app can be either <strong>public</strong> or <strong>limited</strong>.</p>
+<p><strong>Public</strong>: a public app can be seen by all <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> users, whether registered or not. Communications relating to a public app, such as tickets and discussions, might be picked up and rendered by popular search engines. Changes to the app are still restricted to app team members, but the app has general visibility.</p>
 <p><strong>Limited (Private)</strong>: if an app is limited (private), it can only be seen by members of the specific app team. Invited members don't see the app until they accept the invitation.</p>
-<p>With limited (private) apps, content relating to the app, such as tickets and discussions, is not accessible to public search engines, although it is indexed and rendered by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> internal search facility.</p>
+<p>With limited (private) apps, content relating to the app, such as tickets and discussions, is not accessible to public search engines, although it is indexed and rendered by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> internal search facility.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -646,7 +646,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->authorization cookie.</p>
 
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API: Overview</a></li>
+  <li><a href="index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API: Overview</a></li>
   <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
   <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
