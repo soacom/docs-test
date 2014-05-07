@@ -1,1 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.

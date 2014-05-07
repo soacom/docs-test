@@ -1,6 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><p>Valid values:</p>
-        <ul class="apidoctable_ul">
-          <li>REST API: <strong>shttp</strong></li>
-          <li>SOAP 1.1 API: <strong>soap11</strong></li>
-          <li>SOAP 1.2 API: <strong>soap12</strong></li>
-        </ul>

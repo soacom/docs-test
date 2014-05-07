@@ -1,2 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-Indicates whether actions relating to the board item should be included. Default value: <strong>true</strong>. If set to <strong>false</strong>, actions are not included.

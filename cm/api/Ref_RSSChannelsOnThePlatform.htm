@@ -13,13 +13,11 @@ no-catalog: true
 
 <h2><a name="top"></a>RSS Channels on the Platform</h2>
 <p>RSS is a widely used technology that allows users to subscribe to website content they're interested in. The content provider organizes information in a defined information structure called an RSS channel. Users can then subscribe to the channel via a piece of software called an RSS feed. Once a user subscribes to an RSS feed, content updates are automatically delivered, without the user having to check the individual websites for updates.</p>
-<p>Many of the operations in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->
-Enterprise API Platform<!-- #EndLibraryItem -->API use RSS in the response. In general, GET&nbsp;operations that return any type of list return the information as an RSS channel, in either JSON or XML format. For examples, see <a href="#platform_rss"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> Objects Returned as RSS Channels</a> below.</p>
-<p>The RSS channel always includes the required summary information, and can also hold a list of items. In some cases, the RSS structure includes additional extension elements. In cases where <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> operations use additional extension elements, they are described in the documentation for the applicable operation.<!--<p>Methods that return information in the form of an RSS channel return the mandatory fields listed below and some or all of the optional elements; the  elements applicable to a specific operation are identified in the operation's description. Since the item elements are somewhat general, the documentation for each method explains which method parameters maps to which RSS item elements.</p>--></p>
+<p>Many of the operations in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API use RSS in the response. In general, GET&nbsp;operations that return any type of list return the information as an RSS channel, in either JSON or XML format. For examples, see <a href="#platform_rss"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->Objects Returned as RSS Channels</a> below.</p>
+<p>The RSS channel always includes the required summary information, and can also hold a list of items. In some cases, the RSS structure includes additional extension elements. In cases where<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->operations use additional extension elements, they are described in the documentation for the applicable operation.<!--<p>Methods that return information in the form of an RSS channel return the mandatory fields listed below and some or all of the optional elements; the  elements applicable to a specific operation are identified in the operation's description. Since the item elements are somewhat general, the documentation for each method explains which method parameters maps to which RSS item elements.</p>--></p>
 
 <h4><a name="rssfieldsoptional"></a>RSS Fields</h4>
-<p>The following tables describe elements that might appear in RSS feeds returned by the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->
-Enterprise API Platform<!-- #EndLibraryItem -->API.</p>
+<p>The following tables describe elements that might appear in RSS feeds returned by the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API.</p>
 <p>In general, platform RSS responses include a few main values, and then one or more items, each with a set of values. These two sets of information are described in the tables below.</p>
 <p><strong>RSS response main values</strong>:</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0"
@@ -33,7 +31,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->API.</p>
 <tbody>
     <tr>
       <td><a name="rss_title"></a>title</td>
-      <td>Name of the item. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem -->, examples are <strong>Application Contracts</strong> (for <span class="apidoc_code"><a href="apps/m_apps_getContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></span>), <strong>APIs</strong> (for <span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>), <strong>User Notifications</strong> (for <span class="apidoc_code">GET&nbsp;notifications/types</span>).</td>
+      <td>Name of the item. In the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, examples are <strong>Application Contracts</strong> (for <span class="apidoc_code"><a href="apps/m_apps_getContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></span>), <strong>APIs</strong> (for <span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>), <strong>User Notifications</strong> (for <span class="apidoc_code">GET&nbsp;notifications/types</span>).</td>
   </tr>
     <tr>
       <td>item</td>
@@ -94,7 +92,7 @@ Enterprise API Platform<!-- #EndLibraryItem -->API.</p>
   </tr>
     <tr>
       <td>enclosure</td>
-      <td>A media file that needs to be rendered with the item. This field is standard to the RSS feed structure, but isn't used by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> API.</td>
+      <td>A media file that needs to be rendered with the item. This field is standard to the RSS feed structure, but isn't used by the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API.</td>
   </tr>
     <tr>
       <td><a name="rss_pubdate"></a>pubDate</td>
@@ -175,9 +173,8 @@ Enterprise API Platform<!-- #EndLibraryItem -->API.</p>
   },
   &quot;version&quot; : &quot;1.0&quot;
 }</pre>
-<h4><a name="platform_rss"></a><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" --> Enterprise API Platform<!-- #EndLibraryItem --> Objects Returned as RSS Channels</h4>
-<p>The following is a list of some of the types of<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->
-Enterprise API Platform<!-- #EndLibraryItem -->information that are returned as RSS channels:</p>
+<h4><a name="platform_rss"></a><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->Objects Returned as RSS Channels</h4>
+<p>The following is a list of some of the types of<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->information that are returned as RSS channels:</p>
 <ul>
   <li>APIs: <a href="apis/m_apis_listAPIs.htm#rss_apis_json">JSON example</a>, <a href="apis/m_apis_listAPIs.htm#rss_apis_xml">XML example</a></li>
   <li>API Board: <a href="apis/m_apis_getBoard.htm#rss_apiboard_json">JSON example</a>, <a href="apis/m_apis_getBoard.htm#rss_apiboard_xml">XML example</a></li>

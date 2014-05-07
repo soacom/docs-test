@@ -1,2 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-Accepts a URL for a WSDL and responds with an list of operations. A successful send returns a list of operations, starting with the ID of the WSDL.
