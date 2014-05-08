@@ -171,11 +171,11 @@ nav-title: Using the CORS Policy
   </tr>
   <tr class="t1row">
     <td>Allow Headers</td>
-    <td>Request headers that the origin domain may specify on the CORS request. Header length should not exceed 256 characters. </td>
+    <td>Request headers that the origin domain may specify on the CORS request. </td>
   </tr>
   <tr class="t2row">
     <td>Expose Headers</td>
-    <td>Response headers that may be sent in the response to the CORS request and exposed by the browser to the request issuer. Header length should not exceed 256 characters. </td>
+    <td>Response headers that may be sent in the response to the CORS request and exposed by the browser to the request issuer. </td>
   </tr>
 </table>
 <p><a href="#top">Back to top</a></p>
@@ -193,10 +193,10 @@ nav-title: Using the CORS Policy
 
 <p>Configure the CORS Options based on your requirements. </p>
 <h5>Step 3: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service  or you can attach the policy at the Service, Operation, or Bindings level.</p>
+<p>After you have saved your policy you can  attach it to a web service at the  Service  level.</p>
 <p><img src="images/cors_attach_policy.jpg" width="648" height="252"></p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
-<p>After you attached the CORS Policy to a service or operation, send a request to your service and view the results in your client. You can also go to the  <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p>After you attached the CORS Policy to a service, send a request to your service and view the results in your client. You can also go to the  <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
 <ul class="usingOrderedList">
   <li>If CORS is enabled for the service and there is a CORS policy assertion that matches the preflight request, the service responds with a status code 200 (OK), and includes the required Access-Control headers in the response.</li>
   <li>If CORS is not enabled for the service or no CORS policy assertion matches the preflight request, the service will respond with status code 403 (Forbidden).</li>
