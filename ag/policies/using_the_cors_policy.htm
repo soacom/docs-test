@@ -165,11 +165,9 @@ nav-title: Using the CORS Policy
       The origin domain is the domain from which the request originates.
       <br>
       <br>
-      You can enter multiple domains by separating them with a comma. Header length should not exceed 256 characters. <br>
+      Each header can include one domain.<br>
       <br>
-      If left blank, the wildcard (*) is returned for the Access Control Allow Origin response header. <br>
-      <br>
-      <em>      Note: If the wildcard is used and All Credentials is enabled, credentials will be ignored.</em></td>
+      If no child elements are specified, all origins are allowed and &lsquo;*&rsquo; is returned for the Access-Control-Allow-Origin response header.</td>
   </tr>
   <tr class="t1row">
     <td>Allow Headers</td>
