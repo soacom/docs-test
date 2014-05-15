@@ -11,9 +11,6 @@ nav-title: Using the CORS Policy
 ---
   <h2 name="top">Using the CORS Policy</h2>
   <p>Learn how to manage cross-origin requests for REST APIs using the CORS (Cross Origin Resource Sharing) Policy.</p>
-  
-  <a href="../assets/cors_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases</a>
-  
 
 <a href="policy_management.htm" class="button secondary">Managing Policies</a>
 
@@ -54,7 +51,7 @@ nav-title: Using the CORS Policy
   <li>wsdl:port</li>
   <li>wsdl:binding</li>
 </ul>
-<p>A CORS policy dictates behavior that is not required by a consumer in order to exchange messages between a consumer and a providers. Instead it dictates behavior that a provider must follow only. Therefore it is recommended that CORS policies be classified as &ldquo;private&rdquo; by including the gmp:Visibility attribute in the enclosing wsp:Policy element with a value of &ldquo;public.&rdquo;</p>
+<p>A CORS policy dictates behavior that is not required by a consumer in order to exchange messages between a consumer and a providers. Instead it dictates behavior that a provider must follow only. Therefore it is recommended that CORS policies be classified as &ldquo;private&rdquo; by including the gmp:Visibility attribute in the enclosing wsp:Policy element with a value of &ldquo;private.&rdquo;</p>
   <p>The following is an example of a CORS policy attached to WSDL components:</p>
 <p><img src="images/cors_policy_attached_wsdl.jpg" width="579" height="497"></p>
 <p>Lines 02 through 06 contain a policy named "CORS" that holds a CORS assertion. The CORS policy is applied to the "ep1" endpoint on line 28.</p>
@@ -75,12 +72,14 @@ nav-title: Using the CORS Policy
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:AllowOrgins</dt>
-  <dd>This mandatory element is an assertion that specifies the set of origins that are allowed. If no child elements (allowed origins) are defined,  Access-Control-Allow-Origin response header is not displayed.</dd>
+  <dd>This mandatory element is an assertion that specifies the set of origins that are allowed. If no child elements are specified, all origins are allowed and &lsquo;*&rsquo; is returned for the Access-Control-Allow-Origin response header.</dd>
+</dl>
+<dl>
+  <dt> cors:CORS/wsp:Policy/cors:AllowOrigins / @{any}</dt>
+  <dd>Additional attributes can be specified but should not contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored.</dd>
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:AllowOrigins/cors:Origin</dt>
-</dl>
-<dl>
   <dd>This optional string element identifies an allowed origin. The string can either be a host name by itself or a protocol schema and host such as http://acme.com. If no scheme is specified all schemes for that host are allowed.</dd>
 </dl>
 <dl>
@@ -88,16 +87,26 @@ nav-title: Using the CORS Policy
   <dd>This optional element is an assertion that when present indicates that the Access-Control-Allow-Credentials response header will be &ldquo;true.&rdquo; When absent it will be &ldquo;false.&rdquo;</dd>
 </dl>
 <dl>
-  <dt>cors:CORS/wsp:Policy/cors:ExposeHeaders</dt>
-  <dd>This optional element is an assertion that specifies what headers should be returned in the Access-Control-Expose-Headers response header. If not present no headers will be returned. </dd>
+  <dt>cors:CORS/wsp:Policy/cors:AllowCredentials /@{any}</dt>
+  <dd>Additional attributes can be specified but should not  contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored.</dd>
 </dl>
 <dl>
-  <dt>cors:CORS/wsp:Policy/cors:ExposeHeader/cors: Header</dt>
+  <dt>cors:CORS/wsp:Policy/cors:ExposeHeaders</dt>
+  <dd>This optional element is an assertion that specifies what headers should be returned in the Access-Control-Expose-Headers response header. If not present no headers will be returned. </dd>
+    </dl>
+<dl>
+  <dt>cors:CORS/wsp:Policy/cors:ExposeHeaders /@{any}</dt>
+  <dd>Additional attributes can be specified but should not  contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored. </dd>
+</dl>
+<dl>
+  <dt>cors:CORS/wsp:Policy/cors:ExposeHeader/cors: Headers</dt>
   <dd>This optional string element identifies an exposed header. </dd>
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:AllowHeaders</dt>
   <dd>This optional element is an assertion that specifies what headers should be returned in the Access-Control-Allow-Headers response header. If not present no headers will be returned. </dd>
+  <dt>cors:CORS/wsp:Policy/cors:AllowHeaders /@{any}</dt>
+  <dd>Additional attributes can be specified but should not  contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored. </dd>
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:AllowHeaders/cors:Header</dt>
@@ -105,11 +114,19 @@ nav-title: Using the CORS Policy
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:MaxAge</dt>
-  <dd>This optional element defines the time period in seconds. When the max age is set, a CORS request will not need to be preflighted, if it has already been preflighted, and falls within the max age duration. </dd>
+  <dd>This optional element is an assertion that specifies what duration should be returned in the Access-Control-Max-Age response header. If not present the manageability container will determine what will be returned. </dd>
 </dl>
 <dl>
   <dt>cors:CORS/wsp:Policy/cors:MaxAge /@duration</dt>
   <dd>This mandatory integer attribute holds the value that will be returned in the Access-Control-Max-Age response header. </dd>
+</dl>
+<dl>
+  <dt>cors:CORS/wsp:Policy/cors:MaxAge /@{any}</dt>
+  <dd>Additional attributes can be specified but should not  contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored. </dd>
+</dl>
+<dl>
+  <dt>cors:CORS /{any}</dt>
+  <dd>This is an extensibility mechanism to allow additional elements to be specified. </dd>
 </dl>
 <dl>
   <dt>cors:CORS /@{any}</dt>
@@ -134,7 +151,7 @@ nav-title: Using the CORS Policy
     <td width="19"></thead>
     <tr class="t2row">
       <td height="36">Max Age</td>
-      <td>This optional element defines the time period in seconds. When the max age is set, a CORS request will not need to be preflighted, if it has already been preflighted, and falls within the max age duration.</td>
+      <td>Duration to be  returned in the Access Control Max Age response header. If not specified, the SOA Container will determine what will be returned. </td>
     </tr>
   <tr class="t1row">
     <td>Allow Credentials</td>
@@ -142,12 +159,15 @@ nav-title: Using the CORS Policy
   </tr>
   <tr class="t2row">
     <td height="91">Allow Origins</td>
-    <td><p>List of origin domains that are permitted to make a request against the service via CORS.  The origin domain is the domain from which the request originates</p>
-      <p>If no child elements (allowed origins) are defined,  Access-Control-Allow-Origin response header is not displayed.<br>
-        <br>
-        Each header can include one domain.<br>
-        <br>
-    </p></td>
+    <td>List of origin domains that are permitted to make a request against the service via CORS.
+
+
+      The origin domain is the domain from which the request originates.
+      <br>
+      <br>
+      Each header can include one domain.<br>
+      <br>
+      If no child elements are specified, all origins are allowed and &lsquo;*&rsquo; is returned for the Access-Control-Allow-Origin response header.</td>
   </tr>
   <tr class="t1row">
     <td>Allow Headers</td>
@@ -163,7 +183,7 @@ nav-title: Using the CORS Policy
 <a name="configuration">
 <h3>Configuration</h3>
 </a>
-<p>Let's take a quick walkthrough of the CORS Policy configuration process to get you started.</p>
+<p>Let's take a quick walkthrough of the CORS Policy configuration process to get your started.</p>
 <h5>Step 1: Add Policy</h5>
 <p>You can create a CORS   Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section.. </p>
 
@@ -176,13 +196,12 @@ nav-title: Using the CORS Policy
 <p>After you have saved your policy you can  attach it to a web service at the  Service  level.</p>
 <p><img src="images/cors_attach_policy.jpg" width="648" height="252"></p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
-<p>After you attached the CORS Policy to a service, send a request to your service and view the results in your client. You can also go to the  <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions. </p>
+<p>After you attached the CORS Policy to a service, send a request to your service and view the results in your client. You can also go to the  <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
 <ul class="usingOrderedList">
   <li>If CORS is enabled for the service and there is a CORS policy assertion that matches the preflight request, the service responds with a status code 200 (OK), and includes the required Access-Control headers in the response.</li>
-  <li>If CORS is not enabled for the service, the request is not preflighted. </li>
-  <li>If the request does not contain the required CORS headers, the request is not preflighted and continues to run normally, and the browser behaves accordingly. </li>
+  <li>If CORS is not enabled for the service or no CORS policy assertion matches the preflight request, the service will respond with status code 403 (Forbidden).</li>
+  <li>If the request does not contain the required CORS headers, the service will respond with the status code 400 (Bad Request). </li>
   <li>If the Origin header is present, this  indicates that the request is a CORS request. The service will then check  the matching CORS policy assertion configuration for a match. If found,  the Access-Control headers are added to the response and sent back to the client. If not found,  the CORS Access-Control headers are not returned. </li></ul>
-<p>Review the <a href="cors_policy_use_cases.pdf" >usage scenarios</a> for more information on the configuration and test cycle. </p>
 <p><a href="#top">Back to top</a></p>
 
 <div class = "divider1"></div>
