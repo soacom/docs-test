@@ -65,11 +65,16 @@ nav-title: Using the Operational Script  Policy with Policy Manager 7.1
 <h5>Step 3: Modify Policy</h5>
 <p>When you <strong>Modify</strong> the Operational Script Policy  on the <em>Policy Details</em> page the initial policy will look like this:</p>
 <p><img src="images/modify_op_script_policy.jpg" width="594" height="415"></p>
-
+<p>To illustrate how to use the policy, we are going to add  script code that will generate an Alert that we can check at the registry level. </p>
+<p>In the <em>Source</em> section, select  <strong>JavaScript</strong> as the Script Language,  add the following code to the Expression section and save the policy:</p>
+<p><strong>alerter.alert(&quot;12121212&quot;,&quot;Operational Script policy Enforced&quot;);</strong></p>
+<p><img src="images/op_script_alert_code.jpg" width="547" height="396" /></p>
 <h5>Step 4: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service  or operation. </p>
+<p>After you have saved your policy   attach it to a web service   operation. </p>
 <p><img src="images/attach_op_script_policy.jpg" width="654" height="221"></p>
-<h5>Step 5: Test Policy and View Monitoring Data</h5>
+<h5>Step 5: Test Policy</h5>
+<p>To test the policy, send a request and view the <em>Alerts</em> portlet of the container that is hosting the service (e.g., Network Director). An alert will be generated for each request sent.</p>
+<p><img src="images/op_script_alert_example.jpg" width="638" height="162" /></p>
 <p><a href="#top">back to top</a>
 </p>
 <div class = "divider1"></div>
