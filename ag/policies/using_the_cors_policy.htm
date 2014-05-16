@@ -54,9 +54,9 @@ nav-title: Using the CORS Policy
   <li>wsdl:port</li>
   <li>wsdl:binding</li>
 </ul>
-<p>A CORS policy dictates behavior that is not required by a consumer in order to exchange messages between a consumer and a providers. Instead it dictates behavior that a provider must follow only. Therefore it is recommended that CORS policies be classified as &ldquo;private&rdquo; by including the gmp:Visibility attribute in the enclosing wsp:Policy element with a value of &ldquo;public.&rdquo;</p>
+<p>A CORS policy dictates behavior that is not required by a consumer in order to exchange messages between a consumer and a Provider. Instead it dictates behavior that a provider must follow only. Therefore it is recommended that CORS policies be classified as &ldquo;public&rdquo; by including the gmp:Visibility attribute in the enclosing wsp:Policy element with a value of &ldquo;public.&rdquo;</p>
   <p>The following is an example of a CORS policy attached to WSDL components:</p>
-<p><img src="images/cors_policy_attached_wsdl.jpg" width="579" height="497"></p>
+<p><img src="images/cors_policy_attachedwsdl.jpg" width="580" height="408" /></p>
 <p>Lines 02 through 06 contain a policy named "CORS" that holds a CORS assertion. The CORS policy is applied to the "ep1" endpoint on line 28.</p>
 
 <p><a href="#top">Back to top</a></p>
@@ -111,11 +111,6 @@ nav-title: Using the CORS Policy
   <dt>cors:CORS/wsp:Policy/cors:MaxAge /@duration</dt>
   <dd>This mandatory integer attribute holds the value that will be returned in the Access-Control-Max-Age response header. </dd>
 </dl>
-<dl>
-  <dt>cors:CORS /@{any}</dt>
-  <dd>Additional attributes can be specified but should not  contradict the semantics of the [owner element]; if an attribute is not recognized, it will be ignored. </dd>
-</dl>
-
 <p>
   An example of a CORS policy is illustrated below:</p>
 </dl>
