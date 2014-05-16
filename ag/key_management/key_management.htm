@@ -111,6 +111,7 @@ nav-title: Managing Keys
   <li><strong>Default - </strong>Used to  import public and private keys and a certificate that has been issued by a third party Certificate  Authority. Import requires that you specify a keystore path or certificate filename. Supported keystore types include <em>Java</em> (imports public keys from a certificate only) and <em>PKCS12</em> (imports keys from a PKCS12 only. The import function supports the certificate file format (.CER). </li>
   <li><strong>External Keystore</strong> - Imports  PKI Keys and X.509 Certificate and assigns them to  external keystore along with the associated alias. </li>
 </ul>
+<p><strong><em>FIPS Support for  importing external private keys:</em></strong> FIPS 140-2 level II allows import of external private keys. You cannot import external private keys into an HSM that is FIPS-140-2 level III compliant.</p>
 <p><a href="#top">back to top</a>
 </p>
 
