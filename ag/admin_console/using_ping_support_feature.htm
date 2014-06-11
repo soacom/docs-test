@@ -1,21 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+---
+layout: page
+title: Using the SOA Software Ping Support Feature
+description: Learn how to ping Network Director and Policy Manager instances to verify they are running.
+product: ag
+category: learn
+weight:	6
+Subcategory: Ping
+type: page
+nav-title: Using the SOA Software Ping Support Feature
 
-
-<title>Getting Started API Developers</title>
-<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
-<link href="../../style/base.css" rel="stylesheet" type="text/css" />
-<link href="../../style/document.css" rel="stylesheet" type="text/css" />
-
-
-</head>
-<body>
-<a name="top"></a>
-<div class="documentation supportContent">
-  <h2 name="top">Using the SOA Software Ping Support Feature</h2>
-  <p>Learn how to manage a container as part of a  cluster in Policy  Manager.</p>
+---
+<h2 name="top">Using the SOA Software Ping Support Feature</h2>
+  <p>Learn how to ping Network Director and Policy Manager instances to verify they are running.</p>
   
  
 <a href="using_admin_console" class="button secondary">Using Admin Console</a>
@@ -29,14 +25,14 @@
    <ol class="table_of_contents">
 
  <li><a href="#introduction">Introduction</a></li>
- <li><a href="#configuration">Configuration</a></li>
+ <li><a href="#enable">Enabling the Ping Service</a></li>
   
  
 
 
 
   </ol>
-  <div class = "divider1"></div><p></p>
+  <div class = "divider1"></div>
 
 
 
@@ -46,63 +42,41 @@
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>The  &quot;SOA Software Cluster Support&quot; feature that provides support for group administration of multiple containers via a single &quot;SOA Software Administration Console.&quot; The clustering feature is based on the idea of a &quot;Master&quot; node and a set of &quot;Slave&quot; nodes all share a common set of feature bundles and configuration. When the clustering feature is installed, any Container Instance may be configured as either a Master or Slave. All Slaves will periodically synchronize their state with the Master node. If the Master node becomes unavailable for any reason, the slaves will remain in their last configured state.
+<p>The<em> SOA Software Ping Support</em> feature includes a simple "ping" web service for testing the functional  state of the container's web service framework.</p>
+<a name="enable_ping">
+<h3>Enabling the Ping Service</h3></a>
+<p>In many cases, when load balancers are being used to load balance the Network Director instances and/or Policy Manager instances, the load balancers will &quot;ping&quot; these instances to verify the instances are running. </p>
+ <p>The <em> SOA Software Ping Support</em> feature provides  support for pinging the instances and can be installed and enabled from the <em>SOA Software Administration  Console </em>of the container instance.</p>
+  <h4>Step 1: Install the Ping feature into the instance</h4>
+  <ol class="usingOrderedList">
+    <li>Launch the <em>SOA Software Administration Console </em>(http://&lt;hostname:&lt;port&gt;/admin/) for the Policy Manager container instance.</li>
+    <li>On the <em>Available Features</em> screen, select <strong>Feature </strong> from the <em>Filter</em> menu. </li>
+    <li>Select the <em>SOA Software Ping  Feature</em> and click <strong>Install Feature</strong>.</li>
+    <li>After the installation is complete, click <strong>Close</strong>.</li>
+  </ol>
+  
+   <h4>Step 2: Enable the Ping feature </h4>
+  <ol class="usingOrderedList">
+    <li>Select the <em>Configuration</em> tab. In the <em>Configuration Categories</em> section,  select <strong>com.soa.feature.ping</strong>.</li>
+    <li>Change the value of the <strong>ping.service.enabled</strong> property from <strong>False</strong> to <strong>True</strong>, then <strong>Apply Changes</strong>.</li>
+  </ol>
+<h4>Step 3: Invoke the Ping Service </h4>
+<p>The Ping service can be invoked using a GET or HEAD request. There are two URLs that can be invoked using either an HTTP GET or HEAD request. 
+  </p>
+<h5>Request and Response</strong> </h5>
+  <p>The request and  expected responses are shown below.</p>
+  <p><img src="images/ping_support1.jpg" width="662" height="327"></p>
+  <h6>Example:</h6>
+  <p><img src="images/ping_support2.jpg" width="660" height="331"></p>
+<h6>Response:</strong></h6>
+<p><img src="images/ping_support3.jpg" width="667" height="127"></p>
+<p>This is the container key:</p>
 
-<p><em>Note: This feature is available in Policy Manager 6.x, and 7.x.</em>
-<p>Here's how it works:
-<p>The &quot;SOA Software Cluster Support&quot; plug-in should be installed into a Master and Slave Container instance using the &quot;SOA Software Administration Console.&quot; When the installation is complete, navigate to the &quot;Configuration&quot; tab, select the <strong>com.soa.cluster</strong> category, configure the master and slave nodes, and click <strong>Save</strong>. </p>
-<h5>Master Node</h5>
-<p>On the Master node, select the &quot;Act as a master node&quot; radio button. </p>
-<p><img src="cluster_support1.jpg" width="505" height="184"></p>
-<h5>Slave Node</h5>
-<p>'For a Slave node, select the &quot;Act as a slave node&quot; radio button, and enter the &quot;Master Hostname&quot; and &quot;Master Port&quot; of the Master Node in the text boxes. Any number of Slave Nodes may use a single master.</p>
-<p><img src="cluster_support2.jpg" width="511" height="194"></p>
-<h5>Advanced Options</h5>
-<p>The "Advanced" configuration is only required in cases where specific configuration PIDs (i.e., Process Identifiers) should not be replicated between cluster nodes. Refer to http://docs.soa.com/ag/assets/PM_ConfigurationCategoriesAndSettings_v61.pdf for a description of each configuration category. </p>
-<p><img src="cluster_support3.jpg" width="489" height="383"></p>
-
-<a name="configuration">
-<h3>Configuration</h3></a>
-<p>To use the SOA Software Cluster Support plug-in you will need two Policy Manager containers (one that will be designated as &quot;Master&quot; and one that will be designated as &quot;Slave&quot;). </p>
-<h5>Prerequisites</h5>
-</a>
+<p style="color: red;">93dbefa2-f5ec-4a16-b681-257dfcfe</p>
 
 
-<ul class="usingOrderedList">
-  <li>SOA Software Platform, Version 7.1 must be installed.<br>
-  </li>
-</ul>
 
-<h5>Step 1: Configure Policy Manager "Master" Container</h5>
-<ol class="usingOrderedList">
-  <li>Launch the <em>Configure Container Instance Wizard</em> - <strong>&lt;release directory&gt;\bin\startup configurator</strong></li>
-  <li>Define the Policy Manager &quot;Master&quot; container (<strong>PM</strong>).</li>
-  <li>In the   <em> SOA Software Administration Console</em>, select <em>Available Features &gt; Features</em> filter,  and install the Policy Manager features (<em>SOA Software Policy Manager Services</em> and    <em>SOA Software Policy Manager Console</em>).</li>
-  <li> Select <em>Available Features &gt; Plug-in </em> filter,  and install  <em> SOA Software Cluster Support</em>. Do not configure keys as this step was already performed when you installed the two Policy Manager features. </li>
-  <li>Select the <em>Configuration</em> tab. In the <em>Configuration Categories</em> section,  select<strong> com.soa.cluster</strong>.</li>
-  <li>Select <strong>Act as master node</strong> and save. </li>
-  <li> Select <strong>com.soa.database.config</strong> (as illustrated below), click<strong> Add Property</strong>, add <strong>encryptValues=false</strong>, click <strong>Apply</strong>, then <strong>Apply Changes</strong>.<br>
-    <br>
-    <img src="cluster_support4.jpg" width="732" height="347"><br>
-  </li>
-  <li>Restart the Policy Manager container instance (<em>System</em> tab &gt; <strong>Restart</strong>).</li>
-  <li>After the container restart is complete, log back into the SOA Software Administration console, and select the <em>Configuration</em> tab. In the <em>Configuration Categories</em> section,  select <strong>com.soa.database.config</strong>.</li>
-  <li>Update the database password (as illustrated below), and <strong>Apply Changes</strong>. <br>
-    <br>
-    <img src="cluster_support5.jpg" width="645" height="309"><br>
-    <br>
-  </li>
- </ol>
- 
- <h5>Step 2: Configure Policy Manager "Slave" Container</h5>
- <h5></h5>
- <ol class="usingOrderedList">
-   <li>Launch the <em>Configure Container Instance Wizard</em> - <strong>&lt;release directory&gt;\bin\startup configurator</strong></li>
-   <li>Define the Policy Manager &quot;Slave&quot; container (<strong>PM1</strong>).</li>
-   <li>In the <em> SOA Software Administration Console</em>, select <em>Available Features &gt; Plug-in </em> filter,  and install <em> SOA Software Cluster Support</em>. Do not install the two Policy Manager features in this container. </li>
-   <li>Select the <em>Configuration</em> tab. In the <em>Configuration Categories</em> section,  select<strong> com.soa.cluster</strong>.</li>
-   <li>Select <strong>Act as slave node, </strong> enter Host (PM1) and Port, then save. </li></ol>
- <p><a href="#top">Back to top</a></p>
+<p><a href="#top">Back to top</a></p>
 
 </div>
 </body>
