@@ -1,24 +1,24 @@
 ---
 layout: page
 title: Installing SOA Software Platform Features
-description: Learn about administration tools used in the <em>SOA Software Administration Console</em>. product: ag
+description: Learn how to install features that are part of the SOA Software Platform default installation.
+product: ag
 category: learn
 weight:	6
-subcategory: Admin
+Subcategory: Install Features
 type: page
-nav-title: Using the SOA Software Administration Console
-
+nav-title: Installing SOA Software Platform Features
 ---
-<div class="documentation supportContent">
+
 <h2 name="top">Installing SOA Software Platform Features</h2>
 
 <p>Learn how to install features that are part of the SOA Software Platform default installation.</p>
 
 <a href="using_admin_console.htm" class="button secondary">Using Admin Console</a>
 
-<a href="install_tools.htm" class="button secondary">Installing Tools</a>
+<a href="installing_tools.htm" class="button secondary">Installing Tools</a> 
 
-<a href="install_plugins.htm" class="button secondary">Installing Plug-ins</a>
+<a href="installing_plugins.htm" class="button secondary">Installing Plug-ins</a>
 
 <a href="config_category.htm" class="button secondary">Configuration Categories</a>
 
@@ -76,94 +76,73 @@ nav-title: Using the SOA Software Administration Console
 
 
 <div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
+<a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm"><h3>SOA Software Tomcat Agent</h3></a>
 
 
 
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
 
 
-<div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
-
-
-
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
+<p>This feature is the policy enforcement point for the Apache Tomcat application  server and provides WS-Policy enforcement for web services deployed to Tomcat.  It can only be deployed in a Container deployed in a Tomcat instance and only  supports the Apache Axis 1.4 SOAP framework.</p>
 
 
 <div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
+<a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm"><h3>SOA Software Ping Support</h3></a>
 
 
 
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
-
-
-<div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
-
-
-
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
+<p>This feature includes a simple &quot;ping&quot; web service for testing the functional  state of the container's web service framework.</p>
 
 
 <div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
+<a href="using_pmconsole_feature.htm"><h3>SOA Software Policy Manager Console</h3></a>
 
 
 
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
-
-
-<div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
-
-
-
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
+<p>This feature includes a web based user interface for the central Policy Manager  governance application. The user interface provides a dashboard and the primary  interface for configuration, management and administration of Policy Manager and  Service Manager. The console must interact with a Container (may be the same  container) configured with the SOA Software Policy Manager Services to fulfill  the core central governance application requirements.<br />
+</p>
 
 
 <div class = "divider1"></div>
-<a href="basics_navigation.htm"><h3>Navigation</h3></a>
+<a href="using_pmservices_feature.htm"><h3>SOA Software Policy Manager Services</h3></a>
 
 
 
-<p>Key terminology and navigation elements used in the platform, App and API component overview, and platform search option.</p>
+<p>This feature includes services provided by the central Policy Manager governance  application. These services include, but are not limited to, UDDIv2 and UDDIv3,  WS-MetadataExchange, SOA Container Configuration, an XACML Policy Decision  Point, a WS-Trust Security Token Service, Alert reporting, and RESTful  interfaces to the governance model. In addition, this feature includes engines  for performing Quality of Service calculations and health and status  monitoring.<br />
+</p>
 
 
 <div class = "divider1"></div>
+<a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm"><h3>SOA Software Managed Services</h3></a>
 
-  <div class = "divider1"></div>
-  <h2>Overview</h2>
-<p>SOA Software Agent Foundation</p>
-<p>SOA Software Delegate</p>
-<p>SOA Software Delegate Access Point</p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/using_network_director_feature.htm">SOA Software Network Director</a></p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm">SOA Software Tomcat Agent</a></p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm">SOA Software Ping Support</a></p>
-<p>SOA Software Policy Manager Console</p>
-<p>SOA Software Policy Manager Services</p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm">SOA Software Managed Services</a> *</p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm">SOA Software Scheduled Jobs</a> *</p>
-<p><a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm">SOA Software Security Services</a> *</p>
-<p>* These features are installed as part of the <em>SOA Software Policy Manager Services</em> feature installation (for a single container installation), or you can deploy them in different containers (See <a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm">Deploy Policy Manager on Multiple Containers</a>).</p>
 
-<a name="xxxt">
-<h3>xxx xxx </h3></a>
-<p>xxx</p>
-<ul class="usingOrderedList">
-  <li>xx</li>
-  <li>xx</li>
-  <li>xx</li>
-  <li>xx</li>
-  <li></li>
-</ul>
 
+
+
+<p>Installs the Policy Manager system services. This feature is used  for multi-container deployments and is also installed as part of the <em>SOA Software Policy Manager Services</em> feature (for single container deployments) along with <em>SOA Software Security Services</em>, and <em>SOA Software Scheduled Jobs </em> features. </p>
+
+
+<div class = "divider1"></div>
+<a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm"><h3>SOA Software Scheduled Jobs</h3></a>
+
+
+
+
+
+<p>Installs a series of system background jobs that are executed by the Policy Manager job scheduler.  This feature is used  for multi-container deployments and is also installed as part of the <em>SOA Software Policy Manager Services</em> feature (for single container deployments) along with <em>SOA Software Managed Services</em>, and <em>SOA Software Security Services</em> features. </p>
+
+
+<div class = "divider1"></div>
+<a href="http://docs.soa.com/docs-test/ag/admin_console/pm_config_multi_containers.htm">
+<h3>SOA Software Security Services</h3></a>
+
+
+
+
+
+<p>Installs Policy Manager security-related services. This feature is used  for multi-container deployments and is also installed as part of the <em>SOA Software Policy Manager Services</em> feature (for single container deployments) along with <em>SOA Software Scheduled Jobs</em>, and <em>SOA Software Managed Services</em> features. </p>
+
+
+<div class = "divider1"></div>
 <p><a href="#top">back to top</a>
 </p>
-<a name="modify_script_information">
-<h3>&nbsp;</h3>
-</a>
 
-
-<div class = "divider1"></div>
