@@ -61,7 +61,10 @@ nav-title: Using the SOA Software Delegate Features
 </ul>
 <a name="prereqs">
 <h3>Prerequisites</h3></a>
-<p>Before configuring a delegate, review the   <a href="http://docs.soa.com/docs-test/ag/assets/PM7x_Delegate_for_Apache_Axis.pdf">Policy Manager Delegate for Apache Axis Technical Note</a> for a complete description of the delegate architecture, delegate handler, configuration handler paramenters, and delegate identity credentials. </p>
+<ul class="usingOrderedList">
+  <li><strong>Apache Axis</strong> – You must be experienced Apache Axis user. In this exercise you will be installing Apache Axis, the Axis SOAP Client, and installing and deploying a web service. </li>
+  <li><strong>Documentation </strong>– Before configuring a delegate, review the   <a href="http://docs.soa.com/docs-test/ag/assets/PM7x_Delegate_for_Apache_Axis.pdf">Policy Manager Delegate for Apache Axis Technical Note</a> to become familiar with the delegate architecture, delegate handler, configuration handler paramenters, and delegate identity credentials. </li>
+</ul>
 <a name="collocated">
 <h3>Configure Collocated Option</h3>
 </a>
@@ -74,11 +77,11 @@ nav-title: Using the SOA Software Delegate Features
    <li>Install Axis service and Axis client in Tomcat (i.e.,  copy to 
      /webapps), then  Restart Tomcat. 
    </li>
-   <li>Register the physical service in PM. (http://
+   <li>Register the physical service in Policy Manager. (http://
      :8080/axis/services/echo?wsdl) 
    </li>
-   <li> Create Tomcat container and manage the physical service in Tomcat container. </li>
-   <li>Create SOAP UI project with physical service URL. </li>
+   <li>Create Tomcat container and manage the physical service in Tomcat container. </li>
+   <li>Create SOAP UI project with the physical service URL. </li>
    <li>Bring up the client page at http://:8080/example-axis-client/echo.jsp </p>
    </li>
    <li> Enter any value and submit. </li>
@@ -86,11 +89,16 @@ nav-title: Using the SOA Software Delegate Features
 
 <a name="remote">
 <h3>Configure Remote Options</h3>
-<h4>&nbsp;</h4>
+<h4>J2EE Container</h4>
+<p></p>
+
+<h4>Standalone Container</h4>
+<p></p>
+
+<h4>Agent Container</h4>
+<p>SOA Software provides delegate support for a variety of different agents (i.e., tc Server, WebSphere, JBoss, etc.). Contact SOA Software Customer Support for more information. </p>
+
 </a>
  <p><a href="#top">Back to top</a></p>
- 
- <p>&nbsp;</p>
-</div>
 </body>
 </html>
