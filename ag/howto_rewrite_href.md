@@ -5,7 +5,7 @@ description: A tutorial on how to rewrite hrefs in response content with Javascr
 product: ag
 category: learn
 subcategory: Howto
-weight: 12
+weight: 4
 type: page
 nav-title: Rewrite HREFs
 ---
