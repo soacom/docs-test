@@ -566,12 +566,13 @@ div.documentation dd { /*glossary definition*/
 
 
 .supportContent pre { /*Added 11/12/13 */
-	background: #F8F4EE;
+	background: #f6f6f6;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 11px;
 	padding-top: 0px;
 	padding-right: 2px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
 	padding-left: 2px;
 	overflow-x:auto;
 	line-height: 15px;

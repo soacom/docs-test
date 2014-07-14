@@ -10,6 +10,9 @@ type: page
 nav-title: Rewrite HREFs
 ---
 
+How to Rewrite HREFs in content
+-------------------------------
+
 This article provides a couple of policy scripts and a script snippet that combine to deliver a nice solution to the question of how to rewrite URLs in REST response content through a virtual service (a very common issue with HATEOAS).  It uses script policies rather than in-process activity scripts because it is likely to apply to an entire service, and not just one or more operations.
 
 On the surface the problem is simple.  The virtual service listens on a URL, the physical service listens on a different one, the physical service returns content that contains href elements that are based on its URL and we need to mediate them so they look like the virtual service URL.  For example, consider a service on http://localhost:9901/rest/staff that calls a downstream service on http://127.0.0.1:3000/people.  The downstream service returns results like:
@@ -169,7 +172,7 @@ switch(messageContext.getParameterType())
 }
 ```
 
-I'm also including a couple of useful utility scripts that will you with other policies you may need to write:
+I'm also including a couple of useful utility scripts that will help you with other policies you may need to write:
 
 empty-policy.js - what it sounds like, it’s a framework to use for writing your own javascript policies.
 
@@ -198,23 +201,23 @@ switch(messageContext.getParameterType())
 audit-properties.js - a code snippet you can put in any of the request or response handler segments in one of these policies.  It spits out 2 debug log entries, one that contains all the message properties and their values, another that contains all the exchange properties and their values.  This is incredibly useful for debugging these policies.
 
 ```javascript
-        // Audit the msg properties
-        var msgPropNames = msg.getPropertyNames();
-        var msgPropNamesArray = msgPropNames.toArray();
-        var msgArrayLength = msgPropNamesArray.length;
-        var msgPropOutput = "Message Properties\n";     
-        for (var i = 0; i < msgArrayLength; i++) {
-            msgPropOutput += msgPropNamesArray[i] + " = " + msg.getProperty(msgPropNamesArray[i]) + "\n";
-        }       
-        auditLog.debug(msgPropOutput);
-        
-        // Audit the exg properties
-        var exgPropNames = exg.getPropertyNames();
-        var exgPropNamesArray = exgPropNames.toArray();
-        var exgArrayLength = exgPropNamesArray.length;
-        var exgPropOutput = "Exchange Properties\n";        
-        for (var i = 0; i < exgArrayLength; i++) {
-            exgPropOutput += exgPropNamesArray[i] + " = " + exg.getProperty(exgPropNamesArray[i]) + "\n";
-        }       
-        auditLog.debug(exgPropOutput);
+// Audit the msg properties
+var msgPropNames = msg.getPropertyNames();
+var msgPropNamesArray = msgPropNames.toArray();
+var msgArrayLength = msgPropNamesArray.length;
+var msgPropOutput = "Message Properties\n";     
+for (var i = 0; i < msgArrayLength; i++) {
+    msgPropOutput += msgPropNamesArray[i] + " = " + msg.getProperty(msgPropNamesArray[i]) + "\n";
+}       
+auditLog.debug(msgPropOutput);
+
+// Audit the exg properties
+var exgPropNames = exg.getPropertyNames();
+var exgPropNamesArray = exgPropNames.toArray();
+var exgArrayLength = exgPropNamesArray.length;
+var exgPropOutput = "Exchange Properties\n";        
+for (var i = 0; i < exgArrayLength; i++) {
+    exgPropOutput += exgPropNamesArray[i] + " = " + exg.getProperty(exgPropNamesArray[i]) + "\n";
+}       
+auditLog.debug(exgPropOutput);
 ```
