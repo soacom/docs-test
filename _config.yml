@@ -1,2 +1,3 @@
 baseurl: /docs-test
+markdown: kramdown
 MAXWEIGHT: 30
