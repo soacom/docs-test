@@ -6,5 +6,9 @@ Gemfile
 Guardfile
 Gemfile.lock
 CNAME
+<<<<<<< Updated upstream
 .vagrant
 .DS_Store
+=======
+js
+>>>>>>> Stashed changes
