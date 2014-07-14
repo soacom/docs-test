@@ -1,3 +1,3 @@
 baseurl: /docs-test
-markdown: kramdown
+markdown: redcarpet
 MAXWEIGHT: 30
