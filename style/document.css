@@ -535,6 +535,9 @@ a.docs_overview_signup {
 .supportContent pre code {
 	white-space: pre;
 }
+.supportContent pre {
+	white-space: pre;
+}
 .horizontalDottedDivider {
     border-bottom: 1px dotted black;
     height: 0;
