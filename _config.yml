@@ -1,3 +1,6 @@
-baseurl: /docs-test
+baseurl: /soadocs
 MAXWEIGHT: 30
+exclude: [Guardfile]
 markdown: redcarpet
+lunr_search:
+  excludes: [rss.xml, atom.xml, search.json, Guardfile]
