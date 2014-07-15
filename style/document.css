@@ -532,13 +532,14 @@ a.docs_overview_signup {
 .supportContent .doctable, .supportContent p.apidoc_note {
 	margin: 0 20px 15px;
 }
+/* remove comments to enable horizontal scroll
 .supportContent pre code {
 	white-space: pre;
 }
 .supportContent pre {
 	white-space: pre;
 	word-wrap: normal;
-}
+}*/
 .horizontalDottedDivider {
     border-bottom: 1px dotted black;
     height: 0;
