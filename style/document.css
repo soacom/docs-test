@@ -537,6 +537,7 @@ a.docs_overview_signup {
 }
 .supportContent pre {
 	white-space: pre;
+	word-wrap: normal;
 }
 .horizontalDottedDivider {
     border-bottom: 1px dotted black;
