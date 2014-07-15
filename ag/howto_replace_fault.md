@@ -13,7 +13,7 @@ nav-title: Replace Fault Messages
 How to Replace Fault Messages
 -----------------------------
 
-This article describes how to replace the content of fault messages using an operational script policy.
+This article describes how to provide custom content for fault messages using an operational script policy.
 
 It uses a simple script policy acting on both response and fault messages.  It defines a static fault message that it uses to replace any fault content, and any reponse IF the response http status is greater than or equal to 400.  It is a simple matter to change the response code criteria, or the static response message.
 
