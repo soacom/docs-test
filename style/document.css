@@ -532,6 +532,9 @@ a.docs_overview_signup {
 .supportContent .doctable, .supportContent p.apidoc_note {
 	margin: 0 20px 15px;
 }
+.supportContent pre code {
+	white-space: pre;
+}
 .horizontalDottedDivider {
     border-bottom: 1px dotted black;
     height: 0;
