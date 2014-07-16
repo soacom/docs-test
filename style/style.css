@@ -214,6 +214,7 @@ document {
   margin: 0 auto;
   padding-bottom: 15px;
   min-height: 90px;
+  min-width: 1000px;
 }
 .soa-ui-dc-logo {
   float: left;
