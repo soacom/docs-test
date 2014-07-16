@@ -207,6 +207,7 @@ document {
   background: #F8F8F8;
   border-bottom: 1px solid #252525;
   margin-bottom: 40px;
+  width: 100%;
 }
 .soa-ui-dc-top-bar-wrapper .top-bar {
   position: relative;
