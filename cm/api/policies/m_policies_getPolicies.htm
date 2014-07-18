@@ -79,7 +79,7 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td>application/json  or text/xml</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -107,6 +107,13 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/Library/parm_policies_Type.lbi" --> The <a href="../Ref_Values.htm#values_policytypes">policy type</a> governing API operation.<!-- #EndLibraryItem --></td>
     </tr>
+    <tr>
+      <td>SubType</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>A second level for the <a href="../Ref_Values.htm#values_policytypes">policy type</a> governing API operation. For valid values, see <a href="../Ref_Values.htm#values_policysubtypes">Policy SubTypes</a>.</td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -122,26 +129,65 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows two policies returned.</p>
+<p id="id_sampleresponse">The sample response below shows five policies returned.</p>
 
 <p><strong>Sample response headers: JSON</strong></p>
 <pre>HTTP/1.1 200 OK
-Content-Type: application/json</pre>
+Content-Type: application/json
+Fri, 18 Jul 2014 10:45:58 GMT</pre>
 <p><a name="rss_policies_json"></a><strong>Sample response body: JSON</strong></p>
 <pre>{
   "channel" : {
     "title" : "Policies",
     "item" : [ {
-      "title" : "Open Monitoring",
-      "description" : "Collects transaction details including recorded messages for every transaction.",
+      "title" : "AtmosphereApplicationSecurityPolicy",
+      "description" : "",
+      "category" : [ {
+        "value" : "policy.apisec",
+        "domain" : "soa.com:policy:subtype"
+      } ],
       "guid" : {
-        "value" : "urn:uuid:cde3fb8a-8a81-11e1-8112-b4822b49f412"
+        "value" : "10001-AtmosphereApplicationSecurityPolicy"
       }
     }, {
-      "title" : "Open Simple Header Security",
-      "description" : "App ID only - no signature, hence low-grade security only.",
+      "title" : "BasicAuditing",
+      "description" : "",
+      "category" : [ {
+        "value" : "policy.auditservice",
+        "domain" : "soa.com:policy:subtype"
+      } ],
       "guid" : {
-        "value" : "urn:uuid:6282f78f-8a81-11e1-8112-b4822b49f412"
+        "value" : "10001-BasicAuditing"
+      }
+    }, {
+      "title" : "CORSAllowAll",
+      "description" : "",
+      "category" : [ {
+        "value" : "policy.cors",
+        "domain" : "soa.com:policy:subtype"
+      } ],
+      "guid" : {
+        "value" : "10001-CORSAllowAll"
+      }
+    }, {
+      "title" : "DetailedAuditing",
+      "description" : "",
+      "category" : [ {
+        "value" : "policy.auditservice",
+        "domain" : "soa.com:policy:subtype"
+      } ],
+      "guid" : {
+        "value" : "10001-DetailedAuditing"
+      }
+    }, {
+      "title" : "OAuthSecurity",
+      "description" : "",
+      "category" : [ {
+        "value" : "policy.oauth",
+        "domain" : "soa.com:policy:subtype"
+      } ],
+      "guid" : {
+        "value" : "10001-OAuthSecurity"
       }
     } ]
   },
@@ -149,32 +195,49 @@ Content-Type: application/json</pre>
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<p><strong>Sample response headers: XML</strong></p>
+<p><strong>Sample response headers: text/xml</strong></p>
 <pre>HTTP/1.1 200 OK
-Content-Type: text/xml</pre>
-<p><a name="rss_policies_xml"></a><strong>Sample response body: XML</strong></p>
+Content-Type: text/xml
+Fri, 18 Jul 2014 10:49:13 GMT</pre>
+<p><a name="rss_policies_xml"></a><strong>Sample response body: text/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" 
-xmlns:ns3="http://soa.com/xsd/comment/1.0" 
-xmlns:ns4="http://soa.com/xsd/user/1.0" 
-xmlns:ns5="http://a9.com/-/spec/opensearch/1.1/" 
-xmlns:ns6="http://soa.com/xsd/resource/1.0" 
-xmlns:ns7="http://soa.com/xsd/fault/1.0" 
-xmlns:ns8="http://soa.com/xsd/api/1.0" 
-xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
-    &lt;channel&gt;
-        &lt;title&gt;Policies&lt;/title&gt;
-        &lt;item&gt;
-            &lt;title&gt;Open Monitoring&lt;/title&gt;
-            &lt;description&gt;Collects transaction details including recorded messages for every transaction.&lt;/description&gt;
-            &lt;guid&gt;urn:uuid:cde3fb8a-8a81-11e1-8112-b4822b49f412&lt;/guid&gt;
-        &lt;/item&gt;
-        &lt;item&gt;
-            &lt;title&gt;Open Simple Header Security&lt;/title&gt;
-            &lt;description&gt;App ID only - no signature, hence low-grade security only.&lt;/description&gt;
-            &lt;guid&gt;urn:uuid:6282f78f-8a81-11e1-8112-b4822b49f412&lt;/guid&gt;
-        &lt;/item&gt;
-    &lt;/channel&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/rss/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0" 
+xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
+xmlns:ns8="http://soa.com/xsd/legals/1.0" xmlns:ns9="http://soa.com/xsd/dnmodel/1.0" xmlns:ns10="http://soa.com/xsd/fault/1.0" xmlns:ns11="http://soa.com/xsd/api/1.0" 
+xmlns:ns12="http://soa.com/xsd/board/1.0" xmlns:ns13="http://soa.com/xsd/search/1.0" xmlns:ns14="http://soa.com/xsd/workflow/1.0" version="1.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;Policies&lt;/title&gt;
+    &lt;item&gt;
+      &lt;title&gt;AtmosphereApplicationSecurityPolicy&lt;/title&gt;
+      &lt;description&gt;&lt;/description&gt;
+      &lt;category domain="soa.com:policy:subtype"&gt;policy.apisec&lt;/category&gt;
+      &lt;guid&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/guid&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;BasicAuditing&lt;/title&gt;
+      &lt;description&gt;&lt;/description&gt;
+      &lt;category domain="soa.com:policy:subtype"&gt;policy.auditservice&lt;/category&gt;
+      &lt;guid&gt;10001-BasicAuditing&lt;/guid&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;CORSAllowAll&lt;/title&gt;
+      &lt;description&gt;&lt;/description&gt;
+      &lt;category domain="soa.com:policy:subtype"&gt;policy.cors&lt;/category&gt;
+      &lt;guid&gt;10001-CORSAllowAll&lt;/guid&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;DetailedAuditing&lt;/title&gt;
+      &lt;description&gt;&lt;/description&gt;
+      &lt;category domain="soa.com:policy:subtype"&gt;policy.auditservice&lt;/category&gt;
+      &lt;guid&gt;10001-DetailedAuditing&lt;/guid&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;OAuthSecurity&lt;/title&gt;
+      &lt;description&gt;&lt;/description&gt;
+      &lt;category domain="soa.com:policy:subtype"&gt;policy.oauth&lt;/category&gt;
+      &lt;guid&gt;10001-OAuthSecurity&lt;/guid&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
 &lt;/rss&gt;
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -194,7 +257,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json  or text/xml</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -220,6 +283,10 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     <tr>
       <td>Description</td>
       <td>Description of the policy</td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>Information about one or more categories for the policy. Each category is a name/value pair, <strong>value</strong> and <strong>domain</strong>. Domain is soa.com.policy.subtype, and the value is the <a href="../Ref_Values.htm#values_policysubtypes">policy subType</a> value, indicating the type of policy.</td>
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a></td>
