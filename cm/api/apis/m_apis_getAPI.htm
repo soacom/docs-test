@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/{APIID}[?includeDefaultVersion=boolean]</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/{APIID}[?includeDefaultVersion=boolean][?IncludeSettings=boolean]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,9 +56,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api10041.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/12770263-e036-4222-b8eb-87d33676d3ad.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/api10041.acmecorp HTTP/1.1
+<pre>GET&nbsp;/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -115,6 +115,13 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
       <td>Optional</td>
       <td>Indicates whether to include the default version in the information returned. If not specified, defaults to <strong>false</strong>.</td>
     </tr>
+    <tr>
+      <td>IncludeSettings</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether to include the API settings in the information returned. If not specified, defaults to <strong>false</strong>.</td>
+    </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -130,32 +137,74 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows the information returned about the <strong>ACME Payments</strong> API. The information is returned as a JSON object.</p>
+<p id="id_sampleresponse">The sample response below shows the information returned about the <strong>ACME Payments API</strong>. The information is returned as a JSON object.</p>
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Wed, 01 May 2013 20:30:17 GMT
+Date:  Fri, 18 Jul 2014 11:59:09 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIID" : "api18969.acmecorp",
-  "Name" : "ACMEPayments",
+  "APIID" : "12770263-e036-4222-b8eb-87d33676d3ad.acmecorp",
+  "Name" : "ACME Payments API",
   "Description" : "Payments API for ACME customers.",
-  "Visibility" : "Limited",
-  "LatestVersionID" : "apiversion20693.acmecorp",
-  "IsFollowed" : true,
+  "Visibility" : "Public",
+  "LatestVersionID" : "961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp",
+  "IsFollowed" : false,
   "RatingSummary" : {
-    "Five" : 3,
-    "Four" : 1,
+    "Five" : 0,
+    "Four" : 0,
     "Three" : 0,
     "Two" : 0,
     "One" : 0
   },
-  "AdminGroupID" : "group18970.acmecorp",
-  "Created" : "2013-01-18T08:46:22Z",
-  "Updated" : "2013-04-30T16:10:47Z",
-  "AvatarURL" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/7247aaab-0263-4590-892f-2632067bbde7.png"
+  "AdminGroupID" : "apiadmin-12770263-e036-4222-b8eb-87d33676d3ad.acmecorp",
+  "Created" : "2014-07-18T15:43:09Z",
+  "Updated" : "2014-07-18T15:44:51Z",
+  "AvatarURL" : "http://&lt;hostname&gt;/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmecorp/avatar"
+}</pre>
+<p><strong>Sample response body with optional request parameter IncludeSettings=true</strong></p>
+<pre>{
+  "APIID" : "12770263-e036-4222-b8eb-87d33676d3ad.acmecorp",
+  "Name" : "ACME Payments API",
+  "Description" : "Payments API for ACME customers.",
+  "Visibility" : "Public",
+  "LatestVersionID" : "961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp",
+  "IsFollowed" : false,
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  },
+  "AdminGroupID" : "apiadmin-12770263-e036-4222-b8eb-87d33676d3ad.acmecorp",
+  "Created" : "2014-07-18T15:43:09Z",
+  "Updated" : "2014-07-18T15:44:51Z",
+  "AvatarURL" : "http://&lt;hostname&gt;/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmecorp/avatar",
+  "APISettings" : {
+    "PublicAPISupport" : "com.soa.feature.enabled",
+    "PublicAPISandboxEndpointSupport" : "com.soa.feature.enabled",
+    "PublicAPIProductionEndpointSupport" : "com.soa.feature.enabled",
+    "PublicAPISandboxAutoApprovalSupport" : "com.soa.feature.enabled",
+    "PublicAPIProductionAutoApprovalSupport" : "com.soa.feature.enabled",
+    "PublicAPIBoardSupport" : "com.soa.feature.enabled",
+    "PublicAPIRatingsSupport" : "com.soa.feature.enabled",
+    "PublicAPIReviewsSupport" : "com.soa.feature.enabled",
+    "PrivateAPISupport" : "com.soa.feature.enabled",
+    "PrivateAPISandboxEndpointSupport" : "com.soa.feature.enabled",
+    "PrivateAPIProductionEndpointSupport" : "com.soa.feature.enabled",
+    "PrivateAPISandboxAutoApprovalSupport" : "com.soa.feature.enabled",
+    "PrivateAPIProductionAutoApprovalSupport" : "com.soa.feature.enabled",
+    "PrivateAPIGroupTypeSupport" : "com.soa.feature.disabled",
+    "PrivateAPIIndependentGroupSupport" : "com.soa.feature.enabled",
+    "PrivateAPIBoardSupport" : "com.soa.feature.enabled",
+    "PrivateAPIRatingsSupport" : "com.soa.feature.enabled",
+    "PrivateAPIReviewsSupport" : "com.soa.feature.enabled",
+    "PublicAPIResourceLevelPermissionsSupport" : "com.soa.feature.enabled",
+    "PrivateAPIResourceLevelPermissionsSupport" : "com.soa.feature.enabled"
+  }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
