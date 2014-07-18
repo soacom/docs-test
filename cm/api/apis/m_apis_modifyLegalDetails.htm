@@ -55,9 +55,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to modify the legal agreement information.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/legals/agreement10030.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/details</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmecorp/details</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apis/versions/apiversion500.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/legals/agreement10030.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/details HTTP/1.1
+<pre>PUT&nbsp;/api/apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/details HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/json; charset=UTF-8</pre>
@@ -137,7 +137,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no other response.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the LegalDocumentID.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -147,10 +147,10 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Wed, 20 Feb 2013 21:55:33 GMT
+Date: Fri, 18 Jul 2014 14:29:50 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<p>None.</p>
+<pre>6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmecorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -178,7 +178,21 @@ Content-Type: text/plain</pre>
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
-<p>None.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a><a href="../Ref_API_Reference.htm#contenttype_response"></a></td>
+      <td>The unique ID of the legal document that was modified.</td>
+    </tr>
+  </tbody>
+</table>
+
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
