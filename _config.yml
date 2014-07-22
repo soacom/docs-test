@@ -1,3 +1,4 @@
-baseurl: /docs-test
+baseurl: /
 MAXWEIGHT: 30
 markdown: redcarpet
+pygments: false
