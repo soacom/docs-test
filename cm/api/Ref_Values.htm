@@ -43,72 +43,72 @@ no-catalog: true
     </tr>
   <tr>
     <td><a href="#values_appsettings">App Settings</a></td>
-    <td><a href="#values_policytypes">Policy Types</a></td>
+    <td><a href="#values_policysubtypes">Policy SubTypes</a></td>
     </tr>
   <tr>
     <td><a href="#values_appstate">App State Values</a></td>
-    <td><a href="#values_reporttype">Report Type</a></td>
+    <td><a href="#values_policytypes">Policy Types</a></td>
     </tr>
   <tr>
     <td><a href="#values_contractenvironment">App/API Contract Environment Values</a></td>
-    <td><a href="#values_resourcetype">Resource Types</a></td>
+    <td><a href="#values_reporttype">Report Type</a></td>
     </tr>
   <tr>
     <td><a href="#values_appversionsettings">App Version Settings</a></td>
-    <td><a href="#values_sortby">Sort By Values</a></td>
+    <td><a href="#values_resourcetype">Resource Types</a></td>
     </tr>
   <tr>
     <td><a href="#values_avatarproviders">Avatar Providers</a></td>
-    <td><a href="#values_sortorder">Sort Order Values</a></td>
+    <td><a href="#values_sortby">Sort By Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_boarditemtypes">Board Item Types</a></td>
-    <td><a href="#values_ticketlabel">Ticket Label Values</a></td>
+    <td><a href="#values_sortorder">Sort Order Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></td>
-    <td><a href="#values_ticketstate">Ticket State Values</a></td>
+    <td><a href="#values_ticketlabel">Ticket Label Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_displaymode">Display Mode</a></td>
-    <td><a href="#values_timeintervals">Time Intervals</a></td>
+    <td><a href="#values_ticketstate">Ticket State Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_environment">Environment</a></td>
-    <td><a href="#values_useractions">User Actions on a Resource</a></td>
+    <td><a href="#values_timeintervals">Time Intervals</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
-    <td><a href="#values_userpreferences">User Preferences</a></td>
+    <td><a href="#values_useractions">User Actions on a Resource</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
-    <td><a href="#values_usersignupstate">User Signup State Values</a></td>
+    <td><a href="#values_userpreferences">User Preferences</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupsettings">Group Settings</a></td>
-    <td><a href="#values_userstatus">User Status</a></td>
+    <td><a href="#values_usersignupstate">User Signup State Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupstates">Group States</a></td>
-    <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+    <td><a href="#values_userstatus">User Status</a></td>
     </tr>
   <tr>
     <td><a href="#values_grouptypes">Group Types</a></td>
-    <td><a href="#values_workflowactions">Workflow Actions</a></td>
+    <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
     </tr>
   <tr>
     <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
-    <td><a href="#values_workflowstates">Workflow States</a></td>
+    <td><a href="#values_workflowactions">Workflow Actions</a></td>
     </tr>
     <tr>
       <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
-      <td>&nbsp;</td>
-    </tr>
+      <td><a href="#values_workflowstates">Workflow States</a></td>
+      </tr>
     <tr>
       <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
       <td>&nbsp;</td>
-    </tr>
+      </tr>
   </tbody>
 </table>
 
@@ -806,6 +806,39 @@ no-catalog: true
   <li>Confidential: <strong>com.soa.oauth.ctype.confidential</strong></li>
   <li>Public: <strong>com.soa.oauth.clienttype.public</strong></li>
 </ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_policysubtypes"></a>Policy SubTypes</h3>
+<p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into <a href="#values_policytypes">policy types</a> and policy subtypes. Policy subtypes are listed below.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="33%">Value</th>
+      <th width="67%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>policy.apisec</td>
+      <td>API security policies</td>
+    </tr>
+    <tr>
+      <td>policy.auditservice</td>
+      <td>auditing policies</td>
+    </tr>
+    <tr>
+      <td>policy.cors</td>
+      <td>CORS policy</td>
+    </tr>
+    <tr>
+      <td>policy.oauth</td>
+      <td>OAuth policy</td>
+    </tr>
+  </tbody>
+</table>
+<p>For an example of how policy subtype values are used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
