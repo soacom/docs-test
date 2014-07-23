@@ -142,7 +142,7 @@
 
                 // Start with the product
                 if ( "{{ site.baseurl }}" ) {
-                    subnavLink = "{{ site.baseurl }}".concat('{{ page.product }}');
+                    subnavLink = "{{ site.baseurl }}/".concat('{{ page.product }}');
                 } else {
                     subnavLink = "/".concat('{{ page.product }}');
                 }
@@ -226,7 +226,7 @@
 
             // Start with the product
             if ( "{{ site.baseurl }}" ) {
-                subnavLink = "{{ site.baseurl }}".concat('{{ page.product }}');
+                subnavLink = "{{ site.baseurl }}/".concat('{{ page.product }}');
             } else {
                 subnavLink = "/".concat('{{ page.product }}');
             }
