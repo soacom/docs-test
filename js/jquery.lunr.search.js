@@ -140,7 +140,9 @@
         $entries.append('<p class="soa-ui-dc-section-paragraph">Nothing found.</p>')
         $entries.parents('#soa-control-dc-search-results').addClass('soa-ui-dc-inline-search-div-no-results');
       } else {
-        $entries.append(this.template({entries: entries}));
+        var tmpl = this.template({entries: entries});
+        tmpl = tmpl.replace(/\&gt;/gm,'>').replace(/\&lt;/gm,'<').replace(/\&quot;/gm,"\"").replace(/\&amp;nbsp;/gm," ");
+        $entries.append(tmpl);
       }
       
       $results.show();
