@@ -163,7 +163,7 @@
                     ObjDetDivH4.addClass("soa-ui-dc-section-header");
 
                     ObjP.addClass("soa-ui-dc-section-paragraph");
-                    ObjP.html(classsnpages[j].d);
+                    ObjP.html(classsnpages[j].d.replace("&amp;nbsp;", " "));
 
                     ObjSecDiv.append(ObjDetDivH4);
                     ObjSecDiv.append(ObjP);
@@ -230,7 +230,7 @@
                 ObjDetDivH4.addClass("soa-ui-dc-section-header");
 
                 ObjP.addClass("soa-ui-dc-section-paragraph");
-                ObjP.html(pages[i].d);
+                ObjP.html(pages[i].d.replace("&amp;nbsp;", " "));
 
                 ObjSecDiv.append(ObjDetDivH4);
                 ObjSecDiv.append(ObjP);
