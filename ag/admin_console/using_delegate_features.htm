@@ -16,6 +16,8 @@ nav-title: Using the SOA Software Delegate Features
 
 <a href="using_admin_console.htm" class="button secondary">Using Admin Console</a>
 
+<a href="http://docs.soa.com/ag/assets/PM7x_Delegate_for_Apache_Axis.pdf" class="button secondary">Policy Manager 7.x Delegate for Apache Axis</a>
+
 <p></p>
 
 
@@ -67,34 +69,78 @@ nav-title: Using the SOA Software Delegate Features
 </ul>
 <a name="collocated">
 <h3>Configure Collocated Option</h3>
+<h4>Step 1: Install and Configure Tomcat Container and Features</h4>
 </a>
 <ol class="usingOrderedList">
-   <li><a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm#tomcat_container">Configure Tomcat Container</a>. </li>
-   <li><a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm#install_tomcatagent">Install the<em> SOA Software Tomcat Agent</em> and <em>SOA Software Delegate </em>features.</a></li>
-   
-   <li><a href="http://docs.soa.com/docs-test/ag/admin_console/using_tomcat_agent_feature.htm#configure_tomcat">Configure the SOA Softwre Tomcat Agent Feature</a>.</li>
-     
-   <li>Install Axis service and Axis client in Tomcat (i.e.,  copy to 
-     /webapps), then  Restart Tomcat. 
-   </li>
-   <li>Register the physical service in Policy Manager. (http://
-     :8080/axis/services/echo?wsdl) 
-   </li>
-   <li>Create Tomcat container and manage the physical service in Tomcat container. </li>
-   <li>Create SOAP UI project with the physical service URL. </li>
-   <li>Bring up the client page at http://:8080/example-axis-client/echo.jsp </p>
-   </li>
-   <li> Enter any value and submit. </li>
+   <li>Configure Tomcat Container (GUI / Silent). See <em>Step 2 </em>of <a href="using_tomcat_agent_feature.htm#tomcat_container">Using Tomcat Agent Feature</a> topic.</li>
+   <li>Install SOA Software Tomcat Agent Feature. See <em>Step 3 </em>of <a href="using_tomcat_agent_feature.htm#install_tomcatagent">Using Tomcat Agent Feature</a> topic.</li>
+   <li>Configure SOA Software Tomcat Agent Feature. See <em>Step 4 </em>of <a href="using_tomcat_agent_feature.htm#configure_tomcat">Using Tomcat Agent Feature</a> topic.</li>
 </ol>
 
-<a name="remote">
-<h3>Configure Remote Options</h3></a>
-<h4>J2EE Container</h4>
-<p></p>
+<h4>Step 2: Install Delegate Feature</h4>
+<ol class="usingOrderedList">
+  <li>Launch the <em>SOA Software Administration Console </em>(http://&lt;hostname:&lt;port&gt;/admin/).</li>
+  <li>On the <em>Installed Features</em> screen, select <strong>Feature</strong> from the <em>Filter</em> menu. </li>
+  <li>Select the <em>SOA Software Delegate </em> feature and click <strong>Install Feature</strong>.</li>
+  <li>After the installation is complete, click <strong>Configure</strong>. On the <em>WS-MetaDataExchange Options</em> screen specify the URL of the Policy Manager Metadata Exchange Service.</li>
+  <li>Restart the container.</li>
+</ol>
+<h4>Step 3: Install Axis Service &amp; Client</h4>
+<ol class="usingOrderedList">
+  <li>Install Axis service and Axis client in Tomcat (i.e.,  copy to 
+  /webapps).</li>
+  <li>Restart Tomcat. </li>
+</ol>
 
-<h4>Standalone Container</h4>
-<p></p>
+<h4>Step 4: Register Tomcat Container</h4>
+<ol class="usingOrderedList">
+  <li>Register Tomcat container in the <em>Policy Manager Management Console</em>. See <em>Step 5 </em>of <a href="using_tomcat_agent_feature.htm#register_tomcat">Using Tomcat Agent Feature</a> topic.</li>
+</ol>
+<h4>Step 5: Create and Manage Physical Service  Policy Manager</h4>
+<ol class="usingOrderedList">
+  <li>Launch the <em>Policy Manager Management Console</em>.</li>
+  <li>Using <strong>Create Physical Service</strong>, register the physical service  (e.g., http://&lt;hostname&gt;:8080/axis/services/echo?wsdl).</li>
+  <li>On the <em>Select Service Management Option</em> screen, select a service management option (i.e., Manage within Container, or Manage through a Virtual Service).</li>
+  <li>On the <em>Select Container</em> screen, select the Tomcat container you registered in <em>Step 4</em>. </li>
+  <li>Complete configuration. </li>
+</ol>
 
+<h4>Step 6: Test</h4>
+<ol class="usingOrderedList">
+  <li>Create SOAP UI project with physical service URL.</li>
+  <li>Bring up the client page at http://&lt;hostname&gt;:8080/example-axis-client/echo.jsp</li>
+  <li>Enter any value and submit.<br />
+  </li>
+</ol>
+<a name="collocated">
+<h3>Configure Remote Options</h3>
+<h4>Configure Remote Delegate Option for Standalone Container (ND)</h4>
+<p>With this option  the <em>SOA Software Delegate Access Point</em> feature is required to perform the message processing. </p>
+</a>
+<ol class="usingOrderedList">
+  <li>Create Standalone Container.</li>
+  <li>Install <em>SOA Software Delegate Access Point</em> feature. </li>
+  <li>Install <em>SOA Software Network Director</em> feature.</li>
+  <li>Install Axis service and Axis client in Tomcat or any . i.e., copy to &lt;TOMCAT HOME&gt;/webapps. Restart TOMCAT.</li>
+  <li>Edit client-config.wsdd file in &lt;TOMCAT_HOME&gt;/webapps/example-axis-client/WEB-INF/classes</li>
+  <li>Change “type” attribute of the “handler” entry to “java:com.soa.delegate.axis.RemoteAxisPivotHandler”.</li>
+  <li>Add parameter element for the proxy.address with address of container installed with Delegate Access Point feature as follows:    &lt;parameter name=&quot;proxy.address&quot; value=&quot;http://&lt;host&gt;:&lt;port&gt;/soapdelegate&quot;/&gt;</li>
+  <li>Restart Tomcat.</li>
+  <li>Deploy Delegate handlers as illustrated in the <a href="http://docs.soa.com/ag/assets/PM7x_Delegate_for_Apache_Axis.pdf" class="button secondary">Policy Manager 7.x Delegate for Apache Axis Technical Note</a> </li>
+</ol><br />
+<h4>Configure Remote Delegate Option for J2EE Container</h4>
+<p>With this option you can install the <em>SOA Software Delegate</em> feature and it can act as an accoint point and collocated delegate. </p>
+<ol class="usingOrderedList">
+  <li>Create Standalone Container.</li>
+  <li>Install <em>SOA Software Delegate </em> feature in J2EE container</li>
+  <li>Install Axis service and Axis client in Tomcat or any . i.e., copy to &lt;TOMCAT HOME&gt;/webapps.  Restart TOMCAT.</li>
+  <li>Edit client-config.wsdd file in &lt;TOMCAT_HOME&gt;/webapps/example-axis-client/WEB-INF/classes.</li>
+  <li>Change &ldquo;type&rdquo; attribute of the &ldquo;handler&rdquo; entry to &ldquo;java:com.soa.delegate.axis.RemoteAxisPivotHandler&rdquo;.</li>
+  <li>Add parameter element for the proxy.address with address of container installed with Delegate Access Point feature as follows: &lt;parameter name=&quot;proxy.address&quot; value=&quot;http://&lt;host&gt;:&lt;port&gt;/soapdelegate&quot;/&gt;</li>
+  <li> Restart Tomcat.</li>
+  <li>Deploy Delegate handlers as illustrated in the <a href="http://docs.soa.com/ag/assets/PM7x_Delegate_for_Apache_Axis.pdf" class="button secondary">Policy Manager 7.x Delegate for Apache Axis Technical Note</a> <br />
+  </li>
+</ol>
 <h4>Agent Container</h4>
 
 <p>SOA Software provides delegate support for a variety of different agents (i.e., tc Server, WebSphere, JBoss, etc.). Contact SOA Software Customer Support for more information.</p>
