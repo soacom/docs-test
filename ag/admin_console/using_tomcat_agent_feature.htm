@@ -46,7 +46,6 @@ nav-title: Using the SOA Software Tomcat Agent Feature
 
 <p>The SOA Software Tomcat Agent feature is the policy enforcement point for the Apache Tomcat application server and provides WS-Policy enforcement for web services deployed to Tomcat. It can only be deployed in a Container deployed in a Tomcat instance and only supports the Apache Axis 1.4 SOAP framework.</p>
 <h3><a name="prereqs">Step 1: Prerequisites</a></h3>
-<p></p>
 <ul class="usingOrderedList">
   <li>SOA Software Platform, Version 6.x or 7.x  must be installed.</li>
   <li>Apache Tomcat Server must be installed on your machine.  </li>
@@ -80,9 +79,7 @@ nav-title: Using the SOA Software Tomcat Agent Feature
   <li>Select an <em>Instance Startup Option</em>, and indicate whether you would like the SOA Software Administration Console to auto-start at the end of the configuration. </li>
   <li>On the <em>Instance Configuration Summary</em> screen, review the summary information and click <strong>Finish</strong>. If you chose to auto-launch the <em>SOA Software Administration Console</em>, the script that displays on the bottom of the screen will say &quot;starting &lt;instance name&gt;.&quot;
   </li>
-  <li>
-    <p>To continue configuring the Tomcat deployment, start the Tomcat Server. When the Tomcat Container has successfully started, the message &quot;STARTED [90] bundle(s)&quot; displays. </p>
-    <img src="images/tomcat4.jpg" width="502" height="272"><br>
+  <li>To continue configuring the Tomcat deployment, start the Tomcat Server. When the Tomcat Container has successfully started, the message &quot;STARTED [90] bundle(s)&quot; displays.    <img src="images/tomcat4.jpg" width="502" height="272"><br>
     <br>
     <img src="images/tomcat5.jpg" width="512" height="298"></li>
   <li>
@@ -176,16 +173,18 @@ After the <em>SOA Software Administration Console</em> launches, navigate to the
    <li>On the <em>Containers Summary</em> screen click <strong>Add Container</strong>. </li>
    <li>Specify the container type (<strong>SOA Container</strong>), container metadata, add metadata certificate to trusted CA (if applicable), and container details.<br>
      <br>
-     <img src="images/tomcat7.jpg" width="501" height="346"><br>
+     <img src="images/tomcat7.jpg" width="501" height="346"><br />
+     <br>
    </li>
    <li>Complete your entries and click <strong>Finish</strong>, then <strong>Close</strong>. The <em>Container Details </em>page for the Tomcat Agent displays. <br>
      <br>
-    <img src="images/tomcat8.jpg" width="617" height="302">   </li>
-   <li>
-     <p>Next you will enable service discovery. In the<em> Service Discovery Configuration</em> portlet, click <strong>Modify Service Discovery Options</strong>. <br>
-       <br>
-       <img src="images/tomcat9.jpg" width="517" height="393">       <br>
-      The screen is organized as follows:     </p>
+    <img src="images/tomcat8.jpg" width="617" height="302">   <br />
+    <br />
+   </li>
+   <li>Next you will enable service discovery. In the<em> Service Discovery Configuration</em> portlet, click <strong>Modify Service Discovery Options</strong>. <br>
+     <br>
+     <img src="images/tomcat9.jpg" width="517" height="393">       <br>
+     The screen is organized as follows:     
      <ul class="usingOrderedList">
        <li><strong>Discovery Agent is deployed - </strong>A checkbox toggle feature that allows you to deploy a &quot;Discovery Agent.&quot; In the enabled state (i.e., checked), specify a URL the represents the location of the &quot;Discovery Agent&quot; in the &quot;Agent URL&quot; text box.  </li>
        <li><strong>Agent URL</strong> - A field display that allows you to specify the Agent URL used to contact the Container &quot;Discovery Agent.&quot; The source of the URL is based on your initial Container configuration and supported application server. </li>
