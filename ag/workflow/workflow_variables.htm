@@ -1,0 +1,257 @@
+---
+layout: page
+title: Workflow Variables
+description: Description of built-in Workflow Variables that can be referenced in a Workflow Definition. product: ag
+category: learn
+sub-nav-class: Workflow
+weight:	6
+type: page
+nav-title: Workflow Variables
+
+---
+
+<a name="top"></a>
+
+<h2 name="top">Workflow Portlets</h2>
+
+<p>Description of built-in Workflow Variables that can be referenced in a Workflow Definition</p>
+
+
+<a href="workflow_management.htm" class="button secondary">Workflow Management</a>
+
+<a href="workflow_library.htm" class="button secondary">Workflow Library</a><a href="pm_workflow_developers_guide.pdf" class="button secondary"> Workflow Developers Guide</a>
+<p></p>
+
+
+
+
+<div class = "divider1"></div>
+<h3 style="color: gray;">Table of Contents</h3>
+
+
+<ol class="table_of_contents">
+
+
+
+<li><a href="#introduction">Introduction</a></li>
+
+
+<li><a href="#general_variables">General Variables</a></li>
+
+<li><a href="#service_variables">Service Specific Variables</a></li>
+
+
+<li><a href="#service_variables">Contract Specific Variables</a></li>
+
+
+</ol>
+  <div class = "divider1"></div>
+  
+    <a name="introduction">
+<h2>Introduction</h2>
+</a>
+    <p>The Policy Manager <em>Workflow Library</em> includes a series of built-in variables that can be referred to in a <em>Workflow Definition</em> file. These variables are used to specify service and contract elements that are referenced throughout a Workflow Definition. In addition to the built-in variables, you can also invoke variables bundled with OSWorkflow or custom defined variables. There are three types of built-in variables: Generic, Service-Specific, and Contract-Specific.</p>
+    <p><em>    Note: Policy Workflow does not include variables.</em></p>
+
+ <a name="general_variables">
+<h2>General Variables</h2></a>
+<p>These built-in workflow variables can be used anywhere in Policy Manager workflow definitions. 
+</p>
+<table class="doctable" cellspacing="0px" width="482">
+  <col style="width: 32.557%;" />
+  <col style="width: 67.443%;" />
+  <thead>
+  </thead>
+  <tr>
+    <th width="139">Variable</th>
+    <th width="337">Content</th>
+    <td></thead></td>
+  </tr>
+  <tr class="t2Row">
+    <td>${subject}</td>
+    <td>The Subject for the current caller of the workflow instance.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${caller}</td>
+    <td>Qualified name (domain\user) of the user that is calling workflow.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${owner}</td>
+    <td>Qualified name (domain\user) of the current &ldquo;owner&rdquo; of the workflow step. The &ldquo;owner&rdquo; is set whenever an action&rsquo;s result is fired.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${document}</td>
+    <td>The WorkflowDocument object for the active workflow instance. (Internal SOA use only).</td>
+  </tr>
+   <tr class="t2Row">
+    <td>${root}</td>
+    <td>The OrganizationKey object for the top-level (Registry) node of the organization tree.</td>
+  </tr>
+   <tr class="t1Row">
+    <td>${organization.email.contact}</td>
+    <td>Comma-delimited list of organization primary email contacts for the organization tree path from the root to the organization containing the service or contract.</td>
+  </tr>
+  
+  </tr>
+</table>
+
+
+<a name="service_variables">
+<h2>Service Specific Variables</h2></a>
+
+
+
+<p>The following built-in workflow variables are used in Service Workflow definitions.
+</p>
+<table class="doctable" cellspacing="0px" width="482">
+  <col style="width: 32.557%;" />
+  <col style="width: 67.443%;" />
+  <thead>
+  </thead>
+  <tr>
+    <th width="139">Variable</th>
+    <th width="337">Content</th>
+    <td></thead></td>
+  </tr>
+  <tr class="t2Row">
+    <td><p>${service}<br />
+      ${service.key}
+    </p></td>
+    <td>The <em>ServiceKey</em> object for the service the workflow is managing. This becomes the service&rsquo;s UDDI key when converted to a string.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${service.name}</td>
+    <td>The name of the service the workflow is managing.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${service.scope}</td>
+    <td>The <em>OrganizationKey</em> object of the organization the service belongs to. This becomes the organization&rsquo;s UDDI key when converted to a string.</td>
+  </tr>
+  <tr class="t1Row">
+    <td><p>${service.consumer}<br />
+      ${service.consumers}
+    </p></td>
+    <td>A <em>Collection</em> of <em>OrganizationKey</em> objects for the organizations with contracts to this service.</td>
+  </tr>
+    <tr class="t2Row">
+    <td>${service.manager}</td>
+    <td>The internal ServiceManager published OSGi service. <em>(Internal SOA use only).</em></td>
+  </tr>
+    <tr class="t1Row">
+    <td>${category.manager}</td>
+    <td><table border="1" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="410" valign="top"><p>The internal <em>CategoryManager</em> published OSGi service. <em>(Internal SOA   use only)</em>.</p></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr class="t1Row">
+   
+</table>
+
+
+
+<a name="contract_variables">
+<h2>Contract Specific Variables</h2></a>
+
+
+
+<p>The following built-in workflow variables are used in Service Workflow definitions. 
+</p>
+<table class="doctable" cellspacing="0px" width="482">
+  <col style="width: 32.557%;" />
+  <col style="width: 67.443%;" />
+  <thead>
+  </thead>
+  <tr>
+    <th width="139">Variable</th>
+    <th width="337">Content</th>
+    <td></thead></td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract}<br />
+      ${contract.key}
+      <br />      
+    <br /></td>
+    <td>The ContractKey object for the contract the workflow is managing.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${contract.name}</td>
+    <td>The name of the contract the workflow is managing.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.version}</td>
+    <td>The version number of the contract.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.description}</td>
+    <td>The contract&rsquo;s description.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${contract.summary}</td>
+    <td>A text block containing the definition of the contract</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.scope}</td>
+    <td>A text block containing the providing organization along with the services and operations that are within the scope of the contract.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${contract.startdate}</td>
+    <td>The effective date/time of the contract.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.enddate}</td>
+    <td>The expiration date/time of the contract.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${is.anonymous}</td>
+    <td><table border="1" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="410" valign="top"><p>&ldquo;true&rdquo; if this is an anonymous contract. &ldquo;false&rdquo; otherwise.</p></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.provider}</td>
+    <td>The OrganizationKey object of the contract&rsquo;s provider organization. This becomes the organization&rsquo;s UDDI key when converted to a string.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${provider.name}</td>
+    <td>The name of the contract&rsquo;s provider organization.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${provider.contact}</td>
+    <td>The name of the primary contact for the contract&rsquo;s provider organization.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${provider.email.contact}</td>
+    <td>The email address of the primary contact for the contract&rsquo;s provider organization.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.consumer}</td>
+    <td>The OrganizationKey object of the contract&rsquo;s consumer organization. This becomes the organization&rsquo;s UDDI key when converted to a string.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${consumer.name}</td>
+    <td>The name of the contract&rsquo;s consumer organization.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${consumer.contact}</td>
+    <td>The name of the primary contact for the contract&rsquo;s consumer organization.</td>
+  </tr>
+  <tr class="t1Row">
+    <td>${consumer.email.contact}</td>
+    <td>The email address of the primary contact for the contract&rsquo;s consumer organization.</td>
+  </tr>
+  <tr class="t2Row">
+    <td>${contract.manager}</td>
+    <td>The internal ContractsManager published OSGi service. (Internal SOA use only).</td>
+  </tr>
+ 
+</table>
+<p><a href="#top">back to top</a>
+</p>
+
+
+
+<div class = "divider1"></div>
