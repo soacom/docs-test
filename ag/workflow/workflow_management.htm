@@ -17,7 +17,7 @@ nav-title: Managing Workflow
 
 <p>Description of functions and tools for managing service, contract, and policy workflow definitions.</p>
 
-<p>NOTE: This guide describes some features that are only available in Policy Manager 7.2 and greater.</p>
+<p><strong><em>Note: </em></strong><em>Policy Workflow Administration is available in Policy Manager 7.2 and greater.</em></p>
 
 <a href="workflow_library.htm" class="button secondary">Workflow Library</a>
 
@@ -37,7 +37,13 @@ nav-title: Managing Workflow
 
 
 
-<li><a href="#library">Workflow Library</a><br />
+
+
+<li><a href="#introduction">Introduction</a>
+</li>
+
+
+<li><a href="#library">Workflow Library</a>
 </li>
 
 <li><a href="#portlets">Workflow Portlets</a></li>
@@ -47,10 +53,36 @@ nav-title: Managing Workflow
 </ol>
   <div class = "divider1"></div>
 
-  <a name="library">
-<h2>Workflow Library</h2></a>
+ 
+  <a name="introduction">
+<h2>Introduction</h2></a>
+<p>Policy Manager <em>Workflow</em> functionality is part of the overall Governance that an organization needs to have over their Service Oriented Architecture Infrastructure (SOA). Workflow allows an organization to assign users to a role that provides oversight for the services that are submitted by the development community. Through the approval or rejection of service candidates and provisioning contracts, the organization can manage the quality of the services that are published in the repository. Workflow also provides an auditable record of the submission and approval of a service which is essential for corporate compliance to standardized business processes that involve lifecycle management (e.g., ISO, CMM, etc.).</p>
+<p>  Workflow is supported for service publication, contract management, and policy management via the <em>Configure &gt; Workflow sectin of the Policy Manager Management Console.</em></p>
 
-<p>xxxx </p>
+  <ul class="usingOrderedList">
+    <li>Service publication workflow manages the process from service creation to service publication.</li>
+    <li>Contract management workflow manages the process from contract creation to contract activation/deactivation/archive.</li>
+    <li>Policy management workflow manages the process from policy creation to policy activation/deactivation/archive.</li>
+  </ul>
+
+<h3>Default Workflow Definitions</h3>
+
+<p>  A &quot;Workflow Definition&quot;  is an XML file that defines the business processes (i.e., actions, steps, processes)  for all services or contracts. The Policy Manager default installation installs three default Workflow definitions for services (default_service_workflow.xml), contracts (default_contract_workflow.xml), and policies (default_policy_workflow.xml).</p>
+<ul class="usingOrderedList">
+  <li>Default Workflow Definitions are hard coded into the Policy Manager back-end to facilitate Workflow &quot;Reset&quot; and are also copied to the \config\workflow_definition_templates folder of the Policy Manager release directory. </li>
+  <li>Custom Workflow Definitions can also be stored in this directory.</li>
+  <li>The default workflow definitions  provide standard workflow processes for service, contract, and policy management and serve as a tutorial for understanding the construction of a workflow definition, and the elements of the Workflow Library.</li>
+</ul>
+<h2>Workflow Library</h2>
+<p>The Policy Manager <em>Workflow Library</em> provides a complete workflow system  that  includes a set of built-in functions, conditions, and variables to simplify the process  of writing a workflow definition  for performing service, contract, and policy management  in the Policy Manager <em>Workbench</em>.  These elements can be used along with other existing functions/conditions/variables provided by OSWorkflow.</p>
+<p>Refer to the OSWorkflow documentation for more information on OSWorkflow concepts.</p>
+<p>The Workflow Library  is composed of the following elements:</p>
+<ul class="usingOrderedList">
+  <li>Workflow Variables</li>
+  <li>Workflow Functions</li>
+  <li>Workflow Conditions</li>
+</ul>
+<p>In addition, the Policy Manager 6.1/7.x Workflow Developers Reference includes  information on how to use scripts in workflows, and perform workflow actions and load workflow XML definitions using command-line tools. </p>
 
 
 
@@ -90,7 +122,7 @@ nav-title: Managing Workflow
 <h3>Workflow Summary</h3>
 </a>
 
-<p>The <em>Workflow Administration Summary</em> screen is the starting point for performing service, contract, and policy workflow administration.</p>
+<p>The <em>Workflow Administration Summary</em> screen is the starting point for performing service, contract, and policy workflow administration. Here you can Enable Workflow, Update Workflow, and Disable Workflow.</p>
 <p><img src="images/workflow summary.jpg" width="634" height="189" /></p>
 
 <p><a href="#top">back to top</a>
@@ -112,13 +144,15 @@ nav-title: Managing Workflow
 <h3>Update Workflow</h3>
 </a>
 
-<p>You can maintain your workflow configuration by uploading a new workflow XML file using the <strong>Update Workflow</strong> function. </p>
+<p>You can maintain your workflow configuration using the Update Workflow function. This option is used if you have workflow functionality enabled, and would like  to upload a custom workflow definition or reset your configuration to the Policy  Manager default workflow  definition. After you upload an XML file:</p>
 <ul class="usingOrderedList">
-  <li> After the XML file is uploaded, the workflow processes defined XML file are active and can be viewed in the Workflow Control Portlets (for services, contract, and policies), and on the Global Workflow Task Portlet that displays at the Root Organization and Sub Organization levels.</li>
-  <li>This function also provides an option for resetting your workflow definition to the system default.</li>
+  <li>The workflow definition and reset option are executed by the Policy Manager Workflow engine.</li>
+  <li>Processes defined in the XML file are active and can be viewed in the Workflow Control Portlets (for services, contract, and policies), and on the Global Workflow Task Portlet that displays at the Root Organization and Sub Organization levels.</li>
+  <li>This function also provides an option for resetting your workflow definition to back to the system default.</li>
 </ul>
 <p><a href="#top">back to top</a>
 </p>
+
 
 <a name="xxx">
 <h3>View Workflow Definition</h3>
