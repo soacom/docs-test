@@ -60,71 +60,73 @@ nav-title: Workflow Functions
     <p><em>Note: Policy Workflow does not include functions.</em></p>
 <a name="general_variables">
 <h2>General Functions</h2></a>
-<p>These workflow functions can be used in any type of Policy Manager workflow.
+<p>These workflow functions can be used in any type of Policy Manager workflow.</p>
 
 
-</p>
-<table width="650
+<table width="700
 " cellspacing="0px" class="doctable">
   <thead>
-   <tr>
-    <th width="173">Variable</th>
-    <th width="516">Content</th>
-    <td width="8"></thead></td>
+  <th width="188">Variable</th>
+    <th width="471">Content</th>
+    <td width="33"></thead>
+    <tr class="t2row">
+      <td height="26">Print</td>
+      <td><p>Prints out the name/value pairs contained in the &lt;arg&gt; elements to stdout along with a timestamp.</p>
+</td>
+    </tr>
+  <tr class="t1row">
+    <td height="26">Log</td
+    >
+    <td></li>      Sends a message to the Policy Manager log.<br />
+          <br />
+          <strong>Arguments</strong><br />
+          <em>message</em> -  The message to be logged along with the object the workflow is managing.<br />
+          <br />
+    <em>severity  (optional) </em>- The logging severity for the message: fatal, error, warning, info (default), debug, or trace.</td>
   </tr>
-  <tr class="t2Row">
-    <td>Print</td>
-    <td>Prints out the name/value pairs contained in the &lt;arg&gt; elements to stdout along with a timestamp.</td>
-  </tr>
-  <tr class="t1Row">
-    <td>Log</td>
-    <td><p>Sends a message to the Policy Manager log.<br />
-      <br />
-      <strong>Arguments</strong><br />
-      <em>message</em> -  The message to be logged along with the object the workflow is managing.<br />
-      <br />
-      <em>severity  (optional) </em>- The logging severity for the message: fatal, error, warning, info (default), debug, or trace.</td>
-  </tr>
-  <tr class="t2Row">
-    <td>runScript</td>
+  <tr class="t2row">
+    <td height="30">runScript</td>
     <td>Run a script to perform a special function. Please refer to a later section that gives details of running scripts from workflow.</td>
+
+  <tr class="t1row">
+    <td height="31">getOrganizationemailContact
+    <td>
+
+
+
+<p>Produces a comma delimited list of organization contact email addresses.<br />
+  <br />
+  <strong>Arguments</strong><br />
+  <em>organization (optional) </em>- The UDDI key of the organization whose email contacts are to be retrieved. Defaults to the parent organization of the service or contract.<br />
+  <br />
+  <em>contactType</em> -  A comma-delimited list of organization contact &ldquo;use types&rdquo; that are to be selected.<br />
+  <br />
+  <em>emailType (optional)</em> - A comma-delimited list of organization contact email &ldquo;use types&rdquo; that are to be selected.</p>
+<em>variable  (optional)</em> - The name of the workflow variable that is to hold the resulting list of email addresses. This name must not contain a period. The default is to use the first value in the contactType argument.</td>
   </tr>
-  <tr class="t1Row">
-    <td>getOrganizationemailContact</td>
-    <td><p>Produces a comma delimited list of organization contact email addresses.<br />
-      <br />
-      <strong>Arguments</strong><br />
-      <em>organization (optional) </em>- The UDDI key of the organization whose email contacts are to be retrieved. Defaults to the parent organization of the service or contract.<br />
-      <br />
-      <em>contactType</em> -  A comma-delimited list of organization contact &ldquo;use types&rdquo; that are to be selected.<br />
-      <br />
-      <em>emailType (optional)</em> - A comma-delimited list of organization contact email &ldquo;use types&rdquo; that are to be selected.</p>
-    <em>variable  (optional)</em> - The name of the workflow variable that is to hold the resulting list of email addresses. This name must not contain a period. The default is to use the first value in the contactType argument.</td>
-  </tr>
-   <tr class="t2Row">
-    <td>email</td>
+  <tr class="t2row">
+    <td height="30">email</td>
     <td><p>Generates and sends an email message.<br />
-      <br />
-      <strong>Arguments</strong><br />
-      <em>smtpHost (optional) </em>- The host name of the SMTP server. Defaults to the global mail server configured in Policy Manager. <br />
-      <br />
-      <em>to</em> -  A comma-delimited list of recipients.<br />
-      <br />
+        <br />
+        <strong>Arguments</strong><br />
+        <em>smtpHost (optional) </em>- The host name of the SMTP server. Defaults to the global mail server configured in Policy Manager. <br />
+        <br />
+        <em>to</em> -  A comma-delimited list of recipients.<br />
+        <br />
         <em>from</em> -  The value to be used as the email sender.<br />
         <em><br />
-        cc  (optional)</em> - A comma-delimited list of copy recipients.<br />
-        <br />
-        <em>subject</em> - The subject line of the message.<br />
-        <br />
-        <em>message</em> -  The body of the message.<br />
-        <br />
-        <em>priority (optional)</em> - The priority of the message: high, medium, low. Default is medium.</p>
-     <em>parseVariables</em> - Should ${…} variables be resolved in the following arguments: to, cc, subject, message.</td>
+cc  (optional)</em> - A comma-delimited list of copy recipients.<br />
+<br />
+<em>subject</em> - The subject line of the message.<br />
+<br />
+<em>message</em> -  The body of the message.<br />
+<br />
+<em>priority (optional)</em> - The priority of the message: high, medium, low. Default is medium.</p>
+    <em>parseVariables</em> - Should ${…} variables be resolved in the following arguments: to, cc, subject, message.    </td>
+  
   </tr>
-   
+
 </table>
-
-
 <a name="service_variables">
 <h2>Service Specific Functions</h2></a>
 
