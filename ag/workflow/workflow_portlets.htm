@@ -17,12 +17,14 @@ nav-title: Workflow Portlets
 
 <p>Description of Service, Contract, and Policy Workflow Portlets in the <em>Policy Manager Management Console.</em></p>
 
-<p>NOTE: This guide describes some features that are only available in Policy Manager 7.2 and greater.</p>
+<p><em>NOTE: This guide describes some features that are only available in Policy Manager 7.2 and greater.</em></p>
 
 
-<a href="workflow_management.htm" class="button secondary">Workflow Management</a>
+<a href="http://docs.soa.com/docs-test/ag/workflow/workflow_management.htm" class="button secondary">Workflow Management</a>
 
-<a href="workflow_library.htm" class="button secondary">Workflow Library</a><a href="pm_workflow_developers_guide.pdf" class="button secondary"> Workflow Developers Guide</a>
+<a href="http://docs.soa.com/docs-test/ag/workflow/workflow_library.htm" class="button secondary">Workflow Library</a>
+
+<a href="http://docs.soa.com/docs-test/ag/assets/PM_workflow_developers_reference_61_7x.pdf" class="button secondary"> Workflow Developers Guide</a>
 <p></p>
 
 
@@ -36,13 +38,18 @@ nav-title: Workflow Portlets
 
 
 
-<li><a href="#library">Introduction</a></li>
-<li>Workflow Control Portlet Funtionality</li>
-<li>Workflow Task Portlet</li>
-<li>Service Workflow Portlet</li>
-<li>Contract Workflow Portlet</li>
-<li>Policy Workflow Portlet<br />
-</li>
+<li><a href="#introduction">Introduction</a></li>
+
+
+<li><a href="#workflow_control">Workflow Control Portlet Funtionality</a></li>
+
+
+<li><a href="#workflow_task">Workflow Task Portlet</a></li>
+
+
+<li><a href="#portlet_org">Workflow Portlet Organization</a></li>
+
+
 
 </ol>
   <div class = "divider1"></div>
@@ -61,60 +68,88 @@ nav-title: Workflow Portlets
     </ul>
     <p>Service,  Contract, and Policy Workflows that are enabled and configured with workflow definitions in the <em>Configure &gt; Workflow</em> section of the <em>Policy Manager Management Console</em>, map directly to the <em>Workflow Tasks</em> <em>Portlet</em> in the Root or Sub-Organization, and to the <em>Workflow Control Portlets</em> on the <em>Services</em>,  <em>Contracts</em>, and <em>Policies Details</em> screens.</p>
     <p>
-    <em>Note: See Managing Workflow for details about developing and managing Workflow definitions. </em></p>
+    Note: See <a href="http://docs.soa.com/docs-test/ag/workflow/workflow_management.htm" class="button secondary">Managing Workflow</a> for details about developing and managing Workflow definitions. </p>
     <h4>Global Workflow Task Portlet</h4>
-    <p>In the Workflow Tasks Portlet located in the Root Organization you can globally manage urgent <em>service, contract, and policy </em>&quot;Workflow Tasks&quot; in the current organization or within the complete Organization Sub-Tree.</p>
+    <p>This portlet located in the Root Organization you can globally manage urgent <em>service, contract, and policy </em>workflow tasks  in the current organization or within the complete Organization Sub-Tree.</p>
 
 
     <h4>Workflow Control Portlet</h4>
-    <p>In the &quot;Workflow Control Portlet&quot; you can manage the state of a particular service or contract.</p>
-<ul class="usingOrderedList">
-      <li>Service Workflow Tasks</li>
-      <li>Contract Workflow Tasks</li>
-      <li>Policy Workflow Tasks
-       
-      </li>
-</ul>
-<a name="library">
+    <p>Here you can manage the state of a particular service,  contract, or policy. The portlets are available on the <em>Service Details</em>, <em>Contract Details</em>, and <em>Policy Details</em> screens. </p>
+<a name="workflow_control">
 <h2>Workflow Control Portlet Functionality</h2>
 </a>
 
-<p>The &quot;Workflow Control Porlet&quot; is associated with each Workbench Object (<em>service</em> or <em>contract</em>). In the Policy Manager &quot;Workbench&quot; these portlets are referred to as &quot;Service Workflow Portlet,&quot; and &quot;Contract Workflow Portlet.&quot; They provide the following functionality:</p>
+<p>The &quot;Workflow Control Porlet&quot; is associated with each Workbench Object (<em>service</em> or <em>contract</em>). In the Policy Manager Workbench these portlets are referred to as  the Service Workflow Portlet,Contract Workflow Portlet, and Policy Workflow Portlet.  They provide the following functionality:</p>
 <ul class="usingOrderedList">
-  <li>Lists all the available Workflow actions for a service or contract object.</li>
-  <li>View or Modify options are permitted based on defined permissions in the &quot;Workflow Definition&quot;</li>
-  <li>Provides &quot;Comment&quot; feature for commenting details of a specific action. Comment is posted to the &quot;History&quot; section of the &quot;Workflow Control Portlet&quot; after an action is submitted.  </li>
+  <li>Lists all the available Workflow actions for a service, contract, or policy  object.</li>
+  <li>View or Modify options are permitted based on defined permissions in the workflow definition.</li>
+  <li>Provides &quot;Comment&quot; feature for commenting details of a specific action. Comment is posted to the &quot;History&quot; section of the portlet after an action is submitted.  </li>
 </ul>
 
 
 
 
 
-  <a name="portlets">
+  <a name="workflow_task">
 <h2>Workflow Task Portlet</h2></a>
 
-<p>The &quot;Workflow Task Portlet&quot; is located in a &quot;Workbench&quot; Organization Object and displays the Workbench actions that have executed and that are marked as needing immediate attention in the &quot;Workflow Definition.&quot; In the &quot;Root Organization&quot; or Sub-Organizations this portlet is referred to as the &quot;Workflow Tasks Portlet.</p>
+<p>This portlet  is located in a Workbench Organization Object and displays the Workbench actions that have executed and that are marked as needing immediate attention in the workflow definition. In the Root Organization or Sub-Organizations this portlet is referred to as the Workflow Tasks Portlet.</p>
 <p>  This portlet provides an overview of workflow activities associated with services and provisioned contracts at the Root Organization level and Sub-Organizations. This portlet can be used by administrators who are responsible for overseeing and managing the quality of services published in the repository (i.e., Registry). After assessing the general state of Workflow Tasks at the Root Organization level, filtered tasks within each Organization can be managed in the associated Services and Contracts Folders.</p>
 <p>  To view the special Workflow Tasks, you must have the &quot;Include Subtree&quot; checkbox selected in the &quot;Workflow Tasks Portlet&quot; located in the Root Organization. You can review the posted service by selecting it in the &quot;Organization Tree.&quot; To approve the pending &quot;State&quot; click the service &quot;Name.&quot;</p>
 <p>  Note: The default setting for the &quot;Include Subtree&quot; option is unchecked. If your Policy Manager deployment includes a high volume of services, and your &quot;Workflow Definition&quot; includes one or more &quot;Immediate Attention&quot; entries, the &quot;Include Subtree&quot; option located in the &quot;Root Organization&quot; could introduce performance problems as all actions from every service will post to this portlet.</p>
 <p>  See Special Workflow State and Workflow Task List for more information on how these actions are configured in the &quot;Workflow Definition.&quot;</p>
-<a name="service_portlet">
-<h2>Services Workflow Portlet</h2></a>
-
-<p>xxx</p>
-
-<a name="contract_portlet">
-<h2>Contract Workflow Portlet</h2></a>
-
-<p>xxx</p>
-
-<a name="policy_portlet">
-<h2>Policy Workflow Portlet</h2></a>
-
-<p>xxx</p>
+<p><img src="images/workflowtask1.jpg" width="332" height="52" /></p>
+<p>Figure. Immediate Attention Workflow Entries (Examples)</p>
+<p><img src="images/workflowtask2.jpg" width="221" height="215" /></p>
+<p>Figure. Workflow Tasks Portlet - <em>for Organization Objects</em></p>
 
 
 
+  <a name="portlet_org">
+<h2>Workflow Portlet Organization</h2>
+</a>
+<p>The Service, Contract, and Policy Workflow Portlets all have a similar organization as illustrated below. Examples are illustrated using the Services Workflow Portlet.</p>
+<h4>Information</u></h4>
+<ul class="usingOrderedList">
+  <li><strong>State</strong> - Represents the workflow state  currently in progress. All of the steps defined in your workflow definition  are presented in the &quot;Information&quot; section of the Workflow Portlet in the  &quot;State&quot; field.<br />
+    <br />
+    <img src="images/services_workflow6.jpg" width="308" height="65" /><br />
+    Figure. &lt;steps&gt; in a Workflow Definition
+    <br />
+    <br />
+  </li>
+  <li><strong>Owner</strong> - Displays the domain and name of the user that has permission to participate in the current Workflow Task. Workflow access control is configured using the &quot;${caller}&quot; variable. This variable allows you to customize access permissions for Workflow &quot;action.&quot; If you do not specify a domain and username and use the default &quot;${caller}&quot; variable, the access is granted for the current logged in user.<br />
+    <br />
+    <img src="images/services_workflow1.jpg" width="129" height="20" /><br />
+    Figure. Example of &quot;${caller}&quot; variable in a Workflow Definition<br />
+    <br />
+  </li>
+  <li><strong>Workflow Is Completed</strong> - When all of the steps in a Workflow Definition have successfully executed, this message displays.  </li>
+</ul>
+<h4>Workflow Actions  </h4>
+<ul class="usingOrderedList">
+    <li><strong>Comments</strong> - A text field that allows you to add comment text for the &quot;Action&quot; that is about to be executed. This comment text will be added to the Workflow &quot;History&quot; and associated with the selected &quot;Action.&quot;</li>
+    <li><strong>Actions</strong> - Displays the name of the &quot;Action&quot; to be executed. A single &quot;Action&quot; can be displayed or two actions that represent a &quot;choice&quot; can be displayed (e.g., Promote / Reject).</li>
+</ul>
+  <h4>
+  History</h4>
+  <p>Displays a read-only list of key information associated with a specific workflow action including: </p>
+  <ul class="usingOrderedList">
+    <li>Date/Time - Displays the date and time the Workflow &quot;Action&quot; was executed.</li>
+    <li>Status - Displays the Workflow &quot;Step&quot; that the &quot;Action&quot; occurred in.</li>
+    <li>Action - Displays the Workflow &quot;Action&quot; that was executed.</li>
+    <li>User - Displays the owner (e.g., ${caller}) who executed the &quot;Action.&quot;</li>
+    <li>Comment - Displays details related to the execution of the &quot;Action.&quot;
+      </p>
+    </li>
+</ul>
+
+<p><img src="images/services_workflow3.jpg" width="246" height="386" /></p>
+<p>Figure. Workflow Control Portlet </p>
+<p><img src="images/services_workflow4.jpg" width="218" height="119" /></p>
+<p>Figure. Execute Action Message</p>
+<p><img src="images/services_workflow5.jpg" width="275" height="131" /></p>
+<p>Figure. Workflow is Completed</p>
 <p><a href="#top">back to top</a>
 </p>
 
