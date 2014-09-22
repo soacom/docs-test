@@ -29,6 +29,7 @@ nav-title: Using the HTTP Caching Policy
   <li><a href="#manage_cache">How Stale Caches are Managed</a></li>
   
   <li><a href="#options">HTTP Caching Policy Options</a></li>
+<li><a href="#cache">Public/Private Caching</a></li>
   
    <li><a href="#configuration">Configuration</a></li>
 
@@ -67,8 +68,14 @@ nav-title: Using the HTTP Caching Policy
   <li><strong>Time To Live</strong> - Allows you to specify the maxium time in seconds a response will be cached. If not specified, the maximum time will dictated by the SOA container settings. </li>
   <li><strong>Act as HTTP Proxy</strong> - Uncheck to enable either the HTTP Proxy Mode (checked) or HTTP Mediation / Server Mode.</li>
   <li><strong>Shared Cache</strong> - Uncheck to enable  ability to use a private cache. You must also select a Subject Category (below). </li>
-  <li><strong>Subject Category</strong> - Allows you to select a subject category if Shared Cache is checked. The subject category is used to find the cache's principal name that is set when the cache is created, and use it as part of the cache key.</li>
+  <li><strong>Subject Category</strong> - Allows you to select a subject category if Shared Cache is checked. The subject category is used to find the cache's principal name that is set when the cache is created, and use it as part of the cache key.  </li>
 </ul>
+<p><a href="#top">Back to top</a></p>
+
+<a name="cache">
+<h3>Public/Private Caching</h3></a>
+
+<p>By default, the caching module considers itself to be a shared (public) cache (<strong>Shared Cache</strong> checked), and will not, for example, cache responses to requests with Authorization headers or responses marked with Cache-Control:  private. If, however, the cache is only going to be used by one logical &quot;user&quot; (behaving similarly to a browser cache), then you will want to turn off the shared cache setting (<strong>Shared Cache </strong>unchecked). </p>
 <p><a href="#top">Back to top</a></p>
 
 <a name="configuration">
@@ -84,9 +91,9 @@ nav-title: Using the HTTP Caching Policy
 <p>When you <strong>Modify</strong> the HTTP Caching   policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
 <p><img src="images/modify_http_caching_policy.jpg" width="477" height="511" /></p>
 <p>Configure the policy options based on your requirements and <strong>Apply</strong>. </p>
-<p><img src="images/http_cache_policy_summary.jpg" width="514" height="168" /></p>
+<p><img src="images/http_cache_policy_summary.jpg" width="454" height="132" /></p>
 <h5>Step 3: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service,  operation, binding that you would like to enhance the message processing of.</p>
+<p>After you have saved your policy you can  attach it to a web service,  operation, or binding that you would like to enhance the message processing of.</p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
 <p>After you attached the HTTPS Caching Policy to a service, operation, or binding, send a request to your service and go to the <em>Services &gt; Monitoring</em> section to view the results for Logs, Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
 <p><a href="#top">Back to top</a></p>
