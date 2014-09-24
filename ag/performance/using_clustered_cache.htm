@@ -1,0 +1,167 @@
+---
+layout: page
+title: Using Clustered Caching
+description: Learn how control throughput of requests on a multiple Network Director deployment using various caching techniques..
+product: ag
+category: learn
+weight:	6
+sub-nav-class: Operations
+type: page
+nav-title: Using Clustered Caching
+
+---
+<h2 name="top">Using Clustered Caching</h2>
+  <p>Learn how control throughput and bandwidth of requests on a multiple Network Director deployment using various caching techniques.</p>
+  
+ 
+<a href="using_admin_console" class="button secondary">Using Admin Console</a>
+<p></p>
+
+  <div class = "divider1"></div>
+   <h3 style="color: gray;">Table of Contents</h3>
+
+   <ol class="table_of_contents">
+
+ <li><a href="#introduction">Introduction</a></li>
+ 
+ 
+  <li><a href="#throughput">How do I configure Clustered Caching for a Throughput Quota Policy?</a></li>
+  
+    <li><a href="#bandwidth">How do I configure Clustered Caching for a Bandwidth Quota Policy?</a></li>
+    
+     <li><a href="#performance">How do I manage Cluster Cache Performance?</a></li>
+  
+ 
+
+  
+ 
+
+
+
+  </ol>
+  <div class = "divider1"></div>
+
+
+
+
+
+
+<a name="introduction">
+<h3>Introduction</h3></a>
+
+<p>In previous Policy Manager versions, if you had ten Network Director instances (i.e., clusters) and configured a Service Level Policy to allow a service to process 10 requests per minute, all ten clusters would process up to ten requests. Data was not synchronized across clusters (e.g., ND1  processed 2 requests, so there are 8 counts left, etc.).</p>
+<p>Beginning with Policy Manager version 7.2, the processing of requests can now be synchronized across multiple Network Director instances (i.e., clusters) within a single deployment  using a technique called <em>clustered caching</em>. You can also fine tune performance by synchronizing system clocks, setting clock skip interval, and setting queues. Clustered caching is used for Throughput Quota and Bandwidth Quota policies. </p>
+<p>You configure cluster caching by updating a series of configuration categories in the <em>SOA Software Administration Console &gt; Configuration </em>section.</p>
+<a name="throughput">
+<h3>How do I configure Clustered Caching for a Throughput Quota Policy? </h3></a>
+<p>Perform the following steps for each Network Director instance. </p>
+<h4>Step 1: Enable Clustered Caching</h4>
+<ol class="usingOrderedList">
+  <li>Launch the <em>SOA Software Administration Console </em>and navigate to the <em>Configuration</em> tab. </li>
+  <li>In the <em>Configuration Categories</em> section, select <strong>com.soa.policyhandle.quota.throughput</strong>.</li>
+  <li>Change <strong>use.clustered.cache</strong> to <strong>True</strong> and <strong>Apply Changes</strong>.  <br />
+    <br />
+    <img src="images/enable_clustercache.jpg" width="622" height="399" />    <br />
+    <br />
+  </li>
+  <li>Stay in the <em>Configuration Catgories </em>section and continue to the next step.</li>
+</ol>
+<h4>Step 2: Configure Group Communication Settings</h4>
+  <ol class="usingOrderedList">
+    <li>Select <strong>com.soa.grid</strong>.</li>
+    <li>Set <strong>grid.network.config.enableMulticast </strong>to <strong>false</strong>, and <strong>grid.network.config.enableTcp</strong> to <strong>true</strong>. <br />
+      <br />
+      <img src="images/config_soagrid.jpg" width="646" height="393" /><br />
+      <br />
+    </li>
+    <li>In <strong>grid.network.config.peerAddresses</strong>, specify the peer address of each Network Director instance in your deployment. Omit the peer address of the current Network Director instance in the list. </li>
+    <li>After completing your entries, <strong>Apply Changes</strong>.</li>
+  </ol>
+  
+   <h4>Step 3: Restart Network Director Instances</h4>
+  <ol class="usingOrderedList">
+    <li>Before you can successfully use cluster caching, you must restart all Network Director instances after completing the configuration category changes outlined in the previous steps. </li>
+  </ol>
+<h4>Step 4: Synchronize Clocks </h4>
+<ol class="usingOrderedList">
+  <li>The Policy Manage cluster caching logic is based on the system clock. To ensure  there is not a lag in one of the Network Director instances (clusters) while processing requests, you must synchonize all system clocks so they match (i.e., by milliseconds and seconds).</li>
+</ol>
+<h4>Step 5: Test Cluster Caching</h4>
+<ol class="usingOrderedList">
+  <li>Configure a  Throughput Quota Policy to process 10 requests per minute. </li>
+  <li>Virtualize a service.</li>
+  <li>Attach the Throughput Quota Policy to the virtual service.</li>
+  <li>Call the virtual service from the SOAP UI.</li>
+  <li>Call the virtual service 10-20 times. </li>
+  <li>In approximately one minute, ten requests will be success and the remainder will fail.</li>
+  <li>Review the alerts. All requests failed past the 10 requests per minute will show a quota exceeded alert.  </li>
+</ol>
+
+<p><a href="#top">Back to top</a></p>
+<a name="bandwidth">
+<h3>How do I configure Clustered Caching for a Bandwidth Quota Policy? </h3>
+<p>&lt;TBD&gt;</p>
+</a>
+
+<p><a href="#top">Back to top</a></p>
+<a name="performance">
+<h3>How do I manage Cluster Cache Performance?</h3>
+<p>Depending on organization of your Policy Manager deployment, including  Network Director instances, amount of traffic, and networking strategy, it is possible that  cluster caching could put a strain on the processing load causing performance to degrade. Several techniques are available to counteract the performance issues. </p>
+<p><em>Note: Cluster cache performance tuning is an advanced function and should be used judiciously by System Administrators only. </em></p>
+</a>
+<h4>Counter Skip Interval</h4>
+<p>The number of requests that are processed is tracked using a global counter. By default, the  counter performs an update  at each request (i.e., 0). With multiple Network Director instances (clusters) processing requests using clustered caching, the number of counter updates could affect performance. </p>
+<p>The <strong>counter.skip.interval</strong> property in the <strong>com.soa.policyhandle.quota.throughput</strong> configuration category, allows you to specify the number of requests  that will be processed before the counter is reset. Using this approach, the number of times per cluster the counter is updated is reduced and performance increases.</p>
+<h5>Example</h5>
+<p>Let's say you set <strong>counter.skip.interval </strong>to 10 and you have two Network Director instances (ND1 and ND2):</p>
+<ul class="usingOrderedList">
+  <li>You  set your Throughput Quota Policy to process 100 requests per minute.</li>
+  <li>ND1 receives 10 requests and this information is stored in memory. </li>
+  <li>The counter is not reset for ND1 (as it has not exceeded 10) and ND2 will not know that ND1 received 10 requests.</li>
+  <li>At the same time ND2 receives 100 requests. At every 10 requests the counter is reset. At 110 requests the counter will stop because the number of requests have exceeded the amount specified in the Throughput Quota Policy. </li>
+</ul>
+<p>By avoiding a constant call to the counter, performance will increase. </p>
+<p><em>Note: This option has an automatic margin of error of 10 requests per node. </em></p>
+<h5>Configure Counter Skip Interval</h5>
+<p>Perform this procedure on all Network Director instances (clusters), and restart each one before sending requests. </p>
+<ol class="usingOrderedList">
+  <li>Launch the <em>SOA Software Administration Console </em>and navigate to the <em>Configuration</em> tab. </li>
+  <li>In the <em>Configuration Categories</em> section, select <strong>com.soa.policyhandle.quota.throughput</strong>.</li>
+  <li>Change <strong>counter.skip.interval </strong>number to reflect number of requests you would like skipped, and <strong>Apply Changes</strong>. <br />
+    <br />
+  <img src="images/counter_skip.jpg" width="635" height="401" />  </li>
+</ol>
+<h4>Queues</h4>
+<p>Another technique you can use to manage clustered cache performance is specifying a <em>Queue </em>in the Throughput Quota Policy. A queue allows you  	 to enter the  number of concurrent threads that the runtime  	 will queue up before denying access. This delays the consumer requests  	 in an effort to overcome a brief spurt in traffic without denying  	 access. </p>
+<p>Queues work in conjunction with <strong>blocking.thread.max.time</strong> (default=10000 milliseconds or 10 seconds) and <strong>cluster.cache.idle.time</strong> (Default = 2 minutes or 120 seconds). These properties are available in the  <strong>com.soa.policy.handle.quota.throughput</strong> configuration category.</p>
+<h5>Example</h5>
+<p>Let's do a quick walkthrough of behavior without using a Queue and with a Queue to illustrate the difference.</p>
+<h5>Without Queue:</h5>
+<ul class="usingOrderedList">
+  <li>You set the <strong>Queue</strong> in the <em>Throughput Quota Policy</em> to <strong>0</strong> and the <strong>Throughput Limit </strong>to <strong>10 </strong>requests per minute. <em>In this scenario only 10 requests would be allowed per minute.</em></li>
+</ul>
+<h5>With Queue:</h5>
+<ul class="usingOrderedList">
+  <li>You set the <strong>Throughput Limit</strong> to <strong>1000</strong> requests per minute, and set the <strong>Queue</strong> to <strong>1</strong> and you've already received 1000 requests in the minute interval. </li>
+  <li>If the <strong>Queue</strong> size was <strong>0</strong> and you receive <strong>1000</strong> requests, and request <strong>1001</strong> comes in, it will be rejected, and a response will be sent. </li>
+  <li>With the <strong>Queue</strong> size set to <strong>1</strong>, instead of rejecting a request over the specified <strong>Throughput Limit</strong>, we will hold the next incoming request for the time specified in the <strong>blocking.thread.max.time</strong> (default 10 seconds). So if you receive 1000 requests, and 1001 requests come in, we will block the request and wait <strong>10</strong> seconds. If the interval is reached we will process the request. </li>
+  <li>This option must be adjusted based on the volume of traffic you are receiving to ensure that excess requests are not getting lost.</li>
+  <li>You can set the <strong>blocking.thread.max.time</strong> up to 10, or 20 seconds, but its not recommened to hold resources for an extended amount of time.</li>
+</ul>
+<h5>Configure Queue</h5>
+<p>Perform this procedure on all Network Director instances (clusters), and restart each one before sending requests. </p>
+<ol class="usingOrderedList">
+  <li>Launch the <em>SOA Software Administration Console </em>and navigate to the <em>Configuration</em> tab. </li>
+  <li>In the <em>Configuration Categories</em> section, select <strong>com.soa.policyhandle.quota.throughput</strong>.</li>
+  <li>Update <strong>blocking.thread.max.time</strong> to the number of milliseconds you would like to block requests that go beyond your specified Throughput Limit. 10000 milliseconds = 10 seconds. </li>
+  <li>Change <strong>cluster.cache.idle.time </strong>number to reflect number &lt;add description&gt;, and <strong>Apply Changes</strong>. <br />
+    <br />
+    <img src="images/counter_skip.jpg" alt="" width="635" height="401" /><br />
+    <br />
+  </li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+</div>
+</body>
+</html>
