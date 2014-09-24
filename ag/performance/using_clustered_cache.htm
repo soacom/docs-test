@@ -99,16 +99,16 @@ nav-title: Using Clustered Caching
 
 <p><a href="#top">Back to top</a></p>
 <a name="bandwidth">
-<h3>How do I configure Clustered Caching for a Bandwidth Quota Policy? </h3>
+<h3>How do I configure Clustered Caching for a Bandwidth Quota Policy? </h3></a>
 <p>&lt;TBD&gt;</p>
-</a>
+
 
 <p><a href="#top">Back to top</a></p>
 <a name="performance">
-<h3>How do I manage Cluster Cache Performance?</h3>
+<h3>How do I manage Cluster Cache Performance?</h3></a>
 <p>Depending on organization of your Policy Manager deployment, including  Network Director instances, amount of traffic, and networking strategy, it is possible that  cluster caching could put a strain on the processing load causing performance to degrade. Several techniques are available to counteract the performance issues. </p>
 <p><em>Note: Cluster cache performance tuning is an advanced function and should be used judiciously by System Administrators only. </em></p>
-</a>
+
 <h4>Counter Skip Interval</h4>
 <p>The number of requests that are processed is tracked using a global counter. By default, the  counter performs an update  at each request (i.e., 0). With multiple Network Director instances (clusters) processing requests using clustered caching, the number of counter updates could affect performance. </p>
 <p>The <strong>counter.skip.interval</strong> property in the <strong>com.soa.policyhandle.quota.throughput</strong> configuration category, allows you to specify the number of requests  that will be processed before the counter is reset. Using this approach, the number of times per cluster the counter is updated is reduced and performance increases.</p>
