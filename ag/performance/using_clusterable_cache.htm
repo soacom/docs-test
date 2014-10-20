@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Using Clustered Caching
-description: Learn how control throughput of requests on a multiple Network Director deployment using various caching techniques.
+title: Using a Clusterable Cache
+description: Learn how to increase performance on a multiple Network Director deployment using a clusterable cache.
 product: ag
 category: learn
-weight:	6
+weight:	5
 sub-nav-class: Operations
 type: page
-nav-title: Using Clustered Caching
+nav-title: Using a Clusterable Cache
 
 ---
-<h2 name="top">Using Clustered Caching</h2>
-  <p>Learn how to increase performance on a  multiple Network Director deployment using clustered caching. </p>
+<h2 name="top">Using a Clusterable Cache</h2>
+  <p>Learn how to increase performance on a  multiple Network Director deployment using a clusterable cache.  </p>
   
  
 <a href="using_admin_console" class="button secondary">Using Admin Console</a>
@@ -25,7 +25,7 @@ nav-title: Using Clustered Caching
  <li><a href="#introduction">Introduction</a></li>
  
  
-  <li><a href="#create">How do I create a Clusterable Cache and Use it in a Policy?</a></li>
+  <li><a href="#create">How do I create a Clusterable Cache and use it in a Policy?</a></li>
   
  
 
@@ -45,15 +45,19 @@ nav-title: Using Clustered Caching
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>In previous Policy Manager versions, a cluster of Network Director (ND) instances worked independently. So if the policy only allowed 10 requests per minute each node (instance) in an ND cluster would allow 10 requests per minute. Data was not synchronized across clusters (e.g., ND1 processed 2 requests, so there are 8 counts left, etc.).</p>
+<p>In previous Policy Manager versions, a cluster of Network Director (ND) instances worked independently. This means if the policy only allowed 10 requests per minute each node (instance) in an ND cluster would allow 10 requests per minute. Data was not synchronized across clusters (e.g., ND1 processed 2 requests, so there are 8 counts left, etc.).</p>
 <p>  Beginning with Policy Manager version 7.2, the processing of requests can now be synchronized across a cluster of multiple ND instances within a single deployment by creating a <em>clusterable cache</em>. A clusterable cache is memory that different processes can share. </p>
 <p>  For example, if you want the entire cluster to collectively only allow 10 requests per minute you can configure the ND&rsquo;s to share memory (i.e., a clusterable cache) which will hold information using counters. Then when one node receives a message and increments a counter, it&rsquo;s the same counter the other nodes are using.</p>
-<p>  You can create a clusterable cache in the <strong>com.soa.grid</strong> property, and then configure properties for the  <em>Throughput Quota Policy</em>, <em>Bandwidth Quota Policy</em>, and <em>WS-Security Policy</em> to use the clustered cache. </p>
-<p>You configure a clusterable cache by updating a series of configuration categories in the <em>SOA Software Administration Console &gt; Configuration</em> section.</p>
-
+<p>A clusterable cache can be used with the following policies:</p>
+<ul class="usingOrderedList">
+  <li> <strong>Throughput Quota Policy</strong> - Allows you to monitor a policy by specifying a throughput limit (i.e., quota) and queue size</li>
+  <li> <strong>Bandwidth Quota Policy</strong> - Allows you to monitor a policy by specifing a <span xml:lang="EN" lang="en">bandwidth cap that can be specified as kilobytes   or megabytes per second.</span></li>
+  <li><strong>WS-Security Message Policy</strong> - Using a clusterable cache, you can share nonces to prevent getting duplicate messages across all ND's in a cluster.<span xml:lang="EN" lang="en">.</span></li>
+</ul>
+<p>  You configure a clusterable cache by updating a series of configuration categories in the <em>SOA Software Administration Console &gt; Configuration</em> section. The process involves setting up the clusterable cache using the <strong>com.soa.grid</strong> property, and then configuring properties for the  <em>Throughput Quota Policy</em>, <em>Bandwidth Quota Policy</em>, and <em>WS-Security Policies</em> to use the clustered cache. </p>
 <p><a href="#top">Back to top</a></p>
 <a name="create">
-<h3>How do I Create a  Clusterable Cache and Use it in a Policy? </h3>
+<h3>How do I Create a  Clusterable Cache and use it in a Policy? </h3>
 </a>
 <p>Perform the following steps for each Network Director instance. </p>
 <h4>Step 1: Create Clusterable Cache</h4>
