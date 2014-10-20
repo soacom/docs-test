@@ -50,7 +50,7 @@ nav-title: Using a Clusterable Cache
 <p>  For example, if you want the entire cluster to collectively only allow 10 requests per minute you can configure the ND&rsquo;s to share memory (i.e., a clusterable cache) which will hold information using counters. Then when one node receives a message and increments a counter, it&rsquo;s the same counter the other nodes are using.</p>
 <p>A clusterable cache can be used with the following policies:</p>
 <ul class="usingOrderedList">
-  <li> <strong>Throughput Quota Policy</strong> - Allows you to monitor a policy by specifying a throughput limit (i.e., quota) and queue size</li>
+  <li> <strong>Throughput Quota Policy</strong> - Allows you to monitor a policy by specifying a throughput limit (i.e., quota) and queue size.</li>
   <li> <strong>Bandwidth Quota Policy</strong> - Allows you to monitor a policy by specifing a <span xml:lang="EN" lang="en">bandwidth cap that can be specified as kilobytes   or megabytes per second.</span></li>
   <li><strong>WS-Security Message Policy</strong> - Using a clusterable cache, you can share nonces to prevent getting duplicate messages across all ND's in a cluster.</li>
 </ul>
