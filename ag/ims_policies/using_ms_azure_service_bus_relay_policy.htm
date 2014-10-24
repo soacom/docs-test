@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Using the Microsoft Azure Service Bus Relay Policy
-description: Learn how to create a token that enables you to publish your service to Microsoft Azure Service Bus using the Microsoft Azure Service Bus Relay Policy. 
+description: Learn how to use the Microsoft Azure Service Bus Relay Policy to host your on-premise APIs in the Microsoft Azure cloud. 
 product: ag
 category: learn
 weight:	8
@@ -10,7 +10,7 @@ type: page
 nav-title: Using the Microsoft Azure Service Bus Relay Policy
 ---
   <h2 name="top">Using the Microsoft Azure Service Bus Relay Policy</h2>
-  <p>Learn how to create a token that enables you to   publish your service to Microsoft Azure Service Bus using the Microsoft Azure Service Bus Relay Policy.</p>
+  <p>Learn how to use the Microsoft Azure Service Bus Relay Policy to host your on-premise APIs in the Microsoft Azure cloud.</p>
 <a href="../policies/policy_management.htm" class="button secondary">Managing Policies</a>
 
 <p></p>
@@ -22,8 +22,6 @@ nav-title: Using the Microsoft Azure Service Bus Relay Policy
 
  <li><a href="#introduction">Introduction</a></li>
 
-  <li><a href="#functionality">Functionality</a></li>
-
   <li><a href="#configuration">Configuration</a></li>
 
 
@@ -32,10 +30,10 @@ nav-title: Using the Microsoft Azure Service Bus Relay Policy
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>The &quot;Microsoft Azure Service Bus Relay Policy&quot; is an Intermediary for Microsoft specific operational policy that is installed to the Policy Manager Management Console as part of the  Intermediary for Microsoft product installation.
+<p>The &quot;Microsoft Azure Service Bus Relay Policy&quot; is an Intermediary for Microsoft  operational policy that is installed to the Policy Manager Management Console as part of the  Intermediary for Microsoft product installation.
 </p>
-<p> With this policy, you can create a token that enables you to   publish your service to Microsoft Azure Service Bus. The policy offers Shared Secret or Access Control authentication modes. You can create multiple policies for different Microsoft Azure Service Bus logins. </p>
-<p>To install this policy, see <em>Chapter 3: Installing SOA Software Intermediary for Microsoft Policy Manager Policy</em> section of the <em>SOA Software Intermediary for Microsoft®: Install Guide</em> for installation instructions.</p>
+<p> With this policy, you can host your on-premise APIs in the Microsoft Azure cloud.  The policy offers Shared Secret or Access Control authentication modes. </p>
+<p>To install this policy, see <em>Chapter 3: Installing SOA Software Intermediary for Microsoft Policy Manager Policy</em> section of the <em>SOA Software Intermediary for Microsoft® Install Guide</em> for installation instructions.</p>
 <p><a href="#top">Back to top</a></p>
 <a name="configuration">
 <h3>Configuration</h3></a>
@@ -65,10 +63,10 @@ nav-title: Using the Microsoft Azure Service Bus Relay Policy
 </ul>
 <h5><img src="images/modify_msazure_policy.jpg" width="458" height="450" /></h5>
 <h5>Step 4: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service  or you can attach the policy at the Organization level and the policy will be active for all services defined within the organization. </p>
+<p>After you have saved your policy you can  attach it to an Intermediary for Microsoft virtual Service in Policy Manager or you can attach the policy at the Organization level and the policy will be active for all services defined within the organization. </p>
 <p><img src="images/ms_azure_pol_attach.jpg" width="653" height="175" /></p>
-<h5>Step 4: Test Policy</h5>
-<p>After you attached the Microsoft Azure Service Bus Relay Policy to a service, send a request to your service and view the results in your client. You can also go to the <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
-<p>If you receive errors, review the log information for details. In most cases, errors are typically associated with specifying the wrong credentials for the Microsoft Azure Service Bus Provider. You may see errors when the service starts and Policy Manager tries to publish the service to the Microsoft Azure Service Bus because the credentials are incorrect. Update the credentials in the policy retry. </p>
+<h5>Step 5: Test Policy</h5>
+<p>After you attached the Microsoft Azure Service Bus Relay Policy to a virtual service, send a request to your service and view the results in your client. You can also go to the <em>Services &gt; Monitoring</em> section to view the results for Logs (i.e., View Usage Record Details), Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p>If you receive errors, review the log information for details. In most cases, errors are typically associated with specifying the wrong credentials for the Microsoft Azure Service Bus Provider. You may see errors when the service is first deployed to Intermediary for Microsoft and Intermediary for Microsoft connects to  Microsoft Azure Service Bus using incorrect credentials. Update the credentials in the policy and retry. </p>
 <p><a href="#top">Back to top</a></p>
 
