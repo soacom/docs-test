@@ -105,18 +105,18 @@ nav-title: Using a Clusterable Cache
 <h4>Step 5: Test Policy Enforcement (Example)</h4>
 <p><strong>Throughput Quota or Bandwidth Quota Policy</strong></p>
 <ol class="usingOrderedList">
-  <li>Configure a  Throughput Quota Policy to process 10 requests per minute. </li>
+  <li>Configure a  Throughput Quota Policy or Bandwidth Quota Policy to process 10 requests per minute. </li>
   <li>Virtualize a service.</li>
-  <li>Attach the Throughput Quota Policy to the virtual service.</li>
+  <li>Attach the policy to the virtual service.</li>
   <li>Call the virtual service from the SOAP UI.</li>
   <li>Call the virtual service 10-20 times. </li>
   <li>In approximately one minute, ten requests will be success and the remainder will fail.</li>
   <li>Review the alerts. All requests failed past the 10 requests per minute will show a quota exceeded alert.  </li>
 </ol>
 
-<p><strong>WS-Security Policy</strong></p>
-
-
+<p><strong>WS-Security Asymmetric Binding Policy</strong></p>
+<p>Refer to  <a href="">Using a Clusterable Cache with WS-Security Asymetric Binding Policy</a> for an example illustration of how to use  clusterable caching with this WS-Security policy type.  
+  </p>
 <p><a href="#top">Back to top</a></p>
 </body>
 </html>
