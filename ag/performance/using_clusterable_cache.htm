@@ -114,6 +114,18 @@ nav-title: Using a Clusterable Cache
   <li>Review the alerts. All requests failed past the 10 requests per minute will show a quota exceeded alert.  </li>
 </ol>
 
+<p><strong>Bandwidth Quota  Policy</strong></p>
+<ol class="usingOrderedList">
+  <li>Configure a Bandwidth Quota Policy with 10 kbps for the Request .</li>
+  <li>Virtualize a service.</li>
+  <li>Attach the policy to the virtual service.</li>
+  <li>In  SOAP UI, run a single test step (e.g, Echo-Request1) in your case and make sure that the response is received  successfully.</li>
+  <li>Click on raw tab and note the content length of the request. Lets assume that content length is 1129 bytes. </li>
+  <li>Configure your load test's limit as 60 seconds or whatever number of seconds you want. </li>
+  <li>After running the test for 60 seconds lets say you see a count of 616 and an error count of 10. In this case the net count is 616-10=606. Ideally you would want to see the error count as 0. Some of these errors might be caused because a backend physical service took too long to return the response and then in this example the  errors should have been included in the net count as ND allowed this request and passed it to physical service. Some of these errors might be caused because all of the ND threads were busy due to high load and in this example errors should not be included in net count. </li>
+  <li>So lets assume that the net count is 606. Total number of bytes allowed by ND in 60 seconds-&gt; 606*1129= 684174.</li>
+  <li>Total number of bytes allowed per second 684174/60= 11402.9 bytes ~ 10kbps.</li>
+</ol>
 <p><strong>WS-Security Asymmetric Binding Policy</strong></p>
 <p>Refer to  <a href="http://docs.soa.com/docs-test/ag/assets/clusterable_cache_wss_asymmetric_binding_policy_use_case.pdf">Using a Clusterable Cache with WS-Security Asymmetric Binding Policy</a> for an example illustration of how to use  clusterable caching with this WS-Security policy type.  
   </p>
