@@ -312,14 +312,81 @@ If you use the SOA Software provided redirect page, add the query parameter of <
  <p>The first step in the policy creation process is to add an Aggregate policy. This policy type serves a container for the CA SiteMinder policies you will be creating in the next section.</p>
 
  <ol class="usingOrderedList">
-   <li>xxx</li>
+   <li>Login to Policy Manager 6.1 (http://&lt;hostname&gt;:&lt;port&gt;/ms/index.do).</li>
+   <li>Enter the following navigation path: <strong>Workbench &gt; Browse</strong>.</li>
+   <li>Navigate to the <em>Policies &gt; Operational </em>folder of the Organization that includes services you would like to authenticate using CA SiteMinder. The &quot;Policies Summary&quot; screen displays.</li>
+   <li>Click <strong>Add Policy</strong>. On the <em>Select Policy Creation Option</em> screen, add three policies according to the criteria below. After saving the policy, click <strong>Modify</strong> on the <em>Policy Details</em> screen to configure each policy.</li>
+   <li>Refer to the table below for a specification of each policy.<br />
+     <br />
+     <table width="353" cellspacing="0px" class="doctable">
+       <thead>
+       </thead>
+       <tr>
+         <th width="347">CA SiteMinder Policy Configuration</th>
+         <td width="8"></thead></td>
+       </tr>
+       <tr class="t2row">
+         <td height="26">
+           <ul class="usingOrderedList">
+             <li><strong>Policy Name:</strong> SiteMinderTokenOverTransport</li>
+             <li><strong>Policy Type:</strong> Aggregate</li>
+           </ul></td>
+       </tr>
+       
+     </table>
+   </li>
  </ol>
  <p><a href="#top">back to top</a> </p>
  
- <h5>Step 2: xxx</h5>
+ <h5>Step 2: Configure Aggregate Policy</h5>
+ <p>Navigate to the <em>Policy Details</em> screen for the Aggregate policy you just created.</p>
 
  <ol class="usingOrderedList">
-   <li>xxx</li></ol>
+<li>In the &quot;Policies&quot; section of the <em>Aggregate Policy Details</em> portlet, click <strong>Add</strong>. The <em>Select Policy Creation Option</em> screen displays.<br />
+  <br />
+  <img src="images/ca_siteminder_configure_aggregate_policy.jpg" width="523" height="121" /><br />
+  <br />
+  <img src="images/ca_siteminder_select_policy_creation.jpg" width="465" height="325" /></li>
+<li>Follow this approach and add three CA SiteMinder policies to the Aggregate policy according to the criteria below. After saving the policy, click <strong>Modify</strong> on the <em>Policy Details</em> screen to configure each policy.</li>
+<li>Refer to the table below for a specification of each policy.<br />
+  <br />
+<table width="531" cellspacing="0px" class="doctable">
+  <thead>
+      </thead>
+    <tr>
+      <th width="525">CA SiteMinder Policy Configuration</th>
+      <td width="8"></thead></td>
+      </tr>
+    <tr class="t2row">
+      <td height="26"><ul class="usingOrderedList">
+        <li><strong>Policy Name:</strong> SiteMinderTokenOverTransport_part1</li>
+        <li><strong>Policy Type:</strong> WS-Security   Transport Binding</li></td>
+      </tr>
+    <tr class="t1row">
+      <td height="26" class="t1Row"><li><strong>Policy Name:</strong> SiteMinderTokenOverTransport_part2</li>
+        <li><strong>Policy Type:</strong> WS-Security   Supporting Tokens</li>
+        <li><strong>Supporting Token Type:</strong> Binary   Security</li>
+        <li><strong>Token Inclusion:</strong> Always   to Recipient</li>
+        <li><strong>Subject Category:</strong> End-User</li>
+        <li><strong>Binary Security Token Type:</strong> urn:soa.com:security.tokens:siteminder-ssotoken</li>li></td>
+      </tr>
+    <tr class="t2row">
+      <td height="30"><li><strong>Policy Name:</strong> SiteMinderTokenOverTransport_part3
+        <li><strong>Policy Type:</strong> Authentication Policy</li>
+        <li><strong>Subject Category:</strong> End-User</li>
+       <li> <strong>Authentication Domain:</strong> CA SiteMinder</li></td>
+      </tr>
+    
+</table>
+<br />
+<p>After configuring all three policies the <em>Policy Details</em> page for the Aggregate Policy will look similar to the following:<br />
+<br />
+<img src="images/ca_siteminder_aggregate_policy.jpg" width="523" height="289" /><br />
+<br />
+</p></li>
+<li>  <br />
+</li>
+</ol>
  <p><a href="#top">back to top</a> </p>
  
  <h5>Step 2: xxx</h5>
