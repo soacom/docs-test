@@ -27,14 +27,18 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
    <ol class="table_of_contents">
 
  <li><a href="#introduction">Introduction</a></li>
- <li>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</li>
- <li>Configure CA SiteMinder Identity System in Policy Manager (Integrate Other SOA Software Products)</li>
+ 
+  <li><a href="#config_legacy">Configure CA SiteMinder Identity System in Policy Manager (Legacy)</a></li>
+  
+    <li><a href="#config_other">Configure CA SiteMinder Identity System in Policy Manager (Integrate Other SOA Software Products)</a></li>
+    <li>Configure CA SiteMinder Policies</li>
 
 
 
 
 
-  </ol>
+
+</ol>
   <div class = "divider1"></div>
 
 
@@ -47,29 +51,227 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
 
 <p><a href="#top">Back to top</a>
 
-<a name="configuration">
-<h3>xxx</h3></a>
-<p>xxx</p>
-<h5>Prerequisites</h5>
-<ul class="usingOrderedList">
-  <li>xxx<br>
-  </li>
-</ul>
+<a name="config_legacy">
+<h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3></a>
+<p>This procedure illustrates how to configure a CA SiteMinder Identity System for legacy usage.<br>
+</p>
 
-<h5>Step 1: xxx</h5>
+<h5>Step 1: Specify Identity System Details</h5>
 <ol class="usingOrderedList">
-  <li>xxx.</li>
-  <li>xxx</li>
-  <li>xxx<br>
+  <li>Login to Policy Manager (http://&lt;hostname&gt;:&lt;port&gt;/ms/index.do)..</li>
+  <li><strong>Configure &gt; Security &gt; Identity Systems</strong>. The <em>Identity Systems Summary</em> screen displays.</li>
+  <li>Click <strong>Add Identity System</strong>. The <em>Add Identity System Wizard</em> screen displays. </li>
+  <li>In the <em>Select Identity System</em> section, select <strong>CA SiteMinder</strong> from the <em>Identity System Type</em> drop-down menu. </li>
+  <li>In the <em>Domain Details</em> section, specify the &quot;Domain Name&quot; and &quot;Domain Description.&quot;<br />
+    <br />
+    <img src="images/ca_siteminder_specify_identity_system_details.jpg" width="621" height="414" /><br>
     <br>
   </li>
 </ol>
 
+ <h5>Step 2: <strong>Create SiteMinder Agent Configuration File</strong> </h5>
+ <ol class="usingOrderedList">
+  <li>Click <strong>Next</strong> to continue. The <em>CA SiteMinder Agent Configuration</em> screen displays.</li>
+<li>Click the <em>Create configuration file</em> radio button.</li>
+<li>Click the <em>Enable Agent</em> checkbox.</li>
+<li>Click the <em>Agent Configuration Object</em> radio button.</li>
+<li>In the &quot;Name&quot; field, specify the Agent Configuration Object name you defined in section <em>Step 4: Install Web Agent on Client Machines</em>.<br />
+  <br />
+  <img src="images/ca_siteminder_create_agent_config.jpg" width="454" height="175" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ 
+  <h5>Step 3: <strong>Configure Host Configuration File</strong></h5>
+  <ol>
+    <li>Click <strong>Next</strong> to continue. The <em>Host Configuration File</em> screen displays.</li>
+    <li>Click the <em>Upload Configuration file</em> radio button.</li>
+    <li>Set the Host Configuration file to the location you specified when you installed the CA SiteMinder Web Agent. The file is located on the server's file system:<br />
+      <br />
+      Example server file path: /opt/siteminder/webagent/config/SmHost.conf<br />
+      <br />
+    <img src="images/ca_siteminder_upload_host_config_file.jpg" width="604" height="117" /></li>
+  </ol>
+<p><a href="#top">back to top</a> </p>
+
+
+ <h5>Step 4: <strong>Configure SiteMinder Agent Options</strong></h5>
+
+ <ol class="usingOrderedList">
+<li>Click <strong>Next</strong> to continue. The <em>CA SiteMinder Agent Options</em> screen displays.</li>
+<li>Set the &quot;Authentication Realm&quot; to the one you created in section &quot;<em>Step 3: Install CA SiteMinder Objects &gt; Create Domain and Realm Configuration</em>.&quot;  </li>
+<li>&quot;Enable verification of client IP Address in session token&quot; should not be checked.<br />
+  <br />
+  <img src="images/ca_siteminder_config_agent_options.jpg" width="415" height="325" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+
+
+ <h5>Step 5: Cache Options</h5>
+
+ <ol class="usingOrderedList">
+   <li>Click <strong>Next</strong> to continue. The <em>Cache Options </em>screen displays.</li>
+   <li>Select the cache option defaults, or customize the cache configuration.<br />
+     <br />
+     <img src="images/ca_siteminder_cache_options.jpg" width="507" height="240" />     <br />
+   </li>
+ </ol>
+ <p><a href="#top">back to top</a> </p>
+
+
+ <h5>Step 6: <strong>Configure User Directory Options</strong></h5>
+
+ <ol class="usingOrderedList">
+<li>Click <strong>Next</strong> to continue. The <em>User Directory Options</em> screen displays.</li>
+<li>If you need to manage CA SiteMinder users (e.g., to assign CA SiteMinder users to contracts), then select &quot;Use SOA Policy Manager LDAP support to access the User Directory&quot; and configure the &quot;Connection Properties&quot; and &quot;Attribute Details&quot; described in the next steps.<br />
+  <br />
+  <em>Note: The default is set to &quot;Access to User Directory is not required.&quot;</em>  <br />
+  <br />
+  <img src="images/ca_siteminder_user_directory_options.jpg" width="506" height="208" /><br />
+</li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 7: <strong>Specify Connection Properties</strong></h5>
+
+ <ol class="usingOrderedList">
+<li>Click <strong>Next</strong> to continue. The <em>Connection Properties</em> screen displays. </li>
+<li>Configure the connection properties for the selected Identity System. You must configure the Main URL, and optionally specify up to five Failover URLs.<br />
+  <br />
+  <img src="images/ca_siteminder_connection_properties.jpg" width="623" height="317" /><br />
+</li>
+</ol>
+<p><a href="#top">back to top</a> </p>
+<h5>Step 8: <strong>Configure Attribute Details</strong></h5>
+
+ <ol class="usingOrderedList">
+<li>Click <strong>Next</strong> to continue. The <em>Attribute Details </em>screen displays. </li>
+<li>Configure the attribute mapping and search scope for Users and Groups.<br />
+  <br />
+  <img src="images/ca_siteminder_attribute_details.jpg" width="242" height="363" /></li>
+</ol>
+ <p><a href="#top">back to top</a></p>
+ <h5>Step 9: <strong>Test the Connection</strong></h5>
+
+ <ol class="usingOrderedList">
+<li>On the <em>Confirmation</em> page, click <strong>Verify Connection</strong> to complete the identity system configuration.</li>
+<li>After the connection is successfully verified. Click <strong>Finish</strong>. Your CA SiteMinder Identity System is saved and displays on the <em>Identity System Summary</em> screen. <br />
+  <br />
+  <img src="images/ca_siteminder_test_connection.jpg" width="619" height="418" /><br />
+</li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h3><a name="config_legacy" id="config_other">Configure CA SiteMinder Identity System in Policy Manager (Integrate Other SOA Software Products)</a></h3>
+ <p>This procedure illustrates how to configure a CA SiteMinder Identity System for use with other SOA Software products. This configuration option enable Single Sign-On support when a custom login screen is required.<br />
+</p>
+ <h5>Step 1: <strong>Specify Identity System Details</strong> </h5>
+ <ol class="usingOrderedList">
+  <li>Login to Policy Manager (http://&lt;hostname&gt;:&lt;port&gt;/ms/index.do).</li>
+<li><strong>Configure &gt; Security &gt; Identity Systems</strong>. The <em>Identity Systems Summary</em> screen displays.</li>
+<li>Click <strong>Add Identity System</strong>. The <em>Add Identity System Wizard</em> screen displays. </li>
+<li>In the <em>Select Identity System</em> section, select <strong>CA SiteMinder</strong> from the <em>Identity System Type</em> drop-down menu. </li>
+<li>In the <em>Domain Details</em> section, specify the &quot;Domain Name&quot; and &quot;Domain Description.&quot;<br />
+  <br />
+  <img src="images/ca_siteminder_specify_identity_system_details_other.jpg" width="623" height="177" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: <strong>Create SiteMinder Agent Configuration File</strong> </h5>
+ <ol class="usingOrderedList">
+  <li>Click <strong>Next</strong> to continue. The <em>CA SiteMinder Agent Configuration</em> screen displays.</li>
+<li>Click the <em>Create configuration file</em> radio button.</li>
+<li>Click the <em>Enable Agent</em> checkbox<strong>.</strong></li>
+<li>Click the <em>Agent Configuration Object</em> radio button.</li>
+<li>In the &quot;Name&quot; field, specify the Agent Configuration Object name you defined in section <em>Step 2: Install Web Agent <strong>on Client Machines</strong></em>.<br />
+  <br />
+  <img src="images/ca_siteminder_create_agent_config_other.jpg" width="454" height="175" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: <strong>Configure Host Configuration File</strong></h5>
+
+ <ol class="usingOrderedList">
+   <li>Click <strong>Next</strong> to continue. The <em>Host Configuration File</em> screen displays.<br />
+     <br />
+   <img src="images/ca_siteminder_host_config_file.jpg" width="432" height="243" />   </li>
+<li>Select the Host Configuration File option that best suits your requirements.</li>
+<li><strong>Host configuration file is located on the server's file system</strong> - Use this option if each host must have its own host configuration file. The host configuration file is located on the server's file system.<br />
+  <br />
+  <img src="images/ca_siteminder_host_config_file2.jpg" width="410" height="53" /></li>
+<li><strong>Create configuration file</strong> - Use this option if you would like to define a host configuration file. After selecting this option, the &quot;Create Host Configuration File&quot; screen displays. See the next step &quot;Create Host Configuration File&quot; for more information.<br />
+  <br />
+  <img src="images/ca_siteminder_host_config_file3.jpg" width="419" height="39" /></li>
+<li><strong>Upload Configuration file</strong> - Use this option to upload an existing host configuration file from your local machine. <br />
+  <br />
+  <em>Note: This option will be used in this procedure.</em><br />
+  <br />
+  <img src="images/ca_siteminder_host_config_file4.jpg" width="413" height="72" /></li>
+<li>Click the <em>Upload Configuration file</em> radio button.</li>
+<li>Specify the Local File Path of the host configuration file to the location you specified when you installed the CA SiteMinder Web Agent. The file is located on the server's file system:<br />
+  <br />
+  Example server file path: /opt/siteminder/webagent/config/SmHost.conf<br />
+  <br />
+  <img src="images/ca_siteminder_host_config_file5.jpg" width="604" height="117" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: <strong>Configure SiteMinder Agent Options</strong></h5>
+
+ <ol class="usingOrderedList">
+   <li>Click <strong>Next</strong> to continue. The CA <em>SiteMinder Agent Options</em> screen displays.</li>
+   <li>Set the &quot;Authentication Realm&quot; to the one you created in section &quot;<em>Step 3: Install CA SiteMinder Objects &gt; Create Domain and Realm Configuration</em>.&quot;  </li>
+   <li>The &quot;Enable verification of client IP Address in session token&quot; option should be unchecked. <br />
+     <br />
+<img src="images/ca_siteminder_config_agent_options2.jpg" width="415" height="325" /></li></ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: <strong>Cache Options</strong></h5>
+
+ <ol class="usingOrderedList">
+   <li>Click <strong>Next</strong> to continue. The <em>Cache Options </em> screen displays.</li>
+<li>Select the cache option defaults, or customize the cache configuration.<br />
+  <br />
+  <img src="images/cache_options2.jpg" width="508" height="245" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: <strong>Configure Login Process Options</strong></h5>
+
+<ol class="usingOrderedList">
+  <li>Click <strong>Next</strong> to continue. The <em>Login Process Options </em>screen displays.<br />
+    <br />
+    The &quot;Login Process Options &quot; screen allows you to specify how the Identity System will be used to provide Single Sign-On support when a custom login screen is required. It is used with SOA Software products that support OAuth/Open ID Providers and that are also integrated with CA SiteMinder.<br />
+    <br />
+  When Single Sign-On support is enabled, the Identity System can be used to authenticate Resource Owner credentials when OAuth or OpenID is issuing access tokens. Single Sign-On support is controlled by a Login Process Manager that you can enable or disable.<br />
+  <br />
+  <img src="images/ca_siteminder_login_options.jpg" width="441" height="229" />  </li>
+</ol>
+<ol class="usingOrderedList">
+  <li>
+    <p>Two methods are used to collect credentials during the login process. </p>
+    <ul>
+      <li>Credentials can be collected using a mechanism to call the Login Process Manager (i.e., Calling Provider). With this method, the OAuth or OpenID provider will use its native facility to collect the resource owners username and password. These will then be passed to this new Identity System for authentication by CA SiteMinder.</li>
+      <li>CA SiteMinder Login Process Manager can redirect to a URL that will cause the CA SiteMinder processing to happen. With this method, use CA SiteMinder's defined login page (or any other mechanism defined by a CA SiteMinder Authentication Scheme). This is done by redirecting to a CA SiteMinder protected resource on a web server with a CA SiteMinder Web Agent. <br />
+        <br />
+        This protected resource is a simple HTML page (provided by SOA Software) that will redirect the browser back to the OAuth/OpenID Provider to complete the token issuing process after a successful CA SiteMinder Login. A sample redirection page can be found here: sm60\samples\com.soa.examples.security.provider.ui\WebContent\connector\example\completeLogin.htm</li>
+    </ul>
+    <p>If you will be using the CA SiteMinder Identity System with OAuth or Open ID Providers that are part of other SOA Software products, configure this option based on your requirements. If youwill not be using this option, uncheck the &quot;Enable OAuth/OpenID login via CA SiteMinder&quot; checkbox.<br />
+      <em>Note: This procedure illustrates using the CA SiteMinder login processing will be used&quot; option to enable the OAuth/OpenID login in the SOA Software Enterprise API Platform product (i.e., Community Manager). </em></p>
+    <ul>
+      <li>Click the &quot;Enable OAuth/OpenID login via CA SiteMinder<br />
+        checkbox.</li>
+      <li>Click the <em>CA SiteMinder login processing will be used</em> radio button. </li>
+      <li>In the &quot;Login Redirect URL&quot; text box, specify a CA SiteMinder protected URL. This value will be modifed to include the URL that takes the user back to the OAuth/OpenID provider. </li>
+      <li>Include the string (<strong>returnToUrl</strong>) in your value to control where the OAuth/OpenID return URL will be placed. </li>
+    </ul>
+  If you use the SOA Software provided redirect page, add the query parameter of <strong>loginCompleteUrl</strong> to the end of your URL. </li>
+</ol>
+<p><a href="#top">back to top</a></p>
  <h5>Step 2: xxx</h5>
 
  <ol class="usingOrderedList">
    <li>xxx</li></ol>
  <p><a href="#top">back to top</a> </p>
+  <p><a href="#top">back to top</a> </p>
+ <h5>Step 2: xxx</h5>
+
+ <ol class="usingOrderedList">
+   <li>xxx</li></ol>
+ <p><a href="#top">back to top</a> </p>
+
 
 
 <div class = "divider1"></div>
