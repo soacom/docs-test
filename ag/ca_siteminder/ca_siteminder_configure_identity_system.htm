@@ -31,12 +31,9 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
   <li><a href="#config_legacy">Configure CA SiteMinder Identity System in Policy Manager (Legacy)</a></li>
   
     <li><a href="#config_other">Configure CA SiteMinder Identity System in Policy Manager (Integrate Other SOA Software Products)</a></li>
-    <li>Configure CA SiteMinder Policies</li>
-
-
-
-
-
+    
+    <li><a href="#config_policies">Configure CA SiteMinder Policies</a></li>
+ 
 
 </ol>
   <div class = "divider1"></div>
@@ -237,11 +234,10 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
     <br />
   When Single Sign-On support is enabled, the Identity System can be used to authenticate Resource Owner credentials when OAuth or OpenID is issuing access tokens. Single Sign-On support is controlled by a Login Process Manager that you can enable or disable.<br />
   <br />
-  <img src="images/ca_siteminder_login_options.jpg" width="441" height="229" />  </li>
-</ol>
-<ol class="usingOrderedList">
-  <li>
-    <p>Two methods are used to collect credentials during the login process. </p>
+  <img src="images/ca_siteminder_login_options.jpg" width="441" height="229" />  <br />
+  <br />
+  </li>
+  <li>Two methods are used to collect credentials during the login process.<br />
     <ul>
       <li>Credentials can be collected using a mechanism to call the Login Process Manager (i.e., Calling Provider). With this method, the OAuth or OpenID provider will use its native facility to collect the resource owners username and password. These will then be passed to this new Identity System for authentication by CA SiteMinder.</li>
       <li>CA SiteMinder Login Process Manager can redirect to a URL that will cause the CA SiteMinder processing to happen. With this method, use CA SiteMinder's defined login page (or any other mechanism defined by a CA SiteMinder Authentication Scheme). This is done by redirecting to a CA SiteMinder protected resource on a web server with a CA SiteMinder Web Agent. <br />
@@ -257,15 +253,93 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
       <li>In the &quot;Login Redirect URL&quot; text box, specify a CA SiteMinder protected URL. This value will be modifed to include the URL that takes the user back to the OAuth/OpenID provider. </li>
       <li>Include the string (<strong>returnToUrl</strong>) in your value to control where the OAuth/OpenID return URL will be placed. </li>
     </ul>
-  If you use the SOA Software provided redirect page, add the query parameter of <strong>loginCompleteUrl</strong> to the end of your URL. </li>
+If you use the SOA Software provided redirect page, add the query parameter of <strong>loginCompleteUrl</strong> to the end of your URL.</li>
 </ol>
 <p><a href="#top">back to top</a></p>
+ <h5>Step 2: Configure User Directory Options</h5>
+
+ <ol class="usingOrderedList">
+   <li>Click <strong>Next</strong> to continue. The <em>Configure User Directory Option&quot; </em>screen displays.<br />
+     <br />
+   Two different methods of providing identity browsing are supported: LDAP support or CA SiteMinder DMS. For this configuration we will be using CA SiteMinder DMS.   </li>
+   <li>Click <strong>Next</strong> to continue. The <em>User Directory Options</em> screen displays.</li>
+   <li>Click the <em>Use CA SiteMinder DMA to access the User Directory</em> radio button.<br />
+     <br />
+   <img src="images/ca_siteminder_user_directory_options2.jpg" width="512" height="211" /><br />
+   </li>
+ </ol>
+ <p><a href="#top">back to top</a></p>
+ <h5>Step 2: <strong>Configure CA SiteMinder DMS Configuration</strong></h5>
+ <p>The &quot;SiteMinder DMS Configuration&quot; screen provides support for CA SiteMinder searches and is used to configure connection and processing options for the DMS access to the CA SiteMinder User Directores that have been defined in the CA SiteMinder Domain that contains the SOA Authentication Realm defined on the CA SiteMinder Agent Options page.</p>
+
+ <ol class="usingOrderedList">
+<li>Specify the Directory Administrator Credentials. </li>
+<li>In the Directory Administrator Credentials section, configure the credentials that DMS will need to gain access to the CA SiteMinder User directories.</li>
+<li>In the &quot;User Directory Structure&quot; section, specify the attributes needed to access users and groups stored in the CA SiteMinder User Directory. Specify the the Root DN for all searches in the &quot;Users Root DN prefix&quot; text box, then split your search results by specifying User name, User full Name, and Group Root DN prefix, Group name and Group description attributes. A sample entry for each is included for each attribute.<br />
+  <br />
+  <img src="images/ca_siteminder_configure_dms1.jpg" width="413" height="314" /><br />
+  <br />
+  <img src="images/ca_siteminder_configure_dms2.jpg" width="420" height="200" /></li>
+</ol>
+ <p><a href="#top">back to top</a> </p>
+ 
+<h5>Step 2: Test the Connection</h5>
+
+ <ol class="usingOrderedList">
+   <li>On the <em>Confirmation</em> page, click <strong>Verify Connection</strong> to complete the identity system configuration.</li>
+   <li>After the connection is successfully verified. Click <strong>Finish</strong>. Your CA SiteMinder Identity System is saved and displays on the <em>Identity System Summary</em> screen.<br />
+     <br />
+   <img src="images/ca_siteminder_test_the_connection2.jpg" width="440" height="365" />   </li>
+ </ol>
+ <p><a href="#top">back to top</a> </p>
+ 
+ 
+ <a name="config_policy">
+<h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3>
+<p>The next step is to define a series of Operational Policies that will be used to process the SiteMinder SSO token for the end-user identity. This task is accomplished creating an Aggregate Policy and adding and configuring the following policy types to the Aggregate Policy using the Policy Manager &quot;Management Console:&quot;</p>
+</a>
+ <ul class="usingOrderedList">
+   <li>WS-Security Transport Binding</li>
+   <li>WS-Security Supporting Tokens</li>
+   <li>Authentication Policy</li>
+ </ul>
+ 
+<p>After the Aggregate Policy is created and the three policies are added, the Aggregate Policy can then be attached to the service that requires CA SiteMinder authentication using the Policy Attachments Portlet.</p>
+ <a name="config_policy"> </a>
+ 
+  
+ <h5>Step 1: <strong>Add Aggregate Policy</strong></h5>
+ <p>The first step in the policy creation process is to add an Aggregate policy. This policy type serves a container for the CA SiteMinder policies you will be creating in the next section.</p>
+
+ <ol class="usingOrderedList">
+   <li>xxx</li>
+ </ol>
+ <p><a href="#top">back to top</a> </p>
+ 
  <h5>Step 2: xxx</h5>
 
  <ol class="usingOrderedList">
    <li>xxx</li></ol>
  <p><a href="#top">back to top</a> </p>
-  <p><a href="#top">back to top</a> </p>
+ 
+ <h5>Step 2: xxx</h5>
+
+ <ol class="usingOrderedList">
+   <li>xxx</li></ol>
+ <p><a href="#top">back to top</a> </p>
+ 
+ <h5>Step 2: xxx</h5>
+
+ <ol class="usingOrderedList">
+   <li>xxx</li></ol>
+ <p><a href="#top">back to top</a> </p>
+ 
+ <h5>Step 2: xxx</h5>
+
+ <ol class="usingOrderedList">
+   <li>xxx</li></ol>
+ <p><a href="#top">back to top</a> </p>
+ 
  <h5>Step 2: xxx</h5>
 
  <ol class="usingOrderedList">
