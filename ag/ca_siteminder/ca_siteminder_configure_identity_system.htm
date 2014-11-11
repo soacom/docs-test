@@ -46,9 +46,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p><a href="#top">Back to top</a>
-
-<a name="config_legacy">
+<p><a name="config_legacy">
 <h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3></a>
 <p>This procedure illustrates how to configure a CA SiteMinder Identity System for legacy usage.<br>
 </p>
@@ -181,7 +179,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
   <img src="images/ca_siteminder_create_agent_config_other.jpg" width="454" height="175" /></li>
 </ol>
  <p><a href="#top">back to top</a> </p>
- <h5>Step 2: <strong>Configure Host Configuration File</strong></h5>
+ <h5>Step 3: <strong>Configure Host Configuration File</strong></h5>
 
  <ol class="usingOrderedList">
    <li>Click <strong>Next</strong> to continue. The <em>Host Configuration File</em> screen displays.<br />
@@ -207,7 +205,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
   <img src="images/ca_siteminder_host_config_file5.jpg" width="604" height="117" /></li>
 </ol>
  <p><a href="#top">back to top</a> </p>
- <h5>Step 2: <strong>Configure SiteMinder Agent Options</strong></h5>
+ <h5>Step 4: <strong>Configure SiteMinder Agent Options</strong></h5>
 
  <ol class="usingOrderedList">
    <li>Click <strong>Next</strong> to continue. The CA <em>SiteMinder Agent Options</em> screen displays.</li>
@@ -216,7 +214,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
      <br />
 <img src="images/ca_siteminder_config_agent_options2.jpg" width="415" height="325" /></li></ol>
  <p><a href="#top">back to top</a> </p>
- <h5>Step 2: <strong>Cache Options</strong></h5>
+ <h5>Step 5: <strong>Cache Options</strong></h5>
 
  <ol class="usingOrderedList">
    <li>Click <strong>Next</strong> to continue. The <em>Cache Options </em> screen displays.</li>
@@ -225,7 +223,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
   <img src="images/cache_options2.jpg" width="508" height="245" /></li>
 </ol>
  <p><a href="#top">back to top</a> </p>
- <h5>Step 2: <strong>Configure Login Process Options</strong></h5>
+ <h5>Step 6: <strong>Configure Login Process Options</strong></h5>
 
 <ol class="usingOrderedList">
   <li>Click <strong>Next</strong> to continue. The <em>Login Process Options </em>screen displays.<br />
@@ -256,7 +254,7 @@ nav-title: Configuring CA SiteMinder Identity System in Policy Manager 7.x
 If you use the SOA Software provided redirect page, add the query parameter of <strong>loginCompleteUrl</strong> to the end of your URL.</li>
 </ol>
 <p><a href="#top">back to top</a></p>
- <h5>Step 2: Configure User Directory Options</h5>
+ <h5>Step 7: Configure User Directory Options</h5>
 
  <ol class="usingOrderedList">
    <li>Click <strong>Next</strong> to continue. The <em>Configure User Directory Option&quot; </em>screen displays.<br />
@@ -268,8 +266,7 @@ If you use the SOA Software provided redirect page, add the query parameter of <
    <img src="images/ca_siteminder_user_directory_options2.jpg" width="512" height="211" /><br />
    </li>
  </ol>
- <p><a href="#top">back to top</a></p>
- <h5>Step 2: <strong>Configure CA SiteMinder DMS Configuration</strong></h5>
+ <h5>Step 8: <strong>Configure CA SiteMinder DMS Configuration</strong></h5>
  <p>The &quot;SiteMinder DMS Configuration&quot; screen provides support for CA SiteMinder searches and is used to configure connection and processing options for the DMS access to the CA SiteMinder User Directores that have been defined in the CA SiteMinder Domain that contains the SOA Authentication Realm defined on the CA SiteMinder Agent Options page.</p>
 
  <ol class="usingOrderedList">
@@ -283,7 +280,7 @@ If you use the SOA Software provided redirect page, add the query parameter of <
 </ol>
  <p><a href="#top">back to top</a> </p>
  
-<h5>Step 2: Test the Connection</h5>
+<h5>Step 9: Test the Connection</h5>
 
  <ol class="usingOrderedList">
    <li>On the <em>Confirmation</em> page, click <strong>Verify Connection</strong> to complete the identity system configuration.</li>
@@ -295,14 +292,14 @@ If you use the SOA Software provided redirect page, add the query parameter of <
  
  
  <a name="config_policy">
-<h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3>
-<p>The next step is to define a series of Operational Policies that will be used to process the SiteMinder SSO token for the end-user identity. This task is accomplished creating an Aggregate Policy and adding and configuring the following policy types to the Aggregate Policy using the Policy Manager &quot;Management Console:&quot;</p>
-</a>
- <ul class="usingOrderedList">
+<h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3></a>
+<p>The next step is to define a series of Operational Policies that will be used to process the SiteMinder SSO token for the end-user identity. This task is accomplished creating an Aggregate Policy and adding and configuring the following policy types to the Aggregate Policy using the Policy Manager &quot;Management Console:&quot;
+ </p>
+<ul class="usingOrderedList">
    <li>WS-Security Transport Binding</li>
    <li>WS-Security Supporting Tokens</li>
    <li>Authentication Policy</li>
- </ul>
+</ul>
  
 <p>After the Aggregate Policy is created and the three policies are added, the Aggregate Policy can then be attached to the service that requires CA SiteMinder authentication using the Policy Attachments Portlet.</p>
  <a name="config_policy"> </a>
@@ -336,8 +333,6 @@ If you use the SOA Software provided redirect page, add the query parameter of <
      </table>
    </li>
  </ol>
- <p><a href="#top">back to top</a> </p>
- 
  <h5>Step 2: Configure Aggregate Policy</h5>
  <p>Navigate to the <em>Policy Details</em> screen for the Aggregate policy you just created.</p>
 
