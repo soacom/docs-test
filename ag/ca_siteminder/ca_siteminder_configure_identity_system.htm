@@ -293,8 +293,9 @@ If you use the SOA Software provided redirect page, add the query parameter of <
  <p><a href="#top">back to top</a> </p>
  
  
- <a name="config_policy">
-<h3>Configure CA SiteMinder Identity System in Policy Manager (Legacy)</h3></a>
+ <a name="config_policies">
+<h3>Configure CA SiteMinder Policies in Policy Manager</h3>
+</a>
 <p>The next step is to define a series of Operational Policies that will be used to process the SiteMinder SSO token for the end-user identity. This task is accomplished creating an Aggregate Policy and adding and configuring the following policy types to the Aggregate Policy using the Policy Manager &quot;Management Console:&quot;
  </p>
 <ul class="usingOrderedList">
@@ -356,7 +357,7 @@ If you use the SOA Software provided redirect page, add the query parameter of <
       </tr>
     <tr class="t2row">
       <td height="26">
-        <li><strong>Policy Name:</strong> SiteMinderTokenOverTransport_part1</li>
+        <ul class="usingOrderedList"><li><strong>Policy Name:</strong> SiteMinderTokenOverTransport_part1</li>
         <li><strong>Policy Type:</strong> WS-Security   Transport Binding</li></td>
       </tr>
     <tr class="t1row">
@@ -375,6 +376,7 @@ If you use the SOA Software provided redirect page, add the query parameter of <
       </tr>
     
 </table>
+</ol>
 <br />
 <p>After configuring all three policies the <em>Policy Details</em> page for the Aggregate Policy will look similar to the following:<br />
 <br />
