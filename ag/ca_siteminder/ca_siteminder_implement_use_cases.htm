@@ -12,126 +12,18 @@ nav-title: Step 7 -  Implement CA SiteMinder Use Cases
 ---
 
 <h2 name="top">Step 7: Implement CA SiteMinder Use Cases</h2>
-  <p>Learn how to use CA-SiteMinder in a variety of different usage scenarios.</p>
-
-
-<a href="using_admin_console.htm" class="button secondary">Using Admin Console</a>
-
-
-<a href="ca_siteminder_integrate_with_pm.htm" class="button secondary">Integrate CA SiteMinder with Policy Manager (Main Topic)</a>
-
-<p></p>
-
-
-  <div class = "divider1"></div>
-   <h3 style="color: gray;">Table of Contents</h3>
-
-   <ol class="table_of_contents">
-
- <li><a href="#introduction">Introduction</a></li>
- 
- 
- <li><a href="#usecase_appidentity">Using CA SiteMinder as Application Identity</a></li>
- 
-  <li><a href="#usecase_usernamepassword">Using Username/Password Security with WS-Security Policy</a></li>
-
-
-  <li><a href="#usecase_sessioncookie">Using SMSESSION Cookie with HTTP Security Policy</a></li>
-
-
-
-
-
-
-
-  </ol>
-  <div class = "divider1"></div>
-
-
-
-
-
-
-<a name="introduction">
-<h3>Introduction</h3></a>
-
-<p><a href="#top">Back to top</a>
-
-<a name="usecase_appidentity">
-<h3>Using CA SiteMinder as an Application Identity</h3></a>
-<p>This use case will the <strong>Manage Outbound Identity </strong>option to send the CA SiteMinder identity to a downstream service that is enforcing Basic Authentication using the HTTP Security Policy. The consuming application (AccountManagerDocLiteralWrappedService_vs3_vs0) does not have a security policy and will only be used to pass the CA SiteMinder identity to the downstream application (AccountManagerDocLiteralWrappedService_vs3).</p>
-
-<p><img src="images/ca_siteminder_usecase_identity1.jpg" width="624" height="406" /></p>
-<p><img src="images/ca_siteminder_usecase_identity3.jpg" width="624" height="198" /></p>
-<p><img src="images/ca_siteminder_usecase_identity2.jpg" width="624" height="325" /></p>
-<p><img src="images/ca_siteminder_usecase_identity4.jpg" width="624" height="402" /></p>
-<p>&nbsp;</p>
-<p><img src="images/ca_siteminder_usecase_identity5.jpg" width="624" height="402" /></p>
-<p><img src="images/ca_siteminder_usecase_identity6.jpg" width="480" height="360" /></p>
-<p><img src="images/ca_siteminder_usecase_identity7.jpg" width="624" height="168" /></p>
-<p>&nbsp;</p>
-<p><img src="images/ca_siteminder_usecase_identity8.jpg" width="616" height="560" /></p>
-<h5>Prerequisites</h5>
-<ul class="usingOrderedList">
-  <li>xxx<br>
-  </li>
-</ul>
-
-<h5>Step 1: xxx</h5>
-<ol class="usingOrderedList">
-  <li>xxx.</li>
-  <li>xxx</li>
-  <li>xxx<br>
-    <br>
-  </li>
-</ol>
-
- <h5>Step 2: xxx</h5>
-
- <ol class="usingOrderedList">
-   <li>xxx</li></ol>
- <p><a href="#top">back to top</a> </p>
- 
- 
- <a name="usecase_usernamepassword">
-<h3>Using Username/Password Security with WS-Security Policy</h3>
-<p>&nbsp;</p>
-<p><img src="images/ca_siteminder_usecase_username1.jpg" width="576" height="403" /></p>
-<p><img src="images/ca_siteminder_usecase_username3.jpg" width="576" height="437" /></p>
-<p><img src="images/ca_siteminder_usecase_username4.jpg" width="576" height="288" /></p>
-<p><img src="images/ca_siteminder_usecase_username5.jpg" width="576" height="122" /></p>
-<p><img src="images/ca_siteminder_usecase_username6.jpg" width="576" height="524" /></p>
-<p><img src="images/ca_siteminder_usecase_username7.jpg" width="576" height="524" /></p>
-</a>
- 
- <a name="usecase_sessioncookie">
-<h3>Using SMSESSION Cookie with HTTP Security Policy</h3></a>
-<p>When a user in SiteMinder protected realm is authenticated, a cookie called SMSESSION is generated. This use case will test authentication of this SMSESSION cookie using HTTP Security Policy. To generate the SMSESSION cookie, we will first use Basic Authentication.</p>
-<ol start="1" type="1">
-  <li>Be sure to check the SiteMinder Agent Configuration Object in      SiteMinder Administrative UI has a parameter called &lsquo;AcceptTPCookie&rsquo; with      the value &lsquo;yes&rsquo;</li>
-  <li>Create a Virtual Service (VS1) then virtualize this Virtual      Service again (VS2). Each Virtual Service will be hosted on separate ND</li>
-  <li>VS1 will have HTTP Security Policy with Basic Authentication. The      policy will also have a response cookie called &lsquo;SMSESSION&rsquo;. Enable      &lsquo;preserve transport binding headers&rsquo; to preserve this cookie header      downstream.</li>
-  <li>VS2 will have HTTP Security Policy with Cookie Authentication. </li>
-</ol>
-<h2><a name="_Toc354060218" id="_Toc354060218">High level configurations needed</a></h2>
-<p>Configure identity system (LoginProcessManager and Identity browsing not needed)<br />
-  Setup policies needed for the service (Authentication policy and http security policy)</p>
-<h2><a name="_Toc354060219" id="_Toc354060219">Procedure</a></h2>
-<p>Include the procedure steps for the above configurations</p>
-<p>&nbsp;</p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie1.jpg" width="576" height="389" /></p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie2.jpg" width="576" height="389" /></p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie3.jpg" width="576" height="280" /></p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie4.jpg" width="575" height="275" /></p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie5.jpg" width="576" height="524" /></p>
-<p>&nbsp;</p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie6.jpg" width="576" height="318" /></p>
-<p><img src="images/ca_siteminder_usecase_sessioncookie7.jpg" width="576" height="524" /></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-
-
-
 <div class = "divider1"></div>
+<h3><a href="ca_siteminder_use_case_app_identity.htm">Using CA SiteMinder as Application Identity</a></h3>
+  <p>Learn how to use CA-SiteMinder as an application identity.</p>
+  <div class = "divider1"></div>
+<h3><a href="ca_siteminder_use_case_username_password.htm">Using Username/Password Security with WS-Security Policy</a></h3>
+  <p>Learn how to  authenticate a web service request with CA-SiteMinder Username/Password with a WS-Security Policy. </p>
+  <div class = "divider1"></div>
+<h3><a href="ca_siteminder_use_case_session.cookie.htm">Using SMSESSION Cookie with HTTP Security Policy</a></h3>
+  <p>Learn how to  authenticate a web service request with CA-SiteMinder using an SMSESSION cookie with an HTTP Security Policy. </p>
+  
+
+
+  <div class = "divider1"></div>
+
+
