@@ -61,7 +61,7 @@ nav-title: Step 6 -  Configure CA SiteMinder Identity System in Policy Manager 7
   <li>In the <em>Select Identity System</em> section, select <strong>CA SiteMinder</strong> from the <em>Identity System Type</em> drop-down menu. </li>
   <li>In the <em>Domain Details</em> section, specify the &quot;Domain Name&quot; and &quot;Domain Description.&quot;<br />
     <br />
-    <img src="images/ca_siteminder_specify_identity_system_details.jpg" width="621" height="414" /><br>
+    <img src="images/ca_siteminder_specify_identity_system_details.jpg" width="555" height="383" /><br>
     <br>
   </li>
 </ol>
@@ -72,7 +72,7 @@ nav-title: Step 6 -  Configure CA SiteMinder Identity System in Policy Manager 7
 <li>Click the <em>Create configuration file</em> radio button.</li>
 <li>Click the <em>Enable Agent</em> checkbox.</li>
 <li>Click the <em>Agent Configuration Object</em> radio button.</li>
-<li>In the &quot;Name&quot; field, specify the Agent Configuration Object name you defined in  <li><a href="#introduction">Installing CA SiteMinder Web Agent on Client Machines</a></li><br />
+<li>In the &quot;Name&quot; field, specify the Agent Configuration Object name you defined in  <a href="http://docs.soa.com/docs-test/ag/ca_siteminder/ca_siteminder_install_webagent_client.htm">Installing CA SiteMinder Web Agent on Client Machines</a>.<br />
   <br />
   <img src="images/ca_siteminder_create_agent_config.jpg" width="454" height="175" /></li>
 </ol>
@@ -96,7 +96,7 @@ nav-title: Step 6 -  Configure CA SiteMinder Identity System in Policy Manager 7
  <ol class="usingOrderedList">
 <li>Click <strong>Next</strong> to continue. The <em>CA SiteMinder Agent Options</em> screen displays.</li>
 <li>Set the &quot;Authentication Realm&quot; to the one you created in section &quot;<em>Step 3: Install CA SiteMinder Objects &gt; Create Domain and Realm Configuration</em>.&quot;  </li>
-<li>&quot;Enable verification of client IP Address in session token&quot; should not be checked.<br />
+<li>&quot;Enable verification of client IP Address in session tokens&quot; should <em>not</em> be checked.<br />
   <br />
   <img src="images/ca_siteminder_config_agent_options.jpg" width="415" height="325" /></li>
 </ol>
@@ -116,10 +116,11 @@ nav-title: Step 6 -  Configure CA SiteMinder Identity System in Policy Manager 7
 
 
  <h5>Step 6: <strong>Configure User Directory Options</strong></h5>
+ <p><em><strong>Note:</strong> Skip the Login Process Options screen. This screen is not used for the Legacy configuration. </em></p>
 
  <ol class="usingOrderedList">
 <li>Click <strong>Next</strong> to continue. The <em>User Directory Options</em> screen displays.</li>
-<li>If you need to manage CA SiteMinder users (e.g., to assign CA SiteMinder users to contracts), then select &quot;Use SOA Policy Manager LDAP support to access the User Directory&quot; and configure the &quot;Connection Properties&quot; and &quot;Attribute Details&quot; described in the next steps.<br />
+<li>If you need to manage CA SiteMinder users (e.g., to assign CA SiteMinder users to contracts), then select &quot;Use SOA Policy Manager LDAP support to access the User Directory&quot; and configure the &quot;Connection Properties&quot; and &quot;Attribute Details.&quot;<br />
   <br />
   <em>Note: The default is set to &quot;Access to User Directory is not required.&quot;</em>  <br />
   <br />
