@@ -51,29 +51,30 @@ nav-title: Using Configuration Actions
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>xxx<h4>xxx</h4>
-<p>xxx</p>
-<ul class="usingOrderedList">
-  <li><strong>xxx</strong></li>
-</ul>
-<a name="options">
+<p>This topic provides a summary of the SOA Software Platform &quot;Default&quot; and &quot;Policy Manager&quot; configuration actions available via the <em>Configuration &gt; Configuration Actions</em> section of the  SOA Software Administration Console.<a name="options">
+</a>
+<a name="defaultactions">
 <h3>Default Installation Configuration Actions</h3></a>
 <p>A container instance includes the following default configuration actions: 
+<p><em><img src="images/config_actions_default.jpg" alt="" width="675" height="323" /></em>
 <h4>Manage Admin Console Administrator</h4>
 <p>The "Manage Administrator Wizard" is executed when the details about the admin console administrator (such as name and password) need to be changed.
 
 The administrator's username can be changed by entering the new username directly in to the Username field. Optionally a new password can be created by entering a value in the new password field confirmed in the password confirmation field.
 
 The current password must be entered in the old password field so that authentication can be performed for any changes to be applied.</p>
-<h4>Manage PKI Keys</h4>
-<p>The &quot;Manage PKI Keys Wizard&quot; is executed as either an installation task or configuration action for the Network Director and various Agent features. The wizard allows you to configure the private key and certificate for the container when communicating with a governance console. <br />
-  The &quot;PKI Keys Details&quot; section displays the &quot;Public Key&quot; that has been generated and assigned to the object. If keys have not been generated and assigned, the &quot;None Found&quot; message displays.<br />
-  The &quot;Certificate Details&quot; section displays a summary of information for the certificate assigned to the current object. Assigned certificates can be generated or imported using this wizard. Certificate information presented includes Subject DN, Issuer DN, Serial Number, Effective Date, and Expiration Date. If a certificate has not been assigned, the &quot;None Found&quot; message displays.<br />
-  The &quot;Key Management Options&quot; section provides functions for performing key and certificate management for the current object. Option categories include &quot;Generate,&quot; &quot;Import,&quot; &quot;Export,&quot; and Delete. Available objects are displayed &quot;in focus&quot; and are based on the object's configuration &quot;state.&quot;<br />
-Select a &quot;Key Management Option&quot; and click &quot;Next&quot; to continue. The pre-selected option is the assigned default.</p>
-<p><em><img src="images/config_actions_default.jpg" width="675" height="323" /></em></p>
 
-<a name="options">
+<p><a href="#top">back to top</a>
+</p>
+<h4>Manage PKI Keys</h4>
+<p>The<em> Manage PKI Keys Wizard </em>is executed as either an installation task or configuration action for the Network Director and various Agent features. The wizard allows you to configure the private key and certificate for the container when communicating with a governance console. </p>
+<p>  The <em>PKI Keys Details</em> section displays the Public Key that has been generated and assigned to the object. If keys have not been generated and assigned, the &quot;None Found&quot; message displays.</p>
+<p>  The <em>Certificate Details </em>section displays a summary of information for the certificate assigned to the current object. Assigned certificates can be generated or imported using this wizard. Certificate information presented includes Subject DN, Issuer DN, Serial Number, Effective Date, and Expiration Date. If a certificate has not been assigned, the &quot;None Found&quot; message displays.</p>
+<p>  The Key Management Options section provides functions for performing key and certificate management for the current object. Option categories include Generate, Import, Export, and Delete. Available objects are displayed &quot;in focus&quot; and are based on the object's configuration &quot;state.&quot;</p>
+<p>  Select a Key Management Option and click <strong>Next</strong> to continue. The pre-selected option is the assigned default.</p>
+
+<p><a href="#top">back to top</a></p>
+<a name="pmactions">
 <h3>Policy Manager Configuration Actions</h3></a>
 <p>The following configuration actions are added to the Configuration Action list as part of the SOA Software Policy Manager Services feature installation. 
 <p><img src="images/config_actions_pm.jpg" alt="" width="620" height="325" />
@@ -181,11 +182,17 @@ A summary of property information is presented below for the "Create new databas
       </tr>
      
 </table>
+
+<p><a href="#top">back to top</a>
+</p>
 <h4>WS-MetadataExchange Options</h4>
 <p>The <em>WS-MetaDataExchange Options </em>task allows you specify the URL of  the Policy Manager &quot;Metadata Exchange Service.&quot; Connecting to the  &quot;Metadata Exchange Service&quot; enables communication between the current  SOA Container instance and Policy Manager to retrieve key information  (e.g., service hosting, database, etc.). </p>
 <p> Specifying the &quot;WS-MetaDataExhange&quot; URL is a required installation  task for &quot;Network Director&quot; and other Agent-based features. </p>
-<p> In Policy Manager, the URL can be found by viewing the Service Descriptor Document of the  &quot;Metadata Exchange Service&quot;. Multiple URL's can be specified for high  availability. Additional entries must be comma separated. </p>
+<p> In Policy Manager, the URL can be found by viewing the Service Descriptor Document of the  &quot;Metadata Exchange Service.&quot; Multiple URLs can be specified for high  availability. Additional entries must be comma separated. </p>
 <p> Enter the &quot;Metadata Exchange Service&quot; URL and click <strong>Finish</strong>.</p>
+
+<p><a href="#top">back to top</a>
+</p>
 
 <h4>Force Configuration Refresh</h4>
 <p>The Force Configuration Refresh task will force the container to  reconfigure itself with configuration information from Policy Manager.  The container will periodically poll for configuration changes. However,  if it is felt a configuration change was not made by the container or  that the polling interval is longer than is desired to pick up a needed  configuration change this task can be used to start the reconfiguration  process. Two options are available:</p>
@@ -193,12 +200,17 @@ A summary of property information is presented below for the "Create new databas
   <li><strong>Refresh from Startup</strong> - Forces the container to refresh  it&rsquo;s configuration from as it would normally from startup. All  configuration information for the container will be retrieved from  Policy Manager. </li>
   <li><strong>Refresh from Date</strong> - Forces  the container to refresh it&rsquo;s  configuration only with changes since the specified date. For example,  if a time five minutes earlier than the present time is entered all  changes in the last five minutes will be retrieved from Policy Manager.</li>
 </ul>
+
+<p><a href="#top">back to top</a>
+</p>
 <h4>Manage Schemas</h4>
-<p>The  &quot;Install Schemas&quot; screen is used to manage schemas associated with the  current SOA Container. Schemas add tables to the database used by the  SOA Container and populate them with data. The screen is organized into  two sections:</p>
-<p>The &quot;Available Schemas&quot; section displays a list of  schemas that are available to install into the current SOA Container. To  install an available schema, click the checkbox next to the schema line  item and click &quot;Finish.&quot; </p>
-<p>The &quot;Installed Schemas&quot; section  provides a list schemas that are currently installed in the SOA  Container. To uninstall a schema, click the checkbox next to the schema  line item and click &quot;Finish.&quot;</p>
-<p>Note: When a schema is selected, the  system will also install all preceding versions of the selected schema  if they have not been previously installed. In this scenario, preceding  schema versions will display in the &quot;Installed Schemas&quot; section of the  &quot;Manage Schemas Wizard&quot; (accessible via the &quot;Configuration&quot; tab) after  the installation is complete.</p>
-<p>After the schema management process is complete, the &quot;Summary&quot; screen displays.</p>
+<p>The<em> Install Schemas</em> screen  is used to manage schemas associated with the  current SOA Container.  Schemas add tables to the database used by the  SOA Container and populate them with data. The screen is organized into  two sections:</p>
+<ul>
+  <li><strong>Available Schemas</strong> - Displays a list of  schemas that are available to install into the current SOA Container. To  install an available schema, click the checkbox next to the schema line  item and click <strong>Finish</strong>.</li>
+  <li><strong>Installed Schemas</strong> - Provides a list schemas that are currently installed in the SOA  Container. To uninstall a schema, click the checkbox next to the schema  line item and click <strong>Finish</strong>.</li>
+</ul>
+<p><strong>Note:</strong> When a schema is selected, the  system will also install all preceding versions of the selected schema  if they have not been previously installed. In this scenario, preceding  schema versions will display in the <em>Installed Schemas </em>section of the  <em>Manage Schemas Wizard</em> (accessible via the <em>Configuration</em> tab) after  the installation is complete.</p>
+<p>After the schema management process is complete, the <em>Summary</em> screen displays.</p>
 <p><a href="#top">back to top</a>
 </p>
 
