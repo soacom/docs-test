@@ -34,7 +34,24 @@ nav-title: Using Configuration Actions
  <li><a href="#introduction">Introduction</a></li>
  <li><a href="#defaultactions">Default Configuration Actions</a></li>
  
+ <li><a href="#manageadmin">Manage Admin Console Administrator</a></li>
+ 
+ 
+  <li><a href="#managepkikeys">Manage PKI Keys</a></li>
+
+
+ 
  <li><a href="#pmactions">Policy Manager Configuration Actions</a></li>
+ 
+ <li><a href="#adddatabase">Configure Database Options / Add Database</a></li>
+ 
+  <li><a href="#metadata">WS-MetadataExchange Options</a></li>
+  
+   <li><a href="#forcerefresh">Force Configuration Refresh</a></li>
+   
+   <li><a href="#manageschemas">Manage Schemas</a></li>
+
+
 
  
 
@@ -53,11 +70,21 @@ nav-title: Using Configuration Actions
 
 <p>This topic provides a summary of the SOA Software Platform &quot;Default&quot; and &quot;Policy Manager&quot; configuration actions available via the <em>Configuration &gt; Configuration Actions</em> section of the  <em>SOA Software Administration Console</em>.<a name="options">
 </a>
+
+<p><a href="#top">back to top</a>
+</p>
 <a name="defaultactions">
 <h3>Default Installation Configuration Actions</h3></a>
 <p>A container instance includes the following default configuration actions: 
 <p><em><img src="images/config_actions_default.jpg" alt="" width="675" height="323" /></em>
-<h4>Manage Admin Console Administrator</h4>
+
+<p><a href="#top">back to top</a>
+</p>
+
+<a name="manageadmin">
+<h4>Manage Admin Console Administrator</h4></a>
+
+
 <p>The <em>Manage Administrator Wizard </em>is executed when the details about the admin console administrator (such as name and password) need to be changed.
 
 The administrator's username can be changed by entering the new username directly in to the Username field. Optionally a new password can be created by entering a value in the new password field confirmed in the password confirmation field.
@@ -66,20 +93,36 @@ The current password must be entered in the old password field so that authentic
 
 <p><a href="#top">back to top</a>
 </p>
-<h4>Manage PKI Keys</h4>
+
+<a name="managepkikeys">
+<h4>Manage PKI Keys</h4></a>
+
+
 <p>The<em> Manage PKI Keys Wizard </em>is executed as either an installation task or configuration action for the Network Director and various Agent features. The wizard allows you to configure the private key and certificate for the container when communicating with a governance console. </p>
 <p>  The <em>PKI Keys Details</em> section displays the Public Key that has been generated and assigned to the object. If keys have not been generated and assigned, the &quot;None Found&quot; message displays.</p>
 <p>  The <em>Certificate Details </em>section displays a summary of information for the certificate assigned to the current object. Assigned certificates can be generated or imported using this wizard. Certificate information presented includes Subject DN, Issuer DN, Serial Number, Effective Date, and Expiration Date. If a certificate has not been assigned, the &quot;None Found&quot; message displays.</p>
 <p>  The <em>Key Management Options</em> section provides functions for performing key and certificate management for the current object. Option categories include Generate, Import, Export, and Delete. Available objects are displayed &quot;in focus&quot; and are based on the object's configuration &quot;state.&quot;</p>
-<p>  Select a Key Management Option and click <strong>Next</strong> to continue. The pre-selected option is the assigned default. Refer to <a href="http://docs.soa.com/ag/key_management/key_management.htm" ">Managing Keys</a>  for more information about  each option. 
+<p>  Select a Key Management Option and click <strong>Next</strong> to continue. The pre-selected option is the assigned default. Refer to <a href="http://docs.soa.com//docs-test/ag/key_management/key_management.htm" ">Managing Keys</a>  for more information about  each option. 
   
 </a></p>
+
+<p><a href="#top">back to top</a>
+</p>
+
 <a name="pmactions">
 <h3>Policy Manager Configuration Actions</h3></a>
 <p>The following configuration actions are added to the <em>Configuration Action</em> list as part of the <em>SOA Software Policy Manager Services</em> feature installation. 
 <p><img src="images/config_actions_pm.jpg" alt="" width="620" height="325" />
-<h4>Add Database</h4>
-<p>The <em>Select Database Option</em> screen displays during the <em>SOA Software Policy Manager Services</em> configuration process, and is available by selecting <strong>Add Database</strong> in the <em>Configuration &gt; Configuration Actions</em> section after the feature configuration is complete. The following actions can be performed:</p>
+
+<p><a href="#top">back to top</a>
+</p>
+
+
+<a name="adddatabase">
+<h4>Configure Database Options / Add Database</h4></a>
+
+
+<p>The <em>Configure Database Options Wizard &gt;</em> <em>Select Database Option</em> screen displays during the <em>SOA Software Policy Manager Services</em> configuration process, and is available by selecting <strong>Add Database</strong> in the <em>Configuration &gt; Configuration Actions</em> section after the feature configuration is complete. The following actions can be performed:</p>
 <ul>
   <li><strong>Create new database</strong> - Creates a new Policy Manager database and associated properties based on the selected database type. </li>
   <li><strong>Use existing database</strong> - Uses an existing Policy Manager tablespace, and retains all tables created by any previous installation. </li>
@@ -182,7 +225,11 @@ A summary of property information is presented below for the "Create new databas
 
 <p><a href="#top">back to top</a>
 </p>
-<h4>WS-MetadataExchange Options</h4>
+
+<a name="metadata">
+<h4>WS-MetadataExchange Options</h4></a>
+
+
 <p>The <em>WS-MetaDataExchange Options </em>task allows you specify the URL of  the Policy Manager &quot;Metadata Exchange Service.&quot; Connecting to the  &quot;Metadata Exchange Service&quot; enables communication between the current  SOA Container instance and Policy Manager to retrieve key information  (e.g., service hosting, database, etc.). </p>
 <p> Specifying the &quot;WS-MetaDataExhange&quot; URL is a required installation  task for &quot;Network Director&quot; and other Agent-based features. </p>
 <p> In Policy Manager, the URL can be found by viewing the Service Descriptor Document of the  &quot;Metadata Exchange Service.&quot; Multiple URLs can be specified for high  availability. Additional entries must be comma separated. </p>
@@ -191,7 +238,10 @@ A summary of property information is presented below for the "Create new databas
 <p><a href="#top">back to top</a>
 </p>
 
-<h4>Force Configuration Refresh</h4>
+<a name="forcerefresh">
+<h4>Force Configuration Refresh</h4></a>
+
+
 <p>The Force Configuration Refresh task will force the container to  reconfigure itself with configuration information from Policy Manager.  The container will periodically poll for configuration changes. However,  if it is felt a configuration change was not made by the container or  that the polling interval is longer than is desired to pick up a needed  configuration change this task can be used to start the reconfiguration  process. Two options are available:</p>
 <ul>
   <li><strong>Refresh from Startup</strong> - Forces the container to refresh  it&rsquo;s configuration from as it would normally from startup. All  configuration information for the container will be retrieved from  Policy Manager. </li>
@@ -200,7 +250,11 @@ A summary of property information is presented below for the "Create new databas
 
 <p><a href="#top">back to top</a>
 </p>
-<h4>Manage Schemas</h4>
+
+<a name="manageschemas">
+<h4>Manage Schemas</h4></a>
+
+
 <p>The<em> Install Schemas</em> screen  is used to manage schemas associated with the  current SOA Container.  Schemas add tables to the database used by the  SOA Container and populate them with data. The screen is organized into  two sections:</p>
 <ul>
   <li><strong>Available Schemas</strong> - Displays a list of  schemas that are available to install into the current SOA Container. To  install an available schema, click the checkbox next to the schema line  item and click <strong>Finish</strong>.</li>
