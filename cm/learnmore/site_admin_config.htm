@@ -63,12 +63,14 @@ no-catalog: true
 <ol class="table_of_contents">
   <li><a href="#what_is_a_resource">What is a Resource?</a></li>
   <li><a href="#what_is_the_difference_between_resources_and_content">What's the difference between Resources and Content?</a></li>
-  <li><a href="#what_is_the_folder_structure_for_content">What is the folder structure for my content?</a></li>
-  <li><a href="#how_do_i_upload_style_sheets_to_the_platform">How do I upload style sheets to the platform?</a></li>
+  <li><a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a></li>
+  <li><a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a></li>
+  <li><a href="#how_do_i_upload_content_sd">How do I upload content for Simple Developer theme?</a></li>  <li><a href="#how_do_i_upload_style_sheets_to_the_platform">How do I upload style sheets to the platform?</a></li>
   <li><a href="#how_do_i_upload_sprite_files_to_the_platform">How do I upload Sprite files to the platform?</a></li>
   <li><a href="#how_do_i_upload_content_to_the_platform">How do I upload content to the platform?</a></li>
   <li><a href="#how_do_i_modify_the_landing_page_for_the_platform">How do I modify the landing page for the platform?</a></li>
   <li><a href="#how_do_i_upload_the_api_and_online_help_content_style_sheet_to_the_platform">How do I upload the API and Online Help content style sheet to the platform?</a></li>
+  <li><a href="#how_do_i_develop_content_for_sd_theme">How do I develop content for Simple Developer theme?</a></li>
 </ol>
 
 
@@ -109,7 +111,7 @@ no-catalog: true
 <ol>
   <li>Log in as the Site Admin.</li>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
-  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
+  <li>If you want to work with the template for the <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a> (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a></li>
   <li>Click <strong>Download Template</strong> to download the default platform template, <strong>custom_template.less</strong>. For full instructions, see <a href="#how_do_i_download_the_custom_template_less_template">How do I download the custom_template.less template?</a></li>
   <li>Rename the downloaded file from <strong>custom_template.less</strong> to <strong>custom.less</strong> and modify it as needed.</li>
   <li>Upload the revised file to the platform. For instructions, see <a href="#how_do_i_upload_my_customless_file_after_i_have_updated_it">How do I upload my custom.less file after I have updated it?</a></li>
@@ -289,7 +291,7 @@ no-catalog: true
 <h5><a name="to_customize_your_logo_filename"></a>To specify your logo filename in the template:</h5>
 
 <ol>
-  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Download</strong> to download a new custom_template.less file and rename it to custom.less.</li>
   <li>Load the custom .less file into an HTML editor and change the filename for this entry: @logo-img: url(&quot;images/&lt;image_name&gt;.png&quot;); to the new logo filename.</li>
@@ -299,7 +301,7 @@ no-catalog: true
 
 <h5><a name="to_upload_your_logo_file"></a>To upload your logo file:</h5>
 <ol>
-  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Rebuild Styles</strong> to ensure that all the proper style folders are generated. <em>Note: If you specified a custom logo name in custom.less and already uploaded the style sheet the rebuild step is not required. </em></li>
   <li>Go to <em>Resources &gt; Resources &gt; File Manager</em> and navigate to the theme/default/style folder:<br />
@@ -309,7 +311,7 @@ no-catalog: true
   <br />
   <br /></li>
   <li>Click into the /images folder and upload your logo file. <em>Note that the logo must comply with the stated logo requirements. </em></li>
-  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Admin &gt; Config &gt; Custom Styles</em>, choose the theme if needed, and click <strong>Rebuild Styles</strong>.</li>
+  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Administration &gt; Config &gt; Custom Styles</em>, choose the theme if needed, and click <strong>Rebuild Styles</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -519,13 +521,12 @@ no-catalog: true
     <p> Files uploaded to this location are indexed periodically, automatically, so that content is available for your site users when they use the Search feature to look for content.</p>
   </li>
 </ul>
-<p>  For more information on the file and folder structure for your implementation, as it relates to files you might want to upload or customize, see <a href="#what_is_the_folder_structure_for_content">What is the folder structure for my resources?</a> below. </p>
+<p>  For more information on the file and folder structure for your implementation, as it relates to files you might want to upload or customize, see <a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a> and <a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a> below. </p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="what_is_the_folder_structure_for_content"></a>
-<h3>What is the folder structure for my content?</h3>
+<a name="what_is_the_folder_structure_for_content_default"></a><h3>What is the folder structure for content in Default Theme?</h3>
 <p>If you're uploading content to the platform, via <em>Administration &gt; Config &gt; Resources</em> &gt; <em>Content</em>, you'll need to make sure you place files in the correct folders.</p>
 <p>Clicking the <strong>Content</strong> button takes you to File Manager where you can create folders, navigate up and down the folder structure, and upload single files or ZIP files. When you're uploading files, it's important to make sure you're in the right folder. You cannot move files.</p>
 <p>The Content button takes you to the top level of the folder structure, the <strong>/content</strong> folder. From there, the folder structure is as follows:</p>
@@ -540,6 +541,47 @@ no-catalog: true
     </ul>
   </li>
   </ul>
+<p>For example, let's say you want to customize the Support page. The URL for the page is: &lt;hostname&gt;/#/home/support. You would go to <em>Administration &gt; Config &gt; Resources</em> &gt; <em>Content</em>, to access the Content folder. In the File Explorer, click to navigate down to the home folder, then click to navigate down to the support folder. In this folder you will see index.htm which is the default page. To upload a replacement file, click <strong>Upload a File</strong> and navigate to the location of the new file.</p>
+<p>If needed, you can save out the existing HTML; choose to view the file in the browser, click View Source, and then copy the HTML. Or you can export the fileset, which will include referenced assets.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+<a name="what_is_the_folder_structure_for_content_sd"></a><h3>What is the folder structure for content in Simple Developer Theme?</h3>
+<p>The Simple Developer theme shares the same file and folder structure as Default Theme (see <a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a> above), but uses different folders for content.</p>
+<p>Simple Developer theme, by default, includes the following three content files/folders:</p>
+<ul>
+  <li>Documentation page: documentation/index.htm. In the user interface, this is accessed via the Documentation link at the center of the top menu bar.</li>
+  <li>Help page: documentation/index.htm. In the user interface, this is accessed via the Help link, right of top menu bar.</li>
+  <li>Welcome page: documentation/index.htm. In the user interface, this is accessed by clicking on the logo at the top left.</li>
+  </ul>
+<p>In the file system, these are represented by a structure of three subfolders in the main /content/ folder:</p>
+<ul>
+  <li>content/documentation/index.htm</li>
+  <li>content/help/index.htm</li>
+  <li>content/welcome/index.htm</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_upload_content_sd"></a><h3>How do I upload content for Simple Developer theme?</h3>
+<p>The Simple Developer theme shares the same file and folder structure as Default Theme, but uses different folders for content. If you want to replace existing content, you must mirror the existing folder structure, as given in <a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a> above.</p>
+<p>When you navigate to the <strong>content</strong> folder in File Explorer, you won't see these subfolders and files. However, to update the content, you must use identical folder and file names. Create the folder, click into the folder, and then upload the revised file, as explained below.</p>
+<h5>To update a Simple Developer default page</h5>
+<ol>
+  <li>Log in to the platform (Default Theme) as a Site Administrator.</li>
+  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>In the <em>Content</em> section, click <strong>File Manager</strong> to access the Content folder.</li>
+  <li>Click <strong>New Directory</strong>, and create a folder with the exact name of the folder in which you want to update the content: for example, <strong>help</strong>.</li>
+  <li>Click the new folder to go into it in File Explorer.</li>
+  <li>Click Upload a File.</li>
+  <li>Navigate to the location of the updated file and upload it. You can also upload a zip archive if you want to add multiple files or assets.</li>
+  <li>Click <strong>Upload</strong>. The file is uploaded.</li>
+  <li>Test by viewing in Simple Developer theme.
+  <p><strong>Note</strong>: to see the update immediately, you will need to clear cache and refresh the page. Cache is updated automatically every hour, so there is a delay before developers see the new page.</p></li>
+</ol>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -625,6 +667,16 @@ no-catalog: true
   <li>To upload the file to the selected directory, click <strong>Upload</strong>. If you receive an overwrite message click <strong>OK</strong>.
 </li>
 </ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_develop_content_for_sd_theme"></a>
+<h3>How do I develop content for the Simple Developer theme?</h3>
+<p>Content development for the Simple Developer theme is managed in the same way as content development for Default Theme. The files share the same main folder structure as Default Theme, but there are unique subfolders for Simple Developer content.</p>
+<p>In addition, you can develop and upload custom pages for Simple Dev.</p>
+<p>For detailed information on working with Simple Developer content pages, including working with styles, linking, supported file formats, managing assets, and other information, refer to <a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Developer Theme</a>.</p>
+<p>For information about uploading the files, see <a href="#how_do_i_upload_content_sd">How do I upload content for Simple Developer theme?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -1130,6 +1182,3 @@ insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'Developer' from TE
 
 
 <div class = "divider1"></div>
-
-
-
