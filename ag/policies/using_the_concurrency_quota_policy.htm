@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Using the Concurrency Quota Policy
-description: Learn how to .
+description: Learn how to monitor  web service concurrency performance by specifying a concurrency limit (i.e., quota).
 product: ag
 category: learn
 
@@ -16,6 +16,10 @@ nav-title: Using the Concurrency Quota Policy
   <p>Learn how to .</p>
 
 <a href="policy_management.htm" class="button secondary">Managing Policies</a>
+
+<a href="../assets/pm_qos/pm_concurrency_enforcement_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Policy Manager-specific)</a>
+
+
 <p></p>
   <div class = "divider1"></div>
    <h3 style="color: gray;">Table of Contents</h3>
@@ -27,6 +31,10 @@ nav-title: Using the Concurrency Quota Policy
   <li><a href="#options">Concurrency Quota Policy Options</a></li>
   
    <li><a href="#configuration">Configuration</a></li>
+   
+     <li><a href="#pm_usecases">Use Cases (Policy Manager-specific)</a></li>
+   
+     <li><a href="#Cm_usecases">Use Cases (Community Manager-specific)</a></li>
 
 
   </ol>
@@ -35,7 +43,7 @@ nav-title: Using the Concurrency Quota Policy
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>A &quot;Concurrency Quota Policy&quot; is a Quality of Service (QoS) policy that allows you to monitor the web service concurrency performance by specifying a concurrency limit (i.e., quota) that represents the maximum number of concurrency connections, and configuring fault and alert notifications. You can also define Alert Codes in the Alerts &gt; Alert Codes section and enable and select them in the policy definition. </p>
+<p>A &quot;Concurrency Quota Policy&quot; is a Quality of Service (QoS) policy that allows you to monitor the web service concurrency performance by specifying a concurrency limit (i.e., quota) that represents the maximum number of concurrency connections, and configuring fault and alert notifications. You can also define Alert Codes in the <em>Alerts &gt; Alert Codes</em> section and enable and select them in the policy definition. </p>
 <p>  If the specified concurrency limit is exceeded, Policy Manager will return a fault and send an alert. </p>
 
 <h3><a name="options" id="options">Concurrency Quota Policy Options</a></h3>
@@ -71,14 +79,24 @@ nav-title: Using the Concurrency Quota Policy
 <h5>Step 1: Add Policy / Use System Policy</h5>
 <p>In Policy Manager, you can create a Concurrency Quota Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section. </p>
 <h5>Step 2: Modify Policy</h5>
-<p>When you <strong>Modify</strong> the Concurrency Quota   policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
-<p>&nbsp;</p>
-<p>Configure the policy options based on your requirements and <strong>Apply</strong>. </p>
-<p>&nbsp;</p>
+<p>When you <strong>Modify</strong> the Concurrency Quota   Policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
+<p><img src="images/concurrency_quota1.jpg" width="565" height="396" /></p>
+<p>Configure the policy options based on your requirements and <strong>Apply</strong>.</p>
 <h5>Step 3: Attach Policy</h5>
 <p>After you have saved your policy you can  attach it to a web service,  operation, or binding that you would like to enhance the message processing of.</p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
 <p>After you attached the Concurrency Quota Policy to a service, operation, or binding, send a request to your service and go to the <em>Services &gt; Monitoring</em> section to view the results for Logs, Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p><a href="#top">Back to top</a></p>
+<h3>Use Cases (Policy Manager-specific)</h3>
+<p>Click <a href="../assets/pm_qos/pm_concurrency_quota_policy_use_cases.pdf" target="_blank">here</a>
+for a list of Policy Manager-specific use cases for the Concurrency Quota Policy.</p>
+
+<p><a href="#top">Back to top</a></p>
+
+<h3>Use Cases (Community Manager-specific)</h3>
+<p>Click <a href="../assets/pm_qos/cm_concurrency_quota_policy_use_cases.pdf" target="_blank">here</a>
+for a list of Community Manager-specific use cases for the Concurrency Quota Policy.</p>
+
 <p><a href="#top">Back to top</a></p>
 
 <div class = "divider1"></div>
