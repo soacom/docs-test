@@ -1,21 +1,23 @@
 ---
 layout: page
-title: Using the HTTP Caching Policy in Policy Manager 7.2
-description: Learn how to enhance performance of  message processing through  caching responses to previously made service requests using the HTTP Caching Policy.
+title: Using the Service Level Policy
+description: Learn how to defines conditions for measuring and reporting performance of a specific Contract. 
 product: ag
 category: learn
 
 weight:	5
 subcategory: Policies
 type: page
-nav-title: Using the HTTP Caching Policy
+nav-title: Using the Service Level Policy
 ---
-<a name="top"></a>
-<div class="documentation supportContent">
-<h2 name="top">Using the HTTP Caching Policy in Policy Manager 7.2</h2>
-  <p>Learn how to enhance performance of  message processing through  caching responses to previously made service requests using the HTTP Caching Policy.</p>
+<h2 name="top">Using the Service Level Policy</h2>
+  <p>Learn how to </p>
 
 <a href="policy_management.htm" class="button secondary">Managing Policies</a>
+
+<a href="../assets/pm_qos/pm_service_level_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Policy Manager-specific)</a>
+
+
 <p></p>
   <div class = "divider1"></div>
    <h3 style="color: gray;">Table of Contents</h3>
@@ -24,14 +26,13 @@ nav-title: Using the HTTP Caching Policy
 
  <li><a href="#introduction">Introduction</a></li>
  
-  <li><a href="#modes">HTTP Caching Policy Modes</a></li>
-  
-  <li><a href="#manage_cache">How Stale Caches are Managed</a></li>
-  
-  <li><a href="#options">HTTP Caching Policy Options</a></li>
-<li><a href="#cache">Public/Private Caching</a></li>
+  <li><a href="#options">Service Level Policy Options</a></li>
   
    <li><a href="#configuration">Configuration</a></li>
+   
+     <li><a href="#pm_usecases">Use Cases (Policy Manager-specific)</a></li>
+   
+     <li><a href="#Cm_usecases">Use Cases (Community Manager-specific)</a></li>
 
 
   </ol>
@@ -40,63 +41,172 @@ nav-title: Using the HTTP Caching Policy
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>An SOA Container is involved in the  processing of messages prior to their delivery to a service implementation. The performance of message processing can be enhanced  through the caching of responses to previously made service requests. The cached responses can be returned without paying the overhead of invoking the service implementation. </p>
-<p>The  HTTP Caching Policy is an Operational policy that allows you to define    how long a response can be cached for HTTP requests and select a caching mode (HTTP Proxy Mode or HTTP Mediation/Server Mode). </p>
-<p><em>Note: This policy is introduced with Policy Manager 7.2. </em></p>
+<p>The &quot;Service Level Policy&quot; defines conditions for measuring and reporting performance of a specific Contract. Each policy is composed of a &quot;Rule&quot; and &quot;Access Interval.&quot; Rules represent the conditions you define to measure and report performance of a service contract. When a defined system condition matches a defined rule, an alert is raised. A &quot;Rule&quot; is composed of &quot;Rule Elements&quot; (i.e., Alert Code, Metric, Operator, Value, Units, and Interval) that are configured to meet your service monitoring requirements.
 
-<a name="modes">
-<h3>HTTP Caching Policy Modes</h3></a>
-<p>The HTTP Caching policy supports the following modes: </p>
+</p>
+<h3><a name="options" id="options">Service Level Policy Options</a></h3>
+<p>An &quot;Access Interval&quot; is composed of one or more &quot;Access Days&quot; (Sunday through Saturday). Each &quot;Access Day&quot; is configured with an &quot;Access Time&quot; that can represent one complete day (All Day) or a date range (Range) that is specified using a 24-hour clock format (HH:MM). See QoS Policy Functionality Overview for more information.</p>
+<p>When you add an Service Level Policy Rule, you define the service measurement and reporting configuration that will be referenced by services and contracts. The attributes you will define include:</p>
+<h5>Service Level Policy Name and Description</h5>
+<p>The name and description you assign to the Service Level Policy.</p>
+<h5>Service Level Policy Rules</h5>
+<p>Rules represent the conditions you define to measure and report performance for that specific service that is referencing or contains the configuration of a Service Level Policy. When a defined system condition matches a defined rule, an alert is raised in the Policy Manager. </p>
+<p>Note: Available SLA Custom Alert Codes are selectable from the drop-down list box  on the Alert Code field. You can also enter a new SLA Custom Alert Code directly  into the Service Level Policy Rule line item. The minimum SLA Alert Code start number  is 700000. Refer to See <em>About Alert Codes</em> in the Policy Manager Online Help (accessible via the Policy Manager Management Console) for more information  on adding a new alert code in <em>Alerts &gt; Alert Codes</em> section of the Management Console.</p>
+<p>A rule is composed of the following elements:</p>
+<table width="700
+" cellspacing="0px" class="doctable">
+  <thead>
+  </thead>
+  <tr>
+    <th width="188">Rule Element</th>
+    <th width="471">Description</th>
+    <td width="33"></thead></td>
+  </tr>
+  <tr class="t2row">
+    <td height="26">Alert Code</td>
+    <td><p>The Alert Code identification number that represents the alert you would like to      send when the defined condition is met. This value is manually entered into a text    box.</p></td>
+  </tr>
+  <tr class="t1row">
+    <td height="26">Metric</td
+    >
+    <td>A Metric is a measurable function (such as a Response Time) that is used in the rule    calculation. Selectable options include:<br />
+    <br />
+    <img src="images/SLA Response Time.jpg" width="177" height="114" /><br />
+    Figure. Service Level Policy Metrics<br />
+    <br />
+    <em>Note: The &quot;Total&quot; metric options add up the combined size of all the message payload    over the time period.</em></td>
+  </tr>
+  <tr class="t2row">
+    <td height="30">Operator</td>
+    <td><p>An Operator is a symbol that represents a mathematical function (&lt;=, &gt;=, etc.) used    to limit or expand your search to qualify the metric. Selectable options include:<br />
+      <br />
+      <img src="images/SLA Operator.jpg" width="40" height="94" /><br />
+    Figure. Service Level Policy Metrics</p></td>
+  </tr>
+  <tr class="t1row">
+    <td height="31">Value</td>
+    <td><p>A Value is a numerical value that establishes the threshold of the metric.  This<br />
+    value is manually entered into a text box.</p></td>
+  </tr>
+  <tr class="t2row">
+    <td height="30">Units</td>
+    <td><p>A Unit is the unit measure by which the value is counted. Selectable options include:<br />
+      <br />
+      <img src="images/sla units.jpg" width="85" height="107" /><br />
+      Figure. Service Level Policy Units      <br />
+      <br />
+    </p></td>
+    
+  </tr>
+  
+  
+  <tr class="t1row">
+    <td height="30">Interval</td>
+    <td><p>An Interval is the time interval over which the rule is measured. Selectable options      include:<br />
+      <br />
+      <img src="images/SLA Interval.jpg" width="80" height="121" /><br />
+      Figure. Service Level Policy Intervals      <br />
+      <br />
+    </p></td>
+    
+  </tr>
+</table>
 
-<ul class="usingOrderedList">
-  <li><strong>HTTP Proxy Mode</strong> - Using this mode, the container  expects the downstream call to be HTTP and return cache control headers. If the downstream call does not meet these requirements, responses are not cached responses when the Authorization header is sent in the request. </li>
-  <li><strong>HTTP Mediation / Server Mode</strong> - Using this mode, the  presence or absence of downstream headers are not taken into consideration. The caching decisions are based completely on the client cache-control headers and default behavior is used for the authorization header. This means the authorization header is used in the  cache key and cache the responses  individually per authenticated user. 
-</li>
-</ul>
 
-<p><a href="#top">Back to top</a></p>
+<h5>Example Rule Definition</strong></h5>
+<p>Send alert code [30002] when the [Maximum Response Time] for Service Operation is<br />
+  [&gt;] [5] [Seconds] in a [1 hour] time interval.</p>
+<p>Before you begin creating rules, you should review the list of available alert codes  to determine which codes you wish to use. One common approach is to establish a series  of two or three thresholds, each using the same metric. The first threshold indicates  that there may be a problem with a service monitored by the Service Level Policy,  the second indicates that there is a problem, but it may not be a serious one, and the third is a warning that there is a major problem that needs to be addressed immediately.</p>
+<h5>Example Rule Definition with Thresholds</h5>
+<table width="700
+" cellspacing="0px" class="doctable">
+  <thead>
+  </thead>
+  <tr>
+    <th width="492">Rule</th>
+    <th width="167">Significance</th>
+    <td width="33"></thead></td>
+  </tr>
+  <tr class="t2row">
+    <td height="26">Send alert code [30002] when the [Maximum Response Time] for Service Operation is    [&gt;] [5] [Seconds] in a [15 minute] time interval.</td>
+    <td><p>Response time is slow, but tolerable. Monitor this service.</p></td>
+  </tr>
+  <tr class="t1row">
+    <td height="26">Send alert code [30004] when the [Maximum Response Time] for Service Operation is    [&gt;] [30] [Seconds] in a [1 hour] time interval.</td
+    >
+    <td>Response time is unacceptable. Investigate.</td>
+  </tr>
+  <tr class="t2row">
+    <td height="30">Send alert code [30007] when the [Maximum Response Time] for Service Operation is    [&gt;] [2] [Minutes] in a [ANY] time interval.</td>
+    <td>Response time is critical. Address immediately.</td>
+  </tr>
+  
+</table>
 
-<a name="manage_cache">
-<h3>How Stale Caches are Managed</h3></a>
-<p>When a message is processed and the headers are read, a determination is made as to whether the cache is stale or not. If a cache is discovered to be stale, response validators are used to send a conditional response to the originating server. If its determined that the cache is not stale, the cached response is used. Otherwise, a full response will be received that will be used instead of the cached response. For more information on the stale cache handling approach used for this policy, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</a></p>
 
-<p><a href="#top">Back to top</a></p>
-
-<a name="options">
-<h3>HTTP Caching Policy Options</h3></a>
-<p>The policy includes the following configuration options:</p>
-<ul class="usingOrderedList">
-  <li><strong>Time To Live</strong> - Allows you to specify the maxium time in seconds a response will be cached. If not specified, the maximum time will dictated by the SOA container settings. </li>
-  <li><strong>Staleness Period Seconds</strong> - If a value is entered, any cached entry will live in the cache for the number of seconds in Time To Live, plus number of seconds in Staleness Period.&nbsp; The &quot;stale&quot; portion of the entry will only be used if Cache-Control directives on the request allow for a stale entry to be used, by the use of max-stale directive.
-  The default is 0.&nbsp; </li>
-  <li><strong>Act as HTTP Proxy</strong> - Uncheck to enable either the HTTP Proxy Mode (checked) or HTTP Mediation / Server Mode.</li>
-  <li><strong>Shared Cache</strong> - Uncheck to enable  ability to use a private cache. You must also select a Subject Category (below). </li>
-  <li><strong>Subject Category</strong> - Allows you to select a subject category if Shared Cache is unchecked. The subject category is used to find the cache's principal name that is set when the cache is created, and use it as part of the cache key.  </li>
-</ul>
-<p><a href="#top">Back to top</a></p>
-
-<a name="cache">
-<h3>Public/Private Caching</h3></a>
-
-<p>By default, the caching module considers itself to be a shared (public) cache (<strong>Shared Cache</strong> checked), and will not, for example, cache responses to requests with Authorization headers or responses marked with Cache-Control:  private. If, however, the cache is only going to be used by one logical &quot;user&quot; (behaving similarly to a browser cache), then you will want to turn off the shared cache setting (<strong>Shared Cache </strong>unchecked). </p>
+<h5>Service Level Policy Access Time</h5>
+<p>Access Time is configured by defining an &quot;Access Interval.&quot; An &quot;Access Interval&quot;  is composed of one or more &quot;Access Days&quot; (Sunday through Saturday). Each &quot;Access  Day&quot; is configured with an &quot;Access Time&quot; that can represent one complete day (All Day) or a date range (Range) that is specified using a 24-hour clock format (HH:MM).</p>
+<table width="700
+" cellspacing="0px" class="doctable">
+  <thead>
+  </thead>
+  <tr>
+    <th width="188">Access Time Option</th>
+    <th width="471">Description</th>
+    <td width="33"></thead></td>
+  </tr>
+  <tr class="t2row">
+    <td height="26">Access Day</td>
+    <td><p>Checkbox options that allow you to select the days you would like to include in the      Access Interval. Selectable days include Monday, Tuesday, Wednesday, Thursday, Friday,    Saturday, and Sunday.</p></td>
+  </tr>
+  <tr class="t1row">
+    <td height="26">Access Time</td
+    >
+    <td>A drop-down list box option that allows you to select &quot;All Day&quot; or &quot;Range&quot; for each&quot;Access Day&quot; defined in the Access Interval. &quot;All Day&quot; represents a full 24-Hour      Day. &quot;Range allows you to select a &quot;To&quot; and &quot;From&quot; times using a 24-hour clock format    (HH:MM).</td>
+  </tr>
+  <tr class="t2row">
+    <td height="30">From Time (Hours:Minutes)</td>
+    <td>&quot;Hour&quot; and &quot;Minute&quot; drop-down list boxes that allow you to select the &quot;From Time&quot;      range to apply to the &quot;Access Time&quot; selection for the &quot;Access Interval&quot; definition.    Hour increments are based on a 24-Hour.</td>
+  </tr>
+  <tr class="t1row">
+    <td height="31">To Time (Hours:Minutes)</td>
+    <td><p>&quot;Hour&quot; and &quot;Minute&quot; drop-down list boxes that allow you to select the &quot;To Time&quot; range      to apply to the &quot;Access Time&quot; selection for the &quot;Access Interval&quot; definition. Hour    increments are based on a 24-Hour.</p></td>
+  </tr>
+  <tr class="t2row">
+    <td height="30">Time Zone</td>
+    <td><p>A drop-down list box that allows you to select the time zone to apply to the &quot;Access    Time&quot; for the current &quot;Access Interval&quot; definition.</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 <p><a href="#top">Back to top</a></p>
 
 <a name="configuration">
 <h3>Configuration</h3></a>
-<p>Let's take a quick walkthrough of the HTTP Caching Policy configuration process to get your started.
+<p>Let's take a quick walkthrough of the Service Level  Policy configuration process to get your started.
 
 </p>
-<h5>Step 1: Add Policy / Use System Policy</h5>
-<p>In Policy Manager, you can create a HTTPS Caching Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section. </p>
+<h5>Step 1: Add Policy</h5>
+<p>In Policy Manager, you can create a Service Level  Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; QoS Policies</em> section. </p>
 <h5>Step 2: Modify Policy</h5>
-<p>When you <strong>Modify</strong> the HTTP Caching   policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
-<p><img src="images/modify_http_caching_policy.jpg" width="456" height="478" /></p>
-<p>Configure the policy options based on your requirements and <strong>Apply</strong>. </p>
-<p><img src="images/http_cache_policy_summary.jpg" width="498" height="145" /></p>
+<p>When you <strong>Modify</strong> the Service Level Policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
+<p><img src="images/modify service level policy rules.jpg" width="614" height="431" /></p>
+<p>Configure the policy options based on your requirements and <strong>Apply</strong>. Refer to the <a href="#options">Service Level Policy Options</a> section for a functional overview of each
+rule element.</p>
 <h5>Step 3: Attach Policy</h5>
-<p>After you have saved your policy you can  attach it to a web service,  operation, or binding that you would like to enhance the message processing of.</p>
+<p>After you have saved your policy you can  attach it to a web service,  operation, or binding.</p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
-<p>After you attached the HTTPS Caching Policy to a service, operation, or binding, send a request to your service and go to the <em>Services &gt; Monitoring</em> section to view the results for Logs, Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p>After you attached the Service Level  Policy to a service, operation, or binding, send a request to your service and go to the <em>Services &gt; Monitoring</em> section to view the results for Logs, Real Time Charts, and Historical Charts. Refer to the Policy Manager Online Help (i.e., Help button) for more information on the using the monitoring functions.</p>
+<p><a href="#top">Back to top</a></p>
+<h3>Use Cases (Policy Manager-specific)</h3>
+<p>Click <a href="../assets/pm_qos/pm_service_level_policy_use_cases.pdf" target="_blank">here</a>
+for a list of Policy Manager-specific use cases for the Service Level  Policy.</p>
+
+<p><a href="#top">Back to top</a></p>
+
+<h3>Use Cases (Community Manager-specific)</h3>
+<p>Click <a href="../assets/pm_qos/cm_service_level_quota_policy_use_cases.pdf" target="_blank">here</a>
+for a list of Community Manager-specific use cases for the Service Level  Policy.</p>
+
 <p><a href="#top">Back to top</a></p>
 
 <div class = "divider1"></div>
