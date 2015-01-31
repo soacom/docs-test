@@ -22,6 +22,8 @@ nav-title: Using the Concurrency Quota Policy
 
 <a href="../assets/pm_qos/pm_concurrency_enforcement_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Policy Manager-specific)</a>
 
+<a href="../assets/pm_qos/cm_concurrency_enforcement_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Policy Manager-specific)</a>
+
 
 <p></p>
   <div class = "divider1"></div>
@@ -46,7 +48,9 @@ nav-title: Using the Concurrency Quota Policy
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>A &quot;Concurrency Quota Policy&quot; is a Quality of Service (QoS) policy that allows you to monitor the web service concurrency performance by specifying a concurrency limit (i.e., quota) that represents the maximum number of concurrency connections, and configuring fault and alert notifications. You can also define Alert Codes in the <em>Alerts &gt; Alert Codes</em> section and enable and select them in the policy definition. </p>
+<p>A &quot;Concurrency Quota Policy&quot; is a Quality of Service (QoS) policy that allows you to monitor the web service concurrency performance by specifying a concurrency limit (i.e., quota) that represents the maximum number of concurrency connections, and configuring fault and alert notifications. </p>
+<p>  You can define a fault message by specifying a name (Fault Message), SOAP fault element that holds errors and status information for a SOAP message (Fault Element Name), URL that points to the fault code schema (Fault Namespace URI), and URL that points to the fault code schema (Fault Namespace URI).</p>
+<p>You can also define Alert Codes in the <em>Alerts &gt; Alert Codes</em> section and enable and select them in the policy definition.</p>
 <p>  If the specified concurrency limit is exceeded, Policy Manager will return a fault and send an alert. </p>
 
 <h3><a name="options" id="options">Concurrency Quota Policy Options</a></h3>
