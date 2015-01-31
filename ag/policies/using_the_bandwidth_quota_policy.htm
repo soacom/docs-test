@@ -13,7 +13,7 @@ nav-title: Using the Bandwidth Quota Policy
 <a name="top"></a>
 <div class="documentation supportContent">
 <h2 name="top">Using the Bandwidth Quota Policy</h2>
-  <p>Learn how to .</p>
+  <p>Learn how to configure the bandwidth cap (i.e, quota) that a consumer can upload or download at any given time.</p>
 
 <p><a href="policy_management.htm" class="button secondary">Managing Policies</a> 
 
@@ -21,6 +21,9 @@ nav-title: Using the Bandwidth Quota Policy
 
 
 <a href="../assets/pm_qos/pm_bandwidth_quota_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Policy Manager-specific)</a>
+
+<a href="../assets/pm_qos/cm_bandwidth_quota_policy_use_cases.pdf" target="_blank" class="button secondary">Use Cases (Community Manager-specific)</a>
+
 <p></p>
   <div class = "divider1"></div>
    <h3 style="color: gray;">Table of Contents</h3>
@@ -45,7 +48,8 @@ nav-title: Using the Bandwidth Quota Policy
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>A &quot;Bandwidth Quota Policy&quot; is a Quality of Service (QoS) Policy that &nbsp;allows you to configure the bandwidth cap (i.e, quota) that a consumer can upload or download at any given time. The bandwidth cap can be specified as kilobytes or megabytes per second. If the quota is exceeded, the runtime will throttle the traffic to conform to the quota policy. The quota is also assigned to either the request (upload) or response (download). &nbsp;No alerts are generated for this policy since the bandwidth consumed is a function of the network speed and capabilities of the service provider, not the consumer.</p>
+<p>A &quot;Bandwidth Quota Policy&quot; is a Quality of Service (QoS) Policy that &nbsp;allows you to configure the bandwidth cap (i.e, quota) that a consumer can upload or download at any given time. The bandwidth cap can be specified as kilobytes or megabytes per second. If the quota is exceeded, the runtime will throttle the traffic to conform to the quota policy. The quota is also assigned to either the request (upload) or response (download). </p>
+<p><em>Note: No alerts are generated for this policy since the bandwidth consumed is a function of the network speed and capabilities of the service provider, not the consumer.</em></p>
 
 <a name="options">
 <h3>Bandwith Quota Policy Options</h3></a>
